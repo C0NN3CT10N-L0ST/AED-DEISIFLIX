@@ -24,4 +24,8 @@ public class Filme {
         this.nrVotos = nrVotos;
     }
 
+    public String toString(){
+        return id + " | " + titulo + " | " + dataLancamento + " | " + nrVotos + " | " + mediaVotos;
+    }
+
 }

@@ -1,13 +1,21 @@
+package pt.ulusofona.deisi.aed.deisiflix;
+
+import pt.ulusofona.deisi.aed.deisiflix.Filme;
+import pt.ulusofona.deisi.aed.deisiflix.Reader;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
     static void lerFicheiros() throws IOException {
-        // TODO
+        Reader.movieReader();
+        Reader.movieVotesReader();
+        Reader.genresReader();
+        Reader.peopleReader();
     }
 
-    static ArrayList<Filme> getFilmes() {
-        // TODO
+    static ArrayList<Filme> getFilmes() throws IOException {
+        return Reader.movieReader();
     }
 
     static ArrayList<String> getLinhasIgnoradas(String fileName) throws IOException {
@@ -25,6 +33,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        // Reader.genresReader();
+        Reader.movieReader();
     }
 }

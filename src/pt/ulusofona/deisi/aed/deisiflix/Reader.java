@@ -1,3 +1,5 @@
+package pt.ulusofona.deisi.aed.deisiflix;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,10 +10,11 @@ public class Reader {
     static boolean DEBUG = true;
     static String testDBPath = new File("").getAbsolutePath() + "\\src\\pt\\ulusofona\\deisi\\aed\\deisiflix\\testDB\\";
 
-    public static void movieReader() throws IOException {
+    public static ArrayList<Filme> movieReader() throws IOException {
         FileReader fr = new FileReader(testDBPath + "deisi_movies.txt");
         BufferedReader reader = new BufferedReader(fr);
 
+        ArrayList<Filme> movies = new ArrayList<>();
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -28,6 +31,14 @@ public class Reader {
                 int budget = Integer.parseInt(components[3].strip());
                 String date = components[4].strip();
 
+                Filme movie = new Filme();
+                movie.id = id;
+                movie.titulo = title;
+                movie.orcamento = budget;
+                movie.dataLancamento = date;
+
+                movies.add(movie);
+
                 if (DEBUG) {
                     System.out.println("ID: " + id);
                     System.out.println("Title: "+ title);
@@ -37,11 +48,9 @@ public class Reader {
                     System.out.println("-----------".repeat(6));
                 }
             }
-
-            // TODO: Add to class
         }
-
         reader.close();
+        return movies;
     }
 
     public static void movieVotesReader() throws IOException {

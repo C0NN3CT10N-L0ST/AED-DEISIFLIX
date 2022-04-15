@@ -1,5 +1,3 @@
-package pt.ulusofona.deisi.aed.deisiflix;
-
 public class Filme {
 
     int id;

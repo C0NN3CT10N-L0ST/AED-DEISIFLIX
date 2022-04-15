@@ -1,8 +1,3 @@
-package pt.ulusofona.deisi.aed.deisiflix;
-
-import pt.ulusofona.deisi.aed.deisiflix.Filme;
-import pt.ulusofona.deisi.aed.deisiflix.Reader;
-
 import java.io.IOException;
 import java.util.ArrayList;
 

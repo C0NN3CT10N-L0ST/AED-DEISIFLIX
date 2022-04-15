@@ -1,5 +1,4 @@
 public class GeneroCinematografico {
-
     String nomeGenero;
 
     GeneroCinematografico(){}

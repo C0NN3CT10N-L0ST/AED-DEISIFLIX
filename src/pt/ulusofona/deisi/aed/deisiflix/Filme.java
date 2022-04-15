@@ -2,9 +2,9 @@ public class Filme {
 
     int id;
     String titulo;
-    Filme[] atores;
-    Filme[] realizadores;
-    Filme[] generos;
+    Pessoa[] atores;
+    Pessoa[] realizadores;
+    GeneroCinematografico[] generos;
     String dataLancamento;
     int orcamento;
     int mediaVotos;
@@ -12,7 +12,7 @@ public class Filme {
 
     Filme(){}
 
-    Filme(int id, String titulo, Filme[] atores, Filme[] realizadores, Filme[] generos, String dataLancamento, int orcamento, int mediaVotos, int nrVotos){
+    Filme(int id, String titulo, Pessoa[] atores, Pessoa[] realizadores, GeneroCinematografico[] generos, String dataLancamento, int orcamento, int mediaVotos, int nrVotos){
         this.id = id;
         this.titulo = titulo;
         this.atores = atores;

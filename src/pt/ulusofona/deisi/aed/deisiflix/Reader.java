@@ -6,10 +6,21 @@ import java.util.ArrayList;
 
 public class Reader {
     static boolean DEBUG = true;
-    static String testDBPath = new File("").getAbsolutePath() + "\\src\\pt\\ulusofona\\deisi\\aed\\deisiflix\\testDB\\";
 
+    // Local Database Paths
+    static String testDBPath = new File("").getAbsolutePath() + "/pt/ulusofona/deisi/aed/deisiflix/testDB/";
+    static String shortMovies = testDBPath + "deisi_movies_short.txt";
+    static String largeMovies = testDBPath + "deisi_movies_large.txt";
+    static String shortVotes = testDBPath + "deisi_movie_votes_short.txt";
+    static String largeVotes = testDBPath + "deisi_movie_votes_large.txt";
+    static String shortPeople = testDBPath + "deisi_people_short.txt";
+    static String largePeople = testDBPath + "deisi_people_large.txt";
+    static String shortGenres = testDBPath + "deisi_genres_short.txt";
+    static String largeGenres = testDBPath + "deisi_genres_large.txt";
+
+    // Reader functions
     public static ArrayList<Filme> movieReader() throws IOException {
-        FileReader fr = new FileReader(testDBPath + "deisi_movies.txt");
+        FileReader fr = new FileReader(largeMovies);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> movies = new ArrayList<>();
@@ -17,6 +28,7 @@ public class Reader {
 
         while ((line = reader.readLine()) != null) {
             if (DEBUG) {
+                System.out.println("-----------".repeat(6));
                 System.out.println("Line -> " + line);
             }
 
@@ -25,7 +37,7 @@ public class Reader {
             if (components.length == 5) {
                 int id = Integer.parseInt(components[0].strip());
                 String title = components[1].strip();
-                int duration = Integer.parseInt(components[2].strip());
+                float duration = Float.parseFloat(components[2].strip());
                 int budget = Integer.parseInt(components[3].strip());
                 String date = components[4].strip();
 
@@ -43,7 +55,6 @@ public class Reader {
                     System.out.println("Duration: " + duration);
                     System.out.println("Budget " + budget);
                     System.out.println("Date: " + date);
-                    System.out.println("-----------".repeat(6));
                 }
             }
         }
@@ -52,13 +63,14 @@ public class Reader {
     }
 
     public static void movieVotesReader() throws IOException {
-        FileReader fr = new FileReader(testDBPath + "deisi_movie_votes.txt");
+        FileReader fr = new FileReader(largeVotes);
         BufferedReader reader = new BufferedReader(fr);
 
         String line = null;
 
         while ((line = reader.readLine()) != null) {
             if (DEBUG) {
+                System.out.println("-----------".repeat(6));
                 System.out.println("Line -> " + line);
             }
 
@@ -73,7 +85,6 @@ public class Reader {
                     System.out.println("ID: " + id);
                     System.out.println("Vote Average: "+ votesAverage);
                     System.out.println("Nr. Votes: " + votesTotal);
-                    System.out.println("-----------".repeat(6));
                 }
             }
 
@@ -84,13 +95,14 @@ public class Reader {
     }
 
     public static void peopleReader() throws IOException {
-        FileReader fr = new FileReader(testDBPath + "deisi_actors.txt");
+        FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
 
         String line = null;
 
         while ((line = reader.readLine()) != null) {
             if (DEBUG) {
+                System.out.println("-----------".repeat(6));
                 System.out.println("Line -> " + line);
             }
 
@@ -109,7 +121,6 @@ public class Reader {
                     System.out.println("Name: "+ name);
                     System.out.println("Genre: " + genre);
                     System.out.println("ID Movie: " + idMovie);
-                    System.out.println("-----------".repeat(6));
                 }
             }
 
@@ -120,13 +131,14 @@ public class Reader {
     }
 
     public static void genresReader() throws IOException {
-        FileReader fr = new FileReader(testDBPath + "deisi_genres.txt");
+        FileReader fr = new FileReader(largeGenres);
         BufferedReader reader = new BufferedReader(fr);
 
         String line = null;
 
         while ((line = reader.readLine()) != null) {
             if (DEBUG) {
+                System.out.println("-----------".repeat(6));
                 System.out.println("Line -> " + line);
             }
 
@@ -139,7 +151,6 @@ public class Reader {
                 if (DEBUG) {
                     System.out.println("Genre Name: " + genre);
                     System.out.println("ID Movie: " + id);
-                    System.out.println("-----------".repeat(6));
                 }
             }
 

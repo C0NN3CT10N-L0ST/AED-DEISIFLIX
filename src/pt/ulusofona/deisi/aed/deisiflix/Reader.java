@@ -19,11 +19,12 @@ public class Reader {
     static String largeGenres = testDBPath + "deisi_genres_large.txt";
 
     // Reader functions
-    public static ArrayList<Filme> movieReader() throws IOException {
+    public static MoviesData movieReader() throws IOException {
         FileReader fr = new FileReader(largeMovies);
         BufferedReader reader = new BufferedReader(fr);
 
-        ArrayList<Filme> movies = new ArrayList<>();
+        ArrayList<Filme> movies = new ArrayList<Filme>();  // Movies
+        ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -56,16 +57,22 @@ public class Reader {
                     System.out.println("Budget " + budget);
                     System.out.println("Date: " + date);
                 }
+            } else {
+                ignoredLines.add(line);
             }
         }
         reader.close();
-        return movies;
+
+        // Returns 'MoviesData' object
+        return new MoviesData(movies, ignoredLines);
     }
 
-    public static void movieVotesReader() throws IOException {
+    // In part1 we only need to return 'ignoredLines'
+    public static ArrayList<String> movieVotesReader() throws IOException {
         FileReader fr = new FileReader(largeVotes);
         BufferedReader reader = new BufferedReader(fr);
 
+        ArrayList<String> ignoredLines = new ArrayList<String>();
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -86,18 +93,23 @@ public class Reader {
                     System.out.println("Vote Average: "+ votesAverage);
                     System.out.println("Nr. Votes: " + votesTotal);
                 }
+            } else {
+                ignoredLines.add(line);
             }
 
             // TODO: Add to class
         }
 
         reader.close();
+        return ignoredLines;
     }
 
-    public static void peopleReader() throws IOException {
-        FileReader fr = new FileReader(largePeople);
+    // In part1 we only need to return 'ignoredLines'
+    public static ArrayList<String> peopleReader() throws IOException {
+        FileReader fr = new FileReader(shortPeople);
         BufferedReader reader = new BufferedReader(fr);
 
+        ArrayList<String> ignoredLines = new ArrayList<String>();
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -122,18 +134,23 @@ public class Reader {
                     System.out.println("Genre: " + genre);
                     System.out.println("ID Movie: " + idMovie);
                 }
+            } else {
+                ignoredLines.add(line);
             }
 
             // TODO: Add to class
         }
 
         reader.close();
+        return ignoredLines;
     }
 
-    public static void genresReader() throws IOException {
+    // In part1 we only need to return 'ignoredLines'
+    public static ArrayList<String> genresReader() throws IOException {
         FileReader fr = new FileReader(largeGenres);
         BufferedReader reader = new BufferedReader(fr);
 
+        ArrayList<String> ignoredLines = new ArrayList<String>();
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -152,37 +169,14 @@ public class Reader {
                     System.out.println("Genre Name: " + genre);
                     System.out.println("ID Movie: " + id);
                 }
+            } else {
+                ignoredLines.add(line);
             }
 
             // TODO: Add to class
         }
 
         reader.close();
-    }
-
-    public static ArrayList<String> getIgnoredLines(String fileName, int numberOfComponents) throws IOException {
-        FileReader fr = new FileReader(testDBPath + fileName);
-        BufferedReader reader = new BufferedReader(fr);
-
-        ArrayList<String> ignoredLines = new ArrayList<>();
-
-        String line = null;
-
-        while ((line = reader.readLine()) != null) {
-            if (DEBUG) {
-                System.out.println("Line -> " + line);
-            }
-
-            String components[] = line.split(",");
-
-            if (components.length != numberOfComponents) {
-                ignoredLines.add(line);
-            }
-
-        }
-
-        reader.close();
-
         return ignoredLines;
     }
 }

@@ -1,33 +1,49 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
+    // Global var
+    static ArrayList<Filme> movies = new ArrayList<Filme>();
+    static ArrayList<String> moviesIgnoredLines = new ArrayList<String>();
+    static ArrayList<String> votesIgnoredLines = new ArrayList<String>();
+    static ArrayList<String> peopleIgnoredLines = new ArrayList<String>();
+    static ArrayList<String> genresIgnoredLines = new ArrayList<String>();
+
     static void lerFicheiros() throws IOException {
-        Reader.movieReader();
-        Reader.movieVotesReader();
-        Reader.genresReader();
-        Reader.peopleReader();
+        MoviesData moviesReader = Reader.movieReader();
+        movies = moviesReader.movies;
+        moviesIgnoredLines = moviesReader.ignoredLines;
+        votesIgnoredLines = Reader.movieVotesReader();
+        peopleIgnoredLines = Reader.peopleReader();
+        genresIgnoredLines = Reader.genresReader();
     }
 
-    static ArrayList<Filme> getFilmes() throws IOException {
-        return Reader.movieReader();
+    static ArrayList<Filme> getFilmes() {
+        return movies;
     }
 
-    static ArrayList<String> getLinhasIgnoradas(String fileName) throws IOException {
+    static ArrayList<String> getLinhasIgnoradas(String fileName) {
         switch (fileName) {
             case "deisi_movies.txt":
-            case "deisi_people.txt":
-                return Reader.getIgnoredLines(fileName, 5);
+                return moviesIgnoredLines;
             case "deisi_movie_votes.txt":
-                return Reader.getIgnoredLines(fileName, 3);
+                return votesIgnoredLines;
+            case "deisi_people.txt":
+                return peopleIgnoredLines;
             case "deisi_genres.txt":
-                return Reader.getIgnoredLines(fileName, 2);
+                return genresIgnoredLines;
             default:
                 return null;
         }
     }
 
     public static void main(String[] args) throws IOException {
-        Reader.movieReader();
+        // DEBUGGING
+        // lerFicheiros();
+
+        // for (int i = 0; i < peopleIgnoredLines.size(); i++) {
+        //     System.out.println(peopleIgnoredLines.get(i));
+        // }
     }
 }

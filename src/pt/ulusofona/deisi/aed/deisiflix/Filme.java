@@ -1,18 +1,28 @@
-public class Filme {
+import java.util.ArrayList;
 
+public class Filme {
     int id;
     String titulo;
-    Pessoa[] atores;
-    Pessoa[] realizadores;
-    GeneroCinematografico[] generos;
+    ArrayList<Pessoa> atores;
+    ArrayList<Pessoa> realizadores;
+    ArrayList<GeneroCinematografico> generos;
     String dataLancamento;
     int orcamento;
-    int mediaVotos;
+    float mediaVotos;
     int nrVotos;
 
     Filme(){}
 
-    Filme(int id, String titulo, Pessoa[] atores, Pessoa[] realizadores, GeneroCinematografico[] generos, String dataLancamento, int orcamento, int mediaVotos, int nrVotos){
+    Filme(int id,
+          String titulo,
+          ArrayList<Pessoa> atores,
+          ArrayList<Pessoa> realizadores,
+          ArrayList<GeneroCinematografico> generos,
+          String dataLancamento,
+          int orcamento,
+          float mediaVotos,
+          int nrVotos
+    ){
         this.id = id;
         this.titulo = titulo;
         this.atores = atores;
@@ -25,7 +35,11 @@ public class Filme {
     }
 
     public String toString(){
-        return id + " | " + titulo + " | " + dataLancamento + " | " + nrVotos + " | " + mediaVotos;
+        // Converts date from 'DD-MM-AAAA' to 'AAAA-MM-DD'
+        String[] tempDate = this.dataLancamento.split("-");
+        String toStringDateFormat = String.join("-", tempDate[2], tempDate[1], tempDate[0]);
+
+        return id + " | " + titulo + " | " + toStringDateFormat + " | " + nrVotos + " | " + mediaVotos;
     }
 
 }

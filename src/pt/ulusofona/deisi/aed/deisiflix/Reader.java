@@ -1,5 +1,6 @@
+package pt.ulusofona.deisi.aed.deisiflix;
+
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,19 +9,18 @@ public class Reader {
     static boolean DEBUG = true;
 
     // Local Database Paths
-    static String testDBPath = new File("").getAbsolutePath() + "/pt/ulusofona/deisi/aed/deisiflix/testDB/";
-    static String shortMovies = testDBPath + "deisi_movies_short.txt";
-    static String largeMovies = testDBPath + "deisi_movies_large.txt";
-    static String shortVotes = testDBPath + "deisi_movie_votes_short.txt";
-    static String largeVotes = testDBPath + "deisi_movie_votes_large.txt";
-    static String shortPeople = testDBPath + "deisi_people_short.txt";
-    static String largePeople = testDBPath + "deisi_people_large.txt";
-    static String shortGenres = testDBPath + "deisi_genres_short.txt";
-    static String largeGenres = testDBPath + "deisi_genres_large.txt";
+    static String shortMovies = "test-files/deisi_movies_short.txt";
+    static String largeMovies = "test-files/deisi_movies_large.txt";
+    static String shortVotes = "test-files/deisi_movie_votes_short.txt";
+    static String largeVotes = "test-files/deisi_movie_votes_large.txt";
+    static String shortPeople = "test-files/deisi_people_short.txt";
+    static String largePeople = "test-files/deisi_people_large.txt";
+    static String shortGenres = "test-files/deisi_genres_short.txt";
+    static String largeGenres = "test-files/deisi_genres_large.txt";
 
     // Reader functions
     public static MoviesData movieReader() throws IOException {
-        FileReader fr = new FileReader(largeMovies);
+        FileReader fr = new FileReader(shortMovies);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> movies = new ArrayList<Filme>();  // Movies
@@ -33,7 +33,7 @@ public class Reader {
                 System.out.println("Line -> " + line);
             }
 
-            String components[] = line.split(",");
+            String[] components = line.split(",");
 
             if (components.length == 5) {
                 int id = Integer.parseInt(components[0].strip());
@@ -69,7 +69,7 @@ public class Reader {
 
     // In part1 we only need to return 'ignoredLines'
     public static ArrayList<String> movieVotesReader() throws IOException {
-        FileReader fr = new FileReader(largeVotes);
+        FileReader fr = new FileReader(shortVotes);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
@@ -81,7 +81,7 @@ public class Reader {
                 System.out.println("Line -> " + line);
             }
 
-            String components[] = line.split(",");
+            String[] components = line.split(",");
 
             if (components.length == 3) {
                 int id = Integer.parseInt(components[0].strip());
@@ -118,7 +118,7 @@ public class Reader {
                 System.out.println("Line -> " + line);
             }
 
-            String components[] = line.split(",");
+            String[] components = line.split(",");
 
             if (components.length == 5) {
                 String tipo = components[0].strip();
@@ -147,7 +147,7 @@ public class Reader {
 
     // In part1 we only need to return 'ignoredLines'
     public static ArrayList<String> genresReader() throws IOException {
-        FileReader fr = new FileReader(largeGenres);
+        FileReader fr = new FileReader(shortGenres);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
@@ -159,7 +159,7 @@ public class Reader {
                 System.out.println("Line -> " + line);
             }
 
-            String components[] = line.split(",");
+            String[] components = line.split(",");
 
             if (components.length == 2) {
                 String genre = components[0].strip();

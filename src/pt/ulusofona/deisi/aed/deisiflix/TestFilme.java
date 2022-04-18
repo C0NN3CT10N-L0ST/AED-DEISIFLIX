@@ -1,3 +1,5 @@
+package pt.ulusofona.deisi.aed.deisiflix;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

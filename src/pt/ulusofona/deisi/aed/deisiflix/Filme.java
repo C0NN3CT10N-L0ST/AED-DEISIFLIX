@@ -1,3 +1,5 @@
+package pt.ulusofona.deisi.aed.deisiflix;
+
 import java.util.ArrayList;
 
 public class Filme {

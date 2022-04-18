@@ -1,6 +1,7 @@
+package pt.ulusofona.deisi.aed.deisiflix;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
     // Global var
@@ -40,10 +41,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         // DEBUGGING
-        // lerFicheiros();
+        lerFicheiros();
 
-        // for (int i = 0; i < peopleIgnoredLines.size(); i++) {
-        //     System.out.println(peopleIgnoredLines.get(i));
-        // }
+        for (int i = 0; i < peopleIgnoredLines.size(); i++) {
+            System.out.println(peopleIgnoredLines.get(i));
+        }
     }
 }

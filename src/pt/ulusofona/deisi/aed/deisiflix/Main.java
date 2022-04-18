@@ -15,7 +15,7 @@ public class Main {
         MoviesData moviesReader = Reader.movieReader();
         movies = moviesReader.movies;
         moviesIgnoredLines = moviesReader.ignoredLines;
-        votesIgnoredLines = Reader.movieVotesReader();
+        votesIgnoredLines = Reader.movieVotesReader(movies);
         peopleIgnoredLines = Reader.peopleReader();
         genresIgnoredLines = Reader.genresReader();
     }
@@ -41,10 +41,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         // DEBUGGING
-        lerFicheiros();
+        // lerFicheiros();
 
-        for (int i = 0; i < peopleIgnoredLines.size(); i++) {
-            System.out.println(peopleIgnoredLines.get(i));
-        }
+        // for (int i = 0; i < movies.size(); i++) {
+        //     System.out.println(movies.get(i).toString());
+        // }
     }
 }

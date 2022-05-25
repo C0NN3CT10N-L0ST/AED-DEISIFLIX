@@ -41,7 +41,33 @@ public class Filme {
         String[] tempDate = this.dataLancamento.split("-");
         String toStringDateFormat = String.join("-", tempDate[2], tempDate[1], tempDate[0]);
 
-        return id + " | " + titulo + " | " + toStringDateFormat + " | " + nrVotos + " | " + mediaVotos;
+        // Defines 'toString' variables
+        int genresSize = this.generos != null ? this.generos.size() : 0;
+        int directorsSize = this.generos != null ? this.realizadores.size() : 0;
+        int actorsSize = 0;
+        int actrissesSize = 0;
+
+        // Counts number of actors and actresses
+        if (this.atores != null) {
+            for (Pessoa actor : this.atores) {
+                if (actor.genero == 'M') {
+                    actorsSize++;
+                } else if (actor.genero == 'F') {
+                    actrissesSize++;
+                }
+            }
+        }
+
+        // Returns final string
+        return id +
+                " | " + titulo +
+                " | " + toStringDateFormat +
+                " | " + nrVotos +
+                " | " + mediaVotos +
+                " | " + genresSize +
+                " | " + directorsSize +
+                " | " + actorsSize +
+                " | " + actrissesSize;
     }
 
 }

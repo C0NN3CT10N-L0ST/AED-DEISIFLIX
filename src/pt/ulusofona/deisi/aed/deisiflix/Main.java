@@ -11,7 +11,7 @@ public class Main {
     static ArrayList<String> peopleIgnoredLines = new ArrayList<String>();
     static ArrayList<String> genresIgnoredLines = new ArrayList<String>();
 
-    static void lerFicheiros() throws IOException {
+    public static void lerFicheiros() throws IOException {
         MoviesData moviesReader = Reader.movieReader();
         movies = moviesReader.movies;
         moviesIgnoredLines = moviesReader.ignoredLines;
@@ -20,11 +20,11 @@ public class Main {
         genresIgnoredLines = Reader.genresReader();
     }
 
-    static ArrayList<Filme> getFilmes() {
+    public static ArrayList<Filme> getFilmes() {
         return movies;
     }
 
-    static ArrayList<String> getLinhasIgnoradas(String fileName) {
+    public static ArrayList<String> getLinhasIgnoradas(String fileName) {
         return switch (fileName) {
             case "deisi_movies.txt" -> moviesIgnoredLines;
             case "deisi_movie_votes.txt" -> votesIgnoredLines;
@@ -32,6 +32,21 @@ public class Main {
             case "deisi_genres.txt" -> genresIgnoredLines;
             default -> null;
         };
+    }
+
+    public static QueryResult perguntar(String pergunta) {
+        // TODO: Implement this
+        return new QueryResult();
+    }
+
+    public static String getVideoURL() {
+        // TODO: Add video here
+        return "";
+    }
+
+    public static String getCreativeQuery() {
+        // TODO: Implement creative query
+        return "";
     }
 
     public static void main(String[] args) throws IOException {

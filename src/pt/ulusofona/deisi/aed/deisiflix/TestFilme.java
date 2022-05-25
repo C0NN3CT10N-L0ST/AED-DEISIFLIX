@@ -6,7 +6,8 @@ import static org.junit.Assert.assertEquals;
 public class TestFilme {
     @Test
     public void testToStringNormal() {
-        Filme movie = new Filme(33,
+        Filme movie = new Filme(
+                33,
                 "Interstellar",
                 null,
                 null,
@@ -24,8 +25,9 @@ public class TestFilme {
     }
 
     @Test
-    public void testToStringWithNullValues() {
-        Filme movie = new Filme(33,
+    public void testToStringWithEmptyValues() {
+        Filme movie = new Filme(
+                33,
                 "",
                 null,
                 null,

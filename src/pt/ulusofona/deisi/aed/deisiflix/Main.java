@@ -25,26 +25,23 @@ public class Main {
     }
 
     static ArrayList<String> getLinhasIgnoradas(String fileName) {
-        switch (fileName) {
-            case "deisi_movies.txt":
-                return moviesIgnoredLines;
-            case "deisi_movie_votes.txt":
-                return votesIgnoredLines;
-            case "deisi_people.txt":
-                return peopleIgnoredLines;
-            case "deisi_genres.txt":
-                return genresIgnoredLines;
-            default:
-                return null;
-        }
+        return switch (fileName) {
+            case "deisi_movies.txt" -> moviesIgnoredLines;
+            case "deisi_movie_votes.txt" -> votesIgnoredLines;
+            case "deisi_people.txt" -> peopleIgnoredLines;
+            case "deisi_genres.txt" -> genresIgnoredLines;
+            default -> null;
+        };
     }
 
     public static void main(String[] args) throws IOException {
         // DEBUGGING
-        // lerFicheiros();
+        lerFicheiros();
 
-        // for (int i = 0; i < movies.size(); i++) {
-        //     System.out.println(movies.get(i).toString());
-        // }
+        for (Filme movie : movies) {
+            System.out.println(movie.toString());
+        }
+        System.out.println("Total filmes: " + movies.size());
+        System.out.println("Total filmes ignorados: " + moviesIgnoredLines.size());
     }
 }

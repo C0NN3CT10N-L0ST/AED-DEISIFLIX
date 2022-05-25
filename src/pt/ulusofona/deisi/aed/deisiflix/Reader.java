@@ -10,17 +10,17 @@ public class Reader {
 
     // Local Database Paths
     // static String shortMovies = "test-files/deisi_movies_short.txt";
-    // static String largeMovies = "test-files/deisi_movies_large.txt";
+    static String largeMovies = "test-files/deisi_movies_large.txt";
     // static String shortVotes = "test-files/deisi_movie_votes_short.txt";
-    // static String largeVotes = "test-files/deisi_movie_votes_large.txt";
+    static String largeVotes = "test-files/deisi_movie_votes_large.txt";
     // static String shortPeople = "test-files/deisi_people_short.txt";
-    // static String largePeople = "test-files/deisi_people_large.txt";
+    static String largePeople = "test-files/deisi_people_large.txt";
     // static String shortGenres = "test-files/deisi_genres_short.txt";
-    // static String largeGenres = "test-files/deisi_genres_large.txt";
+    static String largeGenres = "test-files/deisi_genres_large.txt";
 
     // Reader functions
     public static MoviesData movieReader() throws IOException {
-        FileReader fr = new FileReader("deisi_movies.txt");
+        FileReader fr = new FileReader(largeMovies);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> movies = new ArrayList<Filme>();  // Movies
@@ -69,7 +69,7 @@ public class Reader {
 
     // In part1 we only need to return 'ignoredLines'
     public static ArrayList<String> movieVotesReader(ArrayList<Filme> movies) throws IOException {
-        FileReader fr = new FileReader("deisi_movie_votes.txt");
+        FileReader fr = new FileReader(largeVotes);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
@@ -95,10 +95,10 @@ public class Reader {
                 }
 
                 // Adds vote data to correspondent 'Filme' object in 'movies'
-                for (int i = 0; i < movies.size(); i++) {
-                    if (movies.get(i).id == id) {
-                        movies.get(i).mediaVotos = votesAverage;
-                        movies.get(i).nrVotos = votesTotal;
+                for (Filme movie : movies) {
+                    if (movie.id == id) {
+                        movie.mediaVotos = votesAverage;
+                        movie.nrVotos = votesTotal;
                     }
                 }
             } else {
@@ -112,7 +112,7 @@ public class Reader {
 
     // In part1 we only need to return 'ignoredLines'
     public static ArrayList<String> peopleReader() throws IOException {
-        FileReader fr = new FileReader("deisi_people.txt");
+        FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
@@ -127,14 +127,14 @@ public class Reader {
             String[] components = line.split(",");
 
             if (components.length == 5) {
-                String tipo = components[0].strip();
+                String type = components[0].strip();
                 int idPerson = Integer.parseInt(components[1].strip());
                 String name = components[2].strip();
                 String genre = components[3].strip();
                 int idMovie = Integer.parseInt(components[4].strip());
 
                 if (DEBUG) {
-                    System.out.println("Tipe Person: " + tipo);
+                    System.out.println("Type Person: " + type);
                     System.out.println("ID: " + idPerson);
                     System.out.println("Name: "+ name);
                     System.out.println("Genre: " + genre);
@@ -153,7 +153,7 @@ public class Reader {
 
     // In part1 we only need to return 'ignoredLines'
     public static ArrayList<String> genresReader() throws IOException {
-        FileReader fr = new FileReader("deisi_genres.txt");
+        FileReader fr = new FileReader(largeGenres);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();

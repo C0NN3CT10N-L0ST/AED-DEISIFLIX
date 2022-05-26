@@ -5,4 +5,9 @@ public class QueryResult {
     long tempo;     // Tempo que a query demorou a executar (ms)
 
     QueryResult() {}
+
+    QueryResult(String valor, long tempo) {
+        this.valor = valor;
+        this.tempo = tempo;
+    }
 }

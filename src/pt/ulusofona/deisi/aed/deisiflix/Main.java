@@ -82,7 +82,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         // Reads input files
+        // long readTimerStart = System.currentTimeMillis();
         lerFicheiros();
+        // long readTimerEnd = System.currentTimeMillis();
+        // System.out.println("Tempo de leitura dos ficheiros: " + (readTimerEnd - readTimerStart));
 
 //        DEBUGGING
 //        for (Filme movie : movies) {

@@ -65,6 +65,15 @@ public class Reader {
 
         // Returns 'MoviesData' object
         return new MoviesData(movies, ignoredLines);
+
+        /*
+            TODO:
+             -Store movies in an arrayList keeping the same file order (already done)
+             -Store movies in a sorted (by ID) arrayList so its easier to access through (binary search)
+
+             Problems:
+             -Double the memory size
+         */
     }
 
     // In part1 we only need to return 'ignoredLines'
@@ -145,6 +154,10 @@ public class Reader {
             }
 
             // TODO: Add to class
+            /*
+                Maybe store actors and directors in 2 different dictionaries (HashMap)
+                because their Id's might be the same (between actors and directors)
+            */
         }
 
         reader.close();

@@ -3,6 +3,8 @@ package pt.ulusofona.deisi.aed.deisiflix;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+// TODO: fix test because the 'toString' method from 'Filme' class changed
+
 public class TestFilme {
     @Test
     public void testToStringNormal() {

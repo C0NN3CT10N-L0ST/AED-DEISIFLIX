@@ -38,14 +38,15 @@ public class Main {
     public static QueryResult perguntar(String pergunta) {
         // Checks if the query is valid
         // Valid -> runs query and returns it
-        // Invalid -> prints invalid query message and returns null (??? not sure)
+        // Invalid -> returns null (??? not sure)
 
         // Gets query code
         String code = "";
         String data = "";
-        if (pergunta.length() > 1) {
+        String[] query = pergunta.split(" ", 2);
+
+        if (query.length > 1) {
             // Divides the query in 'code' and 'data' (which holds the data for the code)
-            String[] query = pergunta.split(" ", 2);
             code = query[0];
             data = query[1];
         }

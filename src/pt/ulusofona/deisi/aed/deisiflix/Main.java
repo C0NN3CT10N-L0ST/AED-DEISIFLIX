@@ -2,13 +2,15 @@ package pt.ulusofona.deisi.aed.deisiflix;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    // Global var
+    /* Global variables */
     static ArrayList<Filme> movies = new ArrayList<Filme>();
     static ArrayList<String> moviesIgnoredLines = new ArrayList<String>();
     static ArrayList<String> votesIgnoredLines = new ArrayList<String>();
+    static HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();
     static ArrayList<String> peopleIgnoredLines = new ArrayList<String>();
     static ArrayList<String> genresIgnoredLines = new ArrayList<String>();
 
@@ -17,7 +19,7 @@ public class Main {
         movies = moviesReader.movies;
         moviesIgnoredLines = moviesReader.ignoredLines;
         votesIgnoredLines = Reader.movieVotesReader(movies);
-        peopleIgnoredLines = Reader.peopleReader();
+        peopleIgnoredLines = Reader.peopleReader(moviesPeople);
         genresIgnoredLines = Reader.genresReader();
     }
 
@@ -81,9 +83,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        // Reads input files
         // long readTimerStart = System.currentTimeMillis();
-        lerFicheiros();
+        lerFicheiros();  // Reads input files
         // long readTimerEnd = System.currentTimeMillis();
         // System.out.println("Tempo de leitura dos ficheiros: " + (readTimerEnd - readTimerStart));
 

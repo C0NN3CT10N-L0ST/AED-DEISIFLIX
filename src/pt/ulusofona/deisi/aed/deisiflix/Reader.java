@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Reader {
     static boolean DEBUG = false;
@@ -76,7 +77,7 @@ public class Reader {
          */
     }
 
-    // In part1 we only need to return 'ignoredLines'
+    // Return 'ignoredLines'
     public static ArrayList<String> movieVotesReader(ArrayList<Filme> movies) throws IOException {
         FileReader fr = new FileReader(largeVotes);
         BufferedReader reader = new BufferedReader(fr);
@@ -104,6 +105,7 @@ public class Reader {
                 }
 
                 // Adds vote data to correspondent 'Filme' object in 'movies'
+                // TODO: Improve this. This is not efficient AT ALL.
                 for (Filme movie : movies) {
                     if (movie.id == id) {
                         movie.mediaVotos = votesAverage;
@@ -119,8 +121,9 @@ public class Reader {
         return ignoredLines;
     }
 
-    // In part1 we only need to return 'ignoredLines'
-    public static ArrayList<String> peopleReader() throws IOException {
+    // Returns 'ignoredLines'
+    public static ArrayList<String> peopleReader(HashMap<String, MovieAssociate> moviesPeople) throws IOException {
+        // long startTimer = System.currentTimeMillis();
         FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
 
@@ -139,32 +142,53 @@ public class Reader {
                 String type = components[0].strip();
                 int idPerson = Integer.parseInt(components[1].strip());
                 String name = components[2].strip();
-                String genre = components[3].strip();
+                char gender = components[3].strip().charAt(0);
                 int idMovie = Integer.parseInt(components[4].strip());
 
                 if (DEBUG) {
                     System.out.println("Type Person: " + type);
                     System.out.println("ID: " + idPerson);
                     System.out.println("Name: "+ name);
-                    System.out.println("Genre: " + genre);
+                    System.out.println("Gender: " + gender);
                     System.out.println("ID Movie: " + idMovie);
                 }
+
+                // If KEY does not exist create one, otherwise add movie ID to 'associatedMoviesID'
+                if (!moviesPeople.containsKey(name)) {
+                    // Creates new 'MovieAssociate' instance to store the person info
+                    MovieAssociate person = new MovieAssociate();
+                    person.id = idPerson;
+                    person.name = name;
+                    person.gender = gender;
+                    person.type = type;
+                    // Creates a new ArrayList to store 'associateMoviesID'
+                    ArrayList<Integer> associatedMoviesID = new ArrayList<>();
+                    associatedMoviesID.add(idMovie);
+                    person.associatedMoviesID = associatedMoviesID;
+
+                    // Adds people to an HashMap (KEY -> Person name, VALUE -> MovieAssociate)
+                    moviesPeople.put(name, person);
+                } else {
+                    // Adds 'idMovie' to 'associateMoviesID'
+                    MovieAssociate updatedValue = moviesPeople.get(name);
+                    updatedValue.associatedMoviesID.add(idMovie);
+                    moviesPeople.put(name, updatedValue);
+                }
+
             } else {
                 ignoredLines.add(line);
             }
 
-            // TODO: Add to class
-            /*
-                Maybe store actors and directors in 2 different dictionaries (HashMap)
-                because their Id's might be the same (between actors and directors)
-            */
+            // TODO: Add to main movies 'ArrayList'
         }
 
         reader.close();
+        // long endTimer = System.currentTimeMillis();
+        // System.out.println("TIMER -> peopleReader: " + (endTimer - startTimer));
         return ignoredLines;
     }
 
-    // In part1 we only need to return 'ignoredLines'
+    // Return 'ignoredLines'
     public static ArrayList<String> genresReader() throws IOException {
         FileReader fr = new FileReader(largeGenres);
         BufferedReader reader = new BufferedReader(fr);

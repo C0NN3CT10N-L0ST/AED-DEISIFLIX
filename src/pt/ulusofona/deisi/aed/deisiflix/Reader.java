@@ -24,7 +24,8 @@ public class Reader {
         FileReader fr = new FileReader(largeMovies);
         BufferedReader reader = new BufferedReader(fr);
 
-        ArrayList<Filme> movies = new ArrayList<Filme>();  // Movies
+        ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
+        Filme[] sortedMovies;
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
 
@@ -49,7 +50,7 @@ public class Reader {
                 movie.orcamento = budget;
                 movie.dataLancamento = date;
 
-                movies.add(movie);
+                moviesFileOrder.add(movie);
 
                 if (DEBUG) {
                     System.out.println("ID: " + id);
@@ -64,21 +65,21 @@ public class Reader {
         }
         reader.close();
 
+        long quickSortTimerStart = System.currentTimeMillis();
+        // Sort movies using 'QuickSort'
+        sortedMovies = new Filme[moviesFileOrder.size()];
+        sortedMovies = moviesFileOrder.toArray(sortedMovies);
+        SortingAlgorithms.quickSortMoviesByID(sortedMovies);
+        long quickSortTimerEnd = System.currentTimeMillis();
+        System.out.println("TIMER -> QuickSort Movies: " + (quickSortTimerEnd - quickSortTimerStart) + " ms");
+
         // Returns 'MoviesData' object
-        return new MoviesData(movies, ignoredLines);
-
-        /*
-            TODO:
-             -Store movies in an arrayList keeping the same file order (already done)
-             -Store movies in a sorted (by ID) arrayList so its easier to access through (binary search)
-
-             Problems:
-             -Double the memory size
-         */
+        return new MoviesData(moviesFileOrder, sortedMovies, ignoredLines);
     }
 
     // Return 'ignoredLines'
-    public static ArrayList<String> movieVotesReader(ArrayList<Filme> movies) throws IOException {
+    public static ArrayList<String> movieVotesReader(Filme[] sortedMovies) throws IOException {
+        long votesTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largeVotes);
         BufferedReader reader = new BufferedReader(fr);
 
@@ -104,18 +105,19 @@ public class Reader {
                     System.out.println("Nr. Votes: " + votesTotal);
                 }
 
-                // Adds vote data to correspondent 'Filme' object in 'movies'
-                // TODO: Improve this. This is not efficient AT ALL.
-                for (Filme movie : movies) {
-                    if (movie.id == id) {
-                        movie.mediaVotos = votesAverage;
-                        movie.nrVotos = votesTotal;
-                    }
-                }
+                // Adds vote data to correspondent 'Filme' object in 'sortedMovies'
+                // Finds the ID of the movie through binary search and adds votes' data
+                int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, id);
+                sortedMovies[moviePos].mediaVotos = votesAverage;
+                sortedMovies[moviePos].nrVotos = votesTotal;
+
             } else {
                 ignoredLines.add(line);
             }
         }
+
+        long votesTimerEnd = System.currentTimeMillis();
+        System.out.println("TIMER (votesReader) -> " + (votesTimerEnd - votesTimerStart) + " ms");
 
         reader.close();
         return ignoredLines;
@@ -123,7 +125,7 @@ public class Reader {
 
     // Returns 'ignoredLines'
     public static ArrayList<String> peopleReader(HashMap<String, MovieAssociate> moviesPeople) throws IOException {
-        // long startTimer = System.currentTimeMillis();
+        long startTimer = System.currentTimeMillis();
         FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
 
@@ -183,8 +185,8 @@ public class Reader {
         }
 
         reader.close();
-        // long endTimer = System.currentTimeMillis();
-        // System.out.println("TIMER -> peopleReader: " + (endTimer - startTimer));
+        long endTimer = System.currentTimeMillis();
+        System.out.println("TIMER (peopleReader) -> " + (endTimer - startTimer) + " ms");
         return ignoredLines;
     }
 

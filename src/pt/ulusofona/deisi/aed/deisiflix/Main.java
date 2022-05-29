@@ -21,7 +21,9 @@ public class Main {
         sortedMovies = moviesReader.sortedMovies;
         moviesIgnoredLines = moviesReader.ignoredLines;
         votesIgnoredLines = Reader.movieVotesReader(sortedMovies);
-        peopleIgnoredLines = Reader.peopleReader(moviesPeople);
+        PeopleData peopleReader = Reader.peopleReader();
+        moviesPeople = peopleReader.moviesPeople;
+        peopleIgnoredLines = peopleReader.ignoredLines;
         genresIgnoredLines = Reader.genresReader(sortedMovies);
     }
 

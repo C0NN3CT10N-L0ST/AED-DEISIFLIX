@@ -27,7 +27,7 @@ public class Reader {
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
-        Filme[] sortedMovies;
+        Filme[] sortedMovies;  // Movies sorted
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
 
@@ -129,12 +129,13 @@ public class Reader {
     }
 
     // Returns 'ignoredLines'
-    public static ArrayList<String> peopleReader(HashMap<String, MovieAssociate> moviesPeople) throws IOException {
+    public static PeopleData peopleReader() throws IOException {
         long peopleTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
 
-        ArrayList<String> ignoredLines = new ArrayList<String>();
+        HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();  // 'HashMap' to store people
+        ArrayList<String> ignoredLines = new ArrayList<String>();  // Ignored Lines
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -195,7 +196,8 @@ public class Reader {
         reader.close();
         long peopleTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
-        return ignoredLines;
+
+        return new PeopleData(moviesPeople, ignoredLines);
     }
 
     // Return 'ignoredLines'

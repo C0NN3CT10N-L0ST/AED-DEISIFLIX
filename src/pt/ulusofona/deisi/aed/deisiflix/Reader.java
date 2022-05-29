@@ -182,6 +182,8 @@ public class Reader {
                     MovieAssociate updatedValue = moviesPeople.get(name);
                     updatedValue.associatedMoviesID.add(idMovie);
                     moviesPeople.put(name, updatedValue);
+
+                    // TODO: see if there is a more efficient way to do this
                 }
 
             } else {
@@ -190,7 +192,6 @@ public class Reader {
 
             // TODO:
             //  -Add to main movies 'ArrayList'
-            //  -Maybe create a new class like 'MoviesData' to store the return output of the function
         }
 
         reader.close();

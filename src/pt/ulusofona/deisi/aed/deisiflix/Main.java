@@ -25,6 +25,8 @@ public class Main {
         moviesPeople = peopleReader.moviesPeople;
         peopleIgnoredLines = peopleReader.ignoredLines;
         genresIgnoredLines = Reader.genresReader(sortedMovies);
+
+        // TODO: document this
     }
 
     public static ArrayList<Filme> getFilmes() {
@@ -91,13 +93,6 @@ public class Main {
         lerFicheiros();  // Reads input files
         // long readTimerEnd = System.currentTimeMillis();
         // System.out.println("Tempo de leitura dos ficheiros: " + (readTimerEnd - readTimerStart));
-
-//        DEBUGGING
-//        for (Filme movie : movies) {
-//            System.out.println(movie.toString());
-//        }
-//        System.out.println("Total filmes: " + movies.size());
-//        System.out.println("Total filmes ignorados: " + moviesIgnoredLines.size());
 
         // Main program loop
         System.out.println("Bem vindo ao DEISIFLIX");

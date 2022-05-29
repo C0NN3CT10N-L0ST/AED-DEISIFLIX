@@ -22,7 +22,7 @@ public class Main {
         moviesIgnoredLines = moviesReader.ignoredLines;
         votesIgnoredLines = Reader.movieVotesReader(sortedMovies);
         peopleIgnoredLines = Reader.peopleReader(moviesPeople);
-        genresIgnoredLines = Reader.genresReader();
+        genresIgnoredLines = Reader.genresReader(sortedMovies);
     }
 
     public static ArrayList<Filme> getFilmes() {

@@ -168,6 +168,7 @@ public class Reader {
                     person.name = name;
                     person.gender = gender;
                     person.type = type;
+
                     // Creates a new ArrayList to store 'associateMoviesID'
                     ArrayList<Integer> associatedMoviesID = new ArrayList<>();
                     associatedMoviesID.add(idMovie);
@@ -186,7 +187,9 @@ public class Reader {
                 ignoredLines.add(line);
             }
 
-            // TODO: Add to main movies 'ArrayList'
+            // TODO:
+            //  -Add to main movies 'ArrayList'
+            //  -Maybe create a new class like 'MoviesData' to store the return output of the function
         }
 
         reader.close();
@@ -196,7 +199,8 @@ public class Reader {
     }
 
     // Return 'ignoredLines'
-    public static ArrayList<String> genresReader() throws IOException {
+    public static ArrayList<String> genresReader(Filme[] sortedMovies) throws IOException {
+        long genresTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largeGenres);
         BufferedReader reader = new BufferedReader(fr);
 
@@ -219,14 +223,34 @@ public class Reader {
                     System.out.println("Genre Name: " + genre);
                     System.out.println("ID Movie: " + id);
                 }
+
+                /* Adds genre to the correspondent movieID in 'sortedMovies' */
+                // Gets the position of the correspondent movie in 'sortedMovies'
+                int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, id);
+                // Creates new 'GeneroCinematografico'
+                GeneroCinematografico newGenre = new GeneroCinematografico(genre);
+
+                // Checks if 'movieID' exists and then if the 'ArrayList<GeneroCinematografico>' exists, if not, creates a new one
+                if (moviePos > -1 && sortedMovies[moviePos].generos == null) {
+                    // Creates new 'ArrayList<GeneroCinematografico>' and adds the genre to it
+                    ArrayList<GeneroCinematografico> movieGenres = new ArrayList<>();
+                    movieGenres.add(newGenre);  // Adds genre to 'ArrayList<GeneroCinematografico>'
+                    sortedMovies[moviePos].generos = movieGenres;  // Adds genre to 'sortedMovies'
+                } else if (moviePos > -1) {
+                    // Adds genre to the 'ArrayList'
+                    sortedMovies[moviePos].generos.add(newGenre);
+                }
+
+                // TODO: simplify the code above
             } else {
                 ignoredLines.add(line);
             }
-
-            // TODO: Add to class
         }
-
         reader.close();
+
+        long genresTimerEnd = System.currentTimeMillis();
+        System.out.println("TIMER (genresReader) -> " + (genresTimerEnd - genresTimerStart) + " ms");
+
         return ignoredLines;
     }
 }

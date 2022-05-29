@@ -7,24 +7,26 @@ import java.util.Scanner;
 
 public class Main {
     /* Global variables */
-    static ArrayList<Filme> movies = new ArrayList<Filme>();
-    static ArrayList<String> moviesIgnoredLines = new ArrayList<String>();
-    static ArrayList<String> votesIgnoredLines = new ArrayList<String>();
+    static ArrayList<Filme> moviesFileOrder = new ArrayList<>();
+    static Filme[] sortedMovies;
+    static ArrayList<String> moviesIgnoredLines = new ArrayList<>();
+    static ArrayList<String> votesIgnoredLines = new ArrayList<>();
     static HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();
-    static ArrayList<String> peopleIgnoredLines = new ArrayList<String>();
-    static ArrayList<String> genresIgnoredLines = new ArrayList<String>();
+    static ArrayList<String> peopleIgnoredLines = new ArrayList<>();
+    static ArrayList<String> genresIgnoredLines = new ArrayList<>();
 
     public static void lerFicheiros() throws IOException {
         MoviesData moviesReader = Reader.movieReader();
-        movies = moviesReader.movies;
+        moviesFileOrder = moviesReader.moviesFileOrder;
+        sortedMovies = moviesReader.sortedMovies;
         moviesIgnoredLines = moviesReader.ignoredLines;
-        votesIgnoredLines = Reader.movieVotesReader(movies);
+        votesIgnoredLines = Reader.movieVotesReader(sortedMovies);
         peopleIgnoredLines = Reader.peopleReader(moviesPeople);
         genresIgnoredLines = Reader.genresReader();
     }
 
     public static ArrayList<Filme> getFilmes() {
-        return movies;
+        return moviesFileOrder;
     }
 
     public static ArrayList<String> getLinhasIgnoradas(String fileName) {

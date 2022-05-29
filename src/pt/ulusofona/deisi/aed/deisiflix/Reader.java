@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public class Reader {
     static boolean DEBUG = false;
+    static long startTimer, endTimer;
 
     // Local Database Paths
     // static String shortMovies = "test-files/deisi_movies_short.txt";
@@ -21,6 +22,7 @@ public class Reader {
 
     // Reader functions
     public static MoviesData movieReader() throws IOException {
+        long moviesTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largeMovies);
         BufferedReader reader = new BufferedReader(fr);
 
@@ -65,13 +67,16 @@ public class Reader {
         }
         reader.close();
 
-        long quickSortTimerStart = System.currentTimeMillis();
+        startTimer = System.currentTimeMillis();
         // Sort movies using 'QuickSort'
         sortedMovies = new Filme[moviesFileOrder.size()];
         sortedMovies = moviesFileOrder.toArray(sortedMovies);
         SortingAlgorithms.quickSortMoviesByID(sortedMovies);
-        long quickSortTimerEnd = System.currentTimeMillis();
-        System.out.println("TIMER -> QuickSort Movies: " + (quickSortTimerEnd - quickSortTimerStart) + " ms");
+        endTimer = System.currentTimeMillis();
+        System.out.println("TIMER -> QuickSort Movies: " + (endTimer - startTimer) + " ms");
+
+        long moviesTimerEnd = System.currentTimeMillis();
+        System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
 
         // Returns 'MoviesData' object
         return new MoviesData(moviesFileOrder, sortedMovies, ignoredLines);
@@ -115,17 +120,17 @@ public class Reader {
                 ignoredLines.add(line);
             }
         }
+        reader.close();
 
         long votesTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (votesReader) -> " + (votesTimerEnd - votesTimerStart) + " ms");
 
-        reader.close();
         return ignoredLines;
     }
 
     // Returns 'ignoredLines'
     public static ArrayList<String> peopleReader(HashMap<String, MovieAssociate> moviesPeople) throws IOException {
-        long startTimer = System.currentTimeMillis();
+        long peopleTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
 
@@ -185,8 +190,8 @@ public class Reader {
         }
 
         reader.close();
-        long endTimer = System.currentTimeMillis();
-        System.out.println("TIMER (peopleReader) -> " + (endTimer - startTimer) + " ms");
+        long peopleTimerEnd = System.currentTimeMillis();
+        System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
         return ignoredLines;
     }
 

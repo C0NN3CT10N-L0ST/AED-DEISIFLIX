@@ -136,6 +136,7 @@ public class Reader {
 
         HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();  // 'HashMap' to store people
         ArrayList<String> ignoredLines = new ArrayList<String>();  // Ignored Lines
+        ArrayList<String> peopleDuplicateLinesYear = new ArrayList<>();  // Duplicate people lines
         String line = null;
 
         while ((line = reader.readLine()) != null) {
@@ -178,14 +179,20 @@ public class Reader {
                     // Adds people to an HashMap (KEY -> Person name, VALUE -> MovieAssociate)
                     moviesPeople.put(name, person);
                 } else {
-                    // Adds 'idMovie' to 'associateMoviesID'
-                    MovieAssociate updatedValue = moviesPeople.get(name);
-                    updatedValue.associatedMoviesID.add(idMovie);
-                    moviesPeople.put(name, updatedValue);
+                    // Gets HashMap entry
+                    MovieAssociate movieAssociateEntry = moviesPeople.get(name);
 
-                    // TODO: see if there is a more efficient way to do this
+                    // Checks if 'idMovie' is already in 'associatedMoviesID'
+                    if (movieAssociateEntry.associatedMoviesID.contains(idMovie)) {
+                        // Adds duplicate line to 'peopleDuplicateLinesYear'
+                        peopleDuplicateLinesYear.add(line);
+                    } else {
+                        // Adds 'idMovie' to 'associateMoviesID'
+                        movieAssociateEntry.associatedMoviesID.add(idMovie);
+                        moviesPeople.put(name, movieAssociateEntry);
+                        // TODO: see if there is a more efficient way to do this
+                    }
                 }
-
             } else {
                 ignoredLines.add(line);
             }
@@ -198,7 +205,7 @@ public class Reader {
         long peopleTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
 
-        return new PeopleData(moviesPeople, ignoredLines);
+        return new PeopleData(moviesPeople, peopleDuplicateLinesYear, ignoredLines);
     }
 
     // Return 'ignoredLines'

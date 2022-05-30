@@ -1,19 +1,21 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
     /* Global variables */
-    static ArrayList<Filme> moviesFileOrder = new ArrayList<>();
+    static ArrayList<Filme> moviesFileOrder;
     static Filme[] sortedMovies;
-    static ArrayList<String> moviesIgnoredLines = new ArrayList<>();
-    static ArrayList<String> votesIgnoredLines = new ArrayList<>();
-    static HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();
-    static ArrayList<String> peopleIgnoredLines = new ArrayList<>();
-    static ArrayList<String> genresIgnoredLines = new ArrayList<>();
+    static ArrayList<String> moviesIgnoredLines;
+    static ArrayList<String> votesIgnoredLines;
+    static HashMap<String, MovieAssociate> moviesPeople;
+    static ArrayList<String> peopleDuplicateLinesYear;
+    static ArrayList<String> peopleIgnoredLines;
+    static ArrayList<String> genresIgnoredLines;
 
     public static void lerFicheiros() throws IOException {
         MoviesData moviesReader = Reader.movieReader();
@@ -23,6 +25,7 @@ public class Main {
         votesIgnoredLines = Reader.movieVotesReader(sortedMovies);
         PeopleData peopleReader = Reader.peopleReader();
         moviesPeople = peopleReader.moviesPeople;
+        peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
         genresIgnoredLines = Reader.genresReader(sortedMovies);
 

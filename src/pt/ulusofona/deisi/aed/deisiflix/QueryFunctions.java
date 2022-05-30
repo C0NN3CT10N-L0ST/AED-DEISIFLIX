@@ -1,19 +1,30 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
-import javax.management.Query;
-import java.util.ArrayList;
-
+import java.util.HashMap;
 
 public class QueryFunctions {
     // Elapsed time variables
     static long startTime = 0;
     static long endTime = 0;
 
-    public static QueryResult countMoviesActor(String data) {
+    /*
+        Returns the number of movies an actor has been part of.
+        If the actor does not exist, it must return 0.
+    */
+    public static QueryResult countMoviesActor(String data, HashMap<String, MovieAssociate> people) {
         startTime = System.currentTimeMillis();
-        // TODO
+        String name = data;  // Gets name from data
+        int moviesCount = 0;
+
+        // Check if the actor exists
+        if (people.containsKey(name)) {
+            // Get actor movie count
+            moviesCount = people.get(name).associatedMoviesID.size();
+        }
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        String resultValue = "" + moviesCount;  // Result String
+        return new QueryResult(resultValue, (endTime - startTime));
     }
 
     public static QueryResult getMoviesActorYear(String data) {

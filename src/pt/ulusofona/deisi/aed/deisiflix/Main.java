@@ -63,7 +63,7 @@ public class Main {
         }
 
         return switch (code) {
-            case "COUNT_MOVIES_ACTOR" -> QueryFunctions.countMoviesActor(data);
+            case "COUNT_MOVIES_ACTOR" -> QueryFunctions.countMoviesActor(data, moviesPeople);
             case "GET_MOVIES_ACTOR_YEAR" -> QueryFunctions.getMoviesActorYear(data);
             case "COUNT_MOVIES_WITH_ACTORS" -> QueryFunctions.countMoviesWithActors(data);
             case "COUNT_ACTORS_3_YEARS" -> QueryFunctions.countActors3Years(data);
@@ -112,7 +112,7 @@ public class Main {
             } else {
                 // Prints 'QueryResult' value and elapsed time
                 System.out.println(result.valor);
-                System.out.println("demorou " + result.tempo + " ms");
+                System.out.println("(demorou " + result.tempo + " ms)");
             }
 
             // Gets new line

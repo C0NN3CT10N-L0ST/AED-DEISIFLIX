@@ -27,7 +27,8 @@ public class Reader {
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
-        Filme[] sortedMovies;  // Movies sorted
+        Filme[] sortedMovies;  // Movies sorted by ID
+        HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year (KEY -> Year, VALUE -> MovieIDs)
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
 
@@ -61,25 +62,36 @@ public class Reader {
                     System.out.println("Budget " + budget);
                     System.out.println("Date: " + date);
                 }
+
+                // Gets movie year
+                int year = Integer.parseInt(date.split("-")[2]);
+
+                // Adds 'id' to the correspondent Year in 'movieIDsByYear'
+                // Checks if 'movieIDsByYear' already that year
+                if (movieIDsByYear.containsKey(year)) {
+                    // Adds 'id' to the correspondent year in the HashMap
+                    movieIDsByYear.get(year).add(id);
+                } else {
+                    // Creates new HashMap entry with the current 'year' and add 'id' to it
+                    movieIDsByYear.put(year, new ArrayList<>());
+                    movieIDsByYear.get(year).add(id);
+                }
             } else {
                 ignoredLines.add(line);
             }
         }
         reader.close();
 
-        startTimer = System.currentTimeMillis();
-        // Sort movies using 'QuickSort'
+        // Sort movies by ID using 'QuickSort'
         sortedMovies = new Filme[moviesFileOrder.size()];
         sortedMovies = moviesFileOrder.toArray(sortedMovies);
         SortingAlgorithms.quickSortMoviesByID(sortedMovies);
-        endTimer = System.currentTimeMillis();
-        System.out.println("TIMER -> QuickSort Movies: " + (endTimer - startTimer) + " ms");
 
         long moviesTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
 
         // Returns 'MoviesData' object
-        return new MoviesData(moviesFileOrder, sortedMovies, ignoredLines);
+        return new MoviesData(moviesFileOrder, sortedMovies, movieIDsByYear, ignoredLines);
     }
 
     // Return 'ignoredLines'
@@ -129,7 +141,7 @@ public class Reader {
     }
 
     // Returns 'ignoredLines'
-    public static PeopleData peopleReader() throws IOException {
+    public static PeopleData peopleReader(Filme[] sortedMovies) throws IOException {
         long peopleTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largePeople);
         BufferedReader reader = new BufferedReader(fr);
@@ -162,22 +174,28 @@ public class Reader {
                     System.out.println("ID Movie: " + idMovie);
                 }
 
+                // Creates new 'Pessoa' Object with the person data
+                Pessoa person = new Pessoa(idPerson, name, gender);
+
+                // Adds PEOPLE to 'sortedMovies' array
+                ReaderFunctions.addPersonToMovies(person, type, idMovie, sortedMovies);
+
                 // If KEY does not exist create one, otherwise add movie ID to 'associatedMoviesID'
                 if (!moviesPeople.containsKey(name)) {
                     // Creates new 'MovieAssociate' instance to store the person info
-                    MovieAssociate person = new MovieAssociate();
-                    person.id = idPerson;
-                    person.name = name;
-                    person.gender = gender;
-                    person.type = type;
+                    MovieAssociate movieAssociate = new MovieAssociate();
+                    movieAssociate.id = idPerson;
+                    movieAssociate.name = name;
+                    movieAssociate.gender = gender;
+                    movieAssociate.type = type;
 
                     // Creates a new ArrayList to store 'associateMoviesID'
                     ArrayList<Integer> associatedMoviesID = new ArrayList<>();
                     associatedMoviesID.add(idMovie);
-                    person.associatedMoviesID = associatedMoviesID;
+                    movieAssociate.associatedMoviesID = associatedMoviesID;
 
                     // Adds people to an HashMap (KEY -> Person name, VALUE -> MovieAssociate)
-                    moviesPeople.put(name, person);
+                    moviesPeople.put(name, movieAssociate);
                 } else {
                     // Gets HashMap entry
                     MovieAssociate movieAssociateEntry = moviesPeople.get(name);
@@ -189,16 +207,12 @@ public class Reader {
                     } else {
                         // Adds 'idMovie' to 'associateMoviesID'
                         movieAssociateEntry.associatedMoviesID.add(idMovie);
-                        moviesPeople.put(name, movieAssociateEntry);
                         // TODO: see if there is a more efficient way to do this
                     }
                 }
             } else {
                 ignoredLines.add(line);
             }
-
-            // TODO:
-            //  -Add to main movies 'ArrayList'
         }
 
         reader.close();

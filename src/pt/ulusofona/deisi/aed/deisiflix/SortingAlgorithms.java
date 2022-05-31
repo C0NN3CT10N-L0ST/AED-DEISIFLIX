@@ -45,4 +45,29 @@ public class SortingAlgorithms {
     static void quickSortMoviesByID(Filme[] movies) {
         quickSortMoviesByID(movies, 0, movies.length);
     }
+
+    // Selection Sort Algorithm 'GET_MOVIES_ACTOR_YEAR' query
+    // Sort movies by Date (descending)
+    static ArrayList<QueryFunctions.MovieActorYear> selSortDateByDescendingOrder(ArrayList<QueryFunctions.MovieActorYear> movies) {
+        int greatestSortedPos = -1;
+
+        while (greatestSortedPos < movies.size() - 1) {
+            int greatestPos = greatestSortedPos + 1;
+
+            for (int i = greatestPos + 1; i < movies.size(); i++) {
+                if (movies.get(i).date.isBefore(movies.get(greatestPos).date)) {
+                    greatestPos = i;
+                }
+            }
+
+            greatestSortedPos++;
+
+            if (greatestSortedPos != greatestPos) {
+                QueryFunctions.MovieActorYear temp = movies.get(greatestSortedPos);
+                movies.add(greatestSortedPos, movies.get(greatestPos));
+                movies.add(greatestPos, temp);
+            }
+        }
+        return movies;
+    }
 }

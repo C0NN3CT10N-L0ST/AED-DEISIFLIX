@@ -37,13 +37,18 @@ public class Main {
     }
 
     public static ArrayList<String> getLinhasIgnoradas(String fileName) {
-        return switch (fileName) {
-            case "deisi_movies.txt" -> moviesIgnoredLines;
-            case "deisi_movie_votes.txt" -> votesIgnoredLines;
-            case "deisi_people.txt" -> peopleIgnoredLines;
-            case "deisi_genres.txt" -> genresIgnoredLines;
-            default -> null;
-        };
+        switch (fileName) {
+            case "deisi_movies.txt":
+                return moviesIgnoredLines;
+            case "deisi_movie_votes.txt":
+                return votesIgnoredLines;
+            case "deisi_people.txt":
+                return peopleIgnoredLines;
+            case "deisi_genres.txt":
+                return genresIgnoredLines;
+            default:
+                return null;
+        }
     }
 
     public static QueryResult perguntar(String pergunta) {
@@ -62,23 +67,38 @@ public class Main {
             data = query[1];
         }
 
-        return switch (code) {
-            case "COUNT_MOVIES_ACTOR" -> QueryFunctions.countMoviesActor(data, moviesPeople);
-            case "GET_MOVIES_ACTOR_YEAR" -> QueryFunctions.getMoviesActorYear(data);
-            case "COUNT_MOVIES_WITH_ACTORS" -> QueryFunctions.countMoviesWithActors(data);
-            case "COUNT_ACTORS_3_YEARS" -> QueryFunctions.countActors3Years(data);
-            case "TOP_MOVIES_WITH_GENDER_BIAS" -> QueryFunctions.topMoviesWithGenderBias(data);
-            case "GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR" -> QueryFunctions.getRecentTitlesSameAVGVotesOneSharedActor(data);
-            case "GET_TOP_N_YEARS_BEST_AVG_VOTES" -> QueryFunctions.getTopNYearsBestAVGVotes(data);
-            case "DISTANCE_BETWEEN_ACTORS" -> QueryFunctions.distanceBetweenActors(data);
-            case "GET_TOP_N_MOVIES_RATIO" -> QueryFunctions.getTopNMoviesRatio(data);
-            case "TOP_6_DIRECTORS_WITHIN_FAMILY" -> QueryFunctions.top6DirectorsWithinFamily(data);
-            case "GET_TOP_ACTOR_YEAR" -> QueryFunctions.getTopActorYear(data);
-            case "INSERT_ACTOR" -> QueryFunctions.insertActor(data);
-            case "REMOVE_ACTOR" -> QueryFunctions.removeActor(data);
-            case "GET_DUPLICATE_LINES_YEAR" -> QueryFunctions.getDuplicateLinesYear(data);
-            default -> null;
-        };
+        switch (code) {
+            case "COUNT_MOVIES_ACTOR":
+                return QueryFunctions.countMoviesActor(data, moviesPeople);
+            case "GET_MOVIES_ACTOR_YEAR":
+                return QueryFunctions.getMoviesActorYear(data, moviesPeople, sortedMovies);
+            case "COUNT_MOVIES_WITH_ACTORS":
+                return QueryFunctions.countMoviesWithActors(data, moviesPeople, sortedMovies);
+            case "COUNT_ACTORS_3_YEARS":
+                return QueryFunctions.countActors3Years(data);
+            case "TOP_MOVIES_WITH_GENDER_BIAS":
+                return QueryFunctions.topMoviesWithGenderBias(data);
+            case "GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR":
+                return QueryFunctions.getRecentTitlesSameAVGVotesOneSharedActor(data);
+            case "GET_TOP_N_YEARS_BEST_AVG_VOTES":
+                return QueryFunctions.getTopNYearsBestAVGVotes(data);
+            case "DISTANCE_BETWEEN_ACTORS":
+                return QueryFunctions.distanceBetweenActors(data);
+            case "GET_TOP_N_MOVIES_RATIO":
+                return QueryFunctions.getTopNMoviesRatio(data);
+            case "TOP_6_DIRECTORS_WITHIN_FAMILY":
+                return QueryFunctions.top6DirectorsWithinFamily(data);
+            case "GET_TOP_ACTOR_YEAR":
+                return QueryFunctions.getTopActorYear(data);
+            case "INSERT_ACTOR":
+                return QueryFunctions.insertActor(data);
+            case "REMOVE_ACTOR":
+                return QueryFunctions.removeActor(data);
+            case "GET_DUPLICATE_LINES_YEAR":
+                return QueryFunctions.getDuplicateLinesYear(data);
+            default:
+                return null;
+        }
     }
 
     public static String getVideoURL() {

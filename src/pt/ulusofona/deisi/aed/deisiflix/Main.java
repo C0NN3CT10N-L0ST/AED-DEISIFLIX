@@ -10,6 +10,7 @@ public class Main {
     /* Global variables */
     static ArrayList<Filme> moviesFileOrder;
     static Filme[] sortedMovies;
+    static HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
     static ArrayList<String> moviesIgnoredLines;
     static ArrayList<String> votesIgnoredLines;
     static HashMap<String, MovieAssociate> moviesPeople;
@@ -21,9 +22,10 @@ public class Main {
         MoviesData moviesReader = Reader.movieReader();
         moviesFileOrder = moviesReader.moviesFileOrder;
         sortedMovies = moviesReader.sortedMovies;
+        movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
         votesIgnoredLines = Reader.movieVotesReader(sortedMovies);
-        PeopleData peopleReader = Reader.peopleReader();
+        PeopleData peopleReader = Reader.peopleReader(sortedMovies);
         moviesPeople = peopleReader.moviesPeople;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
@@ -75,7 +77,7 @@ public class Main {
             case "COUNT_MOVIES_WITH_ACTORS":
                 return QueryFunctions.countMoviesWithActors(data, moviesPeople, sortedMovies);
             case "COUNT_ACTORS_3_YEARS":
-                return QueryFunctions.countActors3Years(data);
+                return QueryFunctions.countActors3Years(data, movieIDsByYear, sortedMovies);
             case "TOP_MOVIES_WITH_GENDER_BIAS":
                 return QueryFunctions.topMoviesWithGenderBias(data);
             case "GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR":

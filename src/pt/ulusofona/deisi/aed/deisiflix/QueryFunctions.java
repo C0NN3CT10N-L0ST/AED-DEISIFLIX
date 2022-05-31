@@ -30,6 +30,7 @@ public class QueryFunctions {
         If the actor does not exist, it must return 0.
     */
     public static QueryResult countMoviesActor(String data, HashMap<String, MovieAssociate> people) {
+        // TODO (NOTE): Maybe store movies in an HashMap (KEY -> Movie ID, VALUE -> Filme)
         startTime = System.currentTimeMillis();
         String name = data;  // Gets name from data
         int moviesCount = 0;
@@ -124,11 +125,28 @@ public class QueryFunctions {
         return new QueryResult();
     }
 
-    public static QueryResult countActors3Years(String data) {
+    public static QueryResult countActors3Years(String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
-        // TODO
+        String[] queryArgs = data.split(" ");  // Gets years from query data
+
+        // Creates an Integer array with query args
+        int[] queryYears = new int[3];
+        queryYears[0] = Integer.parseInt(queryArgs[0]);
+        queryYears[1] = Integer.parseInt(queryArgs[1]);
+        queryYears[2] = Integer.parseInt(queryArgs[2]);
+
+        // 'ArrayList' to store unique actors' names
+        ArrayList<String> uniqueActors = new ArrayList<>();
+
+        for (int i = 0; i < queryYears.length; i++) {
+            for (Integer movieID : movieIDsByYear.keySet()) {
+                AuxiliaryQueryFunctions.getUniqueMovieActors(movieID, uniqueActors, sortedMovies);
+            }
+        }
+        String outputString = String.valueOf(uniqueActors.size());
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString, (endTime - startTime));
     }
 
     public static QueryResult topMoviesWithGenderBias(String data) {

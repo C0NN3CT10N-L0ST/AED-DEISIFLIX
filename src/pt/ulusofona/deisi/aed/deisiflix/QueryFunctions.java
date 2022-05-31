@@ -1,5 +1,8 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class QueryFunctions {
@@ -7,7 +10,22 @@ public class QueryFunctions {
     static long startTime = 0;
     static long endTime = 0;
 
+    // Date File Format
+    static DateTimeFormatter dateFileFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+    // Creates a class to store movie 'Title' and 'Date'
+    static class MovieActorYear {
+        String title;
+        LocalDate date;
+
+        MovieActorYear(String title, LocalDate date) {
+            this.title = title;
+            this.date = date;
+        }
+    }
+
     /*
+        Query: 'COUNT_MOVIES_ACTOR'
         Returns the number of movies an actor has been part of.
         If the actor does not exist, it must return 0.
     */
@@ -27,16 +45,81 @@ public class QueryFunctions {
         return new QueryResult(resultValue, (endTime - startTime));
     }
 
-    public static QueryResult getMoviesActorYear(String data) {
+    public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
-        // TODO
+        String[] queryArguments = data.split(" ");
+
+        // Uses 'StringBuilder' to build actor name from query args
+        // Reason: More efficient than 'String' concatenation
+        StringBuilder name = new StringBuilder();
+        name.append(queryArguments[0]);
+        name.append(" ");
+        name.append(queryArguments[1]);
+        int queryYear = Integer.parseInt(queryArguments[2]);  // Gets year from query data
+
+        // Create 'ArrayList' to store movies the actor participated in the given year
+        ArrayList<MovieActorYear> moviesActorYear = new ArrayList<>();
+        // Person Movies ArrayList
+        ArrayList<Integer> personMovies = people.get(name.toString()).associatedMoviesID;
+
+        for (int i = 0; i < personMovies.size(); i++) {
+            // Gets movie position in 'sortedMovies'
+            int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, personMovies.get(i));
+            // Gets movie year for the current ID
+            LocalDate movieDate = LocalDate.parse(sortedMovies[moviePos].dataLancamento, dateFileFormat);
+            int movieYear = movieDate.getYear();
+
+            // If year matches, add it to 'moviesActorYear'
+            if (movieYear == queryYear) {
+                String title = sortedMovies[moviePos].titulo;
+                moviesActorYear.add(new MovieActorYear(title, movieDate));
+            }
+        }
+
+        // Sorts 'moviesActorYear' (using SelectionSort) by Date (descending)
+        SortingAlgorithms.selSortDateByDescendingOrder(moviesActorYear);
+
+        // Builds Output String
+        StringBuilder outputString = new StringBuilder();
+        DateTimeFormatter outputDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        for (int i = 0; i < moviesActorYear.size(); i++) {
+            MovieActorYear currentMovie = moviesActorYear.get(i);
+            if (i == 0) {
+                outputString.append(currentMovie.title);
+                outputString.append(" (");
+                outputString.append(currentMovie.date.format(outputDateFormat));
+                outputString.append(")");
+            } else {
+                outputString.append("\n");
+                outputString.append(currentMovie.title);
+                outputString.append(" (");
+                outputString.append(currentMovie.date.format(outputDateFormat));
+                outputString.append(")");
+            }
+        }
+
+        // TODO: Try to make this more efficient altough its not too bad right now.
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult countMoviesWithActors(String data) {
+    public static QueryResult countMoviesWithActors(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
         // TODO
+
+        String[] actors = data.split(";");  // Gets actor names from query args
+        // Gets first actor from actors given args and accesses its 'MovieAssociate' entry in the HashMap
+        MovieAssociate actor = people.get(actors[0]);
+
+        // Iterates through 'actor' movies and checks in how many they all took part in
+        for (int movieID : actor.associatedMoviesID) {
+            // Gets current movie position in 'sortedMovies'
+            int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
+            // TODO: finish this. Waiting on 'peopleReader' to be able to add people to 'sortedMovies' properly
+        }
+
         endTime = System.currentTimeMillis();
         return new QueryResult();
     }

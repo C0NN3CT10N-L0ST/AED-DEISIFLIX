@@ -1,6 +1,7 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class AuxiliaryQueryFunctions {
@@ -43,5 +44,55 @@ public class AuxiliaryQueryFunctions {
         }
         // If 'actorsCount' matches 'actorsNum' all actors are in 'actors'
         return actorsCount == actorsNum;
+    }
+
+    public static void calculateGenderPercentualDiscrepancy(
+            int year,
+            HashMap<Integer, ArrayList<Integer>> moviesByYear,
+            Filme[] sortedMovies,
+            ArrayList<QueryFunctions.MovieGenderBias> moviesGenderBias
+    ) {
+        // Calculates Percentual Discrepancy for every movie in the given 'year' and stores it in 'moviesGenderBias'
+        for (Integer movieID : moviesByYear.get(year)) {
+            // Get 'movieID' position in 'sortedMovies'
+            int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
+
+            // Verifies that 'movieID' exists in 'sortedMovies' and that 'atores' is not null
+            if (moviePos != -1 && sortedMovies[moviePos].atores != null) {
+                Filme currentMovie = sortedMovies[moviePos];
+                int totalActors = currentMovie.atores.size();
+                boolean hasEnoughPeople = totalActors >= 10;
+
+                // Only does the calculation if movie has more than 10 actors
+                if (hasEnoughPeople) {
+                    int actorsNum = 0;
+                    int actressesNum = 0;
+                    int discrepancy;
+                    char predominantGender;
+
+                    for (Pessoa person : currentMovie.atores) {
+                        if (person.genero == 'M') {
+                            actorsNum++;
+                        }
+
+                        if (person.genero == 'F') {
+                            actressesNum++;
+                        }
+                    }
+
+                    // Checks which is the predominant gender and calculates percentual discrepancy based on that
+                    if (actorsNum > actressesNum) {
+                        discrepancy = actorsNum * 100 / totalActors;
+                        predominantGender = 'M';
+                    } else {
+                        discrepancy = actressesNum * 100 / totalActors;
+                        predominantGender = 'F';
+                    }
+
+                    // Adds movie data to 'moviesGenderBias'
+                    moviesGenderBias.add(new QueryFunctions.MovieGenderBias(currentMovie.titulo, discrepancy, predominantGender));
+                }
+            }
+        }
     }
 }

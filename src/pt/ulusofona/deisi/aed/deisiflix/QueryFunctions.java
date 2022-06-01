@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ public class QueryFunctions {
     // Date File Format
     static DateTimeFormatter dateFileFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    // Creates a class to store movie 'Title' and 'Date'
+    /* Query useful classes */
+    // Class to store data for 'GET_MOVIES_ACTOR_YEAR'
     static class MovieActorYear {
         String title;
         LocalDate date;
@@ -24,7 +26,7 @@ public class QueryFunctions {
         }
     }
 
-    // Creates a class to store data for 'TOP_MOVIES_WITH_GENDER_BIAS' query
+    // Class to store data for 'TOP_MOVIES_WITH_GENDER_BIAS' query
     static class MovieGenderBias {
         String title;
         int discrepancyPercentage;
@@ -34,6 +36,17 @@ public class QueryFunctions {
             this.title = title;
             this.discrepancyPercentage = discrepancyPercentage;
             this.predominantGender = predominantGender;
+        }
+    }
+
+    // Class to store data for 'GET_TOP_N_YEARS_BEST_AVG_VOTES' query
+    static class AVGVotesByYear {
+        int year;
+        float avgVotes;
+
+        AVGVotesByYear(int year, float avgVotes) {
+            this.year = year;
+            this.avgVotes = avgVotes;
         }
     }
 
@@ -193,13 +206,16 @@ public class QueryFunctions {
         // 'ArrayList' to store unique actors' names
         ArrayList<String> uniqueActors = new ArrayList<>();
 
-        for (int i = 0; i < queryYears.length; i++) {
-            for (Integer movieID : movieIDsByYear.keySet()) {
+        for (int queryYear : queryYears) {
+            ArrayList<Integer> movies = movieIDsByYear.get(queryYear);
+            for (int movieID : movies) {
                 // Gets unique actors for each movie and stores them in 'uniqueActors'
                 AuxiliaryQueryFunctions.getUniqueMovieActors(movieID, uniqueActors, sortedMovies);
             }
         }
         String outputString = String.valueOf(uniqueActors.size());
+
+        // TODO: Improve this by a lot LULz
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString, (endTime - startTime));
@@ -270,11 +286,49 @@ public class QueryFunctions {
         return new QueryResult();
     }
 
-    public static QueryResult getTopNYearsBestAVGVotes(String data) {
+    /**
+     * 'GET_TOP_N_YEARS_BEST_AVG_VOTES' Query.
+     * Returns the N (given number) of years with the best movie average votes between all movies.
+     * @param data Query Arguments
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns the years with the best average votes
+     */
+    public static QueryResult getTopNYearsBestAVGVotes(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets number of movies to output
+        int moviesOutputNum = Integer.parseInt(data);
+
+        ArrayList<AVGVotesByYear> votesByYear = new ArrayList<>();
+
+        // Adds each year votes average to 'votesByYear'
+        for (Integer movie : moviesByYear.keySet()) {
+            float yearVotesAverage = AuxiliaryQueryFunctions.calculateYearVotesAverage(moviesByYear.get(movie), sortedMovies);
+            votesByYear.add(new AVGVotesByYear(movie, yearVotesAverage));
+        }
+
+        // Sorts 'votesByYear' by average votes (by ascending order)
+        SortingAlgorithms.quickSortByAVGVotes(votesByYear);
+
+        StringBuilder outputString = new StringBuilder();
+        // Builds output string: starts at the last 'votesByYear' index because it is sorted in ascending order
+        for (int pos = votesByYear.size() - 1, i = 0; i < moviesOutputNum; pos--, i++) {
+            // Gets current 'AVGVotesByYear' object
+            AVGVotesByYear current = votesByYear.get(pos);
+
+            // Appends data to 'outputString'
+            outputString.append(current.year);
+            outputString.append(':');
+            outputString.append(Math.round(current.avgVotes * 100) / 100.0);
+
+            // Does not put '\n' in the last year
+            if (i != moviesOutputNum - 1) {
+                outputString.append('\n');
+            }
+        }
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     public static QueryResult distanceBetweenActors(String data) {

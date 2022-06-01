@@ -1,7 +1,6 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     /* Global variables */
     static ArrayList<Filme> moviesFileOrder;
-    static Filme[] sortedMovies;
+    static Filme[] sortedMoviesByID;
     static HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
     static ArrayList<String> moviesIgnoredLines;
     static ArrayList<String> votesIgnoredLines;
@@ -21,15 +20,15 @@ public class Main {
     public static void lerFicheiros() throws IOException {
         MoviesData moviesReader = Reader.movieReader();
         moviesFileOrder = moviesReader.moviesFileOrder;
-        sortedMovies = moviesReader.sortedMovies;
+        sortedMoviesByID = moviesReader.sortedMoviesByID;
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
-        votesIgnoredLines = Reader.movieVotesReader(sortedMovies);
-        PeopleData peopleReader = Reader.peopleReader(sortedMovies);
+        votesIgnoredLines = Reader.movieVotesReader(sortedMoviesByID);
+        PeopleData peopleReader = Reader.peopleReader(sortedMoviesByID);
         moviesPeople = peopleReader.moviesPeople;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
-        genresIgnoredLines = Reader.genresReader(sortedMovies);
+        genresIgnoredLines = Reader.genresReader(sortedMoviesByID);
 
         // TODO: document this
     }
@@ -73,17 +72,17 @@ public class Main {
             case "COUNT_MOVIES_ACTOR":
                 return QueryFunctions.countMoviesActor(data, moviesPeople);
             case "GET_MOVIES_ACTOR_YEAR":
-                return QueryFunctions.getMoviesActorYear(data, moviesPeople, sortedMovies);
+                return QueryFunctions.getMoviesActorYear(data, moviesPeople, sortedMoviesByID);
             case "COUNT_MOVIES_WITH_ACTORS":
-                return QueryFunctions.countMoviesWithActors(data, moviesPeople, sortedMovies);
+                return QueryFunctions.countMoviesWithActors(data, moviesPeople, sortedMoviesByID);
             case "COUNT_ACTORS_3_YEARS":
-                return QueryFunctions.countActors3Years(data, movieIDsByYear, sortedMovies);
+                return QueryFunctions.countActors3Years(data, movieIDsByYear, sortedMoviesByID);
             case "TOP_MOVIES_WITH_GENDER_BIAS":
-                return QueryFunctions.topMoviesWithGenderBias(data, movieIDsByYear, sortedMovies);
+                return QueryFunctions.topMoviesWithGenderBias(data, movieIDsByYear, sortedMoviesByID);
             case "GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR":
                 return QueryFunctions.getRecentTitlesSameAVGVotesOneSharedActor(data);
             case "GET_TOP_N_YEARS_BEST_AVG_VOTES":
-                return QueryFunctions.getTopNYearsBestAVGVotes(data);
+                return QueryFunctions.getTopNYearsBestAVGVotes(data, movieIDsByYear, sortedMoviesByID);
             case "DISTANCE_BETWEEN_ACTORS":
                 return QueryFunctions.distanceBetweenActors(data);
             case "GET_TOP_N_MOVIES_RATIO":

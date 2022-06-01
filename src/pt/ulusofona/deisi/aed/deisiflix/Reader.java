@@ -32,8 +32,10 @@ public class Reader {
         FileReader fr = new FileReader(largeMovies);
         BufferedReader reader = new BufferedReader(fr);
 
+        // TODO: Store movies in an HashMap (KEY -> Movie ID, VALUE -> 'Filme' object)
+
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
-        Filme[] sortedMovies;  // Movies sorted by ID
+        Filme[] sortedMoviesByID;  // Movies sorted by ID
         HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year (KEY -> Year, VALUE -> MovieIDs)
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
@@ -88,16 +90,16 @@ public class Reader {
         }
         reader.close();
 
-        // Sort movies by ID using 'QuickSort'
-        sortedMovies = new Filme[moviesFileOrder.size()];
-        sortedMovies = moviesFileOrder.toArray(sortedMovies);
-        SortingAlgorithms.quickSortMoviesByID(sortedMovies);
+        // Sorts movies by ID using 'QuickSort'
+        sortedMoviesByID = new Filme[moviesFileOrder.size()];
+        sortedMoviesByID = moviesFileOrder.toArray(sortedMoviesByID);
+        SortingAlgorithms.quickSortMoviesByID(sortedMoviesByID);
 
         long moviesTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
 
         // Returns 'MoviesData' object
-        return new MoviesData(moviesFileOrder, sortedMovies, movieIDsByYear, ignoredLines);
+        return new MoviesData(moviesFileOrder, sortedMoviesByID, movieIDsByYear, ignoredLines);
     }
 
     /**

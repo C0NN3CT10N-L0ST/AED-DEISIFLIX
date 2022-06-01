@@ -5,18 +5,18 @@ import java.util.HashMap;
 
 public class MoviesData {
     ArrayList<Filme> moviesFileOrder;
-    Filme[] sortedMovies;
+    Filme[] sortedMoviesByID;
     ArrayList<String> ignoredLines;
     HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
 
     MoviesData() {}
 
     MoviesData(ArrayList<Filme> moviesFileOrder,
-               Filme[] sortedMovies,
+               Filme[] sortedMoviesByID,
                HashMap<Integer, ArrayList<Integer>> movieIDsByYear,
                ArrayList<String> ignoredLines) {
         this.moviesFileOrder = moviesFileOrder;
-        this.sortedMovies = sortedMovies;
+        this.sortedMoviesByID = sortedMoviesByID;
         this.movieIDsByYear = movieIDsByYear;
         this.ignoredLines = ignoredLines;
     }

@@ -20,7 +20,13 @@ public class Reader {
     // static String shortGenres = "test-files/deisi_genres_short.txt";
     static String largeGenres = "test-files/deisi_genres_large.txt";
 
-    // Reader functions
+    /* Reader functions */
+
+    /**
+     * Reads movie entries from a file, stores them in appropriate data structures and returns those data structures.
+     * @return Returns a 'MoviesData' object with all the data structures that were created
+     * @throws IOException Exceptions related to file reading
+     */
     public static MoviesData movieReader() throws IOException {
         long moviesTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largeMovies);
@@ -94,7 +100,12 @@ public class Reader {
         return new MoviesData(moviesFileOrder, sortedMovies, movieIDsByYear, ignoredLines);
     }
 
-    // Return 'ignoredLines'
+    /**
+     * Reads votes related entries from a file, stores them in appropriate data structures and returns those.
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns an 'ArrayList' with all the ignored lines
+     * @throws IOException Exceptions related to file reading
+     */
     public static ArrayList<String> movieVotesReader(Filme[] sortedMovies) throws IOException {
         long votesTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largeVotes);
@@ -140,7 +151,12 @@ public class Reader {
         return ignoredLines;
     }
 
-    // Returns 'ignoredLines'
+    /**
+     * Reads people entries from a file, stores them in appropriate data structures and returns those.
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns a 'PeopleData' object with all the data structures that were created
+     * @throws IOException Exceptions related to file reading
+     */
     public static PeopleData peopleReader(Filme[] sortedMovies) throws IOException {
         long peopleTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largePeople);
@@ -222,7 +238,12 @@ public class Reader {
         return new PeopleData(moviesPeople, peopleDuplicateLinesYear, ignoredLines);
     }
 
-    // Return 'ignoredLines'
+    /**
+     * Reads genre entries from a file, stores them in appropriate data structures and returns those
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns an 'ArrayList' with all the ignored lines
+     * @throws IOException Exceptions related to file reading
+     */
     public static ArrayList<String> genresReader(Filme[] sortedMovies) throws IOException {
         long genresTimerStart = System.currentTimeMillis();
         FileReader fr = new FileReader(largeGenres);

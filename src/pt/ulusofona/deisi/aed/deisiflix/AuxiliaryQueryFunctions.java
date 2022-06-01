@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class AuxiliaryQueryFunctions {
-    /*
-        Checks if all actors from movie with ID -> 'movieID' are already on 'actors' ArrayList.
-        If not, adds them.
+    /**
+     * Stores all unique actors from a particular movie in an ArrayList.
+     * @param movieID The movie ID
+     * @param actors ArrayList to store the actors
+     * @param sortedMovies Array that contains all movies (sorted by ID)
      */
     public static void getUniqueMovieActors(int movieID, ArrayList<String> actors, Filme[] sortedMovies) {
+        // Gets movie position in 'sortedMovies'
         int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
 
         // First it checks if 'movieID' exists in 'sortedMovies'
@@ -23,8 +26,11 @@ public class AuxiliaryQueryFunctions {
         }
     }
 
-    /*
-        Returns whether 'actors' contains all 'actorNames'
+    /**
+     * Returns whether an ArrayList contains all actor names provided.
+     * @param actors ArrayList where all actors are stored
+     * @param actorNames String with all actor names separated by semicolons
+     * @return Returns whether all actors are contained in the ArrayList
      */
     public static boolean containsActors(ArrayList<Pessoa> actors, String actorNames) {
         // Gets names from 'actorNames' (String with names separated by semicolons)
@@ -46,13 +52,20 @@ public class AuxiliaryQueryFunctions {
         return actorsCount == actorsNum;
     }
 
+    /**
+     * Calculates Gender Percentual Discrepancy for all movies in the given year.
+     * @param year the given year
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param sortedMovies Array that contains all movies (sorted by ID)
+     * @param moviesGenderBias ArrayList where all calculated value will be stored
+     */
     public static void calculateGenderPercentualDiscrepancy(
             int year,
             HashMap<Integer, ArrayList<Integer>> moviesByYear,
             Filme[] sortedMovies,
             ArrayList<QueryFunctions.MovieGenderBias> moviesGenderBias
     ) {
-        // Calculates Percentual Discrepancy for every movie in the given 'year' and stores it in 'moviesGenderBias'
+        // Iterates through every movie in the given 'year'
         for (Integer movieID : moviesByYear.get(year)) {
             // Get 'movieID' position in 'sortedMovies'
             int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
@@ -70,6 +83,7 @@ public class AuxiliaryQueryFunctions {
                     int discrepancy;
                     char predominantGender;
 
+                    // Iterates over all people in 'atores' for each movie and counts them based on gender
                     for (Pessoa person : currentMovie.atores) {
                         if (person.genero == 'M') {
                             actorsNum++;
@@ -89,7 +103,7 @@ public class AuxiliaryQueryFunctions {
                         predominantGender = 'F';
                     }
 
-                    // Adds movie data to 'moviesGenderBias'
+                    // Adds movie gender data to 'moviesGenderBias'
                     moviesGenderBias.add(new QueryFunctions.MovieGenderBias(currentMovie.titulo, discrepancy, predominantGender));
                 }
             }

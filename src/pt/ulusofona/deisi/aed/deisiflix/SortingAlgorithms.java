@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class SortingAlgorithms {
     // QuickSort Partition Algorithm
-    private static int partition(Filme[] movies, int left, int right) {
+    private static int partitionMoviesByID(Filme[] movies, int left, int right) {
         Filme pivot = movies[right];
         int leftIndex = left;
         int rightIndex = right - 1;
@@ -33,7 +33,7 @@ public class SortingAlgorithms {
     // QuickSort Algorithm
     private static Filme[] quickSortMoviesByID(Filme[] movies, int left, int right) {
         if (left < right) {
-            int pivotPos = partition(movies, left, right - 1);
+            int pivotPos = partitionMoviesByID(movies, left, right - 1);
 
             movies = quickSortMoviesByID(movies, left, pivotPos);
             movies = quickSortMoviesByID(movies, pivotPos + 1, right);
@@ -42,13 +42,13 @@ public class SortingAlgorithms {
     }
 
     // QuickSort Algorithm
-    static void quickSortMoviesByID(Filme[] movies) {
+    public static void quickSortMoviesByID(Filme[] movies) {
         quickSortMoviesByID(movies, 0, movies.length);
     }
 
     // Selection Sort Algorithm 'GET_MOVIES_ACTOR_YEAR' query
     // Sort movies by Date (descending)
-    static ArrayList<QueryFunctions.MovieActorYear> selSortDateByDescendingOrder(ArrayList<QueryFunctions.MovieActorYear> movies) {
+    public static void selSortDateByDescendingOrder(ArrayList<QueryFunctions.MovieActorYear> movies) {
         int greatestSortedPos = -1;
 
         while (greatestSortedPos < movies.size() - 1) {
@@ -64,10 +64,33 @@ public class SortingAlgorithms {
 
             if (greatestSortedPos != greatestPos) {
                 QueryFunctions.MovieActorYear temp = movies.get(greatestSortedPos);
-                movies.add(greatestSortedPos, movies.get(greatestPos));
-                movies.add(greatestPos, temp);
+                movies.set(greatestSortedPos, movies.get(greatestPos));
+                movies.set(greatestPos, temp);
             }
         }
-        return movies;
+    }
+
+    // Selection Sort Algorithm for 'TOP_MOVIES_WITH_GENDER_BIAS' query
+    // Sort movies by Discrepancy Percentage (descending)
+    public static void selSortGenderBiasDescending(ArrayList<QueryFunctions.MovieGenderBias> movies) {
+        int greatestSortedPos = -1;
+
+        while (greatestSortedPos < movies.size() - 1) {
+            int greatestPos = greatestSortedPos + 1;
+
+            for (int i = greatestPos + 1; i < movies.size(); i++) {
+                if (movies.get(i).discrepancyPercentage > movies.get(greatestPos).discrepancyPercentage) {
+                    greatestPos = i;
+                }
+            }
+
+            greatestSortedPos++;
+
+            if (greatestSortedPos != greatestPos) {
+                QueryFunctions.MovieGenderBias temp = movies.get(greatestSortedPos);
+                movies.set(greatestSortedPos, movies.get(greatestPos));
+                movies.set(greatestPos, temp);
+            }
+        }
     }
 }

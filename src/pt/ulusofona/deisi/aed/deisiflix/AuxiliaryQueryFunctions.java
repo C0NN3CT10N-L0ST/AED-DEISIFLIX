@@ -15,8 +15,8 @@ public class AuxiliaryQueryFunctions {
         // Gets movie position in 'sortedMovies'
         int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
 
-        // First it checks if 'movieID' exists in 'sortedMovies'
-        if (moviePos != -1) {
+        // First it checks if 'movieID' exists in 'sortedMovies' and if 'atores' is not null
+        if (moviePos != -1 && sortedMovies[moviePos].atores != null) {
             for (Pessoa actor : sortedMovies[moviePos].atores) {
                 // Checks if actor name is already in 'actors', if not, adds it
                 if (!actors.contains(actor.nome)) {
@@ -108,5 +108,27 @@ public class AuxiliaryQueryFunctions {
                 }
             }
         }
+    }
+
+    /**
+     * Calculates the movie average votes from all movies for the given year.
+     * @param movieIDs ArrayList that contains all the movie IDs for the given year
+     * @param sortedMovies Array that contains all movies (sorted by ID)
+     * @return Returns movies' average votes for the given year
+     */
+    public static float calculateYearVotesAverage(ArrayList<Integer> movieIDs, Filme[] sortedMovies) {
+        float totalVotesAverage = 0.0F;
+
+        // Adds each movie votesAverage to 'totalVotesAverage'
+        for (Integer movie : movieIDs) {
+            // Gets movie position in 'sortedMovies'
+            int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movie);
+
+            // Checks if 'moviePos'
+            if (moviePos != -1) {
+                totalVotesAverage += sortedMovies[moviePos].mediaVotos;
+            }
+        }
+        return totalVotesAverage / movieIDs.size();
     }
 }

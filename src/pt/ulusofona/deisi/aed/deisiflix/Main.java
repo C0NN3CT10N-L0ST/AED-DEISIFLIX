@@ -79,7 +79,7 @@ public class Main {
             case "COUNT_ACTORS_3_YEARS":
                 return QueryFunctions.countActors3Years(data, movieIDsByYear, sortedMovies);
             case "TOP_MOVIES_WITH_GENDER_BIAS":
-                return QueryFunctions.topMoviesWithGenderBias(data);
+                return QueryFunctions.topMoviesWithGenderBias(data, movieIDsByYear, sortedMovies);
             case "GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR":
                 return QueryFunctions.getRecentTitlesSameAVGVotesOneSharedActor(data);
             case "GET_TOP_N_YEARS_BEST_AVG_VOTES":

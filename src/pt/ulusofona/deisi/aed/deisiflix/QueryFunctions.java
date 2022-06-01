@@ -24,6 +24,19 @@ public class QueryFunctions {
         }
     }
 
+    // Creates a class to store data for 'TOP_MOVIES_WITH_GENDER_BIAS' query
+    static class MovieGenderBias {
+        String title;
+        int discrepancyPercentage;
+        char predominantGender;
+
+        MovieGenderBias(String title, int discrepancyPercentage, char predominantGender) {
+            this.title = title;
+            this.discrepancyPercentage = discrepancyPercentage;
+            this.predominantGender = predominantGender;
+        }
+    }
+
     /*
         Query: 'COUNT_MOVIES_ACTOR'
         Returns the number of movies an actor has been part of.
@@ -162,11 +175,55 @@ public class QueryFunctions {
         return new QueryResult(outputString, (endTime - startTime));
     }
 
-    public static QueryResult topMoviesWithGenderBias(String data) {
+    public static QueryResult topMoviesWithGenderBias(
+            String data,
+            HashMap<Integer,
+                    ArrayList<Integer>> moviesByYear,
+            Filme[] sortedMovies
+    ) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets query args
+        String[] queryArgs = data.split(" ");
+        // Gets number of movies to output
+        int moviesOutNum = Integer.parseInt(queryArgs[0]);
+        // Gets year input
+        int year = Integer.parseInt(queryArgs[1]);
+
+        ArrayList<MovieGenderBias> moviesGenderBias = new ArrayList<>();
+
+        // Calculates Gender Percentual Discrepancy for all movies in 'year' and adds them to 'moviesGenderBias'
+        AuxiliaryQueryFunctions.calculateGenderPercentualDiscrepancy(year, moviesByYear, sortedMovies, moviesGenderBias);
+
+        // Sorts 'moviesGenderBias' by Gender Percentual Discrepancy (descending)
+        SortingAlgorithms.selSortGenderBiasDescending(moviesGenderBias);
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Builds output string
+        for (int i = 0; i < moviesOutNum; i++) {
+            MovieGenderBias movie = moviesGenderBias.get(i);
+
+            // Dont add '\n' to the last line
+            if (i == moviesOutNum - 1) {
+                outputString.append(movie.title);
+                outputString.append(':');
+                outputString.append(movie.predominantGender);
+                outputString.append(':');
+                outputString.append(movie.discrepancyPercentage);
+            } else {
+                outputString.append(movie.title);
+                outputString.append(':');
+                outputString.append(movie.predominantGender);
+                outputString.append(':');
+                outputString.append(movie.discrepancyPercentage);
+                outputString.append('\n');
+            }
+        }
+
+        // TODO: Make this more efficient. Still has potential to improve.
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     public static QueryResult getRecentTitlesSameAVGVotesOneSharedActor(String data) {

@@ -37,11 +37,13 @@ public class QueryFunctions {
         }
     }
 
-    /*
-        Query: 'COUNT_MOVIES_ACTOR'
-        Returns the number of movies an actor has been part of.
-        If the actor does not exist, it must return 0.
-    */
+    /**
+     * 'COUNT_MOVIES_ACTOR' Query.
+     * Returns the number of movies an actor has been part of. If the actor does not exist, returns 0.
+     * @param data Query arguments
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @return Returns the number of movies an actor has participated in. Returns 0 if actors does not exist.
+     */
     public static QueryResult countMoviesActor(String data, HashMap<String, MovieAssociate> people) {
         // TODO (NOTE): Maybe store movies in an HashMap (KEY -> Movie ID, VALUE -> Filme)
         startTime = System.currentTimeMillis();
@@ -55,10 +57,18 @@ public class QueryFunctions {
         }
 
         endTime = System.currentTimeMillis();
-        String resultValue = "" + moviesCount;  // Result String
+        String resultValue = "" + moviesCount;
         return new QueryResult(resultValue, (endTime - startTime));
     }
 
+    /**
+     * 'GET_MOVIES_ACTOR_YEAR' Query.
+     * Returns the movies an actor took part in for a particular year in descending order (by date).
+     * @param data Query Arguments
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns all the movies the given actor took part in the given year
+     */
     public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
         String[] queryArguments = data.split(" ");
@@ -69,28 +79,30 @@ public class QueryFunctions {
         name.append(queryArguments[0]);
         name.append(" ");
         name.append(queryArguments[1]);
-        int queryYear = Integer.parseInt(queryArguments[2]);  // Gets year from query data
+        int queryYear = Integer.parseInt(queryArguments[2]);  // Gets year from query arguments
 
-        // Create 'ArrayList' to store movies the actor participated in the given year
+        // Creates 'ArrayList' to store movies the actor participated in the given year
         ArrayList<MovieActorYear> moviesActorYear = new ArrayList<>();
-        // Person Movies ArrayList
+        // ArrayList with all the movies the person has been part of
         ArrayList<Integer> personMovies = people.get(name.toString()).associatedMoviesID;
 
         for (int i = 0; i < personMovies.size(); i++) {
             // Gets movie position in 'sortedMovies'
             int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, personMovies.get(i));
-            // Gets movie year for the current ID
-            LocalDate movieDate = LocalDate.parse(sortedMovies[moviePos].dataLancamento, dateFileFormat);
-            int movieYear = movieDate.getYear();
+            // Gets movie year for the current movie ID being checked
+            if (moviePos != -1) {  // Checks if movie exists in 'sortedMovies'
+                LocalDate movieDate = LocalDate.parse(sortedMovies[moviePos].dataLancamento, dateFileFormat);
+                int movieYear = movieDate.getYear();
 
-            // If year matches, add it to 'moviesActorYear'
-            if (movieYear == queryYear) {
-                String title = sortedMovies[moviePos].titulo;
-                moviesActorYear.add(new MovieActorYear(title, movieDate));
+                // If year matches, add it to 'moviesActorYear'
+                if (movieYear == queryYear) {
+                    String title = sortedMovies[moviePos].titulo;
+                    moviesActorYear.add(new MovieActorYear(title, movieDate));
+                }
             }
         }
 
-        // Sorts 'moviesActorYear' (using SelectionSort) by Date (descending)
+        // Sorts 'moviesActorYear' (using SelectionSort) by Date (in descending order)
         SortingAlgorithms.selSortDateByDescendingOrder(moviesActorYear);
 
         // Builds Output String
@@ -119,27 +131,36 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
+    /**
+     * 'COUNT_MOVIES_WITH_ACTORS' Query.
+     * Returns the number of movies in which all the given actors appeared simultaneously.
+     * @param data Query Arguments
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns the number of movies that contain all the given actors.
+     */
     public static QueryResult countMoviesWithActors(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
 
         // Gets actor names from query args
         String[] actors = data.split(";", 2);
-        // Gets first actor from actors given args and accesses its 'MovieAssociate' entry in the HashMap
+        // Gets first actor from actors given args and accesses its 'MovieAssociate' entry in 'people'
         MovieAssociate actor1 = people.get(actors[0]);
         // Stores the other actors separated by ';' (semicolons)
         String otherActors = actors[1];
 
+        // Stores output
         int moviesCount = 0;
 
         // Iterates through 'actor' movies and checks in how many they all took part in
         for (int movieID : actor1.associatedMoviesID) {
             // Gets current movie position in 'sortedMovies'
             int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
-            // TODO: finish this. Waiting on 'peopleReader' to be able to add people to 'sortedMovies' properly
 
             // Checks if movie exists in 'sortedMovies' before accessing it
             if (moviePos != -1) {
                 ArrayList<Pessoa> actorsList = sortedMovies[moviePos].atores;
+                // Checks if all actors participated in the movie currently being checked
                 if (AuxiliaryQueryFunctions.containsActors(actorsList, otherActors)) {
                     moviesCount++;
                 }
@@ -151,6 +172,14 @@ public class QueryFunctions {
         return new QueryResult(outputString, (endTime - startTime));
     }
 
+    /**
+     * 'COUNT_ACTORS_3_YEARS' Query.
+     * Returns the number of unique actors that took part in movies in the given years.
+     * @param data Query Arguments
+     * @param movieIDsByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns the unique actors that participated in movies in the given years
+     */
     public static QueryResult countActors3Years(String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
         String[] queryArgs = data.split(" ");  // Gets years from query data
@@ -166,6 +195,7 @@ public class QueryFunctions {
 
         for (int i = 0; i < queryYears.length; i++) {
             for (Integer movieID : movieIDsByYear.keySet()) {
+                // Gets unique actors for each movie and stores them in 'uniqueActors'
                 AuxiliaryQueryFunctions.getUniqueMovieActors(movieID, uniqueActors, sortedMovies);
             }
         }
@@ -175,10 +205,17 @@ public class QueryFunctions {
         return new QueryResult(outputString, (endTime - startTime));
     }
 
+    /**
+     * 'TOP_MOVIES_WITH_GENDER_BIAS' Query.
+     * Returns the N (given number) movies with the greatest gender percentual discrepancy in the given years.
+     * @param data Query Arguments
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param sortedMovies Array with all movies (sorted by ID)
+     * @return Returns the number of movies with the greatest gender percentual discrepancy in the given year
+     */
     public static QueryResult topMoviesWithGenderBias(
             String data,
-            HashMap<Integer,
-                    ArrayList<Integer>> moviesByYear,
+            HashMap<Integer, ArrayList<Integer>> moviesByYear,
             Filme[] sortedMovies
     ) {
         startTime = System.currentTimeMillis();

@@ -108,21 +108,34 @@ public class QueryFunctions {
 
     public static QueryResult countMoviesWithActors(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
         startTime = System.currentTimeMillis();
-        // TODO
 
-        String[] actors = data.split(";");  // Gets actor names from query args
+        // Gets actor names from query args
+        String[] actors = data.split(";", 2);
         // Gets first actor from actors given args and accesses its 'MovieAssociate' entry in the HashMap
-        MovieAssociate actor = people.get(actors[0]);
+        MovieAssociate actor1 = people.get(actors[0]);
+        // Stores the other actors separated by ';' (semicolons)
+        String otherActors = actors[1];
+
+        int moviesCount = 0;
 
         // Iterates through 'actor' movies and checks in how many they all took part in
-        for (int movieID : actor.associatedMoviesID) {
+        for (int movieID : actor1.associatedMoviesID) {
             // Gets current movie position in 'sortedMovies'
             int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
             // TODO: finish this. Waiting on 'peopleReader' to be able to add people to 'sortedMovies' properly
+
+            // Checks if movie exists in 'sortedMovies' before accessing it
+            if (moviePos != -1) {
+                ArrayList<Pessoa> actorsList = sortedMovies[moviePos].atores;
+                if (AuxiliaryQueryFunctions.containsActors(actorsList, otherActors)) {
+                    moviesCount++;
+                }
+            }
         }
+        String outputString = String.valueOf(moviesCount);
 
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString, (endTime - startTime));
     }
 
     public static QueryResult countActors3Years(String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, Filme[] sortedMovies) {

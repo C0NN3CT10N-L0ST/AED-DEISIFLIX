@@ -1,6 +1,7 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AuxiliaryQueryFunctions {
     /*
@@ -19,5 +20,28 @@ public class AuxiliaryQueryFunctions {
                 }
             }
         }
+    }
+
+    /*
+        Returns whether 'actors' contains all 'actorNames'
+     */
+    public static boolean containsActors(ArrayList<Pessoa> actors, String actorNames) {
+        // Gets names from 'actorNames' (String with names separated by semicolons)
+        String[] names = actorNames.split(";");
+        // Gets the number of actors
+        int actorsNum = names.length;
+        // Counts the number of actor names in 'actors'
+        int actorsCount = 0;
+
+        // Iterate over the ArrayList
+        for (Pessoa actor : actors) {
+            for (String name : names) {
+                if (Objects.equals(actor.nome, name)) {
+                    actorsCount++;
+                }
+            }
+        }
+        // If 'actorsCount' matches 'actorsNum' all actors are in 'actors'
+        return actorsCount == actorsNum;
     }
 }

@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class MoviesData {
     ArrayList<Filme> moviesFileOrder;
     Filme[] sortedMoviesByID;
+    HashMap<Integer, Filme> moviesDict;
     ArrayList<String> ignoredLines;
     HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
 
@@ -13,10 +14,12 @@ public class MoviesData {
 
     MoviesData(ArrayList<Filme> moviesFileOrder,
                Filme[] sortedMoviesByID,
+               HashMap<Integer, Filme> moviesDict,
                HashMap<Integer, ArrayList<Integer>> movieIDsByYear,
                ArrayList<String> ignoredLines) {
         this.moviesFileOrder = moviesFileOrder;
         this.sortedMoviesByID = sortedMoviesByID;
+        this.moviesDict = moviesDict;
         this.movieIDsByYear = movieIDsByYear;
         this.ignoredLines = ignoredLines;
     }

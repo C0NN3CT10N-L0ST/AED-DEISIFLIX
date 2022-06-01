@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 public class Reader {
     static boolean DEBUG = false;
-    static long startTimer, endTimer;
 
     // Local Database Paths
     // static String shortMovies = "test-files/deisi_movies_short.txt";
@@ -36,6 +35,7 @@ public class Reader {
 
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
         Filme[] sortedMoviesByID;  // Movies sorted by ID
+        HashMap<Integer, Filme> moviesDict = new HashMap<>();
         HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year (KEY -> Year, VALUE -> MovieIDs)
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
@@ -84,6 +84,11 @@ public class Reader {
                     movieIDsByYear.put(year, new ArrayList<>());
                     movieIDsByYear.get(year).add(id);
                 }
+
+                // Adds every movie to 'moviesDict' HashMap (KEY: Movie Year, VALUE: 'Filme' object)
+                if (!moviesDict.containsKey(id)) {
+                    moviesDict.put(id, movie);
+                }
             } else {
                 ignoredLines.add(line);
             }
@@ -99,7 +104,7 @@ public class Reader {
         System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
 
         // Returns 'MoviesData' object
-        return new MoviesData(moviesFileOrder, sortedMoviesByID, movieIDsByYear, ignoredLines);
+        return new MoviesData(moviesFileOrder, sortedMoviesByID, moviesDict, movieIDsByYear, ignoredLines);
     }
 
     /**

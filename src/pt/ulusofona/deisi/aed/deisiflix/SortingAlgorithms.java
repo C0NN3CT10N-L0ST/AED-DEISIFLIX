@@ -93,4 +93,47 @@ public class SortingAlgorithms {
             }
         }
     }
+
+    // QuickSort Partition Algorithm for 'GET_TOP_N_YEARS_BEST_AVG_VOTES'
+    public static int paritionByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes, int left, int right) {
+        QueryFunctions.AVGVotesByYear pivot = votes.get(right);
+        int leftIndex = left;
+        int rightIndex = right - 1;
+
+        while (leftIndex <= rightIndex) {
+            if (votes.get(leftIndex).avgVotes > pivot.avgVotes && votes.get(rightIndex).avgVotes < pivot.avgVotes) {
+                QueryFunctions.AVGVotesByYear temp = votes.get(leftIndex);
+                votes.set(leftIndex, votes.get(rightIndex));
+                votes.set(rightIndex, temp);
+            }
+
+            if (votes.get(leftIndex).avgVotes <= pivot.avgVotes) {
+                leftIndex++;
+            }
+
+            if (votes.get(rightIndex).avgVotes >= pivot.avgVotes) {
+                rightIndex--;
+            }
+        }
+
+        votes.set(right, votes.get(leftIndex));
+        votes.set(leftIndex, pivot);
+        return leftIndex;
+    }
+
+    // QuickSort Algorithm for 'GET_TOP_N_YEARS_BEST_AVG_VOTES'
+    private static ArrayList<QueryFunctions.AVGVotesByYear> quickSortByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes, int left, int right) {
+        if (left < right) {
+            int pivotPos = paritionByAVGVotes(votes, left, right - 1);
+
+            votes = quickSortByAVGVotes(votes, left, pivotPos);
+            votes = quickSortByAVGVotes(votes, pivotPos + 1, right);
+        }
+        return votes;
+    }
+
+    // QuickSort Algorithm for 'GET_TOP_N_YEARS_BEST_AVG_VOTES'
+    public static void quickSortByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes) {
+        quickSortByAVGVotes(votes, 0, votes.size());
+    }
 }

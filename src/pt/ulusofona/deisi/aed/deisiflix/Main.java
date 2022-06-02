@@ -9,6 +9,7 @@ public class Main {
     /* Global variables */
     static ArrayList<Filme> moviesFileOrder;
     static Filme[] sortedMoviesByID;
+    static HashMap<Integer, Filme> moviesDict;
     static HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
     static ArrayList<String> moviesIgnoredLines;
     static ArrayList<String> votesIgnoredLines;
@@ -21,6 +22,7 @@ public class Main {
         MoviesData moviesReader = Reader.movieReader();
         moviesFileOrder = moviesReader.moviesFileOrder;
         sortedMoviesByID = moviesReader.sortedMoviesByID;
+        moviesDict = moviesReader.moviesDict;
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
         votesIgnoredLines = Reader.movieVotesReader(sortedMoviesByID);
@@ -72,7 +74,7 @@ public class Main {
             case "COUNT_MOVIES_ACTOR":
                 return QueryFunctions.countMoviesActor(data, moviesPeople);
             case "GET_MOVIES_ACTOR_YEAR":
-                return QueryFunctions.getMoviesActorYear(data, moviesPeople, sortedMoviesByID);
+                return QueryFunctions.getMoviesActorYear(data, moviesPeople, sortedMoviesByID, moviesDict);
             case "COUNT_MOVIES_WITH_ACTORS":
                 return QueryFunctions.countMoviesWithActors(data, moviesPeople, sortedMoviesByID);
             case "COUNT_ACTORS_3_YEARS":

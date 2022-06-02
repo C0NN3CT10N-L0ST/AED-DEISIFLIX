@@ -55,7 +55,7 @@ public class SortingAlgorithms {
             int greatestPos = greatestSortedPos + 1;
 
             for (int i = greatestPos + 1; i < movies.size(); i++) {
-                if (movies.get(i).date.isBefore(movies.get(greatestPos).date)) {
+                if (movies.get(i).date.isAfter(movies.get(greatestPos).date)) {
                     greatestPos = i;
                 }
             }

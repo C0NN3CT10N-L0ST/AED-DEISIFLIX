@@ -1,6 +1,5 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -58,7 +57,6 @@ public class QueryFunctions {
      * @return Returns the number of movies an actor has participated in. Returns 0 if actors does not exist.
      */
     public static QueryResult countMoviesActor(String data, HashMap<String, MovieAssociate> people) {
-        // TODO (NOTE): Maybe store movies in an HashMap (KEY -> Movie ID, VALUE -> Filme)
         startTime = System.currentTimeMillis();
         String name = data;  // Gets name from data
         int moviesCount = 0;
@@ -82,46 +80,34 @@ public class QueryFunctions {
      * @param sortedMovies Array with all movies (sorted by ID)
      * @return Returns all the movies the given actor took part in the given year
      */
-    public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
+    public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
         String[] queryArguments = data.split(" ");
 
         // Uses 'StringBuilder' to build actor name from query args
-        // Reason: More efficient than 'String' concatenation
         StringBuilder name = new StringBuilder();
         name.append(queryArguments[0]);
         name.append(" ");
         name.append(queryArguments[1]);
-        int queryYear = Integer.parseInt(queryArguments[2]);  // Gets year from query arguments
 
-        // Creates 'ArrayList' to store movies the actor participated in the given year
-        ArrayList<MovieActorYear> moviesActorYear = new ArrayList<>();
+        // Gets year from query arguments
+        int queryYear = Integer.parseInt(queryArguments[2]);
+
+        // Stores movies the actor participated in the given year
+        ArrayList<MovieActorYear> moviesActorYear;
         // ArrayList with all the movies the person has been part of
         ArrayList<Integer> personMovies = people.get(name.toString()).associatedMoviesID;
 
-        for (int i = 0; i < personMovies.size(); i++) {
-            // Gets movie position in 'sortedMovies'
-            int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, personMovies.get(i));
-            // Gets movie year for the current movie ID being checked
-            if (moviePos != -1) {  // Checks if movie exists in 'sortedMovies'
-                LocalDate movieDate = LocalDate.parse(sortedMovies[moviePos].dataLancamento, dateFileFormat);
-                int movieYear = movieDate.getYear();
-
-                // If year matches, add it to 'moviesActorYear'
-                if (movieYear == queryYear) {
-                    String title = sortedMovies[moviePos].titulo;
-                    moviesActorYear.add(new MovieActorYear(title, movieDate));
-                }
-            }
-        }
+        moviesActorYear = AuxiliaryQueryFunctions.getMoviesFromYear(queryYear, dateFileFormat, personMovies, moviesDict);
 
         // Sorts 'moviesActorYear' (using SelectionSort) by Date (in descending order)
         SortingAlgorithms.selSortDateByDescendingOrder(moviesActorYear);
 
-        // Builds Output String
         StringBuilder outputString = new StringBuilder();
+        // Sets Date format to be used in the output
         DateTimeFormatter outputDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+        // Builds Output String
         for (int i = 0; i < moviesActorYear.size(); i++) {
             MovieActorYear currentMovie = moviesActorYear.get(i);
             if (i == 0) {
@@ -137,8 +123,6 @@ public class QueryFunctions {
                 outputString.append(")");
             }
         }
-
-        // TODO: Try to make this more efficient altough its not too bad right now.
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString.toString(), (endTime - startTime));

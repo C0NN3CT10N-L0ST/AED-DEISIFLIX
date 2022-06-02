@@ -174,10 +174,10 @@ public class QueryFunctions {
      * Returns the number of unique actors that took part in movies in the given years.
      * @param data Query Arguments
      * @param movieIDsByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the unique actors that participated in movies in the given years
      */
-    public static QueryResult countActors3Years(String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, Filme[] sortedMovies) {
+    public static QueryResult countActors3Years(String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
         String[] queryArgs = data.split(" ");  // Gets years from query data
 
@@ -192,10 +192,14 @@ public class QueryFunctions {
 
         for (int queryYear : queryYears) {
             ArrayList<Integer> movies = movieIDsByYear.get(queryYear);
+            System.out.println("Number of movies in " + queryYear + ": " + movies.size());
+            long startBottle = System.currentTimeMillis();
             for (int movieID : movies) {
                 // Gets unique actors for each movie and stores them in 'uniqueActors'
-                AuxiliaryQueryFunctions.getUniqueMovieActors(movieID, uniqueActors, sortedMovies);
+                AuxiliaryQueryFunctions.getUniqueMovieActors(movieID, uniqueActors, moviesDict);
             }
+            long endBottle = System.currentTimeMillis();
+            System.out.println("Bottleneck: " + (endBottle - startBottle) + " ms");
         }
         String outputString = String.valueOf(uniqueActors.size());
 
@@ -210,13 +214,13 @@ public class QueryFunctions {
      * Returns the N (given number) movies with the greatest gender percentual discrepancy in the given years.
      * @param data Query Arguments
      * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the number of movies with the greatest gender percentual discrepancy in the given year
      */
     public static QueryResult topMoviesWithGenderBias(
             String data,
             HashMap<Integer, ArrayList<Integer>> moviesByYear,
-            Filme[] sortedMovies
+            HashMap<Integer, Filme> moviesDict
     ) {
         startTime = System.currentTimeMillis();
         // Gets query args
@@ -229,7 +233,7 @@ public class QueryFunctions {
         ArrayList<MovieGenderBias> moviesGenderBias = new ArrayList<>();
 
         // Calculates Gender Percentual Discrepancy for all movies in 'year' and adds them to 'moviesGenderBias'
-        AuxiliaryQueryFunctions.calculateGenderPercentualDiscrepancy(year, moviesByYear, sortedMovies, moviesGenderBias);
+        AuxiliaryQueryFunctions.calculateGenderPercentualDiscrepancy(year, moviesByYear, moviesDict, moviesGenderBias);
 
         // Sorts 'moviesGenderBias' by Gender Percentual Discrepancy (descending)
         SortingAlgorithms.selSortGenderBiasDescending(moviesGenderBias);
@@ -275,10 +279,10 @@ public class QueryFunctions {
      * Returns the N (given number) of years with the best movie average votes between all movies.
      * @param data Query Arguments
      * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the years with the best average votes
      */
-    public static QueryResult getTopNYearsBestAVGVotes(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, Filme[] sortedMovies) {
+    public static QueryResult getTopNYearsBestAVGVotes(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
         // Gets number of movies to output
         int moviesOutputNum = Integer.parseInt(data);
@@ -287,7 +291,7 @@ public class QueryFunctions {
 
         // Adds each year votes average to 'votesByYear'
         for (Integer movie : moviesByYear.keySet()) {
-            float yearVotesAverage = AuxiliaryQueryFunctions.calculateYearVotesAverage(moviesByYear.get(movie), sortedMovies);
+            float yearVotesAverage = AuxiliaryQueryFunctions.calculateYearVotesAverage(moviesByYear.get(movie), moviesDict);
             votesByYear.add(new AVGVotesByYear(movie, yearVotesAverage));
         }
 

@@ -78,13 +78,13 @@ public class Main {
             case "COUNT_MOVIES_WITH_ACTORS":
                 return QueryFunctions.countMoviesWithActors(data, moviesPeople, moviesDict);
             case "COUNT_ACTORS_3_YEARS":
-                return QueryFunctions.countActors3Years(data, movieIDsByYear, sortedMoviesByID);
+                return QueryFunctions.countActors3Years(data, movieIDsByYear, moviesDict);
             case "TOP_MOVIES_WITH_GENDER_BIAS":
-                return QueryFunctions.topMoviesWithGenderBias(data, movieIDsByYear, sortedMoviesByID);
+                return QueryFunctions.topMoviesWithGenderBias(data, movieIDsByYear, moviesDict);
             case "GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR":
                 return QueryFunctions.getRecentTitlesSameAVGVotesOneSharedActor(data);
             case "GET_TOP_N_YEARS_BEST_AVG_VOTES":
-                return QueryFunctions.getTopNYearsBestAVGVotes(data, movieIDsByYear, sortedMoviesByID);
+                return QueryFunctions.getTopNYearsBestAVGVotes(data, movieIDsByYear, moviesDict);
             case "DISTANCE_BETWEEN_ACTORS":
                 return QueryFunctions.distanceBetweenActors(data);
             case "GET_TOP_N_MOVIES_RATIO":

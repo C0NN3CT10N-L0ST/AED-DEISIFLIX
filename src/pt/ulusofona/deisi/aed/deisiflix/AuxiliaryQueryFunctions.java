@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Objects;
 
 public class AuxiliaryQueryFunctions {
@@ -41,20 +42,24 @@ public class AuxiliaryQueryFunctions {
     }
 
     /**
-     * Stores all unique actors from a particular movie in an ArrayList.
-     * @param movieID The movie ID
-     * @param actors ArrayList to store the actors
+     * Stores all actors from all movies from a particular year in an HashSet.
+     * @param year The given year
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param actors HashSet to store the actor names
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
      */
-    public static void getUniqueMovieActors(int movieID, ArrayList<String> actors, HashMap<Integer, Filme> moviesDict) {
-        // Gets 'Filme' object
-        Filme movie = moviesDict.get(movieID);
+    public static void getUniqueMovieActors(int year, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashSet<String> actors, HashMap<Integer, Filme> moviesDict) {
+        // Gets all movie IDs from given year
+        ArrayList<Integer> movies = moviesByYear.get(year);
 
-        // First it checks if 'movie' exists in 'moviesDict' and if 'atores' is not null
-        if (movie != null && movie.atores != null) {
-            for (Pessoa actor : movie.atores) {
-                // Checks if actor name is already in 'actors', if not, adds it
-                if (!actors.contains(actor.nome)) {
+        // Adds every actor of every movie to 'actors' HashSet
+        for (int movieID : movies) {
+            // Gets 'Filme' object
+            Filme movie = moviesDict.get(movieID);
+
+            // First it checks if 'movie' exists in 'moviesDict' and if 'atores' is not null
+            if (movie != null && movie.atores != null) {
+                for (Pessoa actor : movie.atores) {
                     actors.add(actor.nome);
                 }
             }

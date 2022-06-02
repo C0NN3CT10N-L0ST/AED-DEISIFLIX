@@ -35,7 +35,7 @@ public class Reader {
 
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
         Filme[] sortedMoviesByID;  // Movies sorted by ID
-        HashMap<Integer, Filme> moviesDict = new HashMap<>();
+        HashMap<Integer, Filme> moviesDict = new HashMap<>();  // Movies by ID (KEY -> Movie ID, VALUE -> 'Filme' object)
         HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year (KEY -> Year, VALUE -> MovieIDs)
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class QueryFunctions {
     // Elapsed time variables
@@ -177,7 +178,10 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the unique actors that participated in movies in the given years
      */
-    public static QueryResult countActors3Years(String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult countActors3Years(
+            String data,
+            HashMap<Integer, ArrayList<Integer>> movieIDsByYear,
+            HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
         String[] queryArgs = data.split(" ");  // Gets years from query data
 
@@ -187,23 +191,33 @@ public class QueryFunctions {
         queryYears[1] = Integer.parseInt(queryArgs[1]);
         queryYears[2] = Integer.parseInt(queryArgs[2]);
 
-        // 'ArrayList' to store unique actors' names
-        ArrayList<String> uniqueActors = new ArrayList<>();
+        int year1 = queryYears[0];
+        int year2 = queryYears[1];
+        int year3 = queryYears[2];
 
-        for (int queryYear : queryYears) {
-            ArrayList<Integer> movies = movieIDsByYear.get(queryYear);
-            System.out.println("Number of movies in " + queryYear + ": " + movies.size());
-            long startBottle = System.currentTimeMillis();
-            for (int movieID : movies) {
-                // Gets unique actors for each movie and stores them in 'uniqueActors'
-                AuxiliaryQueryFunctions.getUniqueMovieActors(movieID, uniqueActors, moviesDict);
+        // 'HashSet' to store unique actors' names
+        HashSet<String> uniqueActorsYear1 = new HashSet<>();
+        HashSet<String> uniqueActorsYear2 = new HashSet<>();
+        HashSet<String> uniqueActorsYear3 = new HashSet<>();
+
+        // Adds every actor from each movie in the given year to its correspondent 'HashSet'
+        AuxiliaryQueryFunctions.getUniqueMovieActors(year1, movieIDsByYear, uniqueActorsYear1, moviesDict);
+        AuxiliaryQueryFunctions.getUniqueMovieActors(year2, movieIDsByYear, uniqueActorsYear2, moviesDict);
+        AuxiliaryQueryFunctions.getUniqueMovieActors(year3, movieIDsByYear, uniqueActorsYear3, moviesDict);
+
+        int uniqueActorsCount = 0;
+
+        // Counts unique actors from given years
+        for (String actor : uniqueActorsYear1) {
+            // Check if 'uniqueActorsYear2' and 'uniqueActorsYear3' also contain the actor, if so, increment counter
+            if (uniqueActorsYear2.contains(actor) && uniqueActorsYear3.contains(actor)) {
+                uniqueActorsCount++;
             }
-            long endBottle = System.currentTimeMillis();
-            System.out.println("Bottleneck: " + (endBottle - startBottle) + " ms");
         }
-        String outputString = String.valueOf(uniqueActors.size());
 
-        // TODO: Improve this by a lot LULz
+        String outputString = String.valueOf(uniqueActorsCount);
+
+        // TODO: Still has margin for improvement
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString, (endTime - startTime));
@@ -267,11 +281,70 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult getRecentTitlesSameAVGVotesOneSharedActor(String data) {
+    public static QueryResult getRecentTitlesSameAVGVotesOneSharedActor(String data, HashMap<Integer, Filme> moviesDict, HashMap<Integer, ArrayList<Integer>> moviesByYear) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // TODO: Do this query properly. This code looks like SHIT xP
+        // Gets query args
+        int id = Integer.parseInt(data);
+
+        // Get movie with query id
+        Filme movie = moviesDict.get(id);
+        float avgVotes = movie.mediaVotos;
+        LocalDate date = LocalDate.parse(movie.dataLancamento, dateFileFormat);
+        ArrayList<Pessoa> actors = movie.atores;
+
+        // Stores valid movie titles
+        ArrayList<String> validMovieTitles = new ArrayList<>();
+
+        // Checks all the movies in the same year or older
+        for (int year = date.getYear(); year < 2022; year++) {
+            if (moviesByYear.containsKey(year)) {
+                // Check each movie in the current year and see if average votes match the given one
+                for (int movieID : moviesByYear.get(year)) {
+                    Filme currentMovie = moviesDict.get(movieID);
+                    int sharedActors = 0;
+
+                    // If year is the same we have to check if movie is older than the given one
+                    if (year == date.getYear() && LocalDate.parse(currentMovie.dataLancamento, dateFileFormat).isAfter(date)) {
+                        if (currentMovie.mediaVotos == avgVotes && currentMovie.atores != null) {
+                            // Checks if has only one shared actor
+                            for (Pessoa actor : currentMovie.atores) {
+                                if (actors.contains(actor)) {
+                                    sharedActors++;
+                                }
+                            }
+                        }
+                    } else {
+                        if (currentMovie.mediaVotos == avgVotes && currentMovie.atores != null) {
+                            // Checks if has only one shared actor
+                            for (Pessoa actor : currentMovie.atores) {
+                                if (actors.contains(actor)) {
+                                    sharedActors++;
+                                }
+                            }
+                        }
+                    }
+
+                    // Checks if theres only one shared actor
+                    if (sharedActors > 0) {
+                        // Adds movie title to 'validMovieTitles'
+                        validMovieTitles.add(currentMovie.titulo);
+                    }
+                }
+            }
+        }
+
+        StringBuilder outputString = new StringBuilder();
+        for (int i = 0; i < validMovieTitles.size(); i++) {
+             outputString.append(validMovieTitles.get(i));
+             if (i != validMovieTitles.size() - 1) {
+                 outputString.append("||");
+             }
+        }
+
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     /**

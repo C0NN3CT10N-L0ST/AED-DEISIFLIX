@@ -1,10 +1,45 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
 public class AuxiliaryQueryFunctions {
+    /**
+     * Returns all the movies in which the year matches the given one.
+     * @param year The given year
+     * @param dateFormat Date format of the 'Filme' release date
+     * @param movies List of movies to check
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
+     * @return Returns an 'ArrayList' with all the movies in which the year matches the given one
+     */
+    public static ArrayList<QueryFunctions.MovieActorYear> getMoviesFromYear(
+            int year,
+            DateTimeFormatter dateFormat,
+            ArrayList<Integer> movies,
+            HashMap<Integer, Filme> moviesDict
+    ) {
+        ArrayList<QueryFunctions.MovieActorYear> result = new ArrayList<>();
+
+        for (Integer movieID : movies) {
+            // Gets current 'Filme' object being checked
+            Filme movie = moviesDict.get(movieID);
+            if (movie != null) {
+                LocalDate movieDate = LocalDate.parse(movie.dataLancamento, dateFormat);
+                int movieYear = movieDate.getYear();
+
+                // Adds 'movie' to 'moviesActorYear' in case the 'year' matches
+                if (movieYear == year) {
+                    String title = movie.titulo;
+                    result.add(new QueryFunctions.MovieActorYear(title, movieDate));
+                }
+            }
+        }
+        return result;
+    }
+
     /**
      * Stores all unique actors from a particular movie in an ArrayList.
      * @param movieID The movie ID
@@ -54,7 +89,7 @@ public class AuxiliaryQueryFunctions {
 
     /**
      * Calculates Gender Percentual Discrepancy for all movies in the given year.
-     * @param year the given year
+     * @param year The given year
      * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
      * @param sortedMovies Array that contains all movies (sorted by ID)
      * @param moviesGenderBias ArrayList where all calculated value will be stored

@@ -74,9 +74,9 @@ public class Main {
             case "COUNT_MOVIES_ACTOR":
                 return QueryFunctions.countMoviesActor(data, moviesPeople);
             case "GET_MOVIES_ACTOR_YEAR":
-                return QueryFunctions.getMoviesActorYear(data, moviesPeople, sortedMoviesByID, moviesDict);
+                return QueryFunctions.getMoviesActorYear(data, moviesPeople, moviesDict);
             case "COUNT_MOVIES_WITH_ACTORS":
-                return QueryFunctions.countMoviesWithActors(data, moviesPeople, sortedMoviesByID);
+                return QueryFunctions.countMoviesWithActors(data, moviesPeople, moviesDict);
             case "COUNT_ACTORS_3_YEARS":
                 return QueryFunctions.countActors3Years(data, movieIDsByYear, sortedMoviesByID);
             case "TOP_MOVIES_WITH_GENDER_BIAS":

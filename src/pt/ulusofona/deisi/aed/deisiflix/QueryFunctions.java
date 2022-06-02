@@ -77,10 +77,10 @@ public class QueryFunctions {
      * Returns the movies an actor took part in for a particular year in descending order (by date).
      * @param data Query Arguments
      * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns all the movies the given actor took part in the given year
      */
-    public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
         String[] queryArguments = data.split(" ");
 
@@ -133,10 +133,10 @@ public class QueryFunctions {
      * Returns the number of movies in which all the given actors appeared simultaneously.
      * @param data Query Arguments
      * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the number of movies that contain all the given actors.
      */
-    public static QueryResult countMoviesWithActors(String data, HashMap<String, MovieAssociate> people, Filme[] sortedMovies) {
+    public static QueryResult countMoviesWithActors(String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
 
         // Gets actor names from query args
@@ -151,18 +151,18 @@ public class QueryFunctions {
 
         // Iterates through 'actor' movies and checks in how many they all took part in
         for (int movieID : actor1.associatedMoviesID) {
-            // Gets current movie position in 'sortedMovies'
-            int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, movieID);
+            // Gets current movie being checked
+            Filme movie = moviesDict.get(movieID);
 
-            // Checks if movie exists in 'sortedMovies' before accessing it
-            if (moviePos != -1) {
-                ArrayList<Pessoa> actorsList = sortedMovies[moviePos].atores;
+            if (movie != null) {
+                ArrayList<Pessoa> actorsList = movie.atores;
                 // Checks if all actors participated in the movie currently being checked
                 if (AuxiliaryQueryFunctions.containsActors(actorsList, otherActors)) {
                     moviesCount++;
                 }
             }
         }
+
         String outputString = String.valueOf(moviesCount);
 
         endTime = System.currentTimeMillis();

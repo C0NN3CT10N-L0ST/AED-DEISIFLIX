@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# This bash sripts zips DP required files
+# FILES: src (folder) and AUTHORS.txt
+
+echo "Zipping DP files..."
+
+zip -r DP.zip src/ AUTHORS.txt >/dev/null
+
+echo "Zipping complete!"

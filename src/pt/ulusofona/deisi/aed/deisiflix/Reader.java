@@ -8,6 +8,13 @@ import java.util.HashMap;
 
 public class Reader {
     static boolean DEBUG = false;
+    static boolean DP = false;  // Sets Readers files' variables based on DP submission or Local environment
+
+    // Reaers files
+    static String moviesFile = "deisi_movies.txt";
+    static String votesFile = "deisi_movie_votes.txt";
+    static String peopleFile = "deisi_people.txt";
+    static String genresFile = "deisi_genres.txt";
 
     // Local Database Paths
     // static String shortMovies = "test-files/deisi_movies_short.txt";
@@ -28,7 +35,10 @@ public class Reader {
      */
     public static MoviesData movieReader() throws IOException {
         long moviesTimerStart = System.currentTimeMillis();
-        FileReader fr = new FileReader(largeMovies);
+        if (!DP) {
+            moviesFile = largeMovies;
+        }
+        FileReader fr = new FileReader(moviesFile);
         BufferedReader reader = new BufferedReader(fr);
 
         // TODO: Store movies in an HashMap (KEY -> Movie ID, VALUE -> 'Filme' object)
@@ -115,7 +125,10 @@ public class Reader {
      */
     public static ArrayList<String> movieVotesReader(Filme[] sortedMovies) throws IOException {
         long votesTimerStart = System.currentTimeMillis();
-        FileReader fr = new FileReader(largeVotes);
+        if (!DP) {
+            votesFile = largeVotes;
+        }
+        FileReader fr = new FileReader(votesFile);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
@@ -166,7 +179,10 @@ public class Reader {
      */
     public static PeopleData peopleReader(Filme[] sortedMovies) throws IOException {
         long peopleTimerStart = System.currentTimeMillis();
-        FileReader fr = new FileReader(largePeople);
+        if (!DP) {
+            peopleFile = largePeople;
+        }
+        FileReader fr = new FileReader(peopleFile);
         BufferedReader reader = new BufferedReader(fr);
 
         HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();  // 'HashMap' to store people
@@ -253,7 +269,10 @@ public class Reader {
      */
     public static ArrayList<String> genresReader(Filme[] sortedMovies) throws IOException {
         long genresTimerStart = System.currentTimeMillis();
-        FileReader fr = new FileReader(largeGenres);
+        if (!DP) {
+            genresFile = largeGenres;
+        }
+        FileReader fr = new FileReader(genresFile);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();

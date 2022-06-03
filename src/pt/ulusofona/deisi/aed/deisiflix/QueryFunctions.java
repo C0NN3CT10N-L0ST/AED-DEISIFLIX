@@ -272,22 +272,15 @@ public class QueryFunctions {
             MovieGenderBias movie = moviesGenderBias.get(i);
 
             // Dont add '\n' to the last line
+            outputString.append(movie.title);
+            outputString.append(':');
+            outputString.append(movie.predominantGender);
+            outputString.append(':');
+            outputString.append(movie.discrepancyPercentage);
+
             if (i == moviesOutNum - 1) {
-                outputString.append(movie.title);
-                outputString.append(':');
-                outputString.append(movie.predominantGender);
-                outputString.append(':');
-                outputString.append(movie.discrepancyPercentage);
-            } else {
-                outputString.append(movie.title);
-                outputString.append(':');
-                outputString.append(movie.predominantGender);
-                outputString.append(':');
-                outputString.append(movie.discrepancyPercentage);
                 outputString.append('\n');
             }
-
-            // TODO: simplify output builder
         }
 
         // TODO: Make this more efficient. Still has potential to improve.
@@ -445,6 +438,14 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
+    /**
+     * 'GET_TOP_N_MOVIES_RATIO' Query.
+     * Returns the top N (given number) movies with the best VotesAVG/NrOfActors ratio for a given year.
+     * @param data Query Arguments
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @return Returns the movies with the best ratio for the given year
+     */
     public static QueryResult getTopNMoviesRatio(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
         // Gets query args

@@ -238,6 +238,12 @@ public class AuxiliaryQueryFunctions {
         return false;
     }
 
+    /**
+     * Calculates the VotesAVG/NrOfActors ratio for each of the given movies.
+     * @param movieIDs Set of movieIDs to calculate ratio
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
+     * @return Returns a 'MovieRatio' object for each movie as an ArrayList
+     */
     public static ArrayList<QueryFunctions.MovieRatio> calculateMoviesRatio(ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict) {
         // Stores 'MovieRatio' obejct for each movie
         ArrayList<QueryFunctions.MovieRatio> output = new ArrayList<>();

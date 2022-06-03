@@ -43,7 +43,7 @@ public class Filme {
 
         // Defines 'toString' variables
         int genresSize = this.generos != null ? this.generos.size() : 0;
-        int directorsSize = this.generos != null ? this.realizadores.size() : 0;
+        int directorsSize = this.realizadores != null ? this.realizadores.size() : 0;
         int actorsSize = 0;
         int actrissesSize = 0;
 

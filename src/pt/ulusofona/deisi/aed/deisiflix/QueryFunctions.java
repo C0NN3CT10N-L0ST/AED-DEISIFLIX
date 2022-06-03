@@ -392,11 +392,42 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult distanceBetweenActors(String data) {
+    /**
+     * 'DISTANCE_BETWEEN_ACTORS' Query.
+     * Returns the distance level that 2 actors are from each other.
+     * If both actors participated in the same movie, return level 0.
+     * If there's a third actor that collaborated with both actors, returns level 1.
+     * If none of the above are true, returns ":(" (sad face).
+     * @param data Query Arguments
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @return Returns the distance level between the two given actors
+     */
+    public static QueryResult distanceBetweenActors(String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets query args
+        String[] queryArgs = data.split(",");
+        String actor1 = queryArgs[0];
+        String actor2 = queryArgs[1];
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Gets all movie IDs from 'actor1'
+        ArrayList<Integer> actor1MovieIDs = people.get(actor1).associatedMoviesID;
+
+        // Level 0: the two actors participated in the same movie
+        if (AuxiliaryQueryFunctions.actorIsContainedInMovies(actor2, actor1MovieIDs, people)) {
+            outputString.append("0");
+        // Level 1: there's a third actor that collaborated with both actors
+        } else if (AuxiliaryQueryFunctions.thirdActorCollaboration(actor1, actor2, people, moviesDict)) {
+            outputString.append("1");
+        // Every other case
+        } else {
+            outputString.append(":(");
+        }
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     public static QueryResult getTopNMoviesRatio(String data) {

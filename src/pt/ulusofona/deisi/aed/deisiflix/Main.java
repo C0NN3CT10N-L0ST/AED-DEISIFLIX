@@ -88,7 +88,7 @@ public class Main {
             case "DISTANCE_BETWEEN_ACTORS":
                 return QueryFunctions.distanceBetweenActors(data, moviesPeople, moviesDict);
             case "GET_TOP_N_MOVIES_RATIO":
-                return QueryFunctions.getTopNMoviesRatio(data);
+                return QueryFunctions.getTopNMoviesRatio(data, movieIDsByYear, moviesDict);
             case "TOP_6_DIRECTORS_WITHIN_FAMILY":
                 return QueryFunctions.top6DirectorsWithinFamily(data);
             case "GET_TOP_ACTOR_YEAR":

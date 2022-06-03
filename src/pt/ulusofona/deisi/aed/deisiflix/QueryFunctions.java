@@ -50,6 +50,19 @@ public class QueryFunctions {
         }
     }
 
+    // Class to store data for 'GET_TOP_N_MOVIES_RATIO' query
+    static class MovieRatio {
+        String title;
+        float ratio;
+
+        MovieRatio(String title, float ratio) {
+            this.title = title;
+            this.ratio = ratio;
+        }
+    }
+
+    /* ----- QUERIES ----- */
+
     /**
      * 'COUNT_MOVIES_ACTOR' Query.
      * Returns the number of movies an actor has been part of. If the actor does not exist, returns 0.
@@ -273,6 +286,8 @@ public class QueryFunctions {
                 outputString.append(movie.discrepancyPercentage);
                 outputString.append('\n');
             }
+
+            // TODO: simplify output builder
         }
 
         // TODO: Make this more efficient. Still has potential to improve.
@@ -430,11 +445,38 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult getTopNMoviesRatio(String data) {
+    public static QueryResult getTopNMoviesRatio(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets query args
+        String[] queryArgs = data.split(" ");
+        int moviesOutputNum = Integer.parseInt(queryArgs[0]);
+        int year = Integer.parseInt(queryArgs[1]);
+
+        // Gets all movie IDs from given 'year'
+        ArrayList<Integer> movieIDs = moviesByYear.get(year);
+
+        // Stores movies' ratio
+        ArrayList<MovieRatio> moviesRatio = AuxiliaryQueryFunctions.calculateMoviesRatio(movieIDs, moviesDict);
+
+        // Sorts 'moviesRatio' by ratio
+        SortingAlgorithms.quickSortByMovieRatio(moviesRatio);
+
+        StringBuilder outputString = new StringBuilder();
+        // Builds output string
+        for (int i = 0, pos = moviesRatio.size() - 1; i < moviesOutputNum; i++, pos--) {
+            // Gets current movie
+            MovieRatio movie = moviesRatio.get(pos);
+            outputString.append(movie.title);
+            outputString.append(':');
+            outputString.append(movie.ratio);
+
+            if (i != moviesOutputNum - 1) {
+                outputString.append('\n');
+            }
+        }
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     public static QueryResult top6DirectorsWithinFamily(String data) {

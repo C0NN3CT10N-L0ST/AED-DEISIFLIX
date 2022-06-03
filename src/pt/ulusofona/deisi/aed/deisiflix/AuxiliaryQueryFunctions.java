@@ -169,4 +169,72 @@ public class AuxiliaryQueryFunctions {
         }
         return totalVotesAverage / movieIDs.size();
     }
+
+    /**
+     * Returns whether an actor has participated in a set of given movies.
+     * @param actor The given actor name
+     * @param movies Set of movies to check
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @return Returns whether the given actor participated in at least one of the given movies set.
+     */
+    public static boolean actorIsContainedInMovies(String actor, ArrayList<Integer> movies, HashMap<String, MovieAssociate> people) {
+        // Gets all movie IDs actor was in
+        ArrayList<Integer> actorMovies = people.get(actor).associatedMoviesID;
+
+        // Checks if theres at least one movie in common between 'actorMovies' and 'movies'
+        for (int movieID : movies) {
+            if (actorMovies.contains(movieID)) {
+                return true;
+            }
+        }
+
+        // If there are no movies in common returns 'false'
+        return false;
+    }
+
+    /**
+     * Checks if there's a third actor that has participated in at least one movie with actor1 and actor2.
+     * @param actor1 The first given actor
+     * @param actor2 The second given actor
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
+     * @return Returns whether there is a third actor in common with actor1 and actor2
+     */
+    public static boolean thirdActorCollaboration(
+            String actor1,
+            String actor2,
+            HashMap<String, MovieAssociate> people,
+            HashMap<Integer, Filme> moviesDict) {
+        // Gets all movies that 'actor1' has been part of
+        ArrayList<Integer> actor1MovieIDs = people.get(actor1).associatedMoviesID;
+
+        // Stores all actors from each of 'actor1MovieIDs'
+        HashSet<String> actors = new HashSet<>();
+
+        // Gets all actors from each of 'actor1MovieIDs'
+        for (int movieID : actor1MovieIDs) {
+            // Adds all actor names to 'actors' HashSet
+            for (Pessoa actor : moviesDict.get(movieID).atores) {
+                actors.add(actor.nome);
+            }
+        }
+
+        // Gets all movies that 'actor2' has been part of
+        ArrayList<Integer> actor2MovieIDs = people.get(actor2).associatedMoviesID;
+
+        // Checks if there's at least one actor from 'actors' in 'actor2' movies
+        for (Integer movieID : actor2MovieIDs) {
+            // Gets current 'Filme' being checked
+            Filme movie = moviesDict.get(movieID);
+
+            // If there's an actor in common between 'actor2' movies and 'actor1' movies, returns true
+            for (Pessoa actor : movie.atores) {
+                if (actors.contains(actor.nome)) {
+                    return true;
+                }
+            }
+        }
+        // If there's no match, returns 'false'
+        return false;
+    }
 }

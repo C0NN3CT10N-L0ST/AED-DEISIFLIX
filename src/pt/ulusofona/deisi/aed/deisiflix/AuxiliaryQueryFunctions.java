@@ -237,4 +237,23 @@ public class AuxiliaryQueryFunctions {
         // If there's no match, returns 'false'
         return false;
     }
+
+    public static ArrayList<QueryFunctions.MovieRatio> calculateMoviesRatio(ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict) {
+        // Stores 'MovieRatio' obejct for each movie
+        ArrayList<QueryFunctions.MovieRatio> output = new ArrayList<>();
+
+        // Calculates the AVGVotes/NrOfActor ratio for each movie in 'movieIDs'
+        for (Integer movieID : movieIDs) {
+            // Gets current movie being checked
+            Filme movie = moviesDict.get(movieID);
+            // Calculates ratio
+            if (movie.atores != null) {
+                float ratio = movie.mediaVotos / movie.atores.size();
+
+                // Adds new 'MovieRatio' object to 'output'
+                output.add(new QueryFunctions.MovieRatio(movie.titulo, ratio));
+            }
+        }
+        return output;
+    }
 }

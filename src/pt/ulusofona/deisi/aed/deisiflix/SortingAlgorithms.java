@@ -95,7 +95,7 @@ public class SortingAlgorithms {
     }
 
     // QuickSort Partition Algorithm for 'GET_TOP_N_YEARS_BEST_AVG_VOTES'
-    public static int paritionByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes, int left, int right) {
+    private static int paritionByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes, int left, int right) {
         QueryFunctions.AVGVotesByYear pivot = votes.get(right);
         int leftIndex = left;
         int rightIndex = right - 1;
@@ -135,5 +135,48 @@ public class SortingAlgorithms {
     // QuickSort Algorithm for 'GET_TOP_N_YEARS_BEST_AVG_VOTES'
     public static void quickSortByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes) {
         quickSortByAVGVotes(votes, 0, votes.size());
+    }
+
+    // QuickSort Partition Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    private static int paritionByMovieRatio(ArrayList<QueryFunctions.MovieRatio> movies, int left, int right) {
+        QueryFunctions.MovieRatio pivot = movies.get(right);
+        int leftIndex = left;
+        int rightIndex = right - 1;
+
+        while (leftIndex <= rightIndex) {
+            if (movies.get(leftIndex).ratio > pivot.ratio && movies.get(rightIndex).ratio < pivot.ratio) {
+                QueryFunctions.MovieRatio temp = movies.get(leftIndex);
+                movies.set(leftIndex, movies.get(rightIndex));
+                movies.set(rightIndex, temp);
+            }
+
+            if (movies.get(leftIndex).ratio <= pivot.ratio) {
+                leftIndex++;
+            }
+
+            if (movies.get(rightIndex).ratio >= pivot.ratio) {
+                rightIndex--;
+            }
+        }
+
+        movies.set(right, movies.get(leftIndex));
+        movies.set(leftIndex, pivot);
+        return leftIndex;
+    }
+
+    // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    private static ArrayList<QueryFunctions.MovieRatio> quickSortByMovieRatio(ArrayList<QueryFunctions.MovieRatio> movies, int left, int right) {
+        if (left < right) {
+            int pivotPos = paritionByMovieRatio(movies, left, right - 1);
+
+            movies = quickSortByMovieRatio(movies, left, pivotPos);
+            movies = quickSortByMovieRatio(movies, pivotPos + 1, right);
+        }
+        return movies;
+    }
+
+    // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    public static void quickSortByMovieRatio(ArrayList<QueryFunctions.MovieRatio> movies) {
+        quickSortByMovieRatio(movies, 0, movies.size());
     }
 }

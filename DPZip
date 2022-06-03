@@ -3,8 +3,12 @@
 # This bash sripts zips DP required files
 # FILES: src (folder) and AUTHORS.txt
 
+echo "Removing 'DP.zip' if it exists..."
+
+rm -f DP.zip
+
 echo "Zipping DP files..."
 
 zip -r DP.zip src/ AUTHORS.txt >/dev/null
 
-echo "Zipping complete!"
+echo "DP zipped files are ready to be submitted! Good luck ;)"

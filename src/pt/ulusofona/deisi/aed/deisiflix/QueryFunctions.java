@@ -278,7 +278,7 @@ public class QueryFunctions {
             outputString.append(':');
             outputString.append(movie.discrepancyPercentage);
 
-            if (i == moviesOutNum - 1) {
+            if (i != moviesOutNum - 1) {
                 outputString.append('\n');
             }
         }

@@ -262,4 +262,31 @@ public class AuxiliaryQueryFunctions {
         }
         return output;
     }
+
+    /**
+     * Counts the number of movies each actor participated in for the given list of movie IDs
+     * and stores them in an HashMap.
+     * @param movieIDs Set of movies to count the actor appearances
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
+     * @param moviesByActor HashMap (KEY: actor name, VALUE: number of movie appearances) with
+     *                      number of appearances by actor
+     */
+    public static void countNumberOfMoviesByActor(ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict, HashMap<String, Integer> moviesByActor) {
+        // Iterates over each movie in 'movieIDs'
+        for (Integer movieID : movieIDs) {
+            // Gets current movie being checked
+            Filme movie = moviesDict.get(movieID);
+            if (movie.atores != null) {
+                // If the entry for the given actor exists, increment its count by 1, if not, create a new entry
+                for (Pessoa actor : movie.atores) {
+                    if (moviesByActor.containsKey(actor.nome)) {
+                        int currentCount = moviesByActor.get(actor.nome);
+                        moviesByActor.put(actor.nome, ++currentCount);
+                    } else {
+                        moviesByActor.put(actor.nome, 1);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -483,15 +483,57 @@ public class QueryFunctions {
     public static QueryResult top6DirectorsWithinFamily(String data) {
         startTime = System.currentTimeMillis();
         // TODO
+        // Gets query args
+        String[] queryArgs = data.split(" ");
+        int rangeStart = Integer.parseInt(queryArgs[0]);
+        int rangeEnd = Integer.parseInt(queryArgs[1]);
+
+
         endTime = System.currentTimeMillis();
         return new QueryResult();
     }
 
-    public static QueryResult getTopActorYear(String data) {
+    /**
+     * 'GET_TOP_ACTOR_YEAR' Query.
+     * Returns the actor with the most appearances in movies from the given year.
+     * @param data Query Arguments
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @return Returns the actor with the greatest movie count for the given year
+     */
+    public static QueryResult getTopActorYear(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets query args
+        int year = Integer.parseInt(data);
+
+        // Gets all movieIDs from the given year
+        ArrayList<Integer> movieIDs = moviesByYear.get(year);
+
+        // Stores the number of movies by actor for the given 'year'
+        HashMap<String, Integer> moviesByActor = new HashMap<>();
+
+        // Counts the number of movie appearances by actor in the given year and store them in 'moviesByActor'
+        AuxiliaryQueryFunctions.countNumberOfMoviesByActor(movieIDs, moviesDict, moviesByActor);
+
+        String mostMoviesActor = "";
+
+        // Checks which actor has the greatest movie appearances
+        //TODO: not good (linear search)
+        for (String actor : moviesByActor.keySet()) {
+            if (mostMoviesActor.isEmpty()) {
+                mostMoviesActor = actor;
+            } else if (moviesByActor.get(actor) > moviesByActor.get(mostMoviesActor)) {
+                mostMoviesActor = actor;
+            }
+        }
+
+        // Builds output string
+        String outputString = mostMoviesActor + ";" + moviesByActor.get(mostMoviesActor);
+
+        //TODO: improve this
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString, (endTime - startTime));
     }
 
     public static QueryResult insertActor(String data) {

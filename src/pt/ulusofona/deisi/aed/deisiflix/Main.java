@@ -92,7 +92,7 @@ public class Main {
             case "TOP_6_DIRECTORS_WITHIN_FAMILY":
                 return QueryFunctions.top6DirectorsWithinFamily(data);
             case "GET_TOP_ACTOR_YEAR":
-                return QueryFunctions.getTopActorYear(data);
+                return QueryFunctions.getTopActorYear(data, movieIDsByYear, moviesDict);
             case "INSERT_ACTOR":
                 return QueryFunctions.insertActor(data);
             case "REMOVE_ACTOR":

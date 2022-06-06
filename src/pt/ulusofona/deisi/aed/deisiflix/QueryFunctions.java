@@ -550,6 +550,13 @@ public class QueryFunctions {
         return new QueryResult();
     }
 
+    /**
+     * 'GET_DUPLICATE_LINES_YEAR' Query.
+     * Returns the duplicate people lines from 'deisi_people.txt' file.
+     * @param data Query Arguments
+     * @param duplicateLinesYear HashMap (KEY: Year, VALUE: ArrayList with all the duplicate lines)
+     * @return Returns the duplicate lines from people file
+     */
     public static QueryResult getDuplicateLinesYear(String data, HashMap<Integer, ArrayList<String>> duplicateLinesYear) {
         startTime = System.currentTimeMillis();
         // Gets given year
@@ -571,7 +578,7 @@ public class QueryFunctions {
             }
         }
 
-        // If there are no results, outputs empty string
+        // If there are no results, outputs an empty string
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString.toString(), (endTime - startTime));

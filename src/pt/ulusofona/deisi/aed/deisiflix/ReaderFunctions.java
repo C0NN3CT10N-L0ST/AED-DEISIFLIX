@@ -1,7 +1,5 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
-import java.awt.image.AreaAveragingScaleFilter;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -42,7 +40,17 @@ public class ReaderFunctions {
         }
     }
 
-    public static void addMovieToDuplicateLinesByYear(
+    /**
+     * Adds a duplicate line from 'deisi_people.txt' file to an HashMap
+     * which stores all the duplicate lines for that file.
+     * @param lineNum The line number of the duplicate line in the original file
+     * @param movieID The movie ID of the person movie
+     * @param personID The person ID
+     * @param duplicateLinesByYear HashMap (KEY: Year, VALUE: ArrayList with all the duplicate lines
+     *                              in the following format '<lineNum>:<personID>:<movieID>')
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     */
+    public static void addLineToDuplicateLinesByYear(
             int lineNum,
             int movieID,
             int personID,

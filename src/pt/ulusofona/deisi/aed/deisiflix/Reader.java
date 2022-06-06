@@ -244,7 +244,7 @@ public class Reader {
                     // Checks if 'idMovie' is already in 'associatedMoviesID'
                     if (movieAssociateEntry.associatedMoviesID.contains(idMovie)) {
                         // Adds duplicate line to 'duplicateLinesByYear'
-                        ReaderFunctions.addMovieToDuplicateLinesByYear(currentLineNum, idMovie, idPerson, duplicateLinesByYear, moviesDict);
+                        ReaderFunctions.addLineToDuplicateLinesByYear(currentLineNum, idMovie, idPerson, duplicateLinesByYear, moviesDict);
                     } else {
                         // Adds 'idMovie' to 'associateMoviesID'
                         movieAssociateEntry.associatedMoviesID.add(idMovie);

@@ -517,7 +517,7 @@ public class QueryFunctions {
 
         String mostMoviesActor = "";
 
-        // Checks which actor has the greatest movie appearances
+        // Checks which actor has the most movie appearances
         //TODO: not good (linear search)
         for (String actor : moviesByActor.keySet()) {
             if (mostMoviesActor.isEmpty()) {
@@ -550,10 +550,30 @@ public class QueryFunctions {
         return new QueryResult();
     }
 
-    public static QueryResult getDuplicateLinesYear(String data) {
+    public static QueryResult getDuplicateLinesYear(String data, HashMap<Integer, ArrayList<String>> duplicateLinesYear) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets given year
+        int year = Integer.parseInt(data);
+
+        StringBuilder outputString = new StringBuilder();
+
+        if (duplicateLinesYear.containsKey(year) && duplicateLinesYear.get(year).size() > 0) {
+            // Gets 'duplicateLinesByYear' entry for the given year
+            ArrayList<String> duplicateLines = duplicateLinesYear.get(year);
+
+            // If there are results, append each of them to 'outputString'
+            for (int i = 0; i < duplicateLines.size(); i++) {
+                outputString.append(duplicateLines.get(i));
+
+                if (i != duplicateLines.size() - 1) {
+                    outputString.append('\n');
+                }
+            }
+        }
+
+        // If there are no results, outputs empty string
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 }

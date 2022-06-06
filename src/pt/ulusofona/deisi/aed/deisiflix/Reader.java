@@ -173,11 +173,11 @@ public class Reader {
 
     /**
      * Reads people entries from a file, stores them in appropriate data structures and returns those.
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns a 'PeopleData' object with all the data structures that were created
      * @throws IOException Exceptions related to file reading
      */
-    public static PeopleData peopleReader(Filme[] sortedMovies) throws IOException {
+    public static PeopleData peopleReader(HashMap<Integer, Filme> moviesDict) throws IOException {
         long peopleTimerStart = System.currentTimeMillis();
         if (!DP) {
             peopleFile = largePeople;
@@ -187,8 +187,10 @@ public class Reader {
 
         HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();  // 'HashMap' to store people
         ArrayList<String> ignoredLines = new ArrayList<String>();  // Ignored Lines
-        ArrayList<String> peopleDuplicateLinesYear = new ArrayList<>();  // Duplicate people lines
+        HashMap<Integer, ArrayList<String>> duplicateLinesByYear = new HashMap<>();  // Duplicate lines by year
         String line = null;
+
+        int currentLineNum = 1;  // Stores current line number in the file
 
         while ((line = reader.readLine()) != null) {
             if (DEBUG) {
@@ -216,8 +218,8 @@ public class Reader {
                 // Creates new 'Pessoa' Object with the person data
                 Pessoa person = new Pessoa(idPerson, name, gender);
 
-                // Adds PEOPLE to 'sortedMovies' array
-                ReaderFunctions.addPersonToMovies(person, type, idMovie, sortedMovies);
+                // Adds PERSON to 'moviesDict' HashMap
+                ReaderFunctions.addPersonToMovies(person, type, idMovie, moviesDict);
 
                 // If KEY does not exist create one, otherwise add movie ID to 'associatedMoviesID'
                 if (!moviesPeople.containsKey(name)) {
@@ -236,13 +238,13 @@ public class Reader {
                     // Adds people to an HashMap (KEY -> Person name, VALUE -> MovieAssociate)
                     moviesPeople.put(name, movieAssociate);
                 } else {
-                    // Gets HashMap entry
+                    // Gets HashMap entry for current person
                     MovieAssociate movieAssociateEntry = moviesPeople.get(name);
 
                     // Checks if 'idMovie' is already in 'associatedMoviesID'
                     if (movieAssociateEntry.associatedMoviesID.contains(idMovie)) {
-                        // Adds duplicate line to 'peopleDuplicateLinesYear'
-                        peopleDuplicateLinesYear.add(line);
+                        // Adds duplicate line to 'duplicateLinesByYear'
+                        ReaderFunctions.addMovieToDuplicateLinesByYear(currentLineNum, idMovie, idPerson, duplicateLinesByYear, moviesDict);
                     } else {
                         // Adds 'idMovie' to 'associateMoviesID'
                         movieAssociateEntry.associatedMoviesID.add(idMovie);
@@ -252,13 +254,14 @@ public class Reader {
             } else {
                 ignoredLines.add(line);
             }
+            currentLineNum++;
         }
 
         reader.close();
         long peopleTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
 
-        return new PeopleData(moviesPeople, peopleDuplicateLinesYear, ignoredLines);
+        return new PeopleData(moviesPeople, duplicateLinesByYear, ignoredLines);
     }
 
     /**

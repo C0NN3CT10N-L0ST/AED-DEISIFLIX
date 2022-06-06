@@ -14,7 +14,7 @@ public class Main {
     static ArrayList<String> moviesIgnoredLines;
     static ArrayList<String> votesIgnoredLines;
     static HashMap<String, MovieAssociate> moviesPeople;
-    static ArrayList<String> peopleDuplicateLinesYear;
+    static HashMap<Integer, ArrayList<String>> peopleDuplicateLinesYear;
     static ArrayList<String> peopleIgnoredLines;
     static ArrayList<String> genresIgnoredLines;
 
@@ -26,7 +26,7 @@ public class Main {
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
         votesIgnoredLines = Reader.movieVotesReader(sortedMoviesByID);
-        PeopleData peopleReader = Reader.peopleReader(sortedMoviesByID);
+        PeopleData peopleReader = Reader.peopleReader(moviesDict);
         moviesPeople = peopleReader.moviesPeople;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
@@ -98,7 +98,7 @@ public class Main {
             case "REMOVE_ACTOR":
                 return QueryFunctions.removeActor(data);
             case "GET_DUPLICATE_LINES_YEAR":
-                return QueryFunctions.getDuplicateLinesYear(data);
+                return QueryFunctions.getDuplicateLinesYear(data, peopleDuplicateLinesYear);
             default:
                 return null;
         }

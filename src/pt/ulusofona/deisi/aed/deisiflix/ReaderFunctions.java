@@ -73,6 +73,7 @@ public class ReaderFunctions {
             entry.append(lineNum);
             entry.append(':');
             entry.append(personID);
+            entry.append(':');
             entry.append(movieID);
 
             // Adds duplicate person to 'duplicateLinesByYear' dict

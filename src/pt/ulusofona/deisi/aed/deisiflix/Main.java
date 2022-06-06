@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Main {
     /* Global variables */
     static ArrayList<Filme> moviesFileOrder;
-    static Filme[] sortedMoviesByID;
     static HashMap<Integer, Filme> moviesDict;
     static HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
     static ArrayList<String> moviesIgnoredLines;
@@ -21,16 +20,15 @@ public class Main {
     public static void lerFicheiros() throws IOException {
         MoviesData moviesReader = Reader.movieReader();
         moviesFileOrder = moviesReader.moviesFileOrder;
-        sortedMoviesByID = moviesReader.sortedMoviesByID;
         moviesDict = moviesReader.moviesDict;
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
-        votesIgnoredLines = Reader.movieVotesReader(sortedMoviesByID);
+        votesIgnoredLines = Reader.movieVotesReader(moviesDict);
         PeopleData peopleReader = Reader.peopleReader(moviesDict);
         moviesPeople = peopleReader.moviesPeople;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
-        genresIgnoredLines = Reader.genresReader(sortedMoviesByID);
+        genresIgnoredLines = Reader.genresReader(moviesDict);
 
         // TODO: document this
     }

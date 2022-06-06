@@ -41,10 +41,7 @@ public class Reader {
         FileReader fr = new FileReader(moviesFile);
         BufferedReader reader = new BufferedReader(fr);
 
-        // TODO: Store movies in an HashMap (KEY -> Movie ID, VALUE -> 'Filme' object)
-
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
-        Filme[] sortedMoviesByID;  // Movies sorted by ID
         HashMap<Integer, Filme> moviesDict = new HashMap<>();  // Movies by ID (KEY -> Movie ID, VALUE -> 'Filme' object)
         HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year (KEY -> Year, VALUE -> MovieIDs)
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
@@ -105,25 +102,20 @@ public class Reader {
         }
         reader.close();
 
-        // Sorts movies by ID using 'QuickSort'
-        sortedMoviesByID = new Filme[moviesFileOrder.size()];
-        sortedMoviesByID = moviesFileOrder.toArray(sortedMoviesByID);
-        SortingAlgorithms.quickSortMoviesByID(sortedMoviesByID);
-
         long moviesTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
 
         // Returns 'MoviesData' object
-        return new MoviesData(moviesFileOrder, sortedMoviesByID, moviesDict, movieIDsByYear, ignoredLines);
+        return new MoviesData(moviesFileOrder, moviesDict, movieIDsByYear, ignoredLines);
     }
 
     /**
      * Reads votes related entries from a file, stores them in appropriate data structures and returns those.
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns an 'ArrayList' with all the ignored lines
      * @throws IOException Exceptions related to file reading
      */
-    public static ArrayList<String> movieVotesReader(Filme[] sortedMovies) throws IOException {
+    public static ArrayList<String> movieVotesReader(HashMap<Integer, Filme> moviesDict) throws IOException {
         long votesTimerStart = System.currentTimeMillis();
         if (!DP) {
             votesFile = largeVotes;
@@ -153,12 +145,15 @@ public class Reader {
                     System.out.println("Nr. Votes: " + votesTotal);
                 }
 
-                // Adds vote data to correspondent 'Filme' object in 'sortedMovies'
-                // Finds the ID of the movie through binary search and adds votes' data
-                int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, id);
-                sortedMovies[moviePos].mediaVotos = votesAverage;
-                sortedMovies[moviePos].nrVotos = votesTotal;
+                // Adds votes' data to correspondent 'Filme' object in 'moviesDict' for each line in the file
+                if (moviesDict.containsKey(id)) {
+                    // Gets 'Filme' object for current movie 'id'
+                    Filme movie = moviesDict.get(id);
 
+                    // Adds votes' data
+                    movie.mediaVotos = votesAverage;
+                    movie.nrVotos = votesTotal;
+                }
             } else {
                 ignoredLines.add(line);
             }
@@ -266,11 +261,11 @@ public class Reader {
 
     /**
      * Reads genre entries from a file, stores them in appropriate data structures and returns those
-     * @param sortedMovies Array with all movies (sorted by ID)
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns an 'ArrayList' with all the ignored lines
      * @throws IOException Exceptions related to file reading
      */
-    public static ArrayList<String> genresReader(Filme[] sortedMovies) throws IOException {
+    public static ArrayList<String> genresReader(HashMap<Integer, Filme> moviesDict) throws IOException {
         long genresTimerStart = System.currentTimeMillis();
         if (!DP) {
             genresFile = largeGenres;
@@ -298,24 +293,24 @@ public class Reader {
                     System.out.println("ID Movie: " + id);
                 }
 
-                /* Adds genre to the correspondent movieID in 'sortedMovies' */
-                // Gets the position of the correspondent movie in 'sortedMovies'
-                int moviePos = SearchAlgorithms.binarySearchMovieByID(sortedMovies, id);
+                /* Adds genre to the correspondent movieID in 'moviesDict' */
                 // Creates new 'GeneroCinematografico'
                 GeneroCinematografico newGenre = new GeneroCinematografico(genre);
 
-                // Checks if 'movieID' exists and then if the 'ArrayList<GeneroCinematografico>' exists, if not, creates a new one
-                if (moviePos > -1 && sortedMovies[moviePos].generos == null) {
-                    // Creates new 'ArrayList<GeneroCinematografico>' and adds the genre to it
-                    ArrayList<GeneroCinematografico> movieGenres = new ArrayList<>();
-                    movieGenres.add(newGenre);  // Adds genre to 'ArrayList<GeneroCinematografico>'
-                    sortedMovies[moviePos].generos = movieGenres;  // Adds genre to 'sortedMovies'
-                } else if (moviePos > -1) {
-                    // Adds genre to the 'ArrayList'
-                    sortedMovies[moviePos].generos.add(newGenre);
-                }
+                // Checks if movie with 'id' ID exists
+                if (moviesDict.containsKey(id)) {
+                    // Gets current 'Filme' object
+                    Filme movie = moviesDict.get(id);
 
-                // TODO: simplify the code above
+                    // Checks if 'generos' exists, if not, creates one
+                    if (movie.generos != null) {
+                        movie.generos.add(newGenre);
+                    } else {
+                        ArrayList<GeneroCinematografico> movieGenres = new ArrayList<>();
+                        movieGenres.add(newGenre);
+                        movie.generos = movieGenres;
+                    }
+                }
             } else {
                 ignoredLines.add(line);
             }

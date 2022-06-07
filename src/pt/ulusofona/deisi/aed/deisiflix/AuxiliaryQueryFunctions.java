@@ -184,10 +184,10 @@ public class AuxiliaryQueryFunctions {
      * @return Returns whether the given actor participated in at least one of the given movies set.
      */
     public static boolean actorIsContainedInMovies(
-            String actor, ArrayList<Integer> movies, HashMap<String, MovieAssociate> people
+            String actor, ArrayList<Integer> movies, HashMap<String, ArrayList<MovieAssociate>> people
     ) {
         // Gets all movie IDs actor was in
-        ArrayList<Integer> actorMovies = people.get(actor).associatedMoviesID;
+        ArrayList<Integer> actorMovies = people.get(actor).get(0).associatedMoviesID;
 
         // Checks if theres at least one movie in common between 'actorMovies' and 'movies'
         for (int movieID : movies) {
@@ -211,10 +211,10 @@ public class AuxiliaryQueryFunctions {
     public static boolean thirdActorCollaboration(
             String actor1,
             String actor2,
-            HashMap<String, MovieAssociate> people,
+            HashMap<String, ArrayList<MovieAssociate>> people,
             HashMap<Integer, Filme> moviesDict) {
         // Gets all movies that 'actor1' has been part of
-        ArrayList<Integer> actor1MovieIDs = people.get(actor1).associatedMoviesID;
+        ArrayList<Integer> actor1MovieIDs = people.get(actor1).get(0).associatedMoviesID;
 
         // Stores all actors from each of 'actor1MovieIDs'
         HashSet<String> actors = new HashSet<>();
@@ -228,7 +228,7 @@ public class AuxiliaryQueryFunctions {
         }
 
         // Gets all movies that 'actor2' has been part of
-        ArrayList<Integer> actor2MovieIDs = people.get(actor2).associatedMoviesID;
+        ArrayList<Integer> actor2MovieIDs = people.get(actor2).get(0).associatedMoviesID;
 
         // Checks if there's at least one actor from 'actors' in 'actor2' movies
         for (Integer movieID : actor2MovieIDs) {

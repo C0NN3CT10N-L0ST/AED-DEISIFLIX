@@ -12,7 +12,7 @@ public class Main {
     static HashMap<Integer, ArrayList<Integer>> movieIDsByYear;
     static ArrayList<String> moviesIgnoredLines;
     static ArrayList<String> votesIgnoredLines;
-    static HashMap<String, MovieAssociate> moviesPeople;
+    static HashMap<String, ArrayList<MovieAssociate>> moviesPeople;
     static HashMap<Integer, ArrayList<String>> peopleDuplicateLinesYear;
     static ArrayList<String> peopleIgnoredLines;
     static ArrayList<String> genresIgnoredLines;

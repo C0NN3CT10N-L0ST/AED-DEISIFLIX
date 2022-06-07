@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PeopleData {
-    // KEY: Person Name, VALUE: 'MovieAssociate' instance
-    HashMap<String, MovieAssociate> moviesPeople;
+    // KEY: Person Name, VALUE: ArrayList with 'MovieAssociate' instances for each actor with the same name
+    HashMap<String, ArrayList<MovieAssociate>> moviesPeople;
     // All ingnored lines from 'deisi_people.txt' untouched
     ArrayList<String> ignoredLines;
     // KEY: Year, VALUE: ArrayList ordered by line number with the format '<lineNum>:<personID>:<movieID>'
@@ -15,7 +15,7 @@ public class PeopleData {
     PeopleData() {}
 
     PeopleData(
-            HashMap<String, MovieAssociate> moviesPeople,
+            HashMap<String, ArrayList<MovieAssociate>> moviesPeople,
             HashMap<Integer, ArrayList<String>> duplicateLinesYear,
             ArrayList<String> ignoredLines
     ) {

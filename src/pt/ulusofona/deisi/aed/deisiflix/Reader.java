@@ -180,7 +180,7 @@ public class Reader {
         FileReader fr = new FileReader(peopleFile);
         BufferedReader reader = new BufferedReader(fr);
 
-        HashMap<String, MovieAssociate> moviesPeople = new HashMap<>();  // 'HashMap' to store people
+        HashMap<String, ArrayList<MovieAssociate>> moviesPeople = new HashMap<>();  // HashMap with all people
         ArrayList<String> ignoredLines = new ArrayList<String>();  // Ignored Lines
         HashMap<Integer, ArrayList<String>> duplicateLinesByYear = new HashMap<>();  // Duplicate lines by year
         String line = null;
@@ -216,40 +216,23 @@ public class Reader {
                 // Adds PERSON to 'moviesDict' HashMap
                 ReaderFunctions.addPersonToMovies(person, type, idMovie, moviesDict);
 
-                // If KEY does not exist create one, otherwise add movie ID to 'associatedMoviesID'
-                if (!moviesPeople.containsKey(name)) {
-                    // Creates new 'MovieAssociate' instance to store the person info
-                    MovieAssociate movieAssociate = new MovieAssociate();
-                    movieAssociate.id = idPerson;
-                    movieAssociate.name = name;
-                    movieAssociate.gender = gender;
-                    movieAssociate.type = type;
+                // Creates new instance of 'MovieAssociate' to store in 'moviesPeople'
+                MovieAssociate personMovieAssociate = new MovieAssociate();
+                personMovieAssociate.id = idPerson;
+                personMovieAssociate.name = name;
+                personMovieAssociate.gender = gender;
+                personMovieAssociate.type = type;
+                personMovieAssociate.associatedMoviesID = new ArrayList<>();
+                personMovieAssociate.associatedMoviesID.add(idMovie);
 
-                    // Creates a new ArrayList to store 'associateMoviesID'
-                    ArrayList<Integer> associatedMoviesID = new ArrayList<>();
-                    associatedMoviesID.add(idMovie);
-                    movieAssociate.associatedMoviesID = associatedMoviesID;
-
-                    // Adds people to an HashMap (KEY -> Person name, VALUE -> MovieAssociate)
-                    moviesPeople.put(name, movieAssociate);
-                } else {
-                    // Gets HashMap entry for current person
-                    MovieAssociate movieAssociateEntry = moviesPeople.get(name);
-
-                    // Checks if ID of the person matches
-                    if (movieAssociateEntry.id == idPerson) {
-                        // Checks if 'idMovie' is already in 'associatedMoviesID'
-                        if (movieAssociateEntry.associatedMoviesID.contains(idMovie)) {
-                            // Adds duplicate line to 'duplicateLinesByYear'
-                            ReaderFunctions.addLineToDuplicateLinesByYear(
-                                    currentLineNum, idMovie, idPerson, duplicateLinesByYear, moviesDict);
-                        } else {
-                            // Adds 'idMovie' to 'associateMoviesID'
-                            movieAssociateEntry.associatedMoviesID.add(idMovie);
-                            // TODO: see if there is a more efficient way to do this
-                        }
-                    }
-                }
+                // Adds 'MovieAssociate' to 'moviesPeople'
+                ReaderFunctions.addMovieAssociateToPeople(
+                        personMovieAssociate,
+                        moviesPeople,
+                        currentLineNum,
+                        duplicateLinesByYear,
+                        moviesDict
+                );
             } else {
                 ignoredLines.add(line);
             }

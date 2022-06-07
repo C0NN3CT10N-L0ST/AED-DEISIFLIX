@@ -67,10 +67,10 @@ public class QueryFunctions {
      * 'COUNT_MOVIES_ACTOR' Query.
      * Returns the number of movies an actor has been part of. If the actor does not exist, returns 0.
      * @param data Query arguments
-     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param people HashMap (KEY: name, VALUE: ArrayList with MovieAssociate's) that stores all people
      * @return Returns the number of movies an actor has participated in. Returns 0 if actors does not exist.
      */
-    public static QueryResult countMoviesActor(String data, HashMap<String, MovieAssociate> people) {
+    public static QueryResult countMoviesActor(String data, HashMap<String, ArrayList<MovieAssociate>> people) {
         startTime = System.currentTimeMillis();
         String name = data;  // Gets name from data
         int moviesCount = 0;
@@ -78,7 +78,9 @@ public class QueryFunctions {
         // Check if the actor exists
         if (people.containsKey(name)) {
             // Get actor movie count
-            moviesCount = people.get(name).associatedMoviesID.size();
+            for (MovieAssociate actor : people.get(name)) {
+                moviesCount += actor.associatedMoviesID.size();
+            }
         }
 
         endTime = System.currentTimeMillis();
@@ -90,12 +92,12 @@ public class QueryFunctions {
      * 'GET_MOVIES_ACTOR_YEAR' Query.
      * Returns the movies an actor took part in for a particular year in descending order (by date).
      * @param data Query Arguments
-     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param people HashMap (KEY: name, VALUE: ArrayList with MovieAssociate's) that stores all people
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns all the movies the given actor took part in the given year
      */
     public static QueryResult getMoviesActorYear(
-            String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict
+            String data, HashMap<String, ArrayList<MovieAssociate>> people, HashMap<Integer, Filme> moviesDict
     ) {
         startTime = System.currentTimeMillis();
         String[] queryArguments = data.split(" ");
@@ -112,7 +114,7 @@ public class QueryFunctions {
         // Stores movies the actor participated in the given year
         ArrayList<MovieActorYear> moviesActorYear;
         // ArrayList with all the movies the person has been part of
-        ArrayList<Integer> personMovies = people.get(name.toString()).associatedMoviesID;
+        ArrayList<Integer> personMovies = people.get(name.toString()).get(0).associatedMoviesID;
 
         moviesActorYear = AuxiliaryQueryFunctions.getMoviesFromYear(queryYear, dateFileFormat, personMovies, moviesDict);
 
@@ -148,19 +150,19 @@ public class QueryFunctions {
      * 'COUNT_MOVIES_WITH_ACTORS' Query.
      * Returns the number of movies in which all the given actors appeared simultaneously.
      * @param data Query Arguments
-     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param people HashMap (KEY: name, VALUE: ArrayList with MovieAssociate's) that stores all people
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the number of movies that contain all the given actors.
      */
     public static QueryResult countMoviesWithActors(
-            String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict
+            String data, HashMap<String, ArrayList<MovieAssociate>> people, HashMap<Integer, Filme> moviesDict
     ) {
         startTime = System.currentTimeMillis();
 
         // Gets actor names from query args
         String[] actors = data.split(";", 2);
         // Gets first actor from actors given args and accesses its 'MovieAssociate' entry in 'people'
-        MovieAssociate actor1 = people.get(actors[0]);
+        MovieAssociate actor1 = people.get(actors[0]).get(0);
         // Stores the other actors separated by ';' (semicolons)
         String otherActors = actors[1];
 
@@ -414,12 +416,12 @@ public class QueryFunctions {
      * If there's a third actor that collaborated with both actors, returns level 1.
      * If none of the above are true, returns ":(" (sad face).
      * @param data Query Arguments
-     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @param people HashMap (KEY: name, VALUE: ArrayList with MovieAssociate's) that stores all people
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the distance level between the two given actors
      */
     public static QueryResult distanceBetweenActors(
-            String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict
+            String data, HashMap<String, ArrayList<MovieAssociate>> people, HashMap<Integer, Filme> moviesDict
     ) {
         startTime = System.currentTimeMillis();
         // Gets query args
@@ -430,7 +432,7 @@ public class QueryFunctions {
         StringBuilder outputString = new StringBuilder();
 
         // Gets all movie IDs from 'actor1'
-        ArrayList<Integer> actor1MovieIDs = people.get(actor1).associatedMoviesID;
+        ArrayList<Integer> actor1MovieIDs = people.get(actor1).get(0).associatedMoviesID;
 
         // Level 0: the two actors participated in the same movie
         if (AuxiliaryQueryFunctions.actorIsContainedInMovies(actor2, actor1MovieIDs, people)) {
@@ -482,7 +484,7 @@ public class QueryFunctions {
             outputString.append(':');
             outputString.append(movie.ratio);
 
-            if (i != moviesRatio.size() - 1) {
+            if (i != moviesRatio.size() - 1 && i != moviesOutputNum - 1) {
                 outputString.append('\n');
             }
         }

@@ -48,7 +48,12 @@ public class AuxiliaryQueryFunctions {
      * @param actors HashSet to store the actor names
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
      */
-    public static void getUniqueMovieActors(int year, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashSet<String> actors, HashMap<Integer, Filme> moviesDict) {
+    public static void getUniqueMovieActors(
+            int year,
+            HashMap<Integer, ArrayList<Integer>> moviesByYear,
+            HashSet<String> actors,
+            HashMap<Integer, Filme> moviesDict
+    ) {
         // Gets all movie IDs from given year
         ArrayList<Integer> movies = moviesByYear.get(year);
 
@@ -143,7 +148,8 @@ public class AuxiliaryQueryFunctions {
                     }
 
                     // Adds movie gender data to 'moviesGenderBias'
-                    moviesGenderBias.add(new QueryFunctions.MovieGenderBias(movie.titulo, discrepancy, predominantGender));
+                    moviesGenderBias.add(new QueryFunctions.MovieGenderBias(
+                            movie.titulo, discrepancy, predominantGender));
                 }
             }
         }
@@ -177,7 +183,9 @@ public class AuxiliaryQueryFunctions {
      * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
      * @return Returns whether the given actor participated in at least one of the given movies set.
      */
-    public static boolean actorIsContainedInMovies(String actor, ArrayList<Integer> movies, HashMap<String, MovieAssociate> people) {
+    public static boolean actorIsContainedInMovies(
+            String actor, ArrayList<Integer> movies, HashMap<String, MovieAssociate> people
+    ) {
         // Gets all movie IDs actor was in
         ArrayList<Integer> actorMovies = people.get(actor).associatedMoviesID;
 
@@ -244,7 +252,9 @@ public class AuxiliaryQueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
      * @return Returns a 'MovieRatio' object for each movie as an ArrayList
      */
-    public static ArrayList<QueryFunctions.MovieRatio> calculateMoviesRatio(ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict) {
+    public static ArrayList<QueryFunctions.MovieRatio> calculateMoviesRatio(
+            ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict
+    ) {
         // Stores 'MovieRatio' obejct for each movie
         ArrayList<QueryFunctions.MovieRatio> output = new ArrayList<>();
 
@@ -271,7 +281,9 @@ public class AuxiliaryQueryFunctions {
      * @param moviesByActor HashMap (KEY: actor name, VALUE: number of movie appearances) with
      *                      number of appearances by actor
      */
-    public static void countNumberOfMoviesByActor(ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict, HashMap<String, Integer> moviesByActor) {
+    public static void countNumberOfMoviesByActor(
+            ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict, HashMap<String, Integer> moviesByActor
+    ) {
         // Iterates over each movie in 'movieIDs'
         for (Integer movieID : movieIDs) {
             // Gets current movie being checked

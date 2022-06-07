@@ -94,7 +94,9 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns all the movies the given actor took part in the given year
      */
-    public static QueryResult getMoviesActorYear(String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult getMoviesActorYear(
+            String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
         String[] queryArguments = data.split(" ");
 
@@ -150,7 +152,9 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the number of movies that contain all the given actors.
      */
-    public static QueryResult countMoviesWithActors(String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult countMoviesWithActors(
+            String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
 
         // Gets actor names from query args
@@ -192,9 +196,8 @@ public class QueryFunctions {
      * @return Returns the unique actors that participated in movies in the given years
      */
     public static QueryResult countActors3Years(
-            String data,
-            HashMap<Integer, ArrayList<Integer>> movieIDsByYear,
-            HashMap<Integer, Filme> moviesDict) {
+            String data, HashMap<Integer, ArrayList<Integer>> movieIDsByYear, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
         String[] queryArgs = data.split(" ");  // Gets years from query data
 
@@ -245,9 +248,7 @@ public class QueryFunctions {
      * @return Returns the number of movies with the greatest gender percentual discrepancy in the given year
      */
     public static QueryResult topMoviesWithGenderBias(
-            String data,
-            HashMap<Integer, ArrayList<Integer>> moviesByYear,
-            HashMap<Integer, Filme> moviesDict
+            String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
     ) {
         startTime = System.currentTimeMillis();
         // Gets query args
@@ -289,7 +290,9 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult getRecentTitlesSameAVGVotesOneSharedActor(String data, HashMap<Integer, Filme> moviesDict, HashMap<Integer, ArrayList<Integer>> moviesByYear) {
+    public static QueryResult getRecentTitlesSameAVGVotesOneSharedActor(
+            String data, HashMap<Integer, Filme> moviesDict, HashMap<Integer, ArrayList<Integer>> moviesByYear
+    ) {
         startTime = System.currentTimeMillis();
         // TODO: Do this query properly. This code looks like SHIT xP
         // Gets query args
@@ -313,7 +316,8 @@ public class QueryFunctions {
                     int sharedActors = 0;
 
                     // If year is the same we have to check if movie is older than the given one
-                    if (year == date.getYear() && LocalDate.parse(currentMovie.dataLancamento, dateFileFormat).isAfter(date)) {
+                    if (year == date.getYear()
+                            && LocalDate.parse(currentMovie.dataLancamento, dateFileFormat).isAfter(date)) {
                         if (currentMovie.mediaVotos == avgVotes && currentMovie.atores != null) {
                             // Checks if has only one shared actor
                             for (Pessoa actor : currentMovie.atores) {
@@ -363,7 +367,9 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the years with the best average votes
      */
-    public static QueryResult getTopNYearsBestAVGVotes(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult getTopNYearsBestAVGVotes(
+            String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
         // Gets number of movies to output
         int moviesOutputNum = Integer.parseInt(data);
@@ -372,7 +378,8 @@ public class QueryFunctions {
 
         // Adds each year votes average to 'votesByYear'
         for (Integer movie : moviesByYear.keySet()) {
-            float yearVotesAverage = AuxiliaryQueryFunctions.calculateYearVotesAverage(moviesByYear.get(movie), moviesDict);
+            float yearVotesAverage = AuxiliaryQueryFunctions.calculateYearVotesAverage(
+                    moviesByYear.get(movie), moviesDict);
             votesByYear.add(new AVGVotesByYear(movie, yearVotesAverage));
         }
 
@@ -411,7 +418,9 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the distance level between the two given actors
      */
-    public static QueryResult distanceBetweenActors(String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult distanceBetweenActors(
+            String data, HashMap<String, MovieAssociate> people, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
         // Gets query args
         String[] queryArgs = data.split(",");
@@ -446,7 +455,9 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the movies with the best ratio for the given year
      */
-    public static QueryResult getTopNMoviesRatio(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult getTopNMoviesRatio(
+            String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
         // Gets query args
         String[] queryArgs = data.split(" ");
@@ -464,14 +475,14 @@ public class QueryFunctions {
 
         StringBuilder outputString = new StringBuilder();
         // Builds output string
-        for (int i = 0, pos = moviesRatio.size() - 1; i < moviesOutputNum; i++, pos--) {
+        for (int i = 0, pos = moviesRatio.size() - 1; i <= pos && i < moviesOutputNum; i++, pos--) {
             // Gets current movie
             MovieRatio movie = moviesRatio.get(pos);
             outputString.append(movie.title);
             outputString.append(':');
             outputString.append(movie.ratio);
 
-            if (i != moviesOutputNum - 1) {
+            if (i != moviesRatio.size() - 1) {
                 outputString.append('\n');
             }
         }
@@ -501,7 +512,9 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the actor with the greatest movie count for the given year
      */
-    public static QueryResult getTopActorYear(String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict) {
+    public static QueryResult getTopActorYear(
+            String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
         // Gets query args
         int year = Integer.parseInt(data);
@@ -557,7 +570,9 @@ public class QueryFunctions {
      * @param duplicateLinesYear HashMap (KEY: Year, VALUE: ArrayList with all the duplicate lines)
      * @return Returns the duplicate lines from people file
      */
-    public static QueryResult getDuplicateLinesYear(String data, HashMap<Integer, ArrayList<String>> duplicateLinesYear) {
+    public static QueryResult getDuplicateLinesYear(
+            String data, HashMap<Integer, ArrayList<String>> duplicateLinesYear
+    ) {
         startTime = System.currentTimeMillis();
         // Gets given year
         int year = Integer.parseInt(data);

@@ -13,7 +13,9 @@ public class ReaderFunctions {
      * @param movieID ID of the movie that were the object will be added
      * @param movies Array with all movies (sorted by ID)
      */
-    public static void addPersonToMovies(Pessoa person, String personType, int movieID, HashMap<Integer, Filme> movies) {
+    public static void addPersonToMovies(
+            Pessoa person, String personType, int movieID, HashMap<Integer, Filme> movies
+    ) {
         // Gets 'Filme' object for movie with 'movieID' ID
         Filme movie = movies.get(movieID);
 

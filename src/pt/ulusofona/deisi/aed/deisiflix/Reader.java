@@ -42,8 +42,8 @@ public class Reader {
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
-        HashMap<Integer, Filme> moviesDict = new HashMap<>();  // Movies by ID (KEY -> Movie ID, VALUE -> 'Filme' object)
-        HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year (KEY -> Year, VALUE -> MovieIDs)
+        HashMap<Integer, Filme> moviesDict = new HashMap<>();  // Movies by ID (KEY: Movie ID, VALUE: 'Filme' object)
+        HashMap<Integer, ArrayList<Integer>> movieIDsByYear = new HashMap<>();  // Movies ID by Year
         ArrayList<String> ignoredLines = new ArrayList<String>(); // Ignored Lines
         String line = null;
 
@@ -236,14 +236,18 @@ public class Reader {
                     // Gets HashMap entry for current person
                     MovieAssociate movieAssociateEntry = moviesPeople.get(name);
 
-                    // Checks if 'idMovie' is already in 'associatedMoviesID'
-                    if (movieAssociateEntry.associatedMoviesID.contains(idMovie)) {
-                        // Adds duplicate line to 'duplicateLinesByYear'
-                        ReaderFunctions.addLineToDuplicateLinesByYear(currentLineNum, idMovie, idPerson, duplicateLinesByYear, moviesDict);
-                    } else {
-                        // Adds 'idMovie' to 'associateMoviesID'
-                        movieAssociateEntry.associatedMoviesID.add(idMovie);
-                        // TODO: see if there is a more efficient way to do this
+                    // Checks if ID of the person matches
+                    if (movieAssociateEntry.id == idPerson) {
+                        // Checks if 'idMovie' is already in 'associatedMoviesID'
+                        if (movieAssociateEntry.associatedMoviesID.contains(idMovie)) {
+                            // Adds duplicate line to 'duplicateLinesByYear'
+                            ReaderFunctions.addLineToDuplicateLinesByYear(
+                                    currentLineNum, idMovie, idPerson, duplicateLinesByYear, moviesDict);
+                        } else {
+                            // Adds 'idMovie' to 'associateMoviesID'
+                            movieAssociateEntry.associatedMoviesID.add(idMovie);
+                            // TODO: see if there is a more efficient way to do this
+                        }
                     }
                 }
             } else {

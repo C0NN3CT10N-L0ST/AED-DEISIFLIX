@@ -122,7 +122,9 @@ public class SortingAlgorithms {
     }
 
     // QuickSort Algorithm for 'GET_TOP_N_YEARS_BEST_AVG_VOTES'
-    private static ArrayList<QueryFunctions.AVGVotesByYear> quickSortByAVGVotes(ArrayList<QueryFunctions.AVGVotesByYear> votes, int left, int right) {
+    private static ArrayList<QueryFunctions.AVGVotesByYear> quickSortByAVGVotes(
+            ArrayList<QueryFunctions.AVGVotesByYear> votes, int left, int right
+    ) {
         if (left < right) {
             int pivotPos = paritionByAVGVotes(votes, left, right - 1);
 
@@ -165,7 +167,9 @@ public class SortingAlgorithms {
     }
 
     // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
-    private static ArrayList<QueryFunctions.MovieRatio> quickSortByMovieRatio(ArrayList<QueryFunctions.MovieRatio> movies, int left, int right) {
+    private static ArrayList<QueryFunctions.MovieRatio> quickSortByMovieRatio(
+            ArrayList<QueryFunctions.MovieRatio> movies, int left, int right
+    ) {
         if (left < right) {
             int pivotPos = paritionByMovieRatio(movies, left, right - 1);
 

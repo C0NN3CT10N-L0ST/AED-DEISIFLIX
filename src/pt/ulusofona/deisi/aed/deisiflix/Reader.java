@@ -181,6 +181,7 @@ public class Reader {
         BufferedReader reader = new BufferedReader(fr);
 
         HashMap<String, ArrayList<MovieAssociate>> moviesPeople = new HashMap<>();  // HashMap with all people
+        HashMap<Integer, String> actorsByID = new HashMap<>();  // All actors by ID (KEY: actor ID, VALUE: actor name)
         ArrayList<String> ignoredLines = new ArrayList<String>();  // Ignored Lines
         HashMap<Integer, ArrayList<String>> duplicateLinesByYear = new HashMap<>();  // Duplicate lines by year
         String line = null;
@@ -233,6 +234,11 @@ public class Reader {
                         duplicateLinesByYear,
                         moviesDict
                 );
+
+                if (type.equals("ACTOR")) {
+                    actorsByID.put(idPerson, name);
+                }
+
             } else {
                 ignoredLines.add(line);
             }
@@ -243,7 +249,7 @@ public class Reader {
         long peopleTimerEnd = System.currentTimeMillis();
         System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
 
-        return new PeopleData(moviesPeople, duplicateLinesByYear, ignoredLines);
+        return new PeopleData(moviesPeople, actorsByID, duplicateLinesByYear, ignoredLines);
     }
 
     /**

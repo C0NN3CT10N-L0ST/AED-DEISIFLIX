@@ -64,15 +64,15 @@ public class ReaderFunctions {
         if (people.containsKey(person.name)) {
             // Checks if 'person' is already present in the 'ArrayList'
             // (returns -1 if it isn't present, the index in the ArrayList if it is)
-            int personExists = -1;
+            int personIndex = -1;
             for (int i = 0; i < people.get(person.name).size(); i++) {
                 if (people.get(person.name).get(i).id == person.id) {
-                    personExists = i;
+                    personIndex = i;
                 }
             }
 
             // If person does not exists, adds it to the 'ArrayList'
-            if (personExists == -1) {
+            if (personIndex == -1) {
                 people.get(person.name).add(person);
             } else {
                 // If the person does exist, just adds the current movie to it in case it is not there yet
@@ -81,10 +81,10 @@ public class ReaderFunctions {
                 int movieID = person.associatedMoviesID.get(0);
 
                 // Adds the movie to movieIDs list in case it does not yet exist
-                if (people.get(person.name).get(personExists).associatedMoviesID.contains(movieID)) {
+                if (people.get(person.name).get(personIndex).associatedMoviesID.contains(movieID)) {
                     addLineToDuplicateLinesByYear(lineNum, movieID, person.id, duplicateLinesByYear, moviesDict);
                 } else {
-                    people.get(person.name).get(personExists).associatedMoviesID.add(movieID);
+                    people.get(person.name).get(personIndex).associatedMoviesID.add(movieID);
                 }
             }
         } else {

@@ -1,5 +1,6 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -298,6 +299,115 @@ public class AuxiliaryQueryFunctions {
                         moviesByActor.put(actor.nome, 1);
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * Adds a person to an HashMap with all people.
+     * @param person The given 'MovieAssociate' object
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     */
+    public static void addPersonToPeopleDict(MovieAssociate person, HashMap<String, ArrayList<MovieAssociate>> people) {
+        // Checks if an entry for the person name already exists and if the person already exists as well
+        if (people.containsKey(person.name)) {
+            boolean personAlreadyExists = false;
+            for (MovieAssociate movieAssociate : people.get(person.name)) {
+                if (movieAssociate.id == person.id && movieAssociate.type.equals(person.type)) {
+                    personAlreadyExists = true;
+                }
+            }
+
+            // If person already exists, do nothing, otherwise, adds new person
+            if (!personAlreadyExists) {
+                people.get(person.name).add(person);
+            }
+        } else {
+            // If person does not yet exist, just add it
+            ArrayList<MovieAssociate> movieAssociates = new ArrayList<>();
+            movieAssociates.add(person);
+            people.put(person.name, movieAssociates);
+        }
+    }
+
+    /**
+     * Returns the 'MovieAssociate' object with the given ID and Name.
+     * If the object does not exist, returns null.
+     * @param id The given ID
+     * @param name The given Name
+     * @param type The given Type ("ACTOR" OR "DIRECTOR")
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     * @return Returns a 'MovieAssociate' object or null.
+     */
+    public static MovieAssociate getMovieAssociateByIDAndName(
+            int id, String name, String type, HashMap<String, ArrayList<MovieAssociate>> people
+    ) {
+        // Create new 'MovieAssociate' object to store person
+        MovieAssociate person = null;
+
+        if (people.containsKey(name)) {
+            for (MovieAssociate movieAssociate : people.get(name)) {
+                if (movieAssociate.id == id && movieAssociate.type.equals(type)) {
+                    person = movieAssociate;
+                }
+            }
+        }
+
+        return person;
+    }
+
+    /**
+     * Removes a person from HashMap (KEY: Person Name, VALUE: ArrayList of MovieAssociate's objects) with all people.
+     * @param person The given 'MovieAssociate' object
+     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
+     */
+    public static void removePersonFromPeopleDict(
+            MovieAssociate person, HashMap<String, ArrayList<MovieAssociate>> people
+    ) {
+        // First checks if entry exists
+        if (people.containsKey(person.name)) {
+            // Gets person position in the ArrayList of the correspondent key
+            int personPos = -1;  // If person does not exist, 'personPos' will be '-1'
+
+            // Gets people ArrayList
+            ArrayList<MovieAssociate> peopleList = people.get(person.name);
+
+            for (int i = 0; i < peopleList.size(); i++) {
+                if (peopleList.get(i).id == person.id && peopleList.get(i).type.equals(person.type)) {
+                    personPos = i;
+                }
+            }
+
+            // Removes 'person' from 'people'
+            peopleList.remove(personPos);
+        }
+    }
+
+    /**
+     * Removes an actor from all the movies he's associated with.
+     * @param id The given actor ID
+     * @param movieIDs ArrayList with all the movie IDs the actor is associated with
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
+     */
+    public static void removeActorFromAllMoviesByID(
+            int id, ArrayList<Integer> movieIDs, HashMap<Integer, Filme> moviesDict
+    ) {
+        for (Integer movieID : movieIDs) {
+            // Gets current movie
+            Filme movie = moviesDict.get(movieID);
+
+            int moviePos = -1;
+
+            // Gets movie index in the current movie 'atores' ArrayList
+            for (int i = 0; i < movie.atores.size(); i++) {
+                if (movie.atores.get(i).id == id) {
+                    moviePos = i;
+                }
+            }
+
+            // Removes actor from movie 'atores' ArrayList
+            if (moviePos != -1) {
+                movie.atores.remove(moviePos);
             }
         }
     }

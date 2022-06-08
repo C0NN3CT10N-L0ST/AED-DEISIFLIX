@@ -78,8 +78,10 @@ public class QueryFunctions {
         // Check if the actor exists
         if (people.containsKey(name)) {
             // Get actor movie count
-            for (MovieAssociate actor : people.get(name)) {
-                moviesCount += actor.associatedMoviesID.size();
+            for (MovieAssociate movieAssociate : people.get(name)) {
+                if (movieAssociate.type.equals("ACTOR")) {
+                    moviesCount += movieAssociate.associatedMoviesID.size();
+                }
             }
         }
 
@@ -111,34 +113,42 @@ public class QueryFunctions {
         // Gets year from query arguments
         int queryYear = Integer.parseInt(queryArguments[2]);
 
-        // Stores movies the actor participated in the given year
-        ArrayList<MovieActorYear> moviesActorYear;
-        // ArrayList with all the movies the person has been part of
-        ArrayList<Integer> personMovies = people.get(name.toString()).get(0).associatedMoviesID;
-
-        moviesActorYear = AuxiliaryQueryFunctions.getMoviesFromYear(queryYear, dateFileFormat, personMovies, moviesDict);
-
-        // Sorts 'moviesActorYear' (using SelectionSort) by Date (in descending order)
-        SortingAlgorithms.selSortDateByDescendingOrder(moviesActorYear);
-
         StringBuilder outputString = new StringBuilder();
-        // Sets Date format to be used in the output
-        DateTimeFormatter outputDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        // Builds Output String
-        for (int i = 0; i < moviesActorYear.size(); i++) {
-            MovieActorYear currentMovie = moviesActorYear.get(i);
-            if (i == 0) {
-                outputString.append(currentMovie.title);
-                outputString.append(" (");
-                outputString.append(currentMovie.date.format(outputDateFormat));
-                outputString.append(")");
-            } else {
-                outputString.append("\n");
-                outputString.append(currentMovie.title);
-                outputString.append(" (");
-                outputString.append(currentMovie.date.format(outputDateFormat));
-                outputString.append(")");
+        // Checks if the given name exists
+        if (people.get(name.toString()) != null) {
+            // Gets current actor
+            MovieAssociate actor = people.get(name.toString()).get(0);
+
+            // Stores movies the actor participated in the given year
+            ArrayList<MovieActorYear> moviesActorYear;
+            // ArrayList with all the movies the person has been part of
+            ArrayList<Integer> personMovies = people.get(name.toString()).get(0).associatedMoviesID;
+
+            moviesActorYear = AuxiliaryQueryFunctions.getMoviesFromYear(
+                    queryYear, dateFileFormat, personMovies, moviesDict);
+
+            // Sorts 'moviesActorYear' (using SelectionSort) by Date (in descending order)
+            SortingAlgorithms.selSortDateByDescendingOrder(moviesActorYear);
+
+            // Sets Date format to be used in the output
+            DateTimeFormatter outputDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+            // Builds Output String
+            for (int i = 0; i < moviesActorYear.size(); i++) {
+                MovieActorYear currentMovie = moviesActorYear.get(i);
+                if (i == 0) {
+                    outputString.append(currentMovie.title);
+                    outputString.append(" (");
+                    outputString.append(currentMovie.date.format(outputDateFormat));
+                    outputString.append(")");
+                } else {
+                    outputString.append("\n");
+                    outputString.append(currentMovie.title);
+                    outputString.append(" (");
+                    outputString.append(currentMovie.date.format(outputDateFormat));
+                    outputString.append(")");
+                }
             }
         }
 
@@ -551,18 +561,132 @@ public class QueryFunctions {
         return new QueryResult(outputString, (endTime - startTime));
     }
 
-    public static QueryResult insertActor(String data) {
+    /**
+     * 'INSERT_ACTOR' Query.
+     * Inserts a new actor in all the necessary data structures to be used in future queries.
+     * The actor needs to be valid (have a unique ID and the movie needs to exist).
+     * @param data Query Arguments
+     * @param people HashMap (KEY: name, VALUE: ArrayList with MovieAssociate's) that stores all people
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @param actorsByID HashMap (KEY: Actor ID, VALUE: Actor Name) with all actors
+     * @return Returns "OK" message on success and "Erro" message on failure
+     */
+    public static QueryResult insertActor(
+            String data,
+            HashMap<String ,ArrayList<MovieAssociate>> people,
+            HashMap<Integer, Filme> moviesDict,
+            HashMap<Integer, String> actorsByID
+    ) {
         startTime = System.currentTimeMillis();
-        // TODO
+        // Gets query args
+        String[] queryArgs = data.split(";");
+        int id = Integer.parseInt(queryArgs[0].strip());
+        String name = queryArgs[1].strip();
+        char gender = queryArgs[2].strip().charAt(0);
+        int movieID = Integer.parseInt(queryArgs[3].strip());
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Creates new 'MovieAssociate' instance
+        MovieAssociate person = new MovieAssociate();
+        person.id = id;
+        person.name = name;
+        person.gender = gender;
+        person.type = "ACTOR";
+        person.associatedMoviesID = new ArrayList<>();
+        person.associatedMoviesID.add(movieID);
+
+        // Creates new 'Pessoa' instance
+        Pessoa pessoa = new Pessoa(id, name, gender);
+
+        // Gets movie from 'moviesDict'
+        Filme movie = moviesDict.get(movieID);
+
+        boolean actorExistsInActorsByID = actorsByID.containsKey(id);
+
+        // If a person with the given 'id' does not exist and the movie exists, add new actor
+        if (movie != null && !actorExistsInActorsByID) {
+            // Adds actor to 'people'
+            AuxiliaryQueryFunctions.addPersonToPeopleDict(person, people);
+
+            // Adds actor to the correspondent movie
+            moviesDict.get(movieID).atores.add(pessoa);
+
+            // Adds actor to 'actorsByID'
+            actorsByID.put(id, name);
+
+            // Builds output string
+            outputString.append("OK");
+        } else if (movie != null) {
+            // In case the person already exists, just add the movie to it if it is not already there
+            for (MovieAssociate movieAssociate : people.get(name)) {
+                if (movieAssociate.id == id && movieAssociate.type.equals("ACTOR")) {
+                    movieAssociate.associatedMoviesID.add(movieID);
+                }
+            }
+
+            // Adds actor to the correspondent movie
+            moviesDict.get(movieID).atores.add(pessoa);
+
+            // Builds output string
+            outputString.append("OK");
+        } else {
+            // Builds output string
+            outputString.append("Erro");
+        }
+
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult removeActor(String data) {
+    /**
+     * 'REMOVE_ACTOR' Query.
+     * Removes an existing actor from all the necessary data structures so it won't appear in future queries.
+     * The given actor needs to be valid, i.e. the ID must exist.
+     * @param data Query Arguments
+     * @param people HashMap (KEY: name, VALUE: ArrayList with MovieAssociate's) that stores all people
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @param actorsByID HashMap (KEY: Actor ID, VALUE: Actor Name) with all actors
+     * @return Returns "OK" message on success and "Erro" message on failure
+     */
+    public static QueryResult removeActor(
+            String data,
+            HashMap<String ,ArrayList<MovieAssociate>> people,
+            HashMap<Integer, Filme> moviesDict,
+            HashMap<Integer, String> actorsByID
+    ) {
         startTime = System.currentTimeMillis();
         // TODO
+        // Gets query args
+        int id = Integer.parseInt(data);
+
+        StringBuilder outputString = new StringBuilder();
+
+        boolean idExists = actorsByID.containsKey(id);
+        // Gets 'MovieAssociate' object associated with 'id'
+        MovieAssociate person = AuxiliaryQueryFunctions.getMovieAssociateByIDAndName(
+                id, actorsByID.get(id), "ACTOR", people);
+
+        if (idExists) {
+            // Gets all movie IDs the actor is associated with
+            ArrayList<Integer> movieIDs = person.associatedMoviesID;
+
+            // Removes actor from 'people'
+            AuxiliaryQueryFunctions.removePersonFromPeopleDict(person, people);
+
+            // Removes actor from all the movies he's associated with
+            AuxiliaryQueryFunctions.removeActorFromAllMoviesByID(id, movieIDs, moviesDict);
+
+            // Builds output string
+            outputString.append("OK");
+        } else {
+            // Builds output string
+            outputString.append("Erro");
+        }
+
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     /**

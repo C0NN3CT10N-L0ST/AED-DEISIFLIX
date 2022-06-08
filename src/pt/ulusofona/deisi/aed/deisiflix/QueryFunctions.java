@@ -486,17 +486,24 @@ public class QueryFunctions {
         SortingAlgorithms.quickSortByMovieRatio(moviesRatio);
 
         StringBuilder outputString = new StringBuilder();
-        // Builds output string
-        for (int i = 0, pos = moviesRatio.size() - 1; i <= pos && i < moviesOutputNum; i++, pos--) {
-            // Gets current movie
-            MovieRatio movie = moviesRatio.get(pos);
-            outputString.append(movie.title);
-            outputString.append(':');
-            outputString.append(movie.ratio);
 
-            if (i != moviesRatio.size() - 1 && i != moviesOutputNum - 1) {
-                outputString.append('\n');
+        // Checks if there are results
+        if (moviesRatio.size() > 0) {
+            // Builds output string
+            for (int i = 0, pos = moviesRatio.size() - 1; i <= pos && i < moviesOutputNum; i++, pos--) {
+                // Gets current movie
+                MovieRatio movie = moviesRatio.get(pos);
+                outputString.append(movie.title);
+                outputString.append(':');
+                outputString.append(movie.ratio);
+
+                if (i != moviesRatio.size() - 1 && i != moviesOutputNum - 1) {
+                    outputString.append('\n');
+                }
             }
+        } else {
+            // Builds output string
+            outputString.append("zerop");
         }
 
         endTime = System.currentTimeMillis();

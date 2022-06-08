@@ -302,11 +302,20 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
+    /**
+     * 'GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR' Query.
+     * Returns the movie titles that have the same average as the given movie,
+     * made after it and that have exactly ONE shared actor between them.
+     * @param data Query Arguments
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @return Returns the movies with same average votes as the given one, made after it, and with a shared actor
+     */
     public static QueryResult getRecentTitlesSameAVGVotesOneSharedActor(
             String data, HashMap<Integer, Filme> moviesDict, HashMap<Integer, ArrayList<Integer>> moviesByYear
     ) {
         startTime = System.currentTimeMillis();
-        // TODO: Do this query properly. This code looks like SHIT xP
+        // TODO: Simplify this. The code looks like SHIT xP
         // Gets query args
         int id = Integer.parseInt(data);
 
@@ -314,7 +323,14 @@ public class QueryFunctions {
         Filme movie = moviesDict.get(id);
         float avgVotes = movie.mediaVotos;
         LocalDate date = LocalDate.parse(movie.dataLancamento, dateFileFormat);
-        ArrayList<Pessoa> actors = movie.atores;
+
+        // Creates an Array with all the IDs from the given movie actors
+        ArrayList<Integer> actorIDs = new ArrayList<>();
+
+        // Adds each actor ID from given movie to 'actorIDs'
+        for (Pessoa actor : movie.atores) {
+            actorIDs.add(actor.id);
+        }
 
         // Stores valid movie titles
         ArrayList<String> validMovieTitles = new ArrayList<>();
@@ -332,25 +348,17 @@ public class QueryFunctions {
                             && LocalDate.parse(currentMovie.dataLancamento, dateFileFormat).isAfter(date)) {
                         if (currentMovie.mediaVotos == avgVotes && currentMovie.atores != null) {
                             // Checks if has only one shared actor
-                            for (Pessoa actor : currentMovie.atores) {
-                                if (actors.contains(actor)) {
-                                    sharedActors++;
-                                }
-                            }
+                            sharedActors = AuxiliaryQueryFunctions.numberOfSharedActors(movieID, actorIDs, moviesDict);
                         }
                     } else {
                         if (currentMovie.mediaVotos == avgVotes && currentMovie.atores != null) {
                             // Checks if has only one shared actor
-                            for (Pessoa actor : currentMovie.atores) {
-                                if (actors.contains(actor)) {
-                                    sharedActors++;
-                                }
-                            }
+                            sharedActors = AuxiliaryQueryFunctions.numberOfSharedActors(movieID, actorIDs, moviesDict);
                         }
                     }
 
                     // Checks if theres only one shared actor
-                    if (sharedActors > 0) {
+                    if (sharedActors == 1) {
                         // Adds movie title to 'validMovieTitles'
                         validMovieTitles.add(currentMovie.titulo);
                     }
@@ -407,7 +415,7 @@ public class QueryFunctions {
             // Appends data to 'outputString'
             outputString.append(current.year);
             outputString.append(':');
-            outputString.append(Math.round(current.avgVotes * 100) / 100.0);
+            outputString.append(Math.round(current.avgVotes * 100) / 100.0);  // Outputs a max of 2 decimal places
 
             // Does not put '\n' in the last year
             if (i != moviesOutputNum - 1) {

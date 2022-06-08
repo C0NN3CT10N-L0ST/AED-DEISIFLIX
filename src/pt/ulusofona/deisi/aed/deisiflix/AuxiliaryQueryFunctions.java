@@ -411,4 +411,27 @@ public class AuxiliaryQueryFunctions {
             }
         }
     }
+
+    /**
+     * Returns the number of shared actors between a set of actor IDs and the actors from a movie.
+     * @param movieID The given movie ID to check
+     * @param actorIDs An ArrayList with all the actor IDs to check
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all existing movies
+     * @return Returns the number of shared actors
+     */
+    public static int numberOfSharedActors(
+            int movieID, ArrayList<Integer> actorIDs, HashMap<Integer, Filme> moviesDict
+    ) {
+        int sharedActors = 0;
+
+        if (moviesDict.containsKey(movieID)) {
+            // Checks how many actors from the movie with 'movieID' are contained in 'actors'
+            for (Pessoa actor : moviesDict.get(movieID).atores) {
+                if (actorIDs.contains(actor.id)) {
+                    sharedActors++;
+                }
+            }
+        }
+        return sharedActors;
+    }
 }

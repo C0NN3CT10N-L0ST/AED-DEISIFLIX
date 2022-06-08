@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Objects;
 
 public class QueryFunctions {
     // Elapsed time variables
@@ -617,12 +618,23 @@ public class QueryFunctions {
         // Gets movie from 'moviesDict'
         Filme movie = moviesDict.get(movieID);
 
-        boolean actorExistsInActorsByID = actorsByID.containsKey(id);
+        boolean existsActorID = actorsByID.containsKey(id);
+        boolean actorIDisFromGivenActor = false;
+
+        if (actorsByID.get(name) != null) {
+            actorIDisFromGivenActor = actorsByID.get(name).equals(name);
+        }
 
         // If a person with the given 'id' does not exist and the movie exists, add new actor
-        if (movie != null && !actorExistsInActorsByID) {
+        if (movie != null && !existsActorID) {
             // Adds actor to 'people'
-            AuxiliaryQueryFunctions.addPersonToPeopleDict(person, people);
+            if (people.get(name) == null) {
+                ArrayList<MovieAssociate> peopleList = new ArrayList<>();
+                peopleList.add(person);
+                people.put(name, peopleList);
+            } else {
+                people.get(name).add(person);
+            }
 
             // Adds actor to the correspondent movie
             moviesDict.get(movieID).atores.add(pessoa);
@@ -632,7 +644,7 @@ public class QueryFunctions {
 
             // Builds output string
             outputString.append("OK");
-        } else if (movie != null) {
+        } else if (movie != null && actorIDisFromGivenActor) {
             // In case the person already exists, just add the movie to it if it is not already there
             for (MovieAssociate movieAssociate : people.get(name)) {
                 if (movieAssociate.id == id && movieAssociate.type.equals("ACTOR")) {
@@ -646,10 +658,10 @@ public class QueryFunctions {
             // Builds output string
             outputString.append("OK");
         } else {
+            // If ID belongs to a different person or the movie does not exist, outputs 'Erro' message
             // Builds output string
             outputString.append("Erro");
         }
-
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString.toString(), (endTime - startTime));

@@ -235,7 +235,8 @@ public class Reader {
                         moviesDict
                 );
 
-                if (type.equals("ACTOR")) {
+                // Adds actor to 'actorsByID'
+                if (type.equals("ACTOR") && !actorsByID.containsKey(idPerson)) {
                     actorsByID.put(idPerson, name);
                 }
 

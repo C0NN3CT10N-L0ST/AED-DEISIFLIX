@@ -119,7 +119,7 @@ public class AuxiliaryQueryFunctions {
             // Verifies that 'movie' exists in 'moviesDict' and that 'atores' is not null
             if (movie != null && movie.atores != null) {
                 int totalActors = movie.atores.size();
-                boolean hasEnoughPeople = totalActors >= 10;
+                boolean hasEnoughPeople = totalActors > 10;
 
                 // Only does the calculation if movie has more than 10 actors
                 if (hasEnoughPeople) {
@@ -141,10 +141,10 @@ public class AuxiliaryQueryFunctions {
 
                     // Checks which is the predominant gender and calculates percentual discrepancy based on that
                     if (actorsNum > actressesNum) {
-                        discrepancy = actorsNum * 100 / totalActors;
+                        discrepancy = (int) Math.round(actorsNum * 100.0 / totalActors);
                         predominantGender = 'M';
                     } else {
-                        discrepancy = actressesNum * 100 / totalActors;
+                        discrepancy = (int) Math.round(actressesNum * 100.0 / totalActors);
                         predominantGender = 'F';
                     }
 

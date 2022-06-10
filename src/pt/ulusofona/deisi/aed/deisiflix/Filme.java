@@ -10,7 +10,7 @@ public class Filme {
     ArrayList<GeneroCinematografico> generos;
     String dataLancamento;
     int orcamento;
-    float mediaVotos;
+    double mediaVotos;
     int nrVotos;
 
     Filme(){}
@@ -22,7 +22,7 @@ public class Filme {
           ArrayList<GeneroCinematografico> generos,
           String dataLancamento,
           int orcamento,
-          float mediaVotos,
+          double mediaVotos,
           int nrVotos
     ){
         this.id = id;

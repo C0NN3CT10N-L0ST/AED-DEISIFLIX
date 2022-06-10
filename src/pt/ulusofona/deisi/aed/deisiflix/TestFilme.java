@@ -30,7 +30,7 @@ public class TestFilme {
                 genres,
                 "07-11-2014",
                 165000000,
-                8.6f,
+                8.6,
                 1718186
         );
 
@@ -50,7 +50,7 @@ public class TestFilme {
                 new ArrayList<>(),
                 "07-11-2014",
                 165000000,
-                8.6f,
+                8.6,
                 1718186
         );
 

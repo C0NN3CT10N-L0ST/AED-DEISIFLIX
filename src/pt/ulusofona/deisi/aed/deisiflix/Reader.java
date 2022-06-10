@@ -136,7 +136,7 @@ public class Reader {
 
             if (components.length == 3) {
                 int id = Integer.parseInt(components[0].strip());
-                float votesAverage = Float.parseFloat(components[1].strip());
+                double votesAverage = Double.parseDouble(components[1].strip());
                 int votesTotal = Integer.parseInt(components[2].strip());
 
                 if (DEBUG) {

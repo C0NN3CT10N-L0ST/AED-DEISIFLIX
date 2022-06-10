@@ -90,7 +90,7 @@ public class Main {
             case "GET_TOP_N_MOVIES_RATIO":
                 return QueryFunctions.getTopNMoviesRatio(data, movieIDsByYear, moviesDict);
             case "TOP_6_DIRECTORS_WITHIN_FAMILY":
-                return QueryFunctions.top6DirectorsWithinFamily(data);
+                return QueryFunctions.top6DirectorsWithinFamily(data, movieIDsByYear, moviesDict);
             case "GET_TOP_ACTOR_YEAR":
                 return QueryFunctions.getTopActorYear(data, movieIDsByYear, moviesDict);
             case "INSERT_ACTOR":
@@ -111,6 +111,8 @@ public class Main {
 
     public static String getCreativeQuery() {
         // TODO: Implement creative query
+        // Query Idea: 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' -> Gets the N number of most expensive movies
+        // from the given year
         return "";
     }
 

@@ -265,7 +265,7 @@ public class AuxiliaryQueryFunctions {
             Filme movie = moviesDict.get(movieID);
             // Calculates ratio
             if (movie.atores != null) {
-                float ratio = movie.mediaVotos / movie.atores.size();
+                double ratio = movie.mediaVotos / movie.atores.size();
 
                 // Adds new 'MovieRatio' object to 'output'
                 output.add(new QueryFunctions.MovieRatio(movie.titulo, ratio));
@@ -433,5 +433,42 @@ public class AuxiliaryQueryFunctions {
             }
         }
         return sharedActors;
+    }
+
+    public static void getDirectionsWithFamilyMembers(
+            int movieID, HashMap<Integer, Filme> moviesDict, HashMap<String, Integer> directionsWithFamilyMembers) {
+        // Stores all director last names in an arraylist and checks if at least 2 of them match
+        // Checks if movie with ID 'movieID' exists and if the movie contains directors
+        if (moviesDict.containsKey(movieID) && moviesDict.get(movieID).realizadores != null) {
+            // Gets current movie
+            Filme movie = moviesDict.get(movieID);
+
+            // Checks if each director has family members in the movie and increments its count in the HashMap
+            for (int i = 0; i < movie.realizadores.size(); i++) {
+                String directorName = movie.realizadores.get(i).nome;
+                String[] directorSplittedName = movie.realizadores.get(i).nome.split(" ");
+                String lastName = directorSplittedName[directorSplittedName.length - 1];
+
+                // Checks if any of the other directors' names match the last name of the current one
+                for (int j = 0; j < movie.realizadores.size(); j++) {
+                    if (j != i) {
+                        // Gets the last name of the current director being checked
+                        String[] currentDirectorSplittedName = movie.realizadores.get(j).nome.split(" ");
+                        String currentlastName = currentDirectorSplittedName[currentDirectorSplittedName.length - 1];
+
+                        if (currentlastName.equals(lastName)) {
+                            if (directionsWithFamilyMembers.containsKey(directorName)) {
+                                // Increments the director count by
+                                int previousCount = directionsWithFamilyMembers.get(directorName);
+                                directionsWithFamilyMembers.put(directorName, previousCount + 1);
+                            } else {
+                                // Creates new HashMap entry for the director
+                                directionsWithFamilyMembers.put(directorName, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -2,10 +2,7 @@ package pt.ulusofona.deisi.aed.deisiflix;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Objects;
+import java.util.*;
 
 public class QueryFunctions {
     // Elapsed time variables
@@ -54,11 +51,22 @@ public class QueryFunctions {
     // Class to store data for 'GET_TOP_N_MOVIES_RATIO' query
     static class MovieRatio {
         String title;
-        float ratio;
+        double ratio;
 
-        MovieRatio(String title, float ratio) {
+        MovieRatio(String title, double ratio) {
             this.title = title;
             this.ratio = ratio;
+        }
+    }
+
+    // Class to store data for 'TOP_6_DIRECTORS_WITHIN_FAMILY' query
+    static class DirectorsFamily {
+        String name;
+        int familyDirections;
+
+        DirectorsFamily(String name, int familyDirections) {
+            this.name = name;
+            this.familyDirections = familyDirections;
         }
     }
 
@@ -322,7 +330,7 @@ public class QueryFunctions {
 
         // Get movie with query id
         Filme movie = moviesDict.get(id);
-        float avgVotes = movie.mediaVotos;
+        double avgVotes = movie.mediaVotos;
         LocalDate date = LocalDate.parse(movie.dataLancamento, dateFileFormat);
 
         // Creates an Array with all the IDs from the given movie actors
@@ -499,7 +507,7 @@ public class QueryFunctions {
         // Checks if there are results
         if (moviesRatio.size() > 0) {
             // Builds output string
-            for (int i = 0, pos = moviesRatio.size() - 1; i <= pos && i < moviesOutputNum; i++, pos--) {
+            for (int i = 0, pos = moviesRatio.size() - 1; i < moviesOutputNum && i < moviesRatio.size(); i++, pos--) {
                 // Gets current movie
                 MovieRatio movie = moviesRatio.get(pos);
                 outputString.append(movie.title);
@@ -519,17 +527,62 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
-    public static QueryResult top6DirectorsWithinFamily(String data) {
+    public static QueryResult top6DirectorsWithinFamily(
+            String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
+    ) {
         startTime = System.currentTimeMillis();
-        // TODO
         // Gets query args
         String[] queryArgs = data.split(" ");
         int rangeStart = Integer.parseInt(queryArgs[0]);
         int rangeEnd = Integer.parseInt(queryArgs[1]);
 
+        // Stores number of directions with family members (KEY: Actor Name, VALUE: Number of directions)
+        HashMap<String, Integer> directionsWithFamilyMembers = new HashMap<>();
+
+        // Iterates over all movies in the given range
+        for (int year = rangeStart; year <= rangeEnd; year++) {
+            // Checks if given year exists in 'moviesByYear'
+            if (moviesByYear.containsKey(year)) {
+                for (int movieID : moviesByYear.get(year)) {
+                    AuxiliaryQueryFunctions.getDirectionsWithFamilyMembers(
+                            movieID, moviesDict, directionsWithFamilyMembers);
+                }
+            }
+        }
+
+        ArrayList<DirectorsFamily> familyDirectionsByDirector = new ArrayList<>();
+
+        // Adds each entry in 'directionsWithFamilyMembers' to 'familyDirectionsByDirector'
+        for (String director : directionsWithFamilyMembers.keySet()) {
+            familyDirectionsByDirector.add(new DirectorsFamily(director, directionsWithFamilyMembers.get(director)));
+        }
+
+        // Sorts 'familyDirectionsByDirector' by Number of family directions
+        SortingAlgorithms.quickSortByFamilyDirections(familyDirectionsByDirector);
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Size of 'familyDirectionsByDirector' ArrayList
+        int dirListSize = familyDirectionsByDirector.size();
+
+        if (dirListSize > 0) {
+            for (int pos = dirListSize - 1, outputNum = 0; pos >= 0 && outputNum < 6; pos--, outputNum++) {
+                // Gets current movie
+                DirectorsFamily director = familyDirectionsByDirector.get(pos);
+                outputString.append(director.name);
+                outputString.append(':');
+                outputString.append(director.familyDirections);
+
+                if (outputNum < 5 && outputNum != dirListSize - 1) {
+                    outputString.append('\n');
+                }
+            }
+        } else {
+            outputString.append("NEM UM");
+        }
 
         endTime = System.currentTimeMillis();
-        return new QueryResult();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
     /**

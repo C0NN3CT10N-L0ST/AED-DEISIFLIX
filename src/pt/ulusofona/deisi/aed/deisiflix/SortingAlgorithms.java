@@ -183,4 +183,51 @@ public class SortingAlgorithms {
     public static void quickSortByMovieRatio(ArrayList<QueryFunctions.MovieRatio> movies) {
         quickSortByMovieRatio(movies, 0, movies.size());
     }
+
+    // QuickSort Partition Algorithm for 'TOP_6_DIRECTORS_WITHIN_FAMILY'
+    private static int paritionByFamilyDirections(
+            ArrayList<QueryFunctions.DirectorsFamily> directions, int left, int right
+    ) {
+        QueryFunctions.DirectorsFamily pivot = directions.get(right);
+        int leftIndex = left;
+        int rightIndex = right - 1;
+
+        while (leftIndex <= rightIndex) {
+            if (directions.get(leftIndex).familyDirections > pivot.familyDirections && directions.get(rightIndex).familyDirections < pivot.familyDirections) {
+                QueryFunctions.DirectorsFamily temp = directions.get(leftIndex);
+                directions.set(leftIndex, directions.get(rightIndex));
+                directions.set(rightIndex, temp);
+            }
+
+            if (directions.get(leftIndex).familyDirections <= pivot.familyDirections) {
+                leftIndex++;
+            }
+
+            if (directions.get(rightIndex).familyDirections >= pivot.familyDirections) {
+                rightIndex--;
+            }
+        }
+
+        directions.set(right, directions.get(leftIndex));
+        directions.set(leftIndex, pivot);
+        return leftIndex;
+    }
+
+    // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    private static ArrayList<QueryFunctions.DirectorsFamily> quickSortByFamilyDirections(
+            ArrayList<QueryFunctions.DirectorsFamily> directions, int left, int right
+    ) {
+        if (left < right) {
+            int pivotPos = paritionByFamilyDirections(directions, left, right - 1);
+
+            directions = quickSortByFamilyDirections(directions, left, pivotPos);
+            directions = quickSortByFamilyDirections(directions, pivotPos + 1, right);
+        }
+        return directions;
+    }
+
+    // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    public static void quickSortByFamilyDirections(ArrayList<QueryFunctions.DirectorsFamily> directions) {
+        quickSortByFamilyDirections(directions, 0, directions.size());
+    }
 }

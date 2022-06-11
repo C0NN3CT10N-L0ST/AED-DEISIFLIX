@@ -527,6 +527,15 @@ public class QueryFunctions {
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }
 
+    /**
+     * 'TOP_6_DIRECTORS_WITHIN_FAMILY' Query.
+     * Returns the top 6 directors that do the most directions with family members.
+     * Family directions are directions that have at least 2 directors with the same last name.
+     * @param data Query Arguments
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @return Returns the 6 directors with most family directions
+     */
     public static QueryResult top6DirectorsWithinFamily(
             String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
     ) {

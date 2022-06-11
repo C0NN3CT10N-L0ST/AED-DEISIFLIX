@@ -449,7 +449,7 @@ public class AuxiliaryQueryFunctions {
                 String[] directorSplittedName = movie.realizadores.get(i).nome.split(" ");
                 String lastName = directorSplittedName[directorSplittedName.length - 1];
 
-                // Checks if any of the other directors' names match the last name of the current one
+                // Checks if any of the other directors' last names match the last name of the current one
                 for (int j = 0; j < movie.realizadores.size(); j++) {
                     if (j != i) {
                         // Gets the last name of the current director being checked

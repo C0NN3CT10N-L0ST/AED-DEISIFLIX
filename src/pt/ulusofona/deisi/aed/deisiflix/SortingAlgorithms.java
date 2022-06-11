@@ -193,7 +193,8 @@ public class SortingAlgorithms {
         int rightIndex = right - 1;
 
         while (leftIndex <= rightIndex) {
-            if (directions.get(leftIndex).familyDirections > pivot.familyDirections && directions.get(rightIndex).familyDirections < pivot.familyDirections) {
+            if (directions.get(leftIndex).familyDirections > pivot.familyDirections
+                    && directions.get(rightIndex).familyDirections < pivot.familyDirections) {
                 QueryFunctions.DirectorsFamily temp = directions.get(leftIndex);
                 directions.set(leftIndex, directions.get(rightIndex));
                 directions.set(rightIndex, temp);

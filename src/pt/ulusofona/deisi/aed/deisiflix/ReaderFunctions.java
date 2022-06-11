@@ -26,20 +26,49 @@ public class ReaderFunctions {
                 // Checks if 'atores' is null, if it is, creates a new 'ArrayList'
                 if (movie.atores == null) {
                     movie.atores = new ArrayList<>();
+
+                    // Adds person to 'atores'
+                    movie.atores.add(person);
+                } else {
+                    if (!personExistsInArrayList(person, movie.atores)) {
+                        // Adds person to 'atores'
+                        movie.atores.add(person);
+                    }
                 }
 
-                // Adds person to 'atores'
-                movie.atores.add(person);
             } else {  // ADDS 'DIRECTOR'
                 // Checks if 'realizadores' is null, if it is, creates a new 'ArrayList'
                 if (movie.realizadores == null) {
                     movie.realizadores = new ArrayList<>();
+
+                    // Adds person to 'realizadores'
+                    movie.realizadores.add(person);
+                } else {
+                    if (!personExistsInArrayList(person, movie.realizadores)) {
+                        // Adds person to 'realizadores'
+                        movie.realizadores.add(person);
+                    }
                 }
 
-                // Adds person to 'realizadores'
-                movie.realizadores.add(person);
             }
         }
+    }
+
+    /**
+     * Returns whether a person is already present in an ArrayList of type 'Pessoa'.
+     * @param person The given 'Pessoa' object representing the person
+     * @param people An 'ArrayList' of type 'Pessoa' with all people to check
+     * @return Returns whether the person exists or not
+     */
+    public static boolean personExistsInArrayList(Pessoa person, ArrayList<Pessoa> people) {
+        if (people != null) {
+            for (Pessoa individual : people) {
+                if (individual.nome.equals(person.nome) && individual.id == person.id) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
@@ -66,7 +95,10 @@ public class ReaderFunctions {
             // (returns -1 if it isn't present, the index in the ArrayList if it is)
             int personIndex = -1;
             for (int i = 0; i < people.get(person.name).size(); i++) {
-                if (people.get(person.name).get(i).id == person.id) {
+                // Gets current person being checked
+                MovieAssociate currentPerson = people.get(person.name).get(i);
+
+                if (currentPerson.type.equals(person.type) && currentPerson.id == person.id) {
                     personIndex = i;
                 }
             }

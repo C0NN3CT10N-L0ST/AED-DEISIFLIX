@@ -26,6 +26,12 @@ public class Reader {
     // static String shortGenres = "test-files/deisi_genres_short.txt";
     static String largeGenres = "test-files/deisi_genres_large.txt";
 
+    // Test files' paths
+    static String testMovies = "test-files/test_movies.txt";
+    static String testVotes = "test-files/test_movie_votes.txt";
+    static String testPeople = "test-files/test_people.txt";
+    static String testGenres = "test-files/test_genres.txt";
+
     /* Reader functions */
 
     /**

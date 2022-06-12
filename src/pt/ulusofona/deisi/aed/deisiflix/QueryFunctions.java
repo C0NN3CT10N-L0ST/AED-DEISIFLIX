@@ -137,16 +137,19 @@ public class QueryFunctions {
 
         // Checks if the given name exists
         if (people.get(name.toString()) != null) {
-            // Gets current actor
-            MovieAssociate actor = people.get(name.toString()).get(0);
-
             // Stores movies the actor participated in the given year
-            ArrayList<MovieActorYear> moviesActorYear;
-            // ArrayList with all the movies the person has been part of
-            ArrayList<Integer> personMovies = people.get(name.toString()).get(0).associatedMoviesID;
+            ArrayList<MovieActorYear> moviesActorYear = new ArrayList<>();
 
-            moviesActorYear = AuxiliaryQueryFunctions.getMoviesFromYear(
-                    queryYear, dateFileFormat, personMovies, moviesDict);
+            // Gets current actor
+            ArrayList<MovieAssociate> actors = people.get(name.toString());
+
+            for (MovieAssociate actor : actors) {
+                // ArrayList with all the movies the person has been part of
+                ArrayList<Integer> personMovies = actor.associatedMoviesID;
+
+                AuxiliaryQueryFunctions.getMoviesFromYear(
+                        queryYear, dateFileFormat, personMovies, moviesDict, moviesActorYear);
+            }
 
             // Sorts 'moviesActorYear' (using SelectionSort) by Date (in descending order)
             SortingAlgorithms.selSortDateByDescendingOrder(moviesActorYear);

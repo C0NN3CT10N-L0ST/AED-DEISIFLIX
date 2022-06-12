@@ -694,8 +694,8 @@ public class QueryFunctions {
         boolean existsActorID = actorsByID.containsKey(id);
         boolean actorIDisFromGivenActor = false;
 
-        if (actorsByID.get(name) != null) {
-            actorIDisFromGivenActor = actorsByID.get(name).equals(name);
+        if (actorsByID.get(id) != null) {
+            actorIDisFromGivenActor = actorsByID.get(id).equals(name);
         }
 
         // If a person with the given 'id' does not exist and the movie exists, add new actor

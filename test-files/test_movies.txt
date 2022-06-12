@@ -5,3 +5,23 @@
 770,Gone with the Wind,238,4000000,15-12-1939
 6978,Big Trouble in Little China,99,25000000,30-05-1986
 1995,Lara Croft: Tomb Raider,100,115000000,11-06-2001
+102651,Maleficent, 97.0,180000000 ,28-05-2014
+118340,Guardians of the Galaxy, 121.0,170000000 ,30-07-2014
+119450,Dawn of the Planet of the Apes, 130.0,170000000 ,26-06-2014
+157336,Interstellar, 169.0,165000000 ,05-11-2014
+122917,The Hobbit: The Battle of the Five Armies, 144.0,250000000 ,10-12-2014
+91314,Transformers: Age of Extinction, 165.0,210000000 ,25-06-2014
+137113,Edge of Tomorrow, 113.0,178000000 ,27-05-2014
+102382,The Amazing Spider-Man 2, 142.0,200000000 ,16-04-2014
+127585,X-Men: Days of Future Past, 131.0,250000000 ,15-05-2014
+100402,Captain America: The Winter Soldier, 136.0,170000000 ,20-03-2014
+335988,Transformers: The Last Knight, 149.0,260000000 ,21-06-2017
+166426,Pirates of the Caribbean: Dead Men Tell No Tales, 129.0,230000000 ,23-05-2017
+337339,The Fate of the Furious, 136.0,250000000 ,12-04-2017
+283995,Guardians of the Galaxy Vol. 2, 137.0,200000000 ,19-04-2017
+281338,War for the Planet of the Apes, 140.0,152000000 ,11-07-2017
+339964,Valerian and the City of a Thousand Planets, 137.0,197471676 ,20-07-2017
+321612,Beauty and the Beast, 129.0,160000000 ,16-03-2017
+274857,King Arthur: Legend of the Sword, 126.0,175000000 ,27-04-2017
+293167,Kong: Skull Island, 118.0,185000000 ,08-03-2017
+260514,Cars 3, 109.0,175000000 ,15-06-2017

@@ -635,7 +635,6 @@ public class QueryFunctions {
         String mostMoviesActor = "";
 
         // Checks which actor has the most movie appearances
-        //TODO: not good (linear search)
         for (String actor : moviesByActor.keySet()) {
             if (mostMoviesActor.isEmpty()) {
                 mostMoviesActor = actor;
@@ -646,8 +645,6 @@ public class QueryFunctions {
 
         // Builds output string
         String outputString = mostMoviesActor + ";" + moviesByActor.get(mostMoviesActor);
-
-        //TODO: improve this
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString, (endTime - startTime));

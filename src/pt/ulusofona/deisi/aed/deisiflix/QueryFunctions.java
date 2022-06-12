@@ -826,9 +826,9 @@ public class QueryFunctions {
     }
 
     /**
-     * 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' Query.
-     * Returns the N (given number) movies with the largest budget for the given year.
-     * Input Format: "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR <NumberOfMovies> <Year>"
+     * 'TOP_10_MOST_EXPENSIVE_MOVIES_YEAR' Query.
+     * Returns the top 10 movies with the largest budget for the given year.
+     * Input Format: "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR <Year>"
      * Output Format: "<MovieTitle> - Budget: $<MovieBudget>" (separated by '\n', newline character)
      * @param data Query Arguments
      * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
@@ -841,8 +841,10 @@ public class QueryFunctions {
         startTime = System.currentTimeMillis();
         // Gets query args
         String[] queryArgs = data.split(" ");
-        int outputNum = Integer.parseInt(queryArgs[0]);
-        int year = Integer.parseInt(queryArgs[1]);
+        int year = Integer.parseInt(queryArgs[0]);
+
+        // Number of movies to output
+        int outputNum = 10;
 
         // Gets movie IDs from given 'year'
         ArrayList<Integer> movieIDs = moviesByYear.get(year);

@@ -99,7 +99,7 @@ public class Main {
                 return QueryFunctions.removeActor(data, moviesPeople, moviesDict, actorsByID);
             case "GET_DUPLICATE_LINES_YEAR":
                 return QueryFunctions.getDuplicateLinesYear(data, peopleDuplicateLinesYear);
-            case "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR":
+            case "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR":
                 return QueryFunctions.topNMostExpensiveMoviesYear(data, movieIDsByYear, moviesDict);
             default:
                 return null;
@@ -114,11 +114,11 @@ public class Main {
     public static String getCreativeQuery() {
         /*
             'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' Query.
-            Returns the N (given number) movies with the largest budget for the given year.
-            Input Format: "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR <NumberOfMovies> <Year>"
+            Returns the top 10 movies with the largest budget for the given year.
+            Input Format: "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR <Year>"
             Output Format: "<MovieTitle> - Budget: $<MovieBudget>" (separated by '\n', newline character)
          */
-        return "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR";
+        return "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR";
     }
 
     public static void main(String[] args) throws IOException {

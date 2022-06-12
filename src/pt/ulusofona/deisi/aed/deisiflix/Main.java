@@ -6,6 +6,27 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+    // Tells the program which files to use in the Readers (DP files or Local files)
+    static boolean DP = false;
+
+    // Reader files' paths
+    static String moviesFile = "deisi_movies.txt";
+    static String votesFile = "deisi_movie_votes.txt";
+    static String peopleFile = "deisi_people.txt";
+    static String genresFile = "deisi_genres.txt";
+
+    // Local database files' paths
+    static String largeMovies = "local-test-files/deisi_movies_large.txt";
+    static String largeVotes = "local-test-files/deisi_movie_votes_large.txt";
+    static String largePeople = "local-test-files/deisi_people_large.txt";
+    static String largeGenres = "local-test-files/deisi_genres_large.txt";
+
+    // Test files' paths
+    static String testMoviesFile = "test-files/test_movies.txt";
+    static String testVotesFile = "test-files/test_movie_votes.txt";
+    static String testPeopleFile = "test-files/test_people.txt";
+    static String testGenresFile = "test-files/test_genres.txt";
+
     /* Global variables */
     static ArrayList<Filme> moviesFileOrder;
     static HashMap<Integer, Filme> moviesDict;
@@ -18,21 +39,59 @@ public class Main {
     static ArrayList<String> peopleIgnoredLines;
     static ArrayList<String> genresIgnoredLines;
 
+    /* Global variables (Tests) */
+    static ArrayList<Filme> testMoviesFileOrder;
+    static HashMap<Integer, Filme> testMoviesDict;
+    static HashMap<Integer, ArrayList<Integer>> testMovieIDsByYear;
+    static ArrayList<String> testMoviesIgnoredLines;
+    static ArrayList<String> testVotesIgnoredLines;
+    static HashMap<String, ArrayList<MovieAssociate>> testMoviesPeople;
+    static HashMap<Integer, String> testActorsByID;
+    static HashMap<Integer, ArrayList<String>> testPeopleDuplicateLinesYear;
+    static ArrayList<String> testPeopleIgnoredLines;
+    static ArrayList<String> testGenresIgnoredLines;
+
     public static void lerFicheiros() throws IOException {
-        MoviesData moviesReader = Reader.movieReader();
+        // Sets Reader files' variables based on DP submission or Local environment
+        if (!DP) {
+            moviesFile = largeMovies;
+            votesFile = largeVotes;
+            peopleFile = largePeople;
+            genresFile = largeGenres;
+        }
+
+        MoviesData moviesReader = Reader.movieReader(moviesFile);
         moviesFileOrder = moviesReader.moviesFileOrder;
         moviesDict = moviesReader.moviesDict;
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
-        votesIgnoredLines = Reader.movieVotesReader(moviesDict);
-        PeopleData peopleReader = Reader.peopleReader(moviesDict);
+        votesIgnoredLines = Reader.movieVotesReader(votesFile, moviesDict);
+        PeopleData peopleReader = Reader.peopleReader(peopleFile, moviesDict);
         moviesPeople = peopleReader.moviesPeople;
         actorsByID = peopleReader.actorsByID;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
-        genresIgnoredLines = Reader.genresReader(moviesDict);
+        genresIgnoredLines = Reader.genresReader(genresFile, moviesDict);
 
         // TODO: document this
+    }
+
+    public static void lerFicheirosTestes() throws IOException {
+        MoviesData moviesReader = Reader.movieReader(testMoviesFile);
+        moviesFileOrder = moviesReader.moviesFileOrder;
+        moviesDict = moviesReader.moviesDict;
+        movieIDsByYear = moviesReader.movieIDsByYear;
+        moviesIgnoredLines = moviesReader.ignoredLines;
+        votesIgnoredLines = Reader.movieVotesReader(testVotesFile, moviesDict);
+        PeopleData peopleReader = Reader.peopleReader(testPeopleFile, moviesDict);
+        moviesPeople = peopleReader.moviesPeople;
+        actorsByID = peopleReader.actorsByID;
+        peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
+        peopleIgnoredLines = peopleReader.ignoredLines;
+        genresIgnoredLines = Reader.genresReader(testGenresFile, moviesDict);
+
+
+        // TODO: Document this
     }
 
     public static ArrayList<Filme> getFilmes() {
@@ -129,10 +188,10 @@ public class Main {
 
         // DEBUG
         //System.out.println(moviesPeople.get("Kunihiko Yuyama").get(0).associatedMoviesID);
-        System.out.println("Duplicate lines in " + 2000);
+        /*System.out.println("Duplicate lines in " + 2000);
         for (String line : peopleDuplicateLinesYear.get(2000)) {
             System.out.println(line);
-        }
+        } */
 
         // Main program loop
         System.out.println("Bem vindo ao DEISIFLIX");

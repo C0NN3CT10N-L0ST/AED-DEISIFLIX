@@ -7,44 +7,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Reader {
-    static boolean DEBUG = false;
-    static boolean DP = false;  // Sets Readers files' variables based on DP submission or Local environment
-
-    // Reaers files
-    static String moviesFile = "deisi_movies.txt";
-    static String votesFile = "deisi_movie_votes.txt";
-    static String peopleFile = "deisi_people.txt";
-    static String genresFile = "deisi_genres.txt";
-
-    // Local Database Paths
-    // static String shortMovies = "test-files/deisi_movies_short.txt";
-    static String largeMovies = "test-files/deisi_movies_large.txt";
-    // static String shortVotes = "test-files/deisi_movie_votes_short.txt";
-    static String largeVotes = "test-files/deisi_movie_votes_large.txt";
-    // static String shortPeople = "test-files/deisi_people_short.txt";
-    static String largePeople = "test-files/deisi_people_large.txt";
-    // static String shortGenres = "test-files/deisi_genres_short.txt";
-    static String largeGenres = "test-files/deisi_genres_large.txt";
-
-    // Test files' paths
-    static String testMovies = "test-files/test_movies.txt";
-    static String testVotes = "test-files/test_movie_votes.txt";
-    static String testPeople = "test-files/test_people.txt";
-    static String testGenres = "test-files/test_genres.txt";
+    static boolean DEBUG = true;
 
     /* Reader functions */
-
     /**
      * Reads movie entries from a file, stores them in appropriate data structures and returns those data structures.
+     * @param filePath The path of the file to read
      * @return Returns a 'MoviesData' object with all the data structures that were created
      * @throws IOException Exceptions related to file reading
      */
-    public static MoviesData movieReader() throws IOException {
+    public static MoviesData movieReader(String filePath) throws IOException {
         long moviesTimerStart = System.currentTimeMillis();
-        if (!DP) {
-            moviesFile = largeMovies;
-        }
-        FileReader fr = new FileReader(moviesFile);
+
+        FileReader fr = new FileReader(filePath);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<Filme> moviesFileOrder = new ArrayList<Filme>();  // Movies with file order preserved
@@ -54,11 +29,6 @@ public class Reader {
         String line = null;
 
         while ((line = reader.readLine()) != null) {
-            if (DEBUG) {
-                System.out.println("-----------".repeat(6));
-                System.out.println("Line -> " + line);
-            }
-
             String[] components = line.split(",");
 
             if (components.length == 5) {
@@ -75,14 +45,6 @@ public class Reader {
                 movie.dataLancamento = date;
 
                 moviesFileOrder.add(movie);
-
-                if (DEBUG) {
-                    System.out.println("ID: " + id);
-                    System.out.println("Title: "+ title);
-                    System.out.println("Duration: " + duration);
-                    System.out.println("Budget " + budget);
-                    System.out.println("Date: " + date);
-                }
 
                 // Gets movie year
                 int year = Integer.parseInt(date.split("-")[2]);
@@ -109,7 +71,9 @@ public class Reader {
         reader.close();
 
         long moviesTimerEnd = System.currentTimeMillis();
-        System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
+        if (DEBUG) {
+            System.out.println("TIMER (moviesReader) -> " + (moviesTimerEnd - moviesTimerStart) + " ms");
+        }
 
         // Returns 'MoviesData' object
         return new MoviesData(moviesFileOrder, moviesDict, movieIDsByYear, ignoredLines);
@@ -117,39 +81,29 @@ public class Reader {
 
     /**
      * Reads votes related entries from a file, stores them in appropriate data structures and returns those.
+     * @param filePath The path of the file to read
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns an 'ArrayList' with all the ignored lines
      * @throws IOException Exceptions related to file reading
      */
-    public static ArrayList<String> movieVotesReader(HashMap<Integer, Filme> moviesDict) throws IOException {
+    public static ArrayList<String> movieVotesReader(
+            String filePath, HashMap<Integer, Filme> moviesDict
+    ) throws IOException {
         long votesTimerStart = System.currentTimeMillis();
-        if (!DP) {
-            votesFile = largeVotes;
-        }
-        FileReader fr = new FileReader(votesFile);
+
+        FileReader fr = new FileReader(filePath);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
         String line = null;
 
         while ((line = reader.readLine()) != null) {
-            if (DEBUG) {
-                System.out.println("-----------".repeat(6));
-                System.out.println("Line -> " + line);
-            }
-
             String[] components = line.split(",");
 
             if (components.length == 3) {
                 int id = Integer.parseInt(components[0].strip());
                 double votesAverage = Double.parseDouble(components[1].strip());
                 int votesTotal = Integer.parseInt(components[2].strip());
-
-                if (DEBUG) {
-                    System.out.println("ID: " + id);
-                    System.out.println("Vote Average: "+ votesAverage);
-                    System.out.println("Nr. Votes: " + votesTotal);
-                }
 
                 // Adds votes' data to correspondent 'Filme' object in 'moviesDict' for each line in the file
                 if (moviesDict.containsKey(id)) {
@@ -167,23 +121,24 @@ public class Reader {
         reader.close();
 
         long votesTimerEnd = System.currentTimeMillis();
-        System.out.println("TIMER (votesReader) -> " + (votesTimerEnd - votesTimerStart) + " ms");
+        if (DEBUG) {
+            System.out.println("TIMER (votesReader) -> " + (votesTimerEnd - votesTimerStart) + " ms");
+        }
 
         return ignoredLines;
     }
 
     /**
      * Reads people entries from a file, stores them in appropriate data structures and returns those.
+     * @param filePath The path of the file to read
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns a 'PeopleData' object with all the data structures that were created
      * @throws IOException Exceptions related to file reading
      */
-    public static PeopleData peopleReader(HashMap<Integer, Filme> moviesDict) throws IOException {
+    public static PeopleData peopleReader(String filePath, HashMap<Integer, Filme> moviesDict) throws IOException {
         long peopleTimerStart = System.currentTimeMillis();
-        if (!DP) {
-            peopleFile = largePeople;
-        }
-        FileReader fr = new FileReader(peopleFile);
+
+        FileReader fr = new FileReader(filePath);
         BufferedReader reader = new BufferedReader(fr);
 
         HashMap<String, ArrayList<MovieAssociate>> moviesPeople = new HashMap<>();  // HashMap with all people
@@ -195,11 +150,6 @@ public class Reader {
         int currentLineNum = 1;  // Stores current line number in the file
 
         while ((line = reader.readLine()) != null) {
-            if (DEBUG) {
-                System.out.println("-----------".repeat(6));
-                System.out.println("Line -> " + line);
-            }
-
             String[] components = line.split(",");
 
             if (components.length == 5) {
@@ -208,14 +158,6 @@ public class Reader {
                 String name = components[2].strip();
                 char gender = components[3].strip().charAt(0);
                 int idMovie = Integer.parseInt(components[4].strip());
-
-                if (DEBUG) {
-                    System.out.println("Type Person: " + type);
-                    System.out.println("ID: " + idPerson);
-                    System.out.println("Name: "+ name);
-                    System.out.println("Gender: " + gender);
-                    System.out.println("ID Movie: " + idMovie);
-                }
 
                 // Creates new 'Pessoa' Object with the person data
                 Pessoa person = new Pessoa(idPerson, name, gender);
@@ -254,44 +196,37 @@ public class Reader {
 
         reader.close();
         long peopleTimerEnd = System.currentTimeMillis();
-        System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
+        if (DEBUG) {
+            System.out.println("TIMER (peopleReader) -> " + (peopleTimerEnd - peopleTimerStart) + " ms");
+        }
 
         return new PeopleData(moviesPeople, actorsByID, duplicateLinesByYear, ignoredLines);
     }
 
     /**
      * Reads genre entries from a file, stores them in appropriate data structures and returns those
+     * @param filePath The path of the file to read
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns an 'ArrayList' with all the ignored lines
      * @throws IOException Exceptions related to file reading
      */
-    public static ArrayList<String> genresReader(HashMap<Integer, Filme> moviesDict) throws IOException {
+    public static ArrayList<String> genresReader(
+            String filePath, HashMap<Integer, Filme> moviesDict
+    ) throws IOException {
         long genresTimerStart = System.currentTimeMillis();
-        if (!DP) {
-            genresFile = largeGenres;
-        }
-        FileReader fr = new FileReader(genresFile);
+
+        FileReader fr = new FileReader(filePath);
         BufferedReader reader = new BufferedReader(fr);
 
         ArrayList<String> ignoredLines = new ArrayList<String>();
         String line = null;
 
         while ((line = reader.readLine()) != null) {
-            if (DEBUG) {
-                System.out.println("-----------".repeat(6));
-                System.out.println("Line -> " + line);
-            }
-
             String[] components = line.split(",");
 
             if (components.length == 2) {
                 String genre = components[0].strip();
                 int id = Integer.parseInt(components[1].strip());
-
-                if (DEBUG) {
-                    System.out.println("Genre Name: " + genre);
-                    System.out.println("ID Movie: " + id);
-                }
 
                 /* Adds genre to the correspondent movieID in 'moviesDict' */
                 // Creates new 'GeneroCinematografico'
@@ -318,7 +253,9 @@ public class Reader {
         reader.close();
 
         long genresTimerEnd = System.currentTimeMillis();
-        System.out.println("TIMER (genresReader) -> " + (genresTimerEnd - genresTimerStart) + " ms");
+        if (DEBUG) {
+            System.out.println("TIMER (genresReader) -> " + (genresTimerEnd - genresTimerStart) + " ms");
+        }
 
         return ignoredLines;
     }

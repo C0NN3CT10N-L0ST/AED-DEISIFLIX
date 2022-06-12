@@ -214,7 +214,7 @@ public class SortingAlgorithms {
         return leftIndex;
     }
 
-    // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    // QuickSort Algorithm for 'TOP_6_DIRECTORS_WITHIN_FAMILY'
     private static ArrayList<QueryFunctions.DirectorsFamily> quickSortByFamilyDirections(
             ArrayList<QueryFunctions.DirectorsFamily> directions, int left, int right
     ) {
@@ -227,8 +227,53 @@ public class SortingAlgorithms {
         return directions;
     }
 
-    // QuickSort Algorithm for 'GET_TOP_N_MOVIES_RATIO'
+    // QuickSort Algorithm for 'TOP_6_DIRECTORS_WITHIN_FAMILY'
     public static void quickSortByFamilyDirections(ArrayList<QueryFunctions.DirectorsFamily> directions) {
         quickSortByFamilyDirections(directions, 0, directions.size());
+    }
+
+    // QuickSort Partition Algorithm for 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR'
+    private static int paritionByMovieBudget(ArrayList<QueryFunctions.MovieBudget> movies, int left, int right) {
+        QueryFunctions.MovieBudget pivot = movies.get(right);
+        int leftIndex = left;
+        int rightIndex = right - 1;
+
+        while (leftIndex <= rightIndex) {
+            if (movies.get(leftIndex).budget > pivot.budget && movies.get(rightIndex).budget < pivot.budget) {
+                QueryFunctions.MovieBudget temp = movies.get(leftIndex);
+                movies.set(leftIndex, movies.get(rightIndex));
+                movies.set(rightIndex, temp);
+            }
+
+            if (movies.get(leftIndex).budget <= pivot.budget) {
+                leftIndex++;
+            }
+
+            if (movies.get(rightIndex).budget >= pivot.budget) {
+                rightIndex--;
+            }
+        }
+
+        movies.set(right, movies.get(leftIndex));
+        movies.set(leftIndex, pivot);
+        return leftIndex;
+    }
+
+    // QuickSort Algorithm for 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR'
+    private static ArrayList<QueryFunctions.MovieBudget> quickSortByMovieBudget(
+            ArrayList<QueryFunctions.MovieBudget> movies, int left, int right
+    ) {
+        if (left < right) {
+            int pivotPos = paritionByMovieBudget(movies, left, right - 1);
+
+            movies = quickSortByMovieBudget(movies, left, pivotPos);
+            movies = quickSortByMovieBudget(movies, pivotPos + 1, right);
+        }
+        return movies;
+    }
+
+    // QuickSort Algorithm for 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR'
+    public static void quickSortByMovieBudget(ArrayList<QueryFunctions.MovieBudget> movies) {
+        quickSortByMovieBudget(movies, 0, movies.size());
     }
 }

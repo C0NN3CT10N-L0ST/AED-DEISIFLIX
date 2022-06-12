@@ -70,6 +70,17 @@ public class QueryFunctions {
         }
     }
 
+    // Class to store data for 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' query
+    static class MovieBudget {
+        String title;
+        int budget;
+
+        MovieBudget(String title, int budget) {
+            this.title = title;
+            this.budget = budget;
+        }
+    }
+
     /* ----- QUERIES ----- */
 
     /**
@@ -809,6 +820,72 @@ public class QueryFunctions {
         }
 
         // If there are no results, outputs an empty string
+
+        endTime = System.currentTimeMillis();
+        return new QueryResult(outputString.toString(), (endTime - startTime));
+    }
+
+    /**
+     * 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' Query.
+     * Returns the N (given number) movies with the largest budget for the given year.
+     * Input Format: "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR <NumberOfMovies> <Year>"
+     * Output Format: "<MovieTitle> - Budget: $<MovieBudget>" (separated by '\n', newline character)
+     * @param data Query Arguments
+     * @param moviesByYear HashMap (KEY: year, VALUE: ArrayList with movie IDs) with all movies sorted by year
+     * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
+     * @return Returns the most expensive movies from the given year
+     */
+    public static QueryResult topNMostExpensiveMoviesYear(
+            String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
+    ) {
+        startTime = System.currentTimeMillis();
+        // Gets query args
+        String[] queryArgs = data.split(" ");
+        int outputNum = Integer.parseInt(queryArgs[0]);
+        int year = Integer.parseInt(queryArgs[1]);
+
+        // Gets movie IDs from given 'year'
+        ArrayList<Integer> movieIDs = moviesByYear.get(year);
+
+        // Stores all 'MovieBudget' objects for each movie in 'movieIDs'
+        ArrayList<MovieBudget> moviesBudget = new ArrayList<>();
+
+        if (movieIDs != null) {
+            for (Integer movieID : movieIDs) {
+                // Gets current movie being checked
+                Filme movie = moviesDict.get(movieID);
+
+                // Adds a new 'MovieBudget' object with current movie data to 'moviesBudget'
+                MovieBudget movieBudget = new MovieBudget(movie.titulo, movie.orcamento);
+                moviesBudget.add(movieBudget);
+            }
+        }
+
+        // Sorts all 'MovieBudget' objects in 'moviesBudget' by 'budget' property
+        SortingAlgorithms.quickSortByMovieBudget(moviesBudget);
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Checks if there are results
+        if (moviesBudget.size() > 0) {
+            // Builds output string
+            for (int i = 0, pos = moviesBudget.size() - 1; i < outputNum && i < moviesBudget.size(); i++, pos--) {
+                // Gets current movie
+                MovieBudget movie = moviesBudget.get(pos);
+                outputString.append(movie.title);
+                outputString.append(" - ");
+                outputString.append("Budget: ");
+                outputString.append('$');
+                outputString.append(movie.budget);
+
+                if (i != moviesBudget.size() - 1 && i != outputNum - 1) {
+                    outputString.append('\n');
+                }
+            }
+        } else {
+            // Builds output string
+            outputString.append("No movies found! LULz");
+        }
 
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString.toString(), (endTime - startTime));

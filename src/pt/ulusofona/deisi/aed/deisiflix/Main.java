@@ -99,6 +99,8 @@ public class Main {
                 return QueryFunctions.removeActor(data, moviesPeople, moviesDict, actorsByID);
             case "GET_DUPLICATE_LINES_YEAR":
                 return QueryFunctions.getDuplicateLinesYear(data, peopleDuplicateLinesYear);
+            case "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR":
+                return QueryFunctions.topNMostExpensiveMoviesYear(data, movieIDsByYear, moviesDict);
             default:
                 return null;
         }
@@ -110,10 +112,13 @@ public class Main {
     }
 
     public static String getCreativeQuery() {
-        // TODO: Implement creative query
-        // Query Idea: 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' -> Gets the N number of most expensive movies
-        // from the given year
-        return "";
+        /*
+            'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' Query.
+            Returns the N (given number) movies with the largest budget for the given year.
+            Input Format: "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR <NumberOfMovies> <Year>"
+            Output Format: "<MovieTitle> - Budget: $<MovieBudget>" (separated by '\n', newline character)
+         */
+        return "TOP_N_MOST_EXPENSIVE_MOVIES_YEAR";
     }
 
     public static void main(String[] args) throws IOException {
@@ -121,6 +126,13 @@ public class Main {
         lerFicheiros();  // Reads input files
         // long readTimerEnd = System.currentTimeMillis();
         // System.out.println("Tempo de leitura dos ficheiros: " + (readTimerEnd - readTimerStart));
+
+        // DEBUG
+        //System.out.println(moviesPeople.get("Kunihiko Yuyama").get(0).associatedMoviesID);
+        System.out.println("Duplicate lines in " + 2000);
+        for (String line : peopleDuplicateLinesYear.get(2000)) {
+            System.out.println(line);
+        }
 
         // Main program loop
         System.out.println("Bem vindo ao DEISIFLIX");

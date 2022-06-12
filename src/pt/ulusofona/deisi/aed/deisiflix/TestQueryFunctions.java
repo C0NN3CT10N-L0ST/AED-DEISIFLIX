@@ -60,4 +60,92 @@ public class TestQueryFunctions {
 
         assertTrue(resultIsCorrect);
     }
+
+    @Test
+    public void testCountMoviesActor() throws IOException {
+        Main.lerFicheirosTestes();
+
+        String expectedResult = "47";
+        String realResult = Main.perguntar("COUNT_MOVIES_ACTOR Tom Cruise").valor;
+        assertEquals(expectedResult, realResult);
+
+        expectedResult = "53";
+        realResult = Main.perguntar("COUNT_MOVIES_ACTOR Clark Gable").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testGetMoviesActorYear() throws IOException {
+        Main.lerFicheirosTestes();
+
+        String expectedResult = "Mission: Impossible III (2006-05-03)";
+        String realResult = Main.perguntar("GET_MOVIES_ACTOR_YEAR Tom Cruise 2006").valor;
+        assertEquals(expectedResult, realResult);
+
+        expectedResult = "The Tall Men (1955-09-22)\nSoldier of Fortune (1955-01-01)";
+        realResult = Main.perguntar("GET_MOVIES_ACTOR_YEAR Clark Gable 1955").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testCountMoviesWithActors() throws IOException {
+        Main.lerFicheirosTestes();
+
+        String expectedResult = "2";
+        String realResult = Main.perguntar("COUNT_MOVIES_WITH_ACTORS Brad Pitt;Angelina Jolie").valor;
+        assertEquals(expectedResult, realResult);
+
+        expectedResult = "2";
+        realResult = Main.perguntar("COUNT_MOVIES_WITH_ACTORS Tom Cruise;Philip Seymour Hoffman").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testCountActors3Years() throws IOException {
+        Main.lerFicheirosTestes();
+
+        String expectedResult = "48";
+        String realResult = Main.perguntar("COUNT_ACTORS_3_YEARS 1970 2010 2015").valor;
+        assertEquals(expectedResult, realResult);
+
+        expectedResult = "944";
+        realResult = Main.perguntar("COUNT_ACTORS_3_YEARS 2001 2010 2014").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testTopMoviesWithGenderBias() throws IOException {
+        Main.lerFicheirosTestes();
+        boolean resultIsCorrect = true;
+
+        ArrayList<String> expectedResultFirstElementsAnyOrder = new ArrayList<>(
+                Arrays.asList(("There Once Was a Singing Blackbird:F:100\n" +
+                "The Man Who Left His Will on Film:F:100\n" +
+                "The Wizard of Gore:F:100\n" +
+                "Even Dwarfs Started Small:F:100\n" +
+                "Portraits of Women:F:100").split("\n")));
+
+        String expectedResultLastElement = "The Honeymoon Killers:F:94";
+
+        ArrayList<String> realResult = new ArrayList<>(
+                Arrays.asList(Main.perguntar("TOP_MOVIES_WITH_GENDER_BIAS 6 1970").valor.split("\n")));
+
+        for (int i = 0; i < 6; i++) {
+            if (i == 5) {
+                if (!realResult.get(i).equals(expectedResultLastElement)) {
+                    resultIsCorrect = false;
+                }
+            } else if (!expectedResultFirstElementsAnyOrder.contains(realResult.get(i))) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
+    }
+
+    /*@Test
+    public void testGetRecentTitlesSameAVGVotesOneSharedActor() throws IOException {
+        Main.lerFicheirosTestes();
+
+
+    }*/
 }

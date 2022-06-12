@@ -25,3 +25,433 @@
 274857,King Arthur: Legend of the Sword, 126.0,175000000 ,27-04-2017
 293167,Kong: Skull Island, 118.0,185000000 ,08-03-2017
 260514,Cars 3, 109.0,175000000 ,15-06-2017
+334,Magnolia, 188.0,37000000 ,08-12-1999
+10627,Taps, 126.0,14000000 ,20-12-1981
+11259,Far and Away, 140.0,60000000 ,22-05-1992
+75780,Jack Reacher, 130.0,60000000 ,20-12-2012
+84330,Room 237, 102.0,0 ,26-10-2012
+343611,Jack Reacher: Never Go Back, 118.0,60000000 ,19-10-2016
+11976,Legend, 94.0,25000000 ,19-07-1985
+2604,Born on the Fourth of July, 145.0,14000000 ,20-12-1989
+74,War of the Worlds, 116.0,132000000 ,28-06-2005
+1538,Collateral, 120.0,65000000 ,04-08-2004
+291537,Winning: The Racing Life of Paul Newman, 83.0,0 ,08-05-2015
+9346,Risky Business, 98.0,6200000 ,05-08-1983
+18172,All the Right Moves, 91.0,0 ,21-10-1983
+180,Minority Report, 145.0,102000000 ,20-06-2002
+744,Top Gun, 110.0,15000000 ,16-05-1986
+56292,Mission: Impossible - Ghost Protocol, 133.0,145000000 ,07-12-2011
+11967,Young Guns, 107.0,13000000 ,12-08-1988
+177677,Mission: Impossible - Rogue Nation, 131.0,150000000 ,23-07-2015
+345,Eyes Wide Shut, 159.0,65000000 ,14-07-1999
+37233,The Firm, 154.0,42000000 ,30-06-1993
+2253,Valkyrie, 121.0,75000000 ,25-12-2008
+1903,Vanilla Sky, 136.0,68000000 ,10-12-2001
+954,Mission: Impossible, 110.0,80000000 ,22-05-1996
+18221,Space Station 3D, 47.0,0 ,17-04-2002
+318224,Going Clear: Scientology and the Prison of Belief, 119.0,0 ,25-01-2015
+80585,Rock of Ages, 123.0,75000000 ,13-06-2012
+380,Rain Man, 133.0,25000000 ,11-12-1988
+282035,The Mummy, 110.0,125000000 ,06-06-2017
+11873,The Color of Money, 119.0,13800000 ,07-10-1986
+33676,Losin' It, 100.0,7000000 ,08-04-1983
+9390,Jerry Maguire, 139.0,50000000 ,06-12-1996
+4515,Lions for Lambs, 92.0,35000000 ,22-10-2007
+137113,Edge of Tomorrow, 113.0,178000000 ,27-05-2014
+628,Interview with the Vampire, 123.0,60000000 ,11-11-1994
+955,Mission: Impossible II, 123.0,125000000 ,24-05-2000
+2119,Days of Thunder, 107.0,60000000 ,27-06-1990
+19114,Endless Love, 116.0,0 ,17-07-1981
+37834,Knight and Day, 109.0,117000000 ,15-06-2010
+818,Austin Powers in Goldmember, 94.0,63000000 ,26-07-2002
+227,The Outsiders, 91.0,10000000 ,25-03-1983
+616,The Last Samurai, 154.0,140000000 ,05-12-2003
+881,A Few Good Men, 138.0,40000000 ,11-12-1992
+956,Mission: Impossible III, 126.0,150000000 ,03-05-2006
+30416,Stanley Kubrick: A Life in Pictures, 141.0,0 ,02-05-2001
+7520,Cocktail, 104.0,20000000 ,29-07-1988
+75612,Oblivion, 124.0,120000000 ,10-04-2013
+7446,Tropic Thunder, 107.0,92000000 ,09-08-2008
+32194,Comrade X, 90.0,0 ,13-12-1940
+38721,Wife vs. Secretary, 88.0,0 ,28-02-1936
+38151,It Started in Naples, 100.0,0 ,06-08-1960
+88812,The Hucksters, 115.0,0 ,27-08-1947
+34269,Across the Wide Missouri, 78.0,0 ,01-10-1951
+71282,China Seas, 87.0,0 ,16-08-1935
+23861,Command Decision, 112.0,0 ,23-12-1948
+33740,That's Entertainment!, 135.0,0 ,21-06-1974
+38077,Red Dust, 83.0,0 ,22-10-1932
+90957,Hold Your Man, 87.0,260000 ,07-07-1933
+51394,Night Nurse, 72.0,0 ,15-07-1931
+44888,Soldier of Fortune, 96.0,0 ,01-01-1955
+37317,The Tall Men, 122.0,0 ,22-09-1955
+82106,After Office Hours, 72.0,0 ,22-02-1935
+119819,The Call of the Wild, 81.0,0 ,09-08-1935
+43881,San Francisco, 115.0,1300000 ,26-06-1936
+25009,Mogambo, 115.0,0 ,09-10-1953
+52239,Possessed, 76.0,0 ,21-11-1931
+33028,Too Hot to Handle, 107.0,0 ,16-09-1938
+3078,It Happened One Night, 105.0,325000 ,22-02-1934
+16130,La Classe Américaine, 72.0,0 ,30-12-1993
+770,Gone with the Wind, 238.0,4000000 ,15-12-1939
+12311,Mutiny on the Bounty, 132.0,1950000 ,08-11-1935
+11536,The Misfits, 124.0,4000000 ,01-01-1961
+121234,But Not For Me, 111.0,0 ,19-08-1959
+5652,The James Dean Story, 81.0,0 ,13-08-1957
+50271,Strange Cargo, 113.0,0 ,01-03-1940
+77448,That's Entertainment! III, 113.0,0 ,01-07-1994
+28564,Manhattan Melodrama, 93.0,0 ,04-05-1934
+36513,No Man of Her Own, 85.0,0 ,30-12-1932
+61541,Love on the Run, 80.0,0 ,20-11-1936
+50079,Chained, 76.0,0 ,31-08-1934
+43137,Teacher's Pet, 120.0,0 ,01-04-1958
+45800,Saratoga, 92.0,0 ,23-07-1937
+61523,Idiot's Delight, 107.0,0 ,27-01-1939
+50600,A Free Soul, 93.0,0 ,02-06-1931
+28258,The Secret Six, 83.0,0 ,18-04-1931
+97327,Laughing Sinners, 72.0,0 ,31-05-1931
+85670,Night Flight, 84.0,0 ,06-10-1933
+43155,Test Pilot, 118.0,0 ,22-04-1938
+55604,Boom Town, 119.0,2000000 ,30-08-1940
+83665,Betrayed, 108.0,0 ,07-09-1954
+184741,Cain and Mabel, 90.0,0 ,26-09-1936
+121074,Any Number Can Play, 112.0,0 ,15-07-1949
+44869,Adventure, 135.0,0 ,28-12-1945
+221656,Polly of the Circus, 69.0,0 ,26-02-1932
+151590,Susan Lenox (Her Fall and Rise), 76.0,0 ,10-10-1931
+43600,Dancing Lady, 92.0,923 ,24-11-1933
+37311,Band of Angels, 125.0,0 ,03-08-1957
+43310,The King and Four Queens, 86.0,0 ,21-12-1956
+49411,WUSA, 115.0,0 ,19-08-1970
+42597,The Owl and the Pussycat, 95.0,0 ,01-01-1970
+77882,The Rise and Rise of Michael Rimmer, 94.0,0 ,12-11-1970
+46691,Joe, 107.0,106000 ,15-07-1970
+9459,Woodstock, 225.0,600000 ,26-03-1970
+17978,The Great White Hope, 103.0,0 ,11-10-1970
+417399,The Castle of Cloads, 89.0,0 ,27-11-1970
+161915,Ice, 130.0,0 ,15-10-1970
+26525,Brewster McCloud, 105.0,0 ,05-12-1970
+161460,You Can't Win 'Em All, 97.0,0 ,23-07-1970
+68827,She Does Not Drink Smoke or Flirts but She Talks, 0.0,0 ,17-04-1970
+56366,Drama of Jealousy, 105.0,0 ,30-04-1970
+65207,The Twelve Gold Medallions, 102.0,0 ,07-01-1970
+72899,The Music Lovers, 123.0,0 ,01-12-1970
+233383,Robin Redbreast, 76.0,0 ,10-12-1970
+42569,Where’s Poppa?, 82.0,0 ,10-11-1970
+19753,Start the Revolution Without Me, 90.0,0 ,14-08-1970
+34479,Scars of Dracula, 96.0,478375 ,08-11-1970
+198661,Metello, 107.0,0 ,02-06-1970
+45873,Cannabis, 95.0,0 ,02-09-1970
+100776,Company: Original Cast Album, 58.0,0 ,01-01-1970
+73600,Bombay Talkie, 112.0,0 ,18-11-1970
+4255,The Party at Kitty and Stud's, 71.0,5000 ,10-02-1970
+139718,The Phynx, 81.0,0 ,06-03-1970
+28051,5 Dolls for an August Moon, 88.0,0 ,14-02-1970
+39931,Mark of the Devil, 96.0,0 ,19-02-1970
+30792,The Corpse, 91.0,0 ,01-01-1970
+20556,Let It Be, 81.0,0 ,13-05-1970
+11040,Little Big Man, 139.0,15000000 ,14-12-1970
+48267,The American Soldier, 80.0,0 ,09-10-1970
+20848,The White Sun of the Desert, 83.0,0 ,30-03-1970
+105079,A Quiet Place to Kill, 94.0,0 ,20-02-1970
+40083,Sometimes a Great Notion, 114.0,0 ,31-12-1970
+47646,The Grasshopper, 98.0,0 ,27-05-1970
+98491,Wuthering Heights, 104.0,0 ,09-06-1970
+104241,Heroic Purgatory, 118.0,0 ,26-09-1970
+12482,Love Is Colder Than Death, 88.0,0 ,16-01-1970
+77925,Lola, 98.0,0 ,01-01-1970
+99536,Satanis: The Devil's Mass, 86.0,0 ,01-03-1970
+423078,Narrien Illat, 100.0,0 ,13-11-1970
+35838,Tristana, 95.0,0 ,29-03-1970
+50754,7 Plus Seven, 52.0,0 ,01-01-1970
+113629,Wind from the East, 100.0,0 ,19-08-1970
+44606,Goin' Down the Road, 90.0,0 ,02-07-1970
+71943,House of Dark Shadows, 97.0,750000 ,09-09-1970
+39766,The Challenge, 74.0,0 ,10-02-1970
+95431,The Flight, 196.0,0 ,01-01-1970
+29233,Horton Hears a Who!, 26.0,0 ,01-01-1970
+36888,Schoolgirl Report Part 1: What Parents Don't Think Is Possible, 90.0,0 ,23-10-1970
+65887,The horse, 0.0,0 ,22-02-1970
+14801,Colossus: The Forbin Project, 100.0,0 ,08-04-1970
+83235,There Once Was a Singing Blackbird, 77.0,0 ,01-01-1970
+92283,I Never Sang for My Father, 92.0,0 ,18-10-1970
+104343,The Man Who Left His Will on Film, 94.0,0 ,27-06-1970
+119575,The Mind of Mr. Soames, 92.0,0 ,01-07-1970
+117424,Maidstone, 106.0,0 ,01-01-1970
+1627,The Wild Child, 83.0,0 ,26-02-1970
+13041,El Topo, 125.0,400000 ,18-12-1970
+27371,Crimes of the Future, 70.0,0 ,01-08-1970
+36179,The One Man Band, 85.0,0 ,18-09-1970
+38953,Ryan's Daughter, 195.0,0 ,09-12-1970
+73697,Come Have Coffee with Us, 98.0,0 ,22-09-1970
+26617,Five Easy Pieces, 98.0,0 ,12-09-1970
+277459,Ludwig van, 91.0,0 ,01-06-1970
+217085,Night Slaves, 72.0,0 ,29-09-1970
+42588,Getting Straight, 124.0,0 ,13-05-1970
+42601,Zatôichi Meets Yojimbo, 115.0,0 ,15-01-1970
+64828,The Landlord, 112.0,0 ,20-05-1970
+286120,The Legend of the Red Lantern, 112.0,0 ,02-01-1970
+36261,The Heroic Ones, 117.0,0 ,14-08-1970
+143887,Uncle Vanya, 104.0,0 ,29-12-1970
+4910,The Man Who Haunted Himself, 94.0,400000 ,18-02-1970
+26451,Investigation of a Citizen Above Suspicion, 115.0,0 ,09-02-1970
+96243,I Start Counting, 105.0,0 ,27-10-1970
+50372,C.C. and Company, 94.0,0 ,14-10-1970
+152846,The Most Beautiful Wife, 108.0,0 ,12-03-1970
+87358,Hornet's Nest, 110.0,0 ,08-09-1970
+31952,The Vampire Lovers, 91.0,0 ,04-10-1970
+33733,One More Time, 92.0,0 ,01-05-1970
+28681,Equinox, 80.0,0 ,01-10-1970
+158262,The Angel Levine, 106.0,0 ,27-07-1970
+46315,Valerie and Her Week of Wonders, 73.0,0 ,10-10-1970
+149725,Wild Women, 74.0,0 ,20-10-1970
+42595,The Spider's Stratagem, 100.0,0 ,25-10-1970
+74071,In the Folds of the Flesh, 88.0,0 ,02-05-1970
+32142,Barquero, 115.0,0 ,03-09-1970
+88276,Zorns Lemma, 60.0,0 ,01-01-1970
+77165,And God Said to Cain, 93.0,0 ,05-02-1970
+5465,The Million Game, 96.0,0 ,18-10-1970
+156068,Mark of the Witch, 84.0,0 ,01-01-1970
+31151,Elvis That's the Way It Is, 109.0,0 ,11-11-1970
+41051,Permissive, 75.0,0 ,17-05-1970
+23506,The Wizard of Gore, 95.0,60000 ,23-10-1970
+113456,Adelheid, 99.0,0 ,06-04-1970
+29416,Horror of the Blood Monsters, 85.0,0 ,01-02-1970
+11913,The Gendarme Takes Off, 90.0,0 ,28-10-1970
+293094,Aliisa, 80.0,0 ,18-11-1970
+25625,Multiple Maniacs, 90.0,5000 ,10-04-1970
+62762,The Chinese Boxer, 90.0,0 ,26-11-1970
+20528,The Ambush: Incident at Blood Pass, 117.0,0 ,18-12-1970
+64651,Stray Cat Rock: Sex Hunter, 85.0,0 ,01-09-1970
+31398,Michael the Brave, 107.0,0 ,01-01-1970
+35002,When Dinosaurs Ruled the Earth, 96.0,0 ,25-10-1970
+65891,The Dunwich Horror, 90.0,0 ,14-01-1970
+4266,The Breach, 124.0,0 ,26-08-1970
+92269,Loving, 89.0,0 ,04-03-1970
+24918,The Twelve Chairs, 94.0,0 ,28-10-1970
+2998,Zabriskie Point, 113.0,7000000 ,09-02-1970
+59005,Quackser Fortune Has a Cousin in the Bronx, 90.0,0 ,13-06-1970
+32599,Alex in Wonderland, 110.0,0 ,01-01-1970
+147307,Multiple SIDosis, 10.0,0 ,31-12-1970
+20345,The Bird with the Crystal Plumage, 98.0,500000 ,19-02-1970
+5953,The Lady in the Car with Glasses and a Gun, 105.0,0 ,22-10-1970
+170923,Quick Billy, 56.0,0 ,24-03-1970
+145162,The Walking Stick, 96.0,0 ,05-06-1970
+92804,Bigfoot, 84.0,0 ,21-10-1970
+132166,The Little Theatre of Jean Renoir, 100.0,0 ,15-12-1970
+105083,Il tuo dolce corpo da uccidere, 88.0,0 ,27-06-1970
+44721,Little Fauss and Big Halsy, 99.0,0 ,21-10-1970
+106887,The Green Wall, 110.0,0 ,04-04-1970
+85769,Reconstruction, 100.0,0 ,31-08-1970
+96131,Tribes, 90.0,0 ,10-11-1970
+60948,On the Comet, 74.0,0 ,09-10-1970
+28050,Hatchet for the Honeymoon, 83.0,0 ,02-06-1970
+94468,Pieces of Dreams, 100.0,0 ,23-09-1970
+2860,Claire's Knee, 105.0,0 ,11-12-1970
+13765,Scrooge, 113.0,0 ,05-11-1970
+17276,Carry On Up the Jungle, 89.0,0 ,03-01-1970
+60859,The Confession, 139.0,0 ,29-04-1970
+14384,Soldier Blue, 112.0,0 ,12-08-1970
+105078,Death Occurred Last Night, 93.0,0 ,04-09-1970
+42586,Darling Lili, 107.0,0 ,01-01-1970
+45398,The McKenzie Break, 108.0,0 ,28-10-1970
+257574,My Sweet Charlie, 97.0,0 ,20-01-1970
+28303,The Cheyenne Social Club, 103.0,0 ,12-06-1970
+42358,Cold Sweat, 94.0,0 ,18-12-1970
+31304,A Swedish Love Story, 115.0,0 ,24-04-1970
+183962,Safety Catch, 87.0,0 ,07-04-1970
+194485,The Priest's Wife, 103.0,0 ,22-12-1970
+198044,First Love, 89.0,0 ,07-10-1970
+59917,Cotton Comes to Harlem, 97.0,1200000 ,27-05-1970
+93862,Goodbye Gemini, 89.0,0 ,06-08-1970
+10364,Catch-22, 121.0,18000000 ,24-06-1970
+107193,Three Supermen in the Jungle, 0.0,0 ,27-02-1970
+37662,The Railway Children, 109.0,0 ,21-12-1970
+90517,The Traveling Executioner, 95.0,0 ,01-01-1970
+27172,There Was a Crooked Man..., 126.0,0 ,18-09-1970
+5722,Beyond the Valley of the Dolls, 109.0,2090000 ,17-07-1970
+5620,Count Dracula, 98.0,0 ,03-04-1970
+129579,Arizona Colt Returns, 0.0,0 ,14-08-1970
+70422,The Lickerish Quartet, 90.0,0 ,13-10-1970
+33157,Waterloo, 128.0,25000000 ,26-10-1970
+31581,Bloody Mama, 90.0,0 ,24-03-1970
+75015,How I Unleashed World War II Part III: Among Friends, 73.0,0 ,06-04-1970
+104239,Eden and After, 93.0,0 ,20-04-1970
+1863,Sunflower, 109.0,0 ,14-03-1970
+22033,Cry of the Banshee, 91.0,500000 ,22-07-1970
+91583,Perfect Friday, 94.0,0 ,10-11-1970
+110748,History of Postwar Japan as Told by a Bar Hostess, 105.0,0 ,01-01-1970
+95556,The Liberation of L.B. Jones, 102.0,0 ,18-03-1970
+42600,Watermelon Man, 100.0,0 ,01-01-1970
+9394,They Call Me Trinity, 106.0,0 ,22-12-1970
+373514,Night Chase, 95.0,0 ,20-11-1970
+43477,Shinbone Alley, 85.0,0 ,26-06-1970
+83124,Light the Fuse... Sartana Is Coming, 99.0,0 ,24-12-1970
+11916,Two Mules for Sister Sara, 116.0,0 ,14-06-1970
+211337,Spiral Jetty, 32.0,0 ,01-08-1970
+88486,Queens Of Evil, 90.0,0 ,11-12-1970
+198657,Tulips of Haarlem, 0.0,0 ,07-06-1970
+117999,Last of the Mobile Hot Shots, 100.0,0 ,02-01-1970
+198652,Loot, 101.0,0 ,01-05-1970
+115353,One Damned Day at Dawn... Django Meets Sartana!, 97.0,0 ,13-06-1970
+153641,The Reckoning, 111.0,0 ,01-01-1970
+281122,Ere erera baleibu icik subua aruaren, 75.0,0 ,01-01-1970
+75905,Fragment of Fear, 94.0,0 ,01-01-1970
+35867,Days and Nights in the Forest, 115.0,0 ,16-01-1970
+42591,The Bloody Judge, 84.0,0 ,05-02-1970
+194817,Take a Girl Like You, 101.0,0 ,16-12-1970
+3145,The Horror of Frankenstein, 95.0,0 ,08-11-1970
+79838,The Flying Doctors of East Africa, 45.0,0 ,02-05-1970
+149690,The Deserter, 104.0,0 ,04-12-1970
+10671,Airport, 137.0,10000000 ,05-03-1970
+146121,The Baby Maker, 109.0,0 ,01-10-1970
+42599,There's a Girl in My Soup, 95.0,0 ,15-12-1970
+107637,If You Were Young: Rage, 89.0,0 ,01-01-1970
+122268,Entertaining Mr. Sloane, 94.0,0 ,08-04-1970
+26427,Hoffman, 113.0,0 ,01-01-1970
+42587,Chariots of the Gods, 92.0,0 ,01-01-1970
+8383,Red Sun, 85.0,0 ,31-08-1970
+278758,San Francisco International, 96.0,0 ,29-09-1970
+31935,Too Late the Hero, 145.0,6250000 ,20-05-1970
+161565,The Lawyer, 120.0,0 ,10-03-1970
+380771,Bartleby, 78.0,0 ,30-10-1970
+421510,Street Scenes, 75.0,0 ,14-09-1970
+148411,Chermeni, 0.0,0 ,01-01-1970
+146787,Overrun!, 100.0,0 ,03-01-1970
+651,M*A*S*H, 116.0,3500000 ,24-01-1970
+28476,The Phantom Tollbooth, 90.0,0 ,07-11-1970
+150958,Ostia, 0.0,0 ,11-03-1970
+21466,Mera Naam Joker, 224.0,0 ,18-12-1970
+11900,Even Dwarfs Started Small, 96.0,200000 ,16-09-1970
+14676,A Man Called Horse, 114.0,0 ,01-05-1970
+11165,Tora! Tora! Tora!, 144.0,25485000 ,26-01-1970
+78101,Many Wars Ago, 101.0,97 ,16-09-1970
+148434,The Stranger That Kneels Beside the Shadow of a Corpse, 97.0,0 ,27-11-1970
+88953,The Ear, 94.0,0 ,01-01-1970
+10308,Why Does Herr R. Run Amok?, 84.0,0 ,27-06-1970
+24570,Carry On Loving, 88.0,0 ,20-09-1970
+38222,On a Clear Day You Can See Forever, 129.0,0 ,17-06-1970
+114390,Hospital, 84.0,0 ,01-02-1970
+52105,Husbands, 131.0,1000000 ,08-12-1970
+12127,Pippi in the South Seas, 86.0,0 ,24-01-1970
+4789,The Garden of the Finzi-Continis, 95.0,0 ,04-12-1970
+42345,The Molly Maguires, 124.0,11000000 ,27-01-1970
+68756,Comrades, 85.0,0 ,05-11-1970
+34732,They Call Me Mister Tibbs!, 108.0,0 ,10-07-1970
+42533,Angels Die Hard, 86.0,0 ,08-07-1970
+61044,Companeros, 118.0,0 ,18-12-1970
+36404,A Trip Down the River, 65.0,0 ,19-10-1970
+221241,Pero Kvrzica's Comradeship, 98.0,0 ,26-11-1970
+185843,The Strangler, 91.0,0 ,11-09-1970
+240968,The Red Detachment of Women, 105.0,0 ,03-12-1970
+122270,The Niklashausen Journey, 90.0,0 ,26-10-1970
+47459,Dorian Gray, 93.0,0 ,24-04-1970
+107327,Figures in a Landscape, 110.0,0 ,21-11-1970
+150043,Something For Everyone, 112.0,0 ,22-07-1970
+194757,The Sidelong Glances of a Pigeon Kicker, 0.0,0 ,01-12-1970
+38765,Chisum, 111.0,6000000 ,23-07-1970
+71206,Adios Sabata, 104.0,0 ,30-09-1970
+85255,...tick... tick... tick..., 100.0,0 ,09-01-1970
+56858,The Key to Paradise, 81.0,0 ,24-08-1970
+106326,The Adventurers, 171.0,0 ,25-03-1970
+146132,The Couples, 121.0,0 ,23-12-1970
+11589,Kelly's Heroes, 144.0,4000000 ,22-06-1970
+26606,Performance, 101.0,0 ,03-08-1970
+59408,Deep End, 90.0,0 ,01-09-1970
+123961,Which Way to the Front?, 96.0,0 ,03-09-1970
+31672,Violent City, 100.0,0 ,17-09-1970
+89199,Trash, 110.0,0 ,05-10-1970
+121113,Toomorrow, 95.0,0 ,27-08-1970
+177043,Flap, 106.0,0 ,13-11-1970
+144910,Suppose They Gave a War and Nobody Came?, 113.0,0 ,11-09-1970
+1685,Beneath the Planet of the Apes, 95.0,3000000 ,01-05-1970
+34377,The Boys in the Band, 118.0,0 ,16-03-1970
+49321,Brancaleone alle crociate, 116.0,0 ,08-03-1970
+40973,Myra Breckinridge, 94.0,5000000 ,24-06-1970
+72203,Karlson Returns, 20.0,0 ,01-01-1970
+193784,The Dove Must Not Fly, 0.0,0 ,11-03-1970
+38221,Space Amoeba, 84.0,0 ,01-08-1970
+51956,The Strawberry Statement, 109.0,0 ,28-08-1970
+70967,Last Known Address, 0.0,0 ,25-07-1970
+63859,Pufnstuf, 94.0,0 ,03-05-1970
+48408,Dirty Dingus Magee, 91.0,0 ,18-11-1970
+13400,Santa Claus Is Comin' to Town, 48.0,0 ,14-12-1970
+33205,Dodes'ka-den, 140.0,0 ,31-10-1970
+64961,When Women Had Tails, 0.0,0 ,16-12-1970
+11202,Patton, 172.0,12000000 ,25-01-1970
+303497,Unfair!, 8.0,0 ,15-11-1970
+31677,Diary of a Mad Housewife, 95.0,0 ,01-01-1970
+11626,Pippi on the Run, 94.0,0 ,13-11-1970
+126927,The Devil's Widow, 106.0,0 ,01-12-1970
+29748,Taste the Blood of Dracula, 95.0,0 ,07-05-1970
+146079,Django and Sartana Are Coming... It's the End, 90.0,0 ,14-11-1970
+64576,Stray Cat Rock: Delinquent Girl Boss, 81.0,0 ,02-05-1970
+26593,Rio Lobo, 114.0,0 ,18-12-1970
+5590,Donkey Skin, 90.0,0 ,20-12-1970
+44000,Trog, 91.0,0 ,24-10-1970
+113520,The Hart of London, 80.0,0 ,30-11-1970
+42593,Lovers and Other Strangers, 104.0,0 ,12-08-1970
+88665,The Snake God, 94.0,0 ,28-11-1970
+27313,I Drink Your Blood, 90.0,0 ,01-01-1970
+20444,The Out of Towners, 98.0,0 ,28-05-1970
+62675,Distracted, 85.0,0 ,09-12-1970
+70412,Blind Woman's Curse, 85.0,0 ,20-06-1970
+174383,No Place to Hide, 80.0,0 ,22-12-1970
+54283,Zatôichi Goes to the Fire Festival, 96.0,0 ,12-08-1970
+70387,A Man Called Sledge, 93.0,0 ,14-11-1970
+77333,Leo the Last, 104.0,0 ,04-09-1970
+62759,Quiet Days in Clichy, 80.0,0 ,01-06-1970
+23330,The Ballad of Cable Hogue, 121.0,3716946 ,13-05-1970
+92233,Forbidden Photos of a Lady Above Suspicion, 93.0,0 ,19-11-1970
+39239,British Sounds, 54.0,0 ,01-01-1970
+307261,Cowboy in Sweden, 60.0,0 ,01-01-1970
+94201,El Condor, 102.0,0 ,19-06-1970
+151679,End of the Road, 110.0,0 ,10-02-1970
+80560,Wanda, 102.0,0 ,01-09-1970
+72881,I Walk the Line, 97.0,4000000 ,18-11-1970
+45817,The Kremlin Letter, 120.0,0 ,01-02-1970
+128442,The Bread and Alley, 10.0,0 ,01-01-1970
+83475,The Debut, 91.0,0 ,12-10-1970
+2912,The Butcher, 90.0,0 ,27-02-1970
+42590,The Clowns, 92.0,0 ,30-08-1970
+87335,The Weekend Murders, 98.0,0 ,15-10-1970
+87503,Eugenie, 87.0,0 ,20-02-1970
+4882,A Bullet for Pretty Boy, 89.0,0 ,15-07-1970
+54154,5th Day of Peace, 103.0,0 ,09-09-1970
+180021,Groupies, 85.0,0 ,08-11-1970
+38978,Ned Kelly, 99.0,0 ,01-07-1970
+10244,Gods of the Plague, 91.0,0 ,24-07-1970
+23269,Portraits of Women, 90.0,0 ,06-02-1970
+80080,Fruit of Paradise, 99.0,0 ,31-07-1970
+51992,And Soon the Darkness, 99.0,0 ,10-09-1970
+3423,The Things of Life, 89.0,0 ,13-03-1970
+70327,Gamera vs. Jiger, 83.0,0 ,21-03-1970
+52949,An Evening of Edgar Allan Poe, 53.0,0 ,01-01-1970
+224600,The Executioner, 107.0,0 ,06-09-1970
+282225,The Choice, 104.0,0 ,02-01-1970
+8416,The Conformist, 107.0,750000 ,21-10-1970
+75086,The Unholy Four, 95.0,0 ,11-03-1970
+31675,Cromwell, 139.0,3750000 ,16-09-1970
+69058,Crescendo, 96.0,0 ,07-06-1970
+258,Bed and Board, 100.0,0 ,31-08-1970
+149320,King: A Filmed Record... Montgomery to Memphis, 185.0,0 ,24-03-1970
+42539,The Birch Wood, 99.0,0 ,10-11-1970
+288291,What Is to Be Done?, 90.0,0 ,01-01-1970
+132,The Rolling Stones: Gimme Shelter, 91.0,0 ,06-12-1970
+44510,The Grandmother, 34.0,0 ,01-01-1970
+94551,The Christine Jorgensen Story, 98.0,0 ,29-10-1970
+5185,The Private Life of Sherlock Holmes, 125.0,10000000 ,29-10-1970
+11657,Le Cercle Rouge, 140.0,0 ,19-10-1970
+77641,Four Rode Out, 90.0,0 ,02-02-1970
+92690,¡Mátalo!, 100.0,0 ,22-10-1970
+9062,Love Story, 99.0,2200000 ,16-12-1970
+10237,The Honeymoon Killers, 108.0,0 ,04-02-1970
+25251,Borsalino, 126.0,0 ,19-05-1970
+21886,No Blade of Grass, 96.0,0 ,23-10-1970
+84496,Zig Zag, 105.0,0 ,01-05-1970
+10112,The Aristocats, 78.0,4000000 ,23-12-1970
+42498,The Adversary, 110.0,0 ,27-10-1970
+85290,The Hawaiians, 134.0,0 ,17-06-1970
+277396,Three Sisters, 165.0,0 ,01-04-1970
+62843,Witchhammer, 103.0,0 ,23-01-1970
+257302,May Morning, 101.0,0 ,02-08-1970

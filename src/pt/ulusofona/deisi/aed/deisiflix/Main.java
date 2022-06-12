@@ -39,18 +39,6 @@ public class Main {
     static ArrayList<String> peopleIgnoredLines;
     static ArrayList<String> genresIgnoredLines;
 
-    /* Global variables (Tests) */
-    static ArrayList<Filme> testMoviesFileOrder;
-    static HashMap<Integer, Filme> testMoviesDict;
-    static HashMap<Integer, ArrayList<Integer>> testMovieIDsByYear;
-    static ArrayList<String> testMoviesIgnoredLines;
-    static ArrayList<String> testVotesIgnoredLines;
-    static HashMap<String, ArrayList<MovieAssociate>> testMoviesPeople;
-    static HashMap<Integer, String> testActorsByID;
-    static HashMap<Integer, ArrayList<String>> testPeopleDuplicateLinesYear;
-    static ArrayList<String> testPeopleIgnoredLines;
-    static ArrayList<String> testGenresIgnoredLines;
-
     public static void lerFicheiros() throws IOException {
         // Sets Reader files' variables based on DP submission or Local environment
         if (!DP) {
@@ -185,13 +173,6 @@ public class Main {
         lerFicheiros();  // Reads input files
         // long readTimerEnd = System.currentTimeMillis();
         // System.out.println("Tempo de leitura dos ficheiros: " + (readTimerEnd - readTimerStart));
-
-        // DEBUG
-        //System.out.println(moviesPeople.get("Kunihiko Yuyama").get(0).associatedMoviesID);
-        /*System.out.println("Duplicate lines in " + 2000);
-        for (String line : peopleDuplicateLinesYear.get(2000)) {
-            System.out.println(line);
-        } */
 
         // Main program loop
         System.out.println("Bem vindo ao DEISIFLIX");

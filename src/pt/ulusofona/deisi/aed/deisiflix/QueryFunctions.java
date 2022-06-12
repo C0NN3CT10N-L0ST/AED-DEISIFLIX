@@ -710,7 +710,7 @@ public class QueryFunctions {
             }
 
             // Adds actor to the correspondent movie
-            moviesDict.get(movieID).atores.add(pessoa);
+            movie.atores.add(pessoa);
 
             // Adds actor to 'actorsByID'
             actorsByID.put(id, name);
@@ -726,7 +726,7 @@ public class QueryFunctions {
             }
 
             // Adds actor to the correspondent movie
-            moviesDict.get(movieID).atores.add(pessoa);
+            movie.atores.add(pessoa);
 
             // Builds output string
             outputString.append("OK");
@@ -757,7 +757,6 @@ public class QueryFunctions {
             HashMap<Integer, String> actorsByID
     ) {
         startTime = System.currentTimeMillis();
-        // TODO
         // Gets query args
         int id = Integer.parseInt(data);
 

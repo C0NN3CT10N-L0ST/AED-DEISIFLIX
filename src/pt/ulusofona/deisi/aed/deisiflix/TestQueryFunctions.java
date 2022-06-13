@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -91,8 +92,8 @@ public class TestQueryFunctions {
     public void testCountMoviesWithActors() throws IOException {
         Main.lerFicheirosTestes();
 
-        String expectedResult = "2";
-        String realResult = Main.perguntar("COUNT_MOVIES_WITH_ACTORS Brad Pitt;Angelina Jolie").valor;
+        String expectedResult = "1";
+        String realResult = Main.perguntar("COUNT_MOVIES_WITH_ACTORS Chris Rankin;Gary Oldman").valor;
         assertEquals(expectedResult, realResult);
 
         expectedResult = "2";
@@ -103,13 +104,8 @@ public class TestQueryFunctions {
     @Test
     public void testCountActors3Years() throws IOException {
         Main.lerFicheirosTestes();
-
-        String expectedResult = "48";
-        String realResult = Main.perguntar("COUNT_ACTORS_3_YEARS 1970 2010 2015").valor;
-        assertEquals(expectedResult, realResult);
-
-        expectedResult = "944";
-        realResult = Main.perguntar("COUNT_ACTORS_3_YEARS 2001 2010 2014").valor;
+        String expectedResult = "356";
+        String realResult = Main.perguntar("COUNT_ACTORS_3_YEARS 1970 1971 1972").valor;
         assertEquals(expectedResult, realResult);
     }
 
@@ -142,10 +138,121 @@ public class TestQueryFunctions {
         assertTrue(resultIsCorrect);
     }
 
-    /*@Test
+    @Test
     public void testGetRecentTitlesSameAVGVotesOneSharedActor() throws IOException {
         Main.lerFicheirosTestes();
 
+        boolean resultIsCorrect = true;
 
-    }*/
+        ArrayList<String> expectedResult = new ArrayList<>(
+                Arrays.asList(
+                        "Pierrepoint: The Last Hangman",
+                        "The Boy in the Striped Pyjamas",
+                        "The Perks of Being a Wallflower",
+                        "An Adventure in Space and Time"
+                ));
+
+        ArrayList<String> realResult = new ArrayList<>(Arrays.asList(
+                Main.perguntar("GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR 673")
+                        .valor.split(Pattern.quote("||"))));
+
+        System.out.println(realResult);
+
+        for (String line : realResult) {
+            if (!expectedResult.contains(line)) {
+                resultIsCorrect = false;
+            }
+        }
+        assertTrue(resultIsCorrect);
+    }
+
+    @Test
+    public void testGetTopNYearsBestAVGVotes() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "1902:6.9\n1901:6.6\n1924:6.57";
+        String realResult = Main.perguntar("GET_TOP_N_YEARS_BEST_AVG_VOTES 3").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testDistanceBetweenActors() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "0";
+        String realResult = Main.perguntar("DISTANCE_BETWEEN_ACTORS Gary Oldman,Danielle Tabor").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testGetTopNMoviesRatio() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "An Evening of Edgar Allan Poe:7.8\n" +
+                "Chariots of the Gods:7.1\n" +
+                "How I Unleashed World War II Part III: Among Friends:7.0";
+        String realResult = Main.perguntar("GET_TOP_N_MOVIES_RATIO 3 1970").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    public void testTop6DirectorsWithinFamily() throws IOException {
+        Main.lerFicheirosTestes();
+        boolean resultIsTrue = true;
+
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList(
+                "David Maysles:1",
+                "Albert Maysles:1",
+                "Paolo Taviani:1",
+                "Vittorio Taviani:1"));
+        ArrayList<String> realResult = new ArrayList<>(
+                Arrays.asList((Main.perguntar("TOP_6_DIRECTORS_WITHIN_FAMILY 1970 1973").valor).split("\n")));
+
+        for (String line : realResult) {
+            if (!expectedResult.contains(line)) {
+                resultIsTrue = false;
+            }
+        }
+        assertTrue(resultIsTrue);
+    }
+
+    @Test
+    public void testGetTopActorYear() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "Christopher Lee;7";
+        String realResult = Main.perguntar("GET_TOP_ACTOR_YEAR 1970").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testInsertActor() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "OK";
+        String realResult = Main.perguntar("INSERT_ACTOR 555555;Pablo Escobar;M;31581").valor;
+        assertEquals(expectedResult, realResult);
+
+        expectedResult = "OK";
+        realResult = Main.perguntar("INSERT_ACTOR 555555;Pablo Escobar;M;92804").valor;
+        assertEquals(expectedResult, realResult);
+
+        expectedResult = "Bigfoot (1970-10-21)\nBloody Mama (1970-03-24)";
+        realResult = Main.perguntar("GET_MOVIES_ACTOR_YEAR Pablo Escobar 1970").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testRemoveActor() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "OK";
+        String realResult = Main.perguntar("REMOVE_ACTOR 287").valor;
+        assertEquals(expectedResult, realResult);
+    }
+
+    @Test
+    public void testGetDuplicateLinesYear() throws IOException {
+        Main.lerFicheirosTestes();
+        String expectedResult = "1362:95251:233383\n" +
+                "1647:12123:11040\n" +
+                "2108:87559:21466\n" +
+                "3046:142473:70412\n" +
+                "3518:87558:21466";
+        String realResult = Main.perguntar("GET_DUPLICATE_LINES_YEAR 1970").valor;
+        assertEquals(expectedResult, realResult);
+    }
 }

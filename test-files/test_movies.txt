@@ -455,3 +455,1582 @@
 277396,Three Sisters, 165.0,0 ,01-04-1970
 62843,Witchhammer, 103.0,0 ,23-01-1970
 257302,May Morning, 101.0,0 ,02-08-1970
+673,Harry Potter and the Prisoner of Azkaban, 141.0,130000000 ,31-05-2004
+14574,The Boy in the Striped Pyjamas, 94.0,12500000 ,07-05-2008
+210024,An Adventure in Space and Time, 90.0,0 ,21-11-2013
+15185,Pierrepoint: The Last Hangman, 98.0,0 ,07-12-2005
+84892,The Perks of Being a Wallflower, 102.0,13000000 ,20-09-2012
+38759,The Saga of Gosta Berling, 183.0,0 ,09-03-1924
+179549,Stop Thief!, 1.0,0 ,01-01-1901
+176273,The Chechahcos, 87.0,0 ,14-05-1924
+144613,Beau Brummel, 127.0,0 ,30-03-1924
+190605,Panorama of Esplanade by Night, 1.0,0 ,11-11-1901
+775,A Trip to the Moon, 14.0,5985 ,01-09-1902
+27522,Waxworks, 83.0,0 ,13-11-1924
+31506,Die Nibelungen: Siegfried, 140.0,0 ,13-02-1924
+96713,The Marriage Circle, 85.0,212000 ,10-02-1924
+1405,Greed, 140.0,546883 ,04-12-1924
+96035,The Big Swallow, 1.0,0 ,15-10-1901
+195732,The Ghost Train, 1.0,0 ,21-01-1901
+55536,The Finances of the Grand Duke, 80.0,0 ,07-01-1924
+49279,The Man with the Rubber Head, 3.0,0 ,01-01-1901
+120672,Peter Pan, 105.0,0 ,29-12-1924
+44473,Entr'acte, 22.0,0 ,04-12-1924
+54539,L'Inhumaine, 123.0,0 ,12-12-1924
+40574,Girl Shy, 80.0,0 ,20-04-1924
+186201,The Red Lily, 81.0,0 ,08-09-1924
+143534,The White Shadow, 44.0,0 ,05-05-1924
+55587,Michael, 93.0,0 ,01-01-1924
+176321,New Year's Eve, 66.0,0 ,03-01-1924
+32928,The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks, 94.0,0 ,26-04-1924
+27511,He Who Gets Slapped, 95.0,172000 ,22-12-1924
+148326,Captain January, 64.0,0 ,06-07-1924
+120673,Wild Oranges, 76.0,0 ,20-01-1924
+5991,The Last Laugh, 90.0,0 ,23-12-1924
+93521,Symphonie diagonale, 5.0,0 ,04-11-1924
+144436,Jack and the Beanstalk, 10.0,0 ,20-06-1902
+42367,Hot Water, 59.0,0 ,26-10-1924
+176389,Kean, 136.0,0 ,14-02-1924
+84880,The Great White Silence, 108.0,0 ,10-05-1924
+80881,The City Without Jews, 80.0,0 ,25-07-1924
+32318,The Navigator, 59.0,0 ,13-10-1924
+176407,Soviet Toys, 11.0,0 ,11-03-1924
+49275,Bluebeard, 10.0,0 ,01-01-1901
+50329,The Sea Hawk, 123.0,0 ,14-06-1924
+2974,The Hands of Orlac, 113.0,0 ,23-09-1924
+217268,The Epic of Everest, 87.0,0 ,01-01-1924
+144611,Kino Eye, 78.0,0 ,31-10-1924
+104067,America, 141.0,0 ,21-02-1924
+28963,The Thief of Bagdad, 149.0,1135654 ,18-03-1924
+42512,Die Nibelungen: Kriemhild's Revenge, 129.0,0 ,25-04-1924
+2973,Aelita: Queen of Mars, 120.0,0 ,24-09-1924
+176298,Opus III, 3.0,0 ,11-03-1924
+71068,The Iron Horse, 150.0,0 ,24-08-1924
+9591,That Thing You Do!, 108.0,0 ,04-10-1996
+72190,World War Z, 116.0,200000000 ,20-06-2013
+76203,12 Years a Slave, 134.0,20000000 ,18-10-2013
+10909,Kalifornia, 117.0,9000000 ,01-09-1993
+63,Twelve Monkeys, 129.0,29500000 ,29-12-1995
+50463,The Favor, 97.0,0 ,29-04-1994
+48448,Across the Tracks, 100.0,0 ,14-02-1991
+357681,Hitting the Apex, 138.0,0 ,02-09-2015
+9039,Trapped, 106.0,30000000 ,20-09-2002
+4944,Burn After Reading, 96.0,37000000 ,05-09-2008
+978,Seven Years in Tibet, 136.0,70000000 ,12-09-1997
+6973,In the Valley of Elah, 124.0,23000000 ,31-08-2007
+9654,The Italian Job, 110.0,60000000 ,30-05-2003
+57157,Young Adult, 94.0,12000000 ,16-12-2011
+9466,Celebrity, 113.0,0 ,07-09-1998
+14411,Sinbad: Legend of the Seven Seas, 86.0,60000000 ,02-07-2003
+2155,Reindeer Games, 124.0,42000000 ,25-02-2000
+12165,The Burning Plain, 111.0,20000000 ,11-07-2008
+9822,Mighty Joe Young, 114.0,90000000 ,25-12-1998
+1813,The Devil's Advocate, 144.0,57000000 ,17-10-1997
+8202,Æon Flux, 93.0,62000000 ,30-11-2005
+550,Fight Club, 139.0,63000000 ,15-10-1999
+504,Monster, 110.0,8000000 ,16-11-2003
+369885,Allied, 124.0,85000000 ,17-11-2016
+14349,Sleepwalking, 101.0,0 ,14-01-2008
+163,Ocean's Twelve, 125.0,110000000 ,09-12-2004
+9701,North Country, 126.0,35000000 ,12-02-2005
+60308,Moneyball, 133.0,50000000 ,22-09-2011
+4476,Legends of the Fall, 133.0,30000000 ,16-12-1994
+107,Snatch, 103.0,10000000 ,01-09-2000
+63472,His Way, 87.0,0 ,04-03-2011
+25749,Children of the Corn III: Urban Harvest, 92.0,0 ,12-09-1995
+8960,Hancock, 92.0,150000000 ,01-07-2008
+26642,The Dark Side of the Sun, 101.0,0 ,21-12-1988
+341013,Atomic Blonde, 115.0,30000000 ,26-07-2017
+290595,The Huntsman: Winter's War, 114.0,115000000 ,06-04-2016
+4477,The Devil's Own, 107.0,90000000 ,12-03-1997
+337339,The Fate of the Furious, 136.0,250000000 ,12-04-2017
+64689,Killing Them Softly, 97.0,15000000 ,20-09-2012
+313297,Kubo and the Two Strings, 102.0,60000000 ,18-08-2016
+188161,A Million Ways to Die in the West, 116.0,0 ,22-05-2014
+14239,Cool World, 102.0,30000000 ,10-07-1992
+10083,No Way Out, 114.0,15000000 ,14-08-1987
+20766,The Road, 111.0,32000000 ,25-11-2009
+2779,The Curse of the Jade Scorpion, 103.0,0 ,05-08-2001
+16869,Inglourious Basterds, 153.0,70000000 ,18-08-2009
+2900,The Astronaut's Wife, 109.0,75000000 ,26-08-1999
+652,Troy, 163.0,175000000 ,13-05-2004
+2749,15 Minutes, 120.0,60000000 ,01-03-2001
+13703,Less Than Zero, 98.0,1 ,06-11-1987
+11978,Men of Honor, 129.0,32000000 ,13-09-2000
+1535,Spy Game, 126.0,92000000 ,18-11-2001
+109404,8, 91.0,0 ,03-03-2012
+8967,The Tree of Life, 139.0,32000000 ,18-05-2011
+30565,The Hamster Factor and Other Tales of Twelve Monkeys, 88.0,0 ,01-01-1997
+76341,Mad Max: Fury Road, 120.0,150000000 ,13-05-2015
+55059,Happy Together, 102.0,0 ,04-05-1989
+34379,No Man's Land, 106.0,0 ,23-10-1987
+19457,The Yards, 115.0,0 ,27-04-2000
+16577,Astro Boy, 94.0,65000000 ,15-10-2009
+1715,The Cider House Rules, 126.0,24000000 ,17-12-1999
+161,Ocean's Eleven, 116.0,85000000 ,07-12-2001
+109091,The Counselor, 117.0,25000000 ,25-10-2013
+9401,2 Days in the Valley, 104.0,0 ,11-09-1996
+4912,Confessions of a Dangerous Mind, 113.0,30000000 ,30-12-2002
+319,True Romance, 120.0,12500000 ,09-09-1993
+182560,Dark Places, 113.0,20000000 ,31-03-2015
+18804,Head in the Clouds, 121.0,0 ,29-04-2004
+787,Mr. & Mrs. Smith, 120.0,110000000 ,07-06-2005
+228150,Fury, 135.0,68000000 ,15-10-2014
+1164,Babel, 143.0,25000000 ,08-09-2006
+4922,The Curious Case of Benjamin Button, 166.0,150000000 ,24-11-2008
+21118,Waking Up in Reno, 91.0,0 ,13-12-2002
+314385,By the Sea, 122.0,10000000 ,12-11-2015
+32227,Hunk, 102.0,0 ,06-03-1987
+293,A River Runs Through It, 123.0,0 ,09-10-1992
+318846,The Big Short, 130.0,28000000 ,11-12-2015
+354287,War Machine, 122.0,60000000 ,26-05-2017
+1541,Thelma & Louise, 130.0,16000000 ,24-05-1991
+807,Se7en, 127.0,33000000 ,22-09-1995
+628,Interview with the Vampire, 123.0,60000000 ,11-11-1994
+4512,The Assassination of Jesse James by the Coward Robert Ford, 160.0,30000000 ,02-09-2007
+21799,Cutting Class, 91.0,0 ,01-07-1989
+492,Being John Malkovich, 112.0,13000000 ,30-09-1999
+58595,Snow White and the Huntsman, 127.0,170000000 ,30-05-2012
+819,Sleepers, 147.0,44000000 ,18-10-1996
+17770,Trial and Error, 98.0,0 ,30-05-1997
+13177,Battle in Seattle, 99.0,8000000 ,07-09-2007
+10609,The Life and Death of Peter Sellers, 122.0,0 ,21-05-2004
+6073,The Mexican, 123.0,57000000 ,01-03-2001
+10917,Too Young to Die?, 92.0,0 ,26-02-1990
+297,Meet Joe Black, 178.0,90000000 ,12-11-1998
+45145,Johnny Suede, 97.0,500000 ,18-08-1991
+15186,Full Frontal, 96.0,2000000 ,02-08-2002
+298,Ocean's Thirteen, 122.0,85000000 ,07-06-2007
+4958,The Legend of Bagger Vance, 126.0,80000000 ,02-11-2000
+38055,Megamind, 95.0,130000000 ,28-10-2010
+1921,Sweet November, 119.0,40000000 ,16-02-2001
+65759,Happy Feet Two, 100.0,130000000 ,17-11-2011
+70981,Prometheus, 124.0,130000000 ,30-05-2012
+410718,Before the Flood, 93.0,0 ,21-10-2016
+10474,The Basketball Diaries, 102.0,0 ,21-04-1995
+3131,Gangs of New York, 167.0,100000000 ,14-12-2002
+1907,The Beach, 119.0,40000000 ,11-02-2000
+64682,The Great Gatsby, 143.0,105000000 ,10-05-2013
+329216,The Foot Shooting Party, 27.0,0 ,01-01-1994
+37857,Don's Plum, 89.0,0 ,10-02-2001
+11324,Shutter Island, 138.0,80000000 ,18-02-2010
+9466,Celebrity, 113.0,0 ,07-09-1998
+454,Romeo + Juliet, 120.0,14500000 ,31-10-1996
+44992,Hubble 3D, 44.0,0 ,19-03-2010
+4148,Revolutionary Road, 119.0,35000000 ,19-12-2008
+640,Catch Me If You Can, 141.0,52000000 ,25-12-2002
+1587,What's Eating Gilbert Grape, 118.0,11000000 ,17-12-1993
+106646,The Wolf of Wall Street, 180.0,100000000 ,25-12-2013
+281957,The Revenant, 156.0,135000000 ,25-12-2015
+12702,Critters 3, 86.0,0 ,11-12-1991
+597,Titanic, 194.0,200000000 ,18-11-1997
+27205,Inception, 148.0,160000000 ,14-07-2010
+9264,Poison Ivy, 93.0,0 ,08-05-1992
+4832,The 11th Hour, 95.0,0 ,17-08-2007
+2567,The Aviator, 170.0,116000000 ,17-12-2004
+36834,Total Eclipse, 111.0,0 ,02-11-1995
+1422,The Departed, 151.0,90000000 ,05-10-2006
+12113,Body of Lies, 128.0,70000000 ,10-10-2008
+9313,The Man in the Iron Mask, 132.0,0 ,12-03-1998
+9819,Marvin's Room, 98.0,23000000 ,18-12-1996
+8092,This Boy’s Life, 115.0,0 ,09-04-1993
+1372,Blood Diamond, 143.0,100000000 ,07-12-2006
+68718,Django Unchained, 165.0,100000000 ,25-12-2012
+12106,The Quick and the Dead, 107.0,32000000 ,09-02-1995
+88794,J. Edgar, 137.0,35000000 ,09-11-2011
+27932,Airport 1975, 107.0,3000000 ,18-10-1974
+252144,Get Christie Love!, 74.0,0 ,22-01-1974
+85483,Something Evil, 73.0,0 ,21-01-1972
+149691,Kill Django...Kill First, 86.0,0 ,05-02-1971
+56942,Family Life, 108.0,0 ,01-12-1971
+69321,Pretty Maids All in a Row, 91.0,0 ,28-04-1971
+10669,Deliverance, 109.0,2000000 ,30-07-1972
+41482,Lone Wolf and Cub: Baby Cart in the Land of Demons, 89.0,0 ,01-01-1973
+102959,Trinity and Sartana Are Coming, 103.0,0 ,30-05-1972
+4989,Shamus, 106.0,0 ,31-01-1973
+987,The Front Page, 105.0,4000000 ,01-12-1974
+29336,The Cannibal Man, 98.0,0 ,01-06-1973
+70322,Gamera vs. Zigra, 87.0,0 ,17-07-1971
+126423,A Poem is a Naked Person, 96.0,0 ,01-01-1974
+116764,Dealing: Or the Berkeley-to-Boston Forty-Brick Lost-Bag Blues, 88.0,0 ,25-02-1972
+260883,Silence the Witness, 100.0,0 ,15-05-1974
+42738,Scorpio, 114.0,0 ,10-04-1973
+20842,Children Shouldn't Play with Dead Things, 87.0,70000 ,28-02-1973
+28415,The Yakuza, 112.0,0 ,21-12-1974
+57757,The Sannikov Land, 90.0,0 ,01-10-1973
+4443,Nuits rouges, 104.0,0 ,20-11-1974
+47737,Gold, 120.0,0 ,08-06-1974
+72447,The Last Run, 95.0,0 ,07-07-1971
+185949,The Pied Piper, 90.0,0 ,27-12-1972
+29960,Vampire Circus, 87.0,0 ,30-04-1972
+11048,The Knock Out Cop, 110.0,0 ,25-10-1973
+2261,Wattstax, 98.0,0 ,04-02-1973
+10869,Herbie Rides Again, 88.0,0 ,14-02-1974
+4495,The Spirit of the Beehive, 97.0,0 ,08-10-1973
+86431,Sinbad, 90.0,0 ,25-11-1971
+142585,That Certain Summer, 73.0,0 ,01-11-1972
+79192,Apache Vengeance, 86.0,0 ,01-10-1971
+99802,A Day at the Beach, 93.0,0 ,17-04-1972
+343042,Embassy, 0.0,0 ,06-10-1972
+160799,The Stranger, 100.0,0 ,26-02-1973
+20871,Gentlemen of Fortune, 88.0,0 ,13-12-1971
+41032,The Stone Tape, 90.0,0 ,31-01-1972
+85673,TNT Jackson, 72.0,0 ,08-06-1974
+198531,Somewhere Beyond Love, 108.0,0 ,06-06-1974
+27012,Bone, 95.0,0 ,01-07-1972
+121111,The Telephone Book, 80.0,0 ,03-10-1971
+79720,Santa and the Ice Cream Bunny, 96.0,0 ,01-01-1972
+127475,The Revengers, 106.0,0 ,21-06-1972
+24349,Minnie and Moskowitz, 115.0,0 ,22-12-1971
+42477,Brain of Blood, 87.0,0 ,01-08-1971
+63176,Liza, 100.0,0 ,11-08-1972
+62363,Le viager, 0.0,0 ,05-09-1972
+42519,The Brotherhood of Satan, 92.0,0 ,06-08-1971
+31587,Scarecrow, 112.0,0 ,11-04-1973
+52721,Blackie the Pirate, 99.0,0 ,12-03-1971
+378918,Snatched, 73.0,0 ,31-01-1973
+185495,Terror in the Wax Museum, 93.0,0 ,02-05-1973
+5919,The Towering Inferno, 159.0,14000000 ,14-12-1974
+98048,Dionysus in '69, 85.0,0 ,30-10-1972
+117493,Blow for Blow, 89.0,0 ,01-06-1972
+49634,Blaise Pascal, 129.0,0 ,16-05-1972
+42495,King Lear, 137.0,0 ,04-02-1971
+36096,Lucifer Rising, 29.0,0 ,10-04-1974
+10514,The Andromeda Strain, 131.0,6500000 ,12-03-1971
+156988,The Return of Halleluja, 83.0,0 ,30-08-1972
+14482,Baba Yaga, 74.0,0 ,03-06-1971
+54284,Zatôichi at Large, 90.0,0 ,15-01-1972
+73827,Why, 0.0,0 ,27-10-1971
+28406,The Fury of the Wolf Man, 90.0,0 ,07-02-1972
+3581,Death Line, 87.0,0 ,01-01-1972
+84465,Made For Each Other, 100.0,0 ,12-12-1971
+295389,Decameron proibitissimo (Boccaccio mio statte zitto), 87.0,0 ,03-08-1972
+29111,Requiem for a Vampire, 87.0,0 ,01-08-1971
+216,Ali: Fear Eats the Soul, 93.0,130000 ,05-03-1974
+80382,The Hireling, 108.0,0 ,10-06-1973
+83215,Fragments of an Alms-Film, 75.0,0 ,01-01-1972
+26332,Electra Glide in Blue, 114.0,0 ,18-08-1973
+3034,Young Frankenstein, 106.0,2800000 ,15-12-1974
+38165,The Mysterious Island, 96.0,0 ,17-03-1973
+42741,Un Flic, 98.0,0 ,30-09-1972
+118121,Butley, 127.0,0 ,21-01-1974
+37608,The New Centurions, 103.0,0 ,03-08-1972
+252,Willy Wonka & the Chocolate Factory, 100.0,3000000 ,29-06-1971
+19252,Carry On Abroad, 88.0,0 ,01-12-1972
+132328,It's Good to Be Alive, 100.0,0 ,22-02-1974
+14811,Fiddler on the Roof, 181.0,9000000 ,03-11-1971
+154671,Vem älskar Yngve Frej?, 104.0,0 ,05-01-1973
+300816,Mama's Dirty Girls, 82.0,0 ,17-08-1974
+42514,Plaza Suite, 114.0,0 ,12-05-1971
+5519,Finders Killers, 92.0,0 ,27-03-1971
+706,Effi Briest, 141.0,0 ,20-06-1974
+4176,Murder on the Orient Express, 128.0,0 ,24-11-1974
+107891,Ambush, 97.0,0 ,05-01-1973
+27116,Bluebeard, 125.0,0 ,01-09-1972
+39829,The Six Million Dollar Man, 90.0,0 ,07-03-1973
+39194,Rhinoceros, 104.0,0 ,21-01-1974
+42485,Cat's Play, 115.0,0 ,10-05-1974
+7014,Themroc, 104.0,0 ,01-03-1973
+19297,Carry On at Your Convenience, 90.0,0 ,10-12-1971
+11945,Emil in Lonneberga, 95.0,0 ,04-12-1971
+3687,Flesh Gordon, 90.0,700000 ,30-07-1974
+39261,The House That Dripped Blood, 102.0,0 ,16-06-1971
+46784,Rabbit's Moon, 16.0,0 ,02-01-1971
+9474,My Name Is Nobody, 117.0,0 ,13-12-1973
+28110,Dillinger, 107.0,1000000 ,20-07-1973
+59414,The Concert for Bangladesh, 103.0,0 ,23-03-1972
+100468,They Have Changed Their Face, 90.0,0 ,02-07-1971
+94623,Directed by John Ford, 99.0,0 ,06-10-1971
+839,Duel, 74.0,450000 ,01-10-1972
+42711,The Slams, 91.0,0 ,26-09-1973
+36492,Carnal Knowledge, 98.0,0 ,21-10-1971
+240607,The Sicilian Connection, 105.0,0 ,21-12-1972
+64115,I Hate Mondays, 98.0,0 ,27-08-1971
+114395,Juvenile Court, 144.0,0 ,04-06-1973
+30929,The Mutations, 92.0,0 ,25-09-1974
+32613,Horror Express, 90.0,300000 ,30-09-1972
+42497,Pink Narcissus, 64.0,27000 ,01-01-1971
+85966,Night Call Nurses, 74.0,75000 ,01-06-1972
+69319,Mavi Boncuk, 0.0,0 ,01-01-1974
+46018,Willie Dynamite, 102.0,0 ,23-01-1974
+84642,Wedding in White, 103.0,0 ,20-10-1972
+154718,Jail Bait, 102.0,0 ,09-01-1973
+200655,Janis, 96.0,0 ,18-10-1974
+24571,Carry On Matron, 87.0,0 ,05-05-1972
+154073,Kid Blue, 100.0,0 ,31-01-1973
+30671,Born Innocent, 98.0,0 ,10-09-1974
+38761,Night of the Lepus, 88.0,0 ,04-10-1972
+993,Sleuth, 138.0,0 ,10-12-1972
+100088,Black Gunn, 97.0,0 ,20-12-1972
+129942,The Experience, 60.0,0 ,01-01-1973
+183654,Garm Hava, 146.0,0 ,05-01-1973
+12530,Avanti!, 140.0,0 ,17-12-1972
+60181,Blood on the Streets, 110.0,0 ,23-10-1974
+23069,Benji, 86.0,0 ,17-10-1974
+42488,The New Land, 204.0,0 ,01-01-1972
+108723,Face-Off, 105.0,600 ,12-11-1971
+38446,Frightmare, 88.0,0 ,05-11-1974
+55909,Claudine, 92.0,0 ,22-04-1974
+110029,Oh Olsun, 83.0,0 ,01-01-1973
+195768,City Under Siege, 0.0,0 ,23-10-1974
+86889,Bram Stoker's Dracula, 100.0,0 ,08-02-1974
+4747,Nathalie Granger, 83.0,0 ,06-10-1972
+16203,Space Is the Place, 85.0,0 ,01-11-1974
+4146,The Wonderful Crook, 90.0,0 ,01-01-1974
+77029,Death Walks on High Heels, 108.0,0 ,19-11-1971
+45940,Company Limited, 110.0,0 ,24-09-1971
+51429,Female Yakuza Tale, 86.0,0 ,06-06-1973
+149336,The Challenge... A Tribute to Modern Art, 104.0,0 ,05-12-1974
+45938,Sunday Bloody Sunday, 110.0,0 ,01-07-1971
+4923,Zardoz, 105.0,0 ,06-02-1974
+129851,A Bullet for a Stranger, 94.0,0 ,23-09-1971
+53031,Living Free, 90.0,0 ,16-12-1972
+74836,Idaho Transfer, 86.0,0 ,15-06-1973
+19562,The Magnificent One, 95.0,0 ,23-11-1973
+11612,Even Angels Eat Beans, 118.0,0 ,22-03-1973
+261872,Sunstruck, 89.0,0 ,22-12-1972
+58218,The Devil's Nightmare, 95.0,0 ,06-06-1971
+44618,The Man Who Quit Smoking, 104.0,0 ,16-12-1972
+80601,Seduction, 99.0,0 ,01-01-1973
+89656,Cool Breeze, 101.0,0 ,29-03-1972
+38060,The Lorax, 25.0,0 ,14-02-1972
+5121,The Sugarland Express, 110.0,3000000 ,05-04-1974
+94744,The Devil with Seven Faces, 90.0,0 ,09-12-1971
+92292,Star Spangled Girl, 93.0,0 ,22-12-1971
+74302,Köyden İndim Şehire, 77.0,0 ,01-01-1974
+97987,Human Cobras, 86.0,80000 ,05-08-1971
+37627,The Little Prince, 88.0,0 ,06-11-1974
+192868,The Sporting Club, 107.0,0 ,28-02-1971
+110040,Salako, 0.0,0 ,12-12-1974
+253,Live and Let Die, 121.0,7000000 ,05-07-1973
+10238,Cries and Whispers, 91.0,0 ,21-12-1972
+107239,Brothers O'Toole, 95.0,0 ,16-05-1973
+31648,12 Chairs, 161.0,0 ,21-06-1971
+173631,Bremer Freiheit, 87.0,0 ,12-12-1972
+838,American Graffiti, 110.0,777000 ,01-08-1973
+220124,The Optimists of Nine Elms, 110.0,0 ,17-10-1973
+55032,Madame Sin, 86.0,0 ,15-01-1972
+284013,Popsy Pop, 100.0,0 ,10-03-1971
+33331,The World's Greatest Athlete, 93.0,0 ,14-02-1973
+42457,A Doll's House, 105.0,0 ,22-05-1973
+78075,Abby, 89.0,0 ,25-12-1974
+62330,The Spook Who Sat by the Door, 102.0,0 ,21-09-1973
+1675,Day for Night, 115.0,0 ,24-05-1973
+12470,Sandakan No. 8, 120.0,0 ,02-11-1974
+40210,Straight on Till Morning, 96.0,0 ,09-07-1972
+90079,Dirty O'Neil, 89.0,0 ,01-05-1974
+45512,Pocket Money, 102.0,0 ,01-01-1972
+39464,Godzilla vs. Hedorah, 87.0,250000 ,24-07-1971
+84104,Shriek of the Mutilated, 86.0,0 ,02-08-1974
+65674,A Town Called Hell, 95.0,0 ,27-10-1971
+36162,Winnie-the-Pooh and a Busy Day, 21.0,0 ,01-01-1972
+104360,A White Dress for Marialé, 92.0,0 ,30-11-1972
+222932,The Deathhead Virgin, 90.0,0 ,01-01-1974
+13397,The Year Without a Santa Claus, 51.0,0 ,10-12-1974
+144686,The Lift, 7.0,0 ,01-11-1972
+81541,Women in Cell Block 7, 100.0,0 ,05-07-1973
+27658,Cockfighter, 83.0,0 ,01-08-1974
+105156,A Black Ribbon for Deborah, 110.0,0 ,01-09-1974
+179847,First Love, 52.0,0 ,01-07-1974
+124414,Pictures of the Old World, 64.0,0 ,01-01-1972
+4579,Heat, 102.0,0 ,06-10-1972
+49600,The Last Movie, 108.0,1000000 ,29-09-1971
+184061,Deliver Us from Evil, 75.0,0 ,11-09-1973
+25627,The Living Dead at Manchester Morgue, 95.0,0 ,28-11-1974
+250093,The Man, 93.0,0 ,19-07-1972
+86234,The Amulet of Ogum, 112.0,0 ,21-05-1974
+5434,Death Smiles on a Murderer, 97.0,0 ,11-01-1973
+11713,Fist of Fury, 108.0,100000 ,22-03-1972
+150708,Terrible Day of the Big Gundown, 94.0,0 ,26-06-1971
+8071,Tout Va Bien, 95.0,0 ,28-04-1972
+26015,Don't Be Afraid of the Dark, 74.0,0 ,10-10-1973
+107705,Byelorussian Station, 101.0,0 ,30-04-1971
+682,The Man with the Golden Gun, 125.0,7000000 ,01-12-1974
+811,Silent Running, 89.0,1000000 ,09-03-1972
+126132,The Act of Seeing with One's Own Eyes, 32.0,0 ,01-01-1971
+137619,Umbracle, 85.0,0 ,01-01-1972
+105384,Orders Signed in White, 93.0,0 ,13-11-1974
+200236,Doctors' Wives, 102.0,0 ,03-02-1971
+34462,Women in Cages, 81.0,0 ,19-10-1971
+69579,My Dear Killer, 96.0,0 ,03-02-1972
+88359,Cops and Robbers, 89.0,0 ,17-08-1973
+129847,Deep West, 94.0,0 ,08-04-1971
+42468,Tales That Witness Madness, 90.0,0 ,01-01-1973
+109259,Blume In Love, 115.0,0 ,17-06-1973
+34280,L'aventure c'est l'aventure, 120.0,0 ,04-05-1972
+46667,Superdad, 96.0,0 ,14-12-1973
+86193,The Incredible 2-Headed Transplant, 87.0,0 ,28-04-1971
+47182,Here Comes Peter Cottontail, 50.0,0 ,04-04-1971
+21711,The Candidate, 110.0,0 ,23-08-1972
+44741,Malicious, 93.0,0 ,29-03-1973
+129067,Hunger, 10.0,0 ,01-10-1974
+90100,Emergency Squad, 95.0,0 ,24-04-1974
+16328,Johnny Got His Gun, 111.0,0 ,04-08-1971
+38925,The Lords of Flatbush, 86.0,160000 ,01-05-1974
+3162,Blackenstein, 87.0,0 ,01-01-1973
+35068,Murphy's War, 107.0,0 ,01-07-1971
+107767,I Am a Nymphomaniac, 103.0,0 ,11-08-1971
+11293,Paper Moon, 102.0,0 ,09-05-1973
+42456,40 Carats, 110.0,0 ,28-06-1973
+37601,Tombs of the Blind Dead, 101.0,0 ,10-04-1972
+11943,Jeremiah Johnson, 108.0,0 ,10-09-1972
+1643,Last Tango in Paris, 129.0,1250000 ,14-10-1972
+24923,Messiah of Evil, 90.0,0 ,01-01-1973
+79426,Crime Boss, 93.0,0 ,08-08-1972
+122677,Blood of Ghastly Horror, 85.0,0 ,21-01-1972
+28067,The Ghost Galleon, 89.0,0 ,28-06-1974
+126523,Taming of the Fire, 166.0,0 ,12-04-1972
+71945,Night of Dark Shadows, 95.0,900000 ,04-08-1971
+11302,Bananas, 82.0,2000000 ,28-04-1971
+75262,The Long Recess, 268.0,0 ,06-06-1972
+7857,Amarcord, 123.0,0 ,13-12-1973
+39993,Short Night of Glass Dolls, 92.0,0 ,21-10-1971
+56231,The Working Class Goes to Paradise, 125.0,0 ,17-09-1971
+81309,Man - Woman Wanted, 82.0,0 ,22-04-1973
+42449,Hearts and Minds, 112.0,0 ,01-01-1974
+54860,The Bodyguard, 0.0,0 ,30-06-1973
+96132,Three Tough Guys, 92.0,0 ,29-05-1974
+203,Mean Streets, 110.0,500000 ,02-10-1973
+98136,Hit Lady, 72.0,0 ,06-10-1974
+56364,The Pyx, 108.0,0 ,08-09-1973
+36040,Walkabout, 95.0,0 ,01-07-1971
+16154,Let's Scare Jessica to Death, 89.0,180000 ,06-08-1971
+64577,Summer Affair, 91.0,0 ,09-04-1971
+21242,Valdez Is Coming, 90.0,0 ,09-04-1971
+172340,Lovin' Molly, 98.0,0 ,14-04-1974
+12481,The Big Boss, 100.0,100000 ,02-10-1971
+291224,How A Sausage Dog Works, 8.0,0 ,01-01-1971
+116445,Wonder Women, 82.0,110000 ,25-04-1973
+80970,Schoolgirl Hitchhikers, 74.0,0 ,16-08-1973
+101307,Rage, 100.0,0 ,22-11-1972
+104317,The Woman Who Powders Herself, 18.0,0 ,01-01-1972
+63025,A Lizard in a Woman's Skin, 104.0,0 ,17-02-1971
+94752,The Doll Squad, 101.0,0 ,19-09-1973
+26774,The Blood on Satan's Claw, 93.0,140000 ,01-01-1971
+171232,Let the Good Times Roll, 99.0,0 ,25-05-1973
+22121,Truck Turner, 91.0,0 ,19-04-1974
+16307,The Wicker Man, 99.0,0 ,01-12-1973
+9040,Serpico, 129.0,3000000 ,05-12-1973
+260884,Chronicle of a Homicide, 99.0,0 ,04-02-1972
+52608,Z.P.G., 97.0,0 ,25-05-1972
+10311,Martha, 116.0,0 ,27-05-1974
+62852,Zero Woman: Red Handcuffs, 88.0,0 ,21-05-1974
+45793,Man of La Mancha, 132.0,0 ,20-12-1972
+107019,The Strange Vengeance of Rosalie, 107.0,0 ,16-06-1972
+29735,The Laughing Policeman, 112.0,0 ,20-12-1973
+5927,Junior Bonner, 100.0,0 ,02-08-1972
+71138,Female Prisoner #701: Scorpion, 87.0,0 ,01-08-1972
+84209,Busting, 92.0,0 ,27-02-1974
+62382,The Mattei Affair, 116.0,0 ,26-01-1972
+45827,One Little Indian, 90.0,0 ,20-06-1973
+54440,The Education of Sonny Carson, 104.0,0 ,17-07-1974
+40218,The Beast Must Die, 93.0,0 ,01-04-1974
+63340,Three the Hard Way, 89.0,0 ,26-06-1974
+118915,Such Good Friends, 102.0,0 ,16-12-1971
+31596,Lemora: A Child's Tale of the Supernatural, 85.0,0 ,01-05-1973
+273126,How the Lion Cub and the Turtle Sang a Song, 9.0,0 ,01-01-1974
+10784,Cabaret, 124.0,6000000 ,13-02-1972
+14881,Joe Kidd, 88.0,0 ,14-07-1972
+31605,The Last American Hero, 95.0,0 ,01-01-1973
+29005,McCabe & Mrs. Miller, 120.0,0 ,24-06-1971
+20173,The Barefoot Executive, 96.0,0 ,17-03-1971
+26331,The Last of Sheila, 120.0,0 ,14-06-1973
+83980,The Trial of Billy Jack, 170.0,7 ,13-11-1974
+37618,The Asphyx, 99.0,0 ,05-12-1972
+26928,Buck and the Preacher, 102.0,0 ,17-03-1972
+18250,Dr. Phibes Rises Again, 89.0,75000 ,01-07-1972
+76764,Who?, 93.0,0 ,18-04-1974
+42479,Ciao! Manhattan, 84.0,0 ,19-04-1973
+96793,Innocent Bystanders, 111.0,0 ,01-09-1972
+148820,Land of Milk and Honey, 80.0,0 ,09-02-1971
+64528,Amuck!, 98.0,0 ,21-03-1972
+73984,Chino, 98.0,0 ,14-09-1973
+112675,The Immortals, 103.0,0 ,23-12-1974
+129943,Breaktime, 14.0,0 ,01-01-1972
+72153,Virgin Witch, 88.0,0 ,08-06-1972
+54505,Manson, 83.0,0 ,01-01-1973
+83147,Doc, 96.0,0 ,01-08-1971
+42452,The House of Seven Corpses, 90.0,0 ,01-02-1974
+105085,Cold Eyes of Fear, 95.0,0 ,06-04-1971
+105503,The No Mercy Man, 90.0,0 ,01-01-1973
+4683,A Gorgeous Girl Like Me, 98.0,0 ,13-09-1972
+36117,Rocker, 86.0,0 ,02-02-1972
+45186,Big Bad Mama, 83.0,0 ,19-09-1974
+22777,The Million Dollar Duck, 89.0,0 ,30-06-1971
+67320,Stanley, 108.0,0 ,23-05-1972
+66775,Young Winston, 157.0,0 ,20-07-1972
+56142,Conversation Piece, 121.0,0 ,10-12-1974
+32050,The Black Windmill, 106.0,0 ,17-05-1974
+65134,Zachariah, 93.0,0 ,12-01-1971
+106618,A Day in the Death of Joe Egg, 106.0,0 ,01-01-1972
+84658,Bonnie's Kids, 105.0,0 ,08-02-1973
+94466,The Ceremony, 123.0,0 ,18-05-1971
+18287,Support Your Local Gunfighter, 91.0,0 ,26-05-1971
+40741,The Trail of Blood, 88.0,0 ,10-06-1972
+101740,Inn of Evil, 121.0,0 ,11-09-1971
+42469,The Creeping Flesh, 94.0,0 ,12-02-1973
+55689,Baba Yaga, 91.0,0 ,20-09-1973
+43701,The Triple Echo, 97.0,0 ,01-01-1972
+551,The Poseidon Adventure, 117.0,5000000 ,01-12-1972
+50958,Deadly Weapons, 75.0,0 ,04-04-1974
+185,A Clockwork Orange, 136.0,2200000 ,18-12-1971
+27645,200 Motels, 98.0,679000 ,10-11-1971
+17365,The Parallax View, 102.0,0 ,14-06-1974
+29498,The Fourth Victim, 88.0,0 ,14-04-1971
+50196,Rugantino, 110.0,0 ,01-01-1973
+258227,Lust for Gold, 86.0,0 ,27-10-1974
+55624,Fata Morgana, 79.0,0 ,04-06-1971
+90582,Tales from Muppetland: The Frog Prince, 50.0,0 ,12-05-1971
+18979,Captain Kronos: Vampire Hunter, 91.0,400000 ,07-04-1974
+90974,The Light at the Edge of the World, 128.0,0 ,16-07-1971
+86979,The Road Builder, 97.0,0 ,12-05-1971
+152635,The Assassination, 0.0,0 ,11-10-1972
+62978,The Salamander, 125.0,0 ,27-10-1971
+15360,The Night Stalker, 74.0,0 ,11-01-1972
+20802,Freebie and the Bean, 113.0,0 ,25-12-1974
+31943,Emperor of the North, 118.0,0 ,23-05-1973
+1559,Sweet Movie, 99.0,0 ,12-06-1974
+984,Dirty Harry, 102.0,4000000 ,21-12-1971
+127987,The Delightful Forest, 92.0,0 ,20-09-1972
+32044,California Split, 108.0,0 ,07-08-1974
+48848,12 Dicembre, 104.0,0 ,01-01-1972
+59189,Phase IV, 86.0,0 ,01-09-1974
+32940,The Terminal Man, 107.0,0 ,19-06-1974
+288094,Casual Relations, 80.0,0 ,22-03-1974
+196253,Weekend of a Champion, 80.0,0 ,31-05-1972
+1705,Battle for the Planet of the Apes, 93.0,1700000 ,15-06-1973
+53947,The Murder of Fred Hampton, 88.0,0 ,01-01-1971
+191536,In the Shadow of Death, 80.0,0 ,30-12-1971
+148811,Reminiscences of a Journey to Lithuania, 76.0,0 ,04-10-1972
+42487,Necromancy, 83.0,0 ,22-09-1972
+14683,The Nine Lives of Fritz the Cat, 77.0,0 ,18-09-1974
+22058,That Man Bolt, 103.0,0 ,01-12-1973
+45103,Richard Pryor: Live and Smokin', 48.0,0 ,29-04-1971
+31472,Lust for a Vampire, 91.0,0 ,17-01-1971
+592,The Conversation, 113.0,1600000 ,07-04-1974
+260912,The Police Serve the Citizens?, 96.0,0 ,01-01-1973
+29268,Castle of Sand, 143.0,0 ,19-10-1974
+77051,The Cutlass, 210.0,0 ,01-01-1973
+681,Diamonds Are Forever, 120.0,7200000 ,13-12-1971
+20803,Ivan Vasilyevich Changes His Profession, 93.0,0 ,17-09-1973
+58080,The Violent Professionals, 104.0,0 ,22-08-1973
+33740,That's Entertainment!, 135.0,0 ,21-06-1974
+15573,The Cowboys, 131.0,6000000 ,13-01-1972
+62851,Under the Flag of the Rising Sun, 96.0,0 ,12-03-1972
+28159,It Lives By Night, 95.0,0 ,15-01-1974
+30892,The Ruling Class, 154.0,0 ,13-09-1972
+28812,The Killer Wore Gloves, 90.0,0 ,05-08-1974
+74417,The Great Kidnapping, 95.0,0 ,16-11-1973
+104548,Demons, 135.0,0 ,13-02-1971
+72032,Return of Sabata, 100.0,245000 ,03-09-1971
+3122,Lady Frankenstein, 99.0,0 ,22-10-1971
+31767,The Devils, 111.0,0 ,01-07-1971
+27327,Phantom of the Paradise, 92.0,0 ,31-10-1974
+4680,Two Men in Town, 100.0,0 ,24-10-1973
+224084,The Last Bullet, 100.0,0 ,26-05-1973
+215061,Synchromy, 7.0,0 ,01-01-1971
+39859,See No Evil, 89.0,0 ,02-09-1971
+12101,Soylent Green, 97.0,0 ,19-04-1973
+36850,A New Leaf, 102.0,0 ,11-03-1971
+257831,Dream City, 124.0,0 ,15-11-1973
+163937,Film About a Woman Who…, 90.0,0 ,11-12-1974
+54164,Man of the East, 115.0,0 ,28-09-1972
+293721,Failure of Engineer Garin, 247.0,0 ,15-10-1973
+257347,Universal Soldier, 94.0,0 ,01-05-1972
+37545,Morning of the Earth, 79.0,0 ,01-01-1971
+54966,Pakeezah, 146.0,0 ,10-09-1972
+34921,Winter Soldier, 96.0,0 ,27-01-1972
+34759,Ziggy  Stardust and the Spiders from Mars, 90.0,0 ,23-12-1973
+11901,High Plains Drifter, 105.0,5500000 ,19-04-1973
+42486,Napoleon and Samantha, 92.0,0 ,05-07-1972
+125495,Le Mataf, 0.0,0 ,14-06-1973
+151423,Let's Go And Kill Sartana, 87.0,0 ,06-09-1971
+56067,The Biscuit Eater, 92.0,0 ,22-03-1972
+42453,The Island at the Top of the World, 93.0,0 ,01-01-1974
+86732,Red Psalm, 87.0,0 ,09-03-1972
+24097,Don't Look in the Basement, 89.0,0 ,01-09-1973
+202639,Hurricane, 82.0,0 ,10-09-1974
+52960,The Tamarind Seed, 119.0,0 ,11-07-1974
+2362,Westworld, 88.0,0 ,22-10-1973
+133328,The Deadly Trackers, 110.0,0 ,21-12-1973
+14685,Swallows and Amazons, 92.0,0 ,01-06-1974
+4703,Daisy Miller, 91.0,2000000 ,22-05-1974
+110115,My Ain Folk, 55.0,0 ,01-12-1973
+57124,Swastika, 113.0,0 ,01-09-1974
+42759,The Call of the Wild, 100.0,0 ,30-11-1972
+38714,Save the Tiger, 100.0,0 ,14-02-1973
+178535,The Dupes, 107.0,0 ,01-07-1973
+117890,Confessions of a Police Captain, 101.0,0 ,26-03-1971
+48014,From Beyond the Grave, 97.0,0 ,23-02-1974
+12598,Jo, 85.0,0 ,31-08-1971
+184578,The Dove, 105.0,0 ,16-06-1974
+88496,Liza Minnelli: Liza With a Z, 55.0,0 ,10-09-1972
+41486,Lone Wolf and Cub: White Heaven in Hell, 83.0,0 ,01-01-1974
+25473,Walking Tall, 125.0,0 ,22-02-1973
+32140,Snowball Express, 93.0,0 ,01-01-1972
+96129,The Bad Bunch, 82.0,0 ,01-01-1973
+228442,Déjeuner du matin, 12.0,0 ,01-01-1974
+161620,Wonder Woman, 75.0,0 ,12-03-1974
+56259,Werewolves on Wheels, 85.0,0 ,19-11-1971
+74430,Thumb Tripping, 94.0,0 ,01-10-1972
+359353,The Scarecrow, 105.0,0 ,10-01-1972
+42458,A Touch of Class, 106.0,0 ,01-01-1973
+29130,The Demoniacs, 100.0,0 ,05-12-1974
+34461,Alice's Adventures in Wonderland, 101.0,2500000 ,01-01-1972
+42450,Macon County Line, 89.0,0 ,01-01-1974
+76452,A Brief Vacation, 112.0,0 ,14-08-1973
+146970,In the West There Was a Man Named Invincible, 87.0,0 ,03-05-1973
+26514,Where the Red Fern Grows, 97.0,0 ,21-06-1974
+195385,The Magnificent Dare Devil, 104.0,0 ,20-11-1973
+114645,Days of 36, 105.0,0 ,30-09-1972
+125276,Secret Chronicle: She Beast Market, 83.0,0 ,11-09-1974
+95322,Moonfire, 107.0,0 ,01-01-1973
+14257,Delusions of Grandeur, 108.0,0 ,01-04-1971
+55418,The Earth Is a Sinful Song, 104.0,0 ,02-11-1973
+81509,Virgin Report, 82.0,0 ,01-01-1972
+11886,Robin Hood, 83.0,15000000 ,08-11-1973
+105757,Whity, 95.0,0 ,02-06-1971
+243984,Persuasion, 300.0,0 ,01-01-1971
+67179,St. Michael Had a Rooster, 90.0,0 ,01-01-1972
+29338,No One Heard the Scream, 90.0,0 ,01-01-1973
+42460,The Pedestrian, 98.0,0 ,05-09-1973
+123867,Panda! Go Panda!: Rainy Day Circus, 38.0,0 ,16-03-1973
+14267,Female Trouble, 97.0,25000 ,04-10-1974
+27459,Little Murders, 110.0,0 ,09-02-1971
+89072,Ginger, 90.0,0 ,01-03-1971
+40812,Return of the Street Fighter, 85.0,0 ,27-04-1974
+16153,Alice Doesn't Live Here Anymore, 112.0,0 ,09-12-1974
+43417,The Magnificent Seven Ride!, 100.0,3000000 ,01-08-1972
+30787,Horror Hospital, 90.0,0 ,11-05-1973
+80911,Payday, 103.0,760000 ,22-09-1973
+28131,Pulp, 95.0,0 ,01-11-1972
+231392,Lost in the Stars, 97.0,0 ,08-04-1974
+42528,Long Live Death, 90.0,0 ,01-01-1971
+1687,Escape from the Planet of the Apes, 98.0,2500000 ,20-05-1971
+32319,Beware of a Holy Whore, 103.0,0 ,28-08-1971
+8703,Three Wishes for Cinderella, 82.0,0 ,01-11-1973
+38996,Dead of Night, 88.0,0 ,28-08-1974
+215797,The Thorn, 93.0,0 ,01-01-1971
+24402,Emmanuelle, 89.0,500000 ,25-06-1974
+67696,A Warm December, 99.0,0 ,23-05-1973
+3125,Dracula vs. Frankenstein, 94.0,0 ,01-12-1971
+143355,The Battle of Sutjeska, 117.0,0 ,31-07-1973
+90110,Down and Dirty Duck, 70.0,0 ,01-07-1974
+9552,The Exorcist, 122.0,8000000 ,26-12-1973
+387957,Clay Pigeon, 93.0,0 ,01-08-1971
+36600,The Flesh and Blood Show, 93.0,0 ,01-10-1972
+90503,Mira, 95.0,0 ,04-03-1971
+92272,The Organization, 106.0,0 ,20-10-1971
+91891,The Unholy Rollers, 88.0,0 ,10-11-1972
+105254,The Touch, 115.0,6900000 ,14-07-1971
+31116,Zaat, 100.0,0 ,01-01-1971
+260817,The Seventh Bullet, 79.0,0 ,30-04-1973
+198171,Mahoney's Last Stand, 109.0,0 ,01-01-1972
+84450,Buster e Billie, 100.0,0 ,21-08-1974
+26119,Chato's Land, 110.0,0 ,01-01-1972
+33638,The Life and Times of Judge Roy Bean, 120.0,0 ,18-12-1972
+30485,Blue Summer, 79.0,0 ,20-11-1973
+139195,The Office Party, 97.0,0 ,04-10-1972
+91618,Terminal Island, 88.0,0 ,01-06-1973
+124504,What Am I Doing in the Middle of the Revolution?, 103.0,0 ,18-12-1972
+3117,Frankenstein and the Monster from Hell, 93.0,0 ,31-03-1973
+221171,Kilplased, 0.0,0 ,12-09-1974
+31644,Dollars, 121.0,0 ,17-12-1971
+39043,Countess Dracula, 93.0,0 ,31-01-1971
+141010,And the Crows Will Dig Your Grave, 82.0,0 ,11-08-1971
+65573,In the Name of the Italian People, 103.0,0 ,15-12-1971
+29039,The Arena, 82.0,0 ,13-03-1974
+42459,Bang the Drum Slowly, 96.0,0 ,26-08-1973
+11035,Roma, 128.0,0 ,15-03-1972
+123787,Weed, 97.0,0 ,01-04-1972
+80680,Baby Needs a New Pair of Shoes, 86.0,0 ,01-11-1974
+83461,Monologue, 94.0,0 ,01-01-1972
+294085,Valerie Inside Outside, 88.0,0 ,30-05-1972
+59881,Taking Off, 93.0,0 ,17-05-1971
+28498,Theatre of Blood, 104.0,0 ,15-03-1973
+26185,McQ, 111.0,0 ,04-01-1974
+16938,Black Christmas, 98.0,0 ,11-10-1974
+66055,Shoot the Living and Pray for the Dead, 90.0,0 ,13-08-1971
+40345,Delirium, 102.0,0 ,05-07-1972
+79683,Bad Man's River, 92.0,0 ,03-12-1971
+76329,Happy New Year, 90.0,0 ,13-04-1973
+42525,The Last Valley, 128.0,0 ,28-01-1971
+110412,Symptoms, 91.0,0 ,10-05-1974
+53868,The Vault of Horror, 83.0,0 ,16-03-1973
+25109,Evil Roy Slade, 97.0,0 ,18-02-1972
+86256,Tarkan and the Blood of the Vikings, 86.0,0 ,01-01-1971
+244182,Emma, 240.0,0 ,01-01-1972
+143437,1 P.M., 77.0,0 ,10-02-1972
+636,THX 1138, 86.0,777000 ,11-03-1971
+208333,The Naked Ape, 85.0,0 ,01-08-1973
+17129,Hanzo the Razor: Who's Got the Gold?, 84.0,0 ,09-02-1974
+85904,The Inner Scar, 60.0,0 ,02-02-1972
+47536,Hitler: The Last Ten Days, 0.0,0 ,19-04-1973
+39263,Blood from the Mummy's Tomb, 94.0,0 ,16-06-1971
+22021,Coffy, 91.0,500000 ,13-06-1973
+10939,The Return of the Tall Blond Man with One Black Shoe, 81.0,0 ,12-11-1974
+18589,The Abductors, 90.0,0 ,28-01-1972
+82191,Flight of the Doves, 105.0,0 ,02-04-1971
+30885,Vampyres, 87.0,0 ,01-01-1974
+47251,Indian Summer, 132.0,0 ,27-10-1972
+258907,Dyketactics, 4.0,0 ,01-01-1974
+24569,Carry On Henry, 89.0,0 ,01-01-1971
+38034,The Heroine, 84.0,0 ,26-04-1973
+87417,Slither, 97.0,0 ,07-03-1973
+5486,A Bay of Blood, 84.0,0 ,08-08-1971
+63959,The Zodiac Killer, 87.0,0 ,07-04-1971
+143451,Arcana, 102.0,0 ,06-04-1972
+78399,The Savior, 90.0,0 ,01-09-1971
+48153,The Outside Man, 104.0,0 ,21-12-1972
+81937,Dynamite Brothers, 90.0,0 ,01-05-1974
+9277,The Sting, 129.0,5500000 ,25-12-1973
+113523,Doomsday Machine, 83.0,0 ,01-01-1972
+49106,The Dawns Here Are Quiet, 188.0,0 ,06-06-1972
+356864,Fat Man on a Beach, 0.0,0 ,02-01-1973
+213955,The Green Hornet, 90.0,0 ,21-03-1974
+11942,Bring Me the Head of Alfredo Garcia, 112.0,1500000 ,14-08-1974
+186066,National Mechanics, 105.0,0 ,28-12-1972
+44154,A Touch of Zen, 200.0,0 ,17-11-1971
+112234,Women in Revolt, 97.0,0 ,01-01-1971
+45007,The Hunting Party, 111.0,0 ,16-07-1971
+28068,The Loreley's Grasp, 85.0,0 ,23-02-1974
+11946,New Mischief by Emil, 91.0,0 ,21-10-1972
+8348,Thunderbolt and Lightfoot, 115.0,0 ,23-05-1974
+29352,Super Stooges vs the Wonder Women, 105.0,0 ,11-04-1974
+56150,Jonathan Livingston Seagull, 120.0,0 ,23-10-1973
+104041,Mousey, 85.0,0 ,24-05-1974
+34052,Jack and the Beanstalk, 93.0,0 ,20-07-1974
+29496,Cut-Throats Nine, 83.0,0 ,10-07-1972
+3043,Flesh for Frankenstein, 95.0,450000 ,30-11-1973
+34184,The Burglars, 120.0,0 ,31-10-1971
+64847,Belladonna of Sadness, 89.0,0 ,01-01-1973
+126563,The American Dreamer, 90.0,0 ,01-04-1971
+33357,The Valachi Papers, 125.0,0 ,01-06-1972
+270002,Fuck Off! Images of Finland, 96.0,0 ,19-03-1971
+8425,The Clockmaker of St. Paul, 105.0,0 ,16-01-1974
+23847,Across 110th Street, 102.0,0 ,19-12-1972
+3133,Badlands, 94.0,0 ,15-10-1973
+66187,Elite Group, 0.0,0 ,10-04-1974
+86643,House of Whipcord, 102.0,0 ,19-04-1974
+99259,Eight Deadly Shots, 316.0,0 ,19-04-1972
+84847,Cinderella Liberty, 117.0,0 ,18-12-1973
+87514,Skyjacked, 101.0,0 ,24-05-1972
+22376,Treasure Island, 94.0,0 ,01-10-1972
+4279,The Married Couple of the Year Two, 98.0,0 ,07-04-1971
+86493,She Devils of the SS, 95.0,0 ,31-12-1972
+27832,The Corpse Grinders, 72.0,47000 ,19-05-1971
+13013,Son of Dracula, 90.0,0 ,12-04-1974
+232005,Jude the Obscure, 300.0,0 ,03-10-1971
+11316,The Tragedy of Macbeth, 140.0,0 ,13-10-1971
+2926,The Three Musketeers, 105.0,0 ,11-12-1973
+8333,The Taking of Pelham One Two Three, 104.0,0 ,02-10-1974
+17128,Hanzo the Razor: The Snare, 89.0,0 ,11-08-1973
+173805,Fortune and Men's Eyes, 102.0,0 ,15-06-1971
+32021,The Night Strangler, 74.0,0 ,16-01-1973
+11072,Blazing Saddles, 93.0,2600000 ,07-02-1974
+77765,The Klansman, 112.0,5000000 ,25-10-1974
+210615,The Son, 100.0,0 ,30-03-1973
+128174,Blood Thirst, 74.0,0 ,14-05-1971
+30566,Blacula, 93.0,500000 ,25-08-1972
+210609,Pioneer Woman, 74.0,0 ,18-12-1973
+39889,The Candy Snatchers, 94.0,0 ,01-01-1973
+69578,What Have They Done to Your Daughters?, 87.0,0 ,10-08-1974
+30903,Blade of the Ripper, 98.0,0 ,15-01-1971
+63512,Murders in the Rue Morgue, 87.0,0 ,06-10-1971
+88875,The Effect of Gamma Rays on Man-in-the-Moon Marigolds, 100.0,0 ,20-12-1972
+97313,Bank Shot, 83.0,0 ,31-07-1974
+593,Solaris, 167.0,0 ,20-03-1972
+133919,Scenes from a Marriage, 283.0,150000 ,11-04-1973
+150677,His Name was King, 96.0,0 ,18-05-1971
+130639,Extreme Private Eros: Love Song 1974, 98.0,0 ,01-01-1974
+18047,Brian's Song, 73.0,0 ,30-11-1971
+245073,Family Life, 88.0,0 ,24-09-1971
+261274,A Flower, 8.0,0 ,01-01-1971
+87362,High Crime, 100.0,0 ,12-08-1973
+96106,Battle of the Amazons, 90.0,0 ,11-08-1973
+86497,Wide Open, 98.0,0 ,18-12-1974
+31515,The Boy Friend, 137.0,0 ,16-12-1971
+150025,Django's Cut Price Corpses, 83.0,0 ,03-05-1971
+21717,Big Jake, 110.0,0 ,26-05-1971
+48211,Sacco & Vanzetti, 120.0,0 ,16-03-1971
+22307,Sisters, 93.0,500000 ,27-03-1973
+22029,Black Caesar, 94.0,0 ,07-02-1973
+74087,Death Carries a Cane, 84.0,0 ,05-01-1973
+74948,Steppenwolf, 107.0,0 ,01-01-1974
+58402,The Boss, 100.0,0 ,01-02-1973
+46898,Malcolm X, 91.0,0 ,24-05-1972
+145481,Don Quijote cabalga de nuevo, 132.0,0 ,09-03-1973
+26831,That'll Be The Day, 87.0,0 ,13-05-1973
+5691,The Canterbury Tales, 111.0,0 ,01-07-1972
+3427,Max and the Junkmen, 112.0,0 ,17-02-1971
+21964,Five Fingers of Death, 104.0,0 ,26-05-1972
+28801,Twins of Evil, 87.0,0 ,03-10-1971
+102410,Fillmore, 105.0,0 ,14-06-1972
+69872,Your Vice is a Locked Room and Only I Have the Key, 96.0,0 ,04-08-1972
+9462,The Way of the Dragon, 100.0,130000 ,01-06-1972
+5920,Le Mans, 104.0,0 ,23-06-1971
+11378,Trafic, 96.0,0 ,16-04-1971
+30593,Heavy Traffic, 76.0,950000 ,08-08-1973
+29069,The Velvet Vampire, 80.0,0 ,13-10-1971
+34991,Gumshoe, 88.0,0 ,01-12-1971
+4986,Fuzz, 93.0,0 ,14-07-1972
+29129,The Shiver of the Vampires, 95.0,0 ,21-04-1971
+147106,Oklahoma Crude, 108.0,0 ,03-07-1973
+41897,Charleston, 111.0,0 ,10-09-1974
+90029,The Mad Butcher, 83.0,0 ,18-02-1971
+5482,Rabid Dogs, 96.0,0 ,01-01-1974
+304701,Haathi Mere Saathi, 0.0,0 ,01-05-1971
+241004,Tintin and the Lake of Sharks, 81.0,0 ,13-12-1972
+204007,A mí las mujeres ni fu ni fa, 88.0,0 ,01-07-1971
+129830,Aniskin and Fantomas, 129.0,0 ,08-05-1974
+38939,Tales from the Crypt, 92.0,0 ,09-03-1972
+10310,The Bitter Tears of Petra von Kant, 124.0,0 ,05-10-1972
+40029,The Bamboo House of Dolls, 110.0,0 ,21-12-1973
+87734,There's Always Vanilla, 93.0,0 ,01-12-1971
+146428,You and Me, 97.0,0 ,25-10-1971
+154575,Illumination, 87.0,0 ,29-09-1973
+28855,The Return of Count Yorga, 97.0,0 ,18-08-1971
+152787,Deaf Smith & Johnny Ears, 91.0,0 ,29-03-1973
+27196,Stardust, 107.0,0 ,24-10-1974
+76200,Just Before Nightfall, 100.0,0 ,31-03-1971
+85971,Summer School Teachers, 85.0,0 ,01-08-1974
+155597,All Screwed Up, 105.0,0 ,22-02-1974
+81775,The Audience, 106.0,0 ,01-01-1972
+42500,Lawman, 99.0,0 ,01-01-1971
+38582,Godzilla vs. Mechagodzilla, 84.0,0 ,20-03-1974
+86236,Dying Room Only, 74.0,0 ,18-09-1973
+27409,Night of the Devils, 91.0,0 ,29-04-1972
+14902,1776, 142.0,0 ,09-11-1972
+31591,Bad Company, 93.0,0 ,08-10-1972
+92299,The Thief Who Came to Dinner, 104.0,0 ,01-03-1973
+39872,Female Prisoner Scorpion: Jailhouse 41, 90.0,0 ,30-12-1972
+72114,The Groundstar Conspiracy, 103.0,0 ,12-06-1972
+307114,To Encourage the Others, 105.0,0 ,27-03-1972
+70609,Schoolgirl Report Part 5: What All Parents Should Know, 86.0,0 ,13-04-1973
+58411,Cannibal Girls, 84.0,0 ,01-04-1973
+56787,Bad Ronald, 74.0,0 ,23-10-1974
+53094,World on a Wire, 213.0,0 ,14-10-1973
+37488,Hit Man, 90.0,0 ,20-12-1972
+125374,Minamata: The Victims and Their World, 105.0,0 ,12-03-1971
+72648,Devil Times Five, 88.0,0 ,31-05-1974
+20947,Moscow-Cassiopeia, 85.0,0 ,23-09-1973
+994,Straw Dogs, 118.0,2200000 ,29-12-1971
+31656,Thieves Like Us, 123.0,0 ,11-02-1974
+43003,F for Fake, 89.0,0 ,13-03-1973
+43158,Godspell: A Musical Based on the Gospel According to St. Matthew, 103.0,0 ,21-03-1973
+420519,Wet Dreams, 89.0,0 ,10-10-1974
+83831,Charley-One-Eye, 96.0,0 ,18-04-1973
+27923,Hopelessly Lost, 93.0,0 ,06-06-1973
+18274,Frogs, 91.0,0 ,10-03-1972
+42448,Harry and Tonto, 115.0,0 ,12-08-1974
+143335,The Gathering Storm, 75.0,0 ,29-11-1974
+49354,Moon of the Wolf, 75.0,0 ,26-09-1972
+61574,Jeremy, 84.0,0 ,01-01-1973
+87897,Homebodies, 96.0,0 ,01-09-1974
+2000,Aguirre: The Wrath of God, 93.0,92000 ,29-12-1972
+5558,The Phantom of Liberty, 103.0,0 ,10-09-1974
+155128,The Body, 89.0,0 ,06-03-1974
+42470,The Day of the Dolphin, 104.0,0 ,19-12-1973
+54001,The Traveler, 83.0,0 ,01-01-1974
+42473,Tom Sawyer, 103.0,0 ,01-01-1973
+47406,Arabian Nights, 130.0,0 ,20-06-1974
+103236,Zanjeer, 146.0,0 ,11-05-1973
+126278,Vampir-Cuadecuc, 67.0,0 ,17-05-1971
+47397,Anita, 95.0,0 ,30-12-1972
+54008,Sugar Hill, 91.0,0 ,01-02-1974
+140825,The Deadly Trap, 96.0,0 ,09-06-1971
+256122,Prata Palomares, 125.0,0 ,01-01-1972
+61852,The Big Store, 86.0,0 ,06-09-1973
+72205,The Fox and the Hare, 12.0,0 ,01-01-1973
+61594,The Grand Duel, 98.0,0 ,29-12-1972
+38430,Seventeen Moments in Spring, 840.0,0 ,01-01-1973
+29449,Images, 101.0,0 ,01-05-1972
+26173,Mr. Majestyk, 103.0,0 ,17-07-1974
+79645,The Grissom Gang, 128.0,0 ,28-05-1971
+42269,We All Loved Each Other So Much, 124.0,0 ,01-01-1974
+53780,The Amazing Mr Blunden, 95.0,0 ,07-12-1972
+36194,The Go-Between, 118.0,100000 ,24-09-1971
+42513,Two English Girls, 130.0,0 ,18-11-1971
+77771,Touki Bouki, 85.0,0 ,01-07-1973
+93890,I Eat Your Skin, 84.0,0 ,29-10-1971
+3426,Cesar and Rosalie, 110.0,0 ,26-10-1972
+47246,Ladies & Gentlemen, 83.0,0 ,01-12-1973
+103850,A Place Called Today, 103.0,0 ,15-06-1972
+252888,Thief, 74.0,0 ,09-10-1971
+58545,The Most Wonderful Evening of My Life, 0.0,0 ,22-12-1972
+71762,Trial on the Road, 96.0,0 ,06-11-1971
+54396,The Cheerleaders, 81.0,0 ,01-03-1973
+280004,The Great Waltz, 135.0,0 ,11-11-1972
+112687,Doomwatch, 92.0,0 ,01-03-1972
+2200,Jacob the Liar, 100.0,0 ,22-12-1974
+94069,Spasmo, 94.0,0 ,16-02-1974
+251241,Plastic Jesus, 73.0,0 ,01-01-1971
+95551,The Mansion of Madness, 99.0,0 ,10-08-1973
+90590,Policewomen, 90.0,0 ,09-02-1974
+159365,Benaam, 117.0,0 ,18-10-1974
+149026,T.R. Baskin, 90.0,0 ,20-10-1971
+72185,Winnie the Pooh and Tigger Too, 25.0,0 ,20-09-1974
+45192,El profe, 120.0,0 ,07-04-1971
+88950,'Gator Bait, 88.0,0 ,01-06-1974
+41461,The Iceman Cometh, 239.0,0 ,10-11-1973
+95043,The Devil, 119.0,0 ,01-01-1972
+173732,Bang Bang, 80.0,0 ,01-01-1971
+129564,Property Is No Longer a Theft, 126.0,0 ,03-10-1973
+1721,All the Way Boys, 106.0,0 ,22-12-1972
+110227,The Borrowers, 81.0,0 ,14-12-1973
+33583,The Decameron, 112.0,0 ,01-01-1971
+10309,The Merchant of Four Seasons, 88.0,0 ,04-11-1971
+54388,The Daring Dobermans, 88.0,0 ,01-07-1973
+74831,The Devil's Wedding Night, 80.0,0 ,01-04-1973
+76198,The Slap, 99.0,0 ,23-10-1974
+96337,Zandy's Bride, 116.0,0 ,19-05-1974
+93064,Bawdy Tales, 93.0,0 ,01-01-1973
+29482,The Bloodstained Butterfly, 95.0,0 ,10-09-1971
+117408,The Age of the Medici, 255.0,0 ,26-12-1972
+147729,Animals Are Beautiful People, 92.0,0 ,14-11-1974
+199985,The Last Hours of a Virgin, 98.0,0 ,22-05-1972
+163549,Sunday in the Country, 93.0,0 ,22-11-1974
+42489,Sounder, 105.0,0 ,24-09-1972
+72449,The Carey Treatment, 101.0,0 ,29-03-1972
+105093,Glass Ceiling, 92.0,0 ,03-05-1971
+42517,The Big Doll House, 95.0,0 ,01-01-1971
+30934,Tower of Evil, 89.0,0 ,19-05-1972
+21035,Turkish Delight, 112.0,0 ,22-02-1973
+40387,Night Watch, 99.0,0 ,08-11-1973
+5484,Four Times That Night, 83.0,0 ,15-04-1972
+11914,Perched on a Tree, 90.0,0 ,12-04-1971
+80701,The Master and Margaret, 95.0,0 ,15-07-1972
+32082,The Hospital, 103.0,0 ,14-12-1971
+357959,Sour Grape, 76.0,0 ,30-08-1974
+7514,The Harder They Come, 103.0,0 ,01-09-1972
+17875,The Hellstrom Chronicle, 90.0,0 ,05-05-1971
+70490,Massacre Mafia Style, 82.0,0 ,19-12-1974
+18568,The Master Touch, 112.0,0 ,08-12-1972
+47848,Scent of a Woman, 103.0,0 ,25-12-1974
+94055,The Peace Killers, 88.0,0 ,29-09-1971
+56153,The Seduction of Mimi, 121.0,0 ,01-01-1972
+247749,Apple in the River, 76.0,0 ,03-01-1974
+78250,Blood Shack, 70.0,0 ,01-01-1971
+39535,Tarot, 91.0,0 ,01-01-1973
+1847,The Long Goodbye, 113.0,0 ,07-03-1973
+85837,Detroit 9000, 106.0,0 ,01-08-1973
+79750,The Assassin of Rome, 98.0,0 ,01-01-1972
+29854,Seizure, 94.0,250000 ,01-01-1974
+38654,When Eight Bells Toll, 94.0,0 ,09-03-1971
+139563,La poliziotta, 0.0,0 ,15-11-1974
+3478,Ludwig, 235.0,0 ,29-12-1972
+107068,The Sinful Nuns of Saint Valentine, 93.0,0 ,26-03-1974
+93142,Man Without a Memory, 92.0,0 ,23-08-1974
+29142,Executive Action, 91.0,0 ,07-11-1973
+52661,99 and 44/100% Dead, 98.0,0 ,29-08-1974
+26504,Black Belly of the Tarantula, 98.0,0 ,12-08-1971
+78233,The Policeman, 87.0,0 ,05-06-1971
+440178,Pilate and Others, 98.0,0 ,29-03-1972
+36885,Schoolgirl Report Part 3: What Parents Find Unthinkable, 97.0,0 ,17-02-1972
+49326,City Beneath the Sea, 98.0,0 ,25-01-1971
+31906,The Beguiled, 105.0,0 ,31-03-1971
+130948,7 Hours of Violence, 93.0,0 ,15-11-1973
+40350,Fright, 87.0,0 ,01-01-1971
+107774,Pete 'n' Tillie, 100.0,0 ,17-12-1972
+82350,Finché c'è guerra c'è speranza, 0.0,0 ,20-12-1974
+22048,Foxy Brown, 94.0,500000 ,05-04-1974
+51302,The Muppet Musicians of Bremen, 50.0,0 ,01-01-1972
+238397,James Dean Remembered, 67.0,0 ,01-01-1974
+68736,Joe Cocker - Mad Dogs & Englishmen, 117.0,0 ,27-08-1971
+931,Don't Look Now, 110.0,1500000 ,03-12-1973
+8327,The Holy Mountain, 114.0,0 ,01-05-1973
+82465,Child's Play, 100.0,0 ,12-12-1972
+74057,Steelyard Blues, 93.0,0 ,31-01-1973
+105576,The Old Maid, 85.0,0 ,05-01-1972
+1410,Dark Star, 83.0,60000 ,01-04-1974
+35280,The Other, 108.0,0 ,23-05-1972
+1485,Get Carter, 112.0,1814462 ,03-03-1971
+213635,Luther, 110.0,0 ,21-01-1974
+86594,In Search of Ancient Astronauts, 0.0,0 ,05-01-1973
+30708,Cahill U.S. Marshal, 103.0,0 ,11-07-1973
+16825,The Case of the Scorpion's Tail, 90.0,0 ,16-08-1971
+46845,Man in the Wilderness, 104.0,0 ,24-11-1971
+45377,Death Sentence, 74.0,0 ,02-10-1974
+27395,Count Dracula's Great Love, 85.0,0 ,12-05-1973
+41471,Lone Wolf and Cub: Sword of Vengeance, 83.0,0 ,01-04-1972
+30552,The Eroticist, 109.0,0 ,16-03-1972
+150224,Savage Guns, 85.0,0 ,25-11-1971
+58447,Three Giant Men, 81.0,0 ,01-01-1973
+42461,The Scarlet Letter, 90.0,0 ,01-01-1973
+172475,Mrs. Pollifax: Spy, 110.0,0 ,21-05-1971
+22784,Boxcar Bertha, 92.0,600000 ,14-06-1972
+65386,Officers, 96.0,0 ,26-07-1971
+40732,The Emigrants, 191.0,0 ,08-03-1971
+11951,Vanishing Point, 99.0,1300000 ,15-01-1971
+21489,The Odessa File, 130.0,0 ,17-10-1974
+157724,The Crazy Bunch, 93.0,0 ,27-04-1974
+6976,Whoever Slew Auntie Roo?, 91.0,0 ,31-10-1971
+83413,Blood Freak, 86.0,0 ,01-01-1972
+91459,Italianamerican, 49.0,0 ,01-01-1974
+221144,Maybe I'll Come Home in the Spring, 74.0,0 ,16-01-1971
+30576,Karlsson on the Roof, 99.0,0 ,07-12-1974
+84473,The Iron Rose, 80.0,0 ,12-04-1973
+124122,Little Mother, 90.0,0 ,05-01-1973
+19336,Godzilla vs. Gigan, 89.0,0 ,12-03-1972
+36886,Schoolgirl Report Part 4: What Drives Parents to Despair, 88.0,0 ,28-09-1972
+224813,One Man's War, 108.0,0 ,27-02-1973
+46359,Demons of the Mind, 89.0,0 ,05-11-1972
+4593,The Discreet Charm of the Bourgeoisie, 101.0,800000 ,15-09-1972
+36887,Schoolgirl Report Part 2: What Keeps Parents Awake at Night, 91.0,0 ,26-08-1971
+70061,On the Trail of the Bremen Town Musicians, 18.0,0 ,02-02-1973
+149326,Ape and Super-Ape, 0.0,0 ,01-01-1972
+573,Frenzy, 116.0,3500000 ,25-05-1972
+26480,The Legend of the 7 Golden Vampires, 85.0,0 ,11-07-1974
+9461,Enter the Dragon, 99.0,850000 ,17-08-1973
+29805,Juggernaut, 109.0,0 ,25-09-1974
+120249,‘Rameau’s Nephew’ by Diderot (Thanx to Dennis Young) by Wilma Schoen, 270.0,0 ,05-11-1974
+64943,Giordano Bruno, 115.0,0 ,29-11-1973
+6619,Death in Venice, 130.0,0 ,01-03-1971
+134223,The Man Called Noon, 98.0,0 ,29-08-1973
+343,Harold and Maude, 91.0,1200000 ,20-12-1971
+12593,Fritz the Cat, 78.0,850000 ,12-04-1972
+41477,Lone Wolf and Cub: Baby Cart in Peril, 81.0,0 ,15-11-1972
+5485,Baron Blood, 98.0,0 ,25-02-1972
+261005,Your Honor, 92.0,0 ,10-09-1973
+12089,The Tall Blond Man with One Black Shoe, 90.0,0 ,06-12-1972
+53898,A Safe Place, 94.0,0 ,01-10-1971
+16306,Fantastic Planet, 72.0,0 ,01-05-1973
+30341,Villain, 98.0,0 ,26-05-1971
+104974,Captain Apache, 94.0,0 ,27-10-1971
+15516,The Last House on the Left, 84.0,90000 ,30-08-1972
+3159,Frankenstein's Castle of Freaks, 90.0,0 ,19-02-1974
+3701,Gang War in Milan, 90.0,0 ,21-02-1973
+90351,Sympathy for the Underdog, 93.0,0 ,01-01-1971
+92287,One Is a Lonely Number, 97.0,0 ,19-06-1972
+3699,Seven Blood-Stained Orchids, 92.0,0 ,30-06-1972
+262296,Acadia Acadia?!?, 118.0,0 ,01-01-1971
+2204,Alice in the Cities, 110.0,0 ,17-05-1974
+19403,The Mechanic, 100.0,0 ,06-10-1972
+20051,Dad's Army, 95.0,0 ,12-03-1971
+114444,My Childhood, 48.0,0 ,05-06-1972
+14328,The Paper Chase, 113.0,0 ,16-10-1973
+39264,Godzilla vs. Megalon, 78.0,760000 ,17-03-1973
+107282,Savages, 106.0,0 ,27-06-1972
+158828,An American Hippie in Israel, 95.0,0 ,01-01-1972
+21142,Billy Jack, 114.0,0 ,02-08-1971
+48207,Melody, 103.0,0 ,28-03-1971
+76871,The Widow Couderc, 92.0,0 ,15-09-1971
+79735,Shoot Out, 95.0,0 ,16-08-1971
+90715,Greaser's Palace, 91.0,0 ,31-07-1972
+29425,The Crazies, 103.0,275000 ,16-03-1973
+55106,Butterflies Are Free, 109.0,0 ,06-07-1972
+85365,Tony Arzenta, 90.0,0 ,23-08-1973
+43077,Gordon's War, 90.0,0 ,09-08-1973
+42451,The Apprenticeship of Duddy Kravitz, 120.0,0 ,11-04-1974
+42501,Murmur of the Heart, 118.0,0 ,27-04-1971
+84324,The Super Cops, 90.0,0 ,20-03-1974
+47313,Sister Street Fighter, 86.0,0 ,31-08-1974
+84922,Mahler, 115.0,0 ,04-04-1974
+90728,Hammer, 92.0,0 ,04-07-1972
+257472,Rivers of Sand, 83.0,0 ,30-10-1974
+36163,Winnie-the-Pooh Goes Visiting, 10.0,0 ,01-01-1971
+222413,Hellyys, 86.0,0 ,17-02-1972
+48693,The Mother and the Whore, 217.0,0 ,01-05-1973
+264723,Le pélican, 83.0,0 ,06-02-1974
+46175,Daughters of Darkness, 100.0,0 ,28-05-1971
+59912,The Reincarnation of Isabel, 98.0,0 ,17-01-1973
+24084,The Adventures of Barry McKenzie, 114.0,0 ,01-01-1972
+202637,A Cry in the Wilderness, 74.0,0 ,26-03-1974
+11123,Earthquake, 123.0,7000000 ,15-11-1974
+692,Pink Flamingos, 93.0,12000 ,12-03-1972
+53657,Raid on Rommel, 99.0,0 ,12-02-1971
+183859,Interviews with My Lai Veterans, 22.0,0 ,25-02-1971
+252853,Dr. Cook's Garden, 75.0,0 ,19-01-1971
+92670,Silence, 129.0,0 ,13-11-1971
+105347,How Tasty Was My Little Frenchman, 84.0,0 ,01-06-1971
+173739,Zézero, 30.0,0 ,01-01-1974
+1688,Conquest of the Planet of the Apes, 88.0,1700000 ,29-06-1972
+113012,Distant Thunder, 101.0,0 ,01-01-1973
+35718,Nude For Satan, 82.0,0 ,30-10-1974
+169364,Swayamvaram, 131.0,39000 ,23-11-1972
+48691,Goodbye Uncle Tom, 123.0,0 ,30-09-1971
+68053,Slap the Monster on Page One, 90.0,0 ,19-10-1972
+103432,Outrage, 74.0,0 ,28-11-1973
+28650,The Thing with Two Heads, 91.0,0 ,19-07-1972
+191703,Pioneers in Ingolstadt, 84.0,0 ,19-05-1971
+150226,Ballad of Django, 88.0,0 ,17-04-1971
+91255,Death Walks at Midnight, 103.0,0 ,17-11-1972
+54307,Zatôichi's Conspiracy, 88.0,0 ,21-04-1973
+144498,To Find a Man, 90.0,0 ,31-01-1972
+65332,Love and Anarchy, 120.0,0 ,23-02-1973
+68247,The Wrath of God, 111.0,0 ,14-07-1972
+42467,25 Fireman's Street, 97.0,0 ,27-09-1973
+86049,Follow Me!, 95.0,0 ,18-07-1972
+88390,Black Eye, 98.0,0 ,17-05-1974
+85633,Hot Pepper, 54.0,0 ,22-11-1973
+38646,Nicholas and Alexandra, 189.0,0 ,29-11-1971
+24777,Private Parts, 87.0,0 ,01-09-1972
+27084,Invasion of the Bee Girls, 85.0,0 ,01-06-1973
+35405,S*P*Y*S, 87.0,0 ,05-09-1974
+169652,Salomé, 80.0,0 ,19-02-1972
+24559,Slaughterhouse-Five, 104.0,3200000 ,15-03-1972
+105902,Craze, 96.0,0 ,15-05-1974
+68659,The Horsemen, 109.0,0 ,16-08-1971
+84418,Asylum of Satan, 80.0,0 ,01-01-1972
+196784,Something Big, 108.0,0 ,19-11-1971
+11577,Pat Garrett & Billy the Kid, 106.0,4638783 ,23-05-1973
+65502,Fools' Parade, 98.0,0 ,18-08-1971
+40687,The Heartbreak Kid, 106.0,0 ,17-12-1972
+113300,A Blank on the Map, 59.0,0 ,29-12-1971
+42492,Up the Sandbox, 97.0,0 ,21-12-1972
+85442,To Catch a Spy, 94.0,0 ,06-09-1971
+63172,The Year 01, 90.0,0 ,22-02-1973
+32143,Billy Two Hats, 99.0,0 ,20-03-1974
+91487,State of Siege, 122.0,0 ,30-12-1972
+47446,The Trojan Women, 105.0,0 ,26-09-1971
+87788,The Legend of Nigger Charley, 98.0,0 ,16-03-1972
+80351,The Castaway Cowboy, 91.0,0 ,01-08-1974
+91607,Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?, 108.0,0 ,15-06-1971
+46941,Love and Pain and the Whole Damn Thing, 110.0,0 ,19-04-1973
+4883,Ten Little Indians, 98.0,0 ,24-09-1974
+326755,Dirty Weekend, 107.0,0 ,08-03-1973
+36764,Uuno Turhapuro, 87.0,0 ,24-08-1973
+46059,The Hot Rock, 101.0,0 ,26-01-1972
+259180,The Impossible Hour, 45.0,0 ,08-03-1974
+64307,Heroes of Sung, 81.0,0 ,01-12-1973
+56764,The Glass Menagerie, 100.0,0 ,16-12-1973
+35922,The Rolling Stones: Cocksucker Blues, 93.0,0 ,01-01-1972
+38616,Marjoe, 88.0,0 ,24-07-1972
+17965,The Abominable Dr. Phibes, 94.0,3000000 ,18-05-1971
+137037,The Death of Maria Malibran, 104.0,0 ,02-03-1972
+61683,Don't Deliver Us from Evil, 102.0,0 ,05-04-1971
+171308,Baffled!, 90.0,0 ,29-01-1973
+4985,The Longest Yard, 121.0,2900000 ,21-08-1974
+31856,Hydrozagadka, 70.0,0 ,30-04-1971
+42526,The Nightcomers, 96.0,0 ,01-01-1971
+104644,A Reflection of Fear, 89.0,0 ,12-02-1973
+66730,The Rescue, 79.0,0 ,24-09-1971
+69576,Who Saw Her Die?, 90.0,1000000 ,12-05-1972
+29515,The Mack, 110.0,0 ,04-04-1973
+42529,W.R. - Mysteries of the Organism, 84.0,0 ,13-10-1971
+5822,Sweet Sweetback's Baadasssss Song, 97.0,150000 ,23-04-1971
+143068,The Postmaster, 68.0,0 ,25-08-1972
+91627,Love Me Deadly, 95.0,42500 ,05-01-1973
+16246,Gone in 60 Seconds, 105.0,0 ,28-07-1974
+48847,The Amputee, 5.0,0 ,01-01-1974
+228455,The Order, 44.0,0 ,01-01-1973
+84285,Von Richthofen and Brown, 97.0,0 ,30-06-1971
+12335,Bedknobs and Broomsticks, 117.0,20000000 ,07-10-1971
+21537,Not Scared to Die, 87.0,0 ,12-01-1973
+131313,Jane Eyre, 110.0,0 ,04-06-1971
+79572,Execution Squad, 100.0,0 ,25-02-1972
+11234,The Omega Man, 98.0,0 ,01-08-1971
+27331,Charley Varrick, 111.0,0 ,19-09-1973
+11034,The Great Gatsby, 144.0,6500000 ,27-03-1974
+52761,Daisy Town, 71.0,0 ,01-11-1971
+19017,Dirty Mary Crazy Larry, 93.0,0 ,17-05-1974
+49719,Zeppelin, 100.0,0 ,06-10-1971
+122229,Angel's Leap, 95.0,0 ,21-09-1971
+33057,Alvin Purple, 95.0,0 ,20-12-1973
+42499,The Night Evelyn Came out of the Grave, 103.0,0 ,18-08-1971
+46010,Old Men: Robbers, 92.0,0 ,01-01-1971
+106402,The Severed Arm, 89.0,0 ,01-01-1973
+466,Klute, 114.0,2500000 ,21-06-1971
+760,The Mad Adventures of Rabbi Jacob, 100.0,0 ,17-10-1973
+29424,Hungry Wives, 104.0,90000 ,01-05-1972
+42496,Millhouse, 92.0,0 ,01-01-1971
+124019,A Well Spent Life, 44.0,0 ,01-01-1971
+108535,Roma bene, 100.0,0 ,08-10-1971
+46595,The Great Ecstasy of Woodcarver Steiner, 45.0,22500 ,01-01-1974
+36665,General Idi Amin Dada, 90.0,0 ,01-11-1974
+40810,The Streetfighter, 91.0,0 ,02-02-1974
+27554,The Panic in Needle Park, 110.0,1645000 ,13-07-1971
+93289,Now Where Did the Seventh Company Get to?, 95.0,0 ,01-01-1973
+30648,Blindman, 105.0,0 ,15-11-1971
+42516,Love, 88.0,0 ,21-01-1971
+109456,Coffin Full of Dollars, 91.0,0 ,01-04-1971
+138273,La Vacanza, 0.0,0 ,04-09-1971
+14886,The Last Detail, 103.0,0 ,11-12-1973
+42531,Wild Rovers, 136.0,0 ,23-06-1971
+30689,Four Flies on Grey Velvet, 104.0,0 ,17-12-1971
+38035,Sweet Sugar, 90.0,0 ,09-06-1972
+55848,Lancelot of the Lake, 85.0,0 ,26-09-1974
+32080,The Seven-Ups, 103.0,0 ,01-01-1973
+54988,Bird on a Wire, 105.0,0 ,05-07-1974
+11842,Red Sun, 112.0,0 ,15-09-1971
+12116,Love in the Afternoon, 97.0,0 ,21-08-1972
+26762,The Outfit, 103.0,0 ,01-10-1973
+125889,Stars and the Water Carriers, 91.0,0 ,14-08-1974
+77861,The Execution of Private Slovik, 120.0,0 ,13-03-1974
+75063,Rainbow Bridge, 108.0,0 ,01-03-1972
+119364,The Take, 91.0,0 ,01-05-1974
+167707,A Bee in the Rain, 66.0,0 ,13-04-1972
+85126,Hickey & Boggs, 111.0,0 ,04-10-1972
+49125,Allonsanfan, 115.0,0 ,08-12-1974
+76002,Kotch, 113.0,0 ,17-09-1971
+42476,Ben, 94.0,0 ,23-06-1972
+72639,The Marseille Contract, 89.0,0 ,04-09-1974
+2487,Lady Snowblood, 97.0,0 ,01-12-1973
+26648,The Night Porter, 118.0,0 ,03-04-1974
+97519,Lost Horizon, 143.0,12 ,17-03-1973
+29596,Nothing But the Night, 90.0,0 ,01-01-1973
+28156,The Baby, 84.0,0 ,01-03-1973
+59159,Callan, 106.0,0 ,01-01-1974
+62437,Land of Silence and Darkness, 85.0,0 ,08-10-1971
+10102,La Grande Bouffe, 135.0,0 ,16-05-1973
+32615,The Offence, 112.0,0 ,11-01-1973
+103711,Charley and the Angel, 93.0,0 ,23-03-1973
+33020,Dracula A.D. 1972, 96.0,0 ,27-09-1972
+205236,El taxi de los conflictos, 100.0,0 ,31-05-1973
+88065,The Werewolf of Washington, 90.0,0 ,01-10-1973
+24085,Barry McKenzie Holds His Own, 93.0,0 ,12-12-1974
+28153,It's Alive, 91.0,0 ,15-10-1974
+103067,The Designated Victim, 105.0,0 ,22-04-1971
+90094,Mean Frank and Crazy Tony, 85.0,0 ,23-11-1973
+105098,The Man with Icy Eyes, 95.0,0 ,10-04-1971
+187897,The Deadly Duo, 94.0,0 ,22-12-1971
+149145,Les Hautes Solitudes, 80.0,0 ,15-12-1974
+39922,The Sinful Dwarf, 92.0,0 ,20-12-1973
+46565,Torino nera, 105.0,0 ,22-05-1972
+55044,Cisco Pike, 95.0,0 ,14-01-1972
+293091,When the Heavens Fell, 100.0,0 ,10-03-1972
+44157,How To Frame A Figg, 103.0,0 ,01-02-1971
+5924,Papillon, 151.0,12000000 ,13-12-1973
+65192,The Savage Five, 96.0,0 ,15-02-1974
+59803,Adventures of Mowgli, 90.0,0 ,01-01-1973
+242920,The Glass House, 90.0,0 ,04-02-1972
+18257,Black Belt Jones, 87.0,0 ,29-01-1974
+86520,Himiko, 100.0,0 ,09-03-1974
+61799,A Girl in Australia, 107.0,0 ,01-01-1971
+17897,The Golden Voyage of Sinbad, 105.0,0 ,20-12-1973
+16993,Fat City, 100.0,0 ,26-07-1972
+137269,Cousin Jules, 91.0,0 ,01-05-1972
+16180,The Legend of Hell House, 95.0,0 ,15-06-1973
+147105,The Enchanted World of Danny Kaye: The Emperor's New Clothes, 60.0,0 ,21-02-1972
+104334,Super Bitch, 93.0,0 ,05-03-1973
+54236,Cousin Angelica, 107.0,0 ,28-04-1974
+81672,Passionate, 96.0,0 ,06-06-1974
+829,Chinatown, 130.0,6000000 ,20-06-1974
+41474,Lone Wolf and Cub: Baby Cart to Hades, 89.0,0 ,01-08-1972
+90944,Tragic Ceremony, 82.0,0 ,20-12-1972
+10236,The Way We Were, 118.0,0 ,17-10-1973
+104251,Pastoral: To Die in the Country, 104.0,0 ,28-12-1974
+8144,Dig Your Grave Friend... Sabata's Coming, 88.0,0 ,02-04-1971
+62761,The Cars That Ate Paris, 87.0,0 ,10-10-1974
+39882,Schoolgirls in Chains, 90.0,45000 ,01-01-1973
+48350,Psychomania, 85.0,0 ,05-01-1973
+168228,Some Call It Loving, 105.0,0 ,16-11-1973
+5483,Lisa and the Devil, 92.0,1000000 ,08-05-1973
+59098,Au Pair Girls, 85.0,0 ,01-07-1972
+33126,Chung Kuo - Cina, 207.0,0 ,26-12-1972
+49907,We Want the Colonels, 102.0,0 ,05-03-1973
+10648,Magnum Force, 124.0,0 ,23-12-1973
+4984,White Lightning, 101.0,0 ,06-08-1973
+70345,Sssssss, 99.0,0 ,06-07-1973
+105087,Cross Current, 90.0,0 ,20-08-1971
+56718,The Mind Snatchers, 94.0,0 ,28-06-1972
+53045,Hands of the Ripper, 85.0,0 ,17-10-1971
+356862,On Reflection: B.S. Johnson on Dr. Samuel Johnson, 0.0,0 ,02-01-1972
+21256,Born to Win, 88.0,0 ,01-12-1971
+99449,The Iguana with the Tongue of Fire, 92.0,0 ,24-08-1971
+63187,The Sinner, 79.0,0 ,01-01-1972
+102812,FTA, 97.0,0 ,21-07-1972
+90617,Walter Defends Sarajevo, 133.0,0 ,30-11-1972
+112383,Lampaansyöjät, 96.0,0 ,17-11-1972
+46581,Immoral Tales, 103.0,0 ,17-08-1974
+34800,The Cub Tiger from Kwang Tung, 80.0,0 ,31-03-1973
+6591,What Have You Done to Solange?, 103.0,0 ,09-03-1972
+90949,Pets, 97.0,0 ,01-02-1974
+53931,Seven Alone, 97.0,0 ,20-12-1974
+58702,Between Miracles, 122.0,0 ,24-05-1971
+139851,And Now My Love, 150.0,0 ,15-05-1974
+21613,Street Mobster, 92.0,0 ,06-05-1972
+37129,Only Old Men Are Going to Battle, 92.0,0 ,06-06-1973
+4909,The Day of the Jackal, 143.0,0 ,15-05-1973
+32034,Puppet on a Chain, 98.0,0 ,01-01-1971
+105145,The Flower with Petals of Steel, 90.0,0 ,13-11-1973
+176568,Sensuela, 109.0,0 ,29-05-1973
+31901,For Pete's Sake, 90.0,0 ,26-06-1974
+156140,To My Dear Mother on Her Birthday, 105.0,0 ,22-08-1974
+49711,The Laboratory of Fear, 11.0,0 ,01-01-1971
+1051,The French Connection, 104.0,1800000 ,09-10-1971
+40983,Beware! The Blob, 91.0,0 ,21-06-1972
+246882,Then I Sentenced Them All to Death, 103.0,0 ,24-01-1972
+21036,Panda! Go Panda!, 35.0,0 ,17-12-1972
+219823,The Friends, 100.0,0 ,07-09-1971
+95892,Honor Thy Father, 97.0,0 ,01-03-1973
+50688,Isle of the Snake People, 90.0,0 ,01-03-1971
+224089,A Commissioner's Accusations, 114.0,0 ,31-07-1974
+85674,The Twilight People, 84.0,0 ,01-06-1972
+126760,Cancel My Reservation, 99.0,0 ,21-09-1972
+58257,Savage Messiah, 103.0,0 ,27-06-1972
+62996,They Only Kill Their Masters, 97.0,0 ,22-11-1972
+11561,Sleeper, 89.0,2000000 ,17-12-1973
+59230,Lucky Luciano, 105.0,0 ,10-10-1973
+482,Shaft, 100.0,4000000 ,02-07-1971
+42466,Scream Blacula Scream, 96.0,0 ,27-06-1973
+15171,Charlotte's Web, 94.0,0 ,01-03-1973
+187447,Supermen Against the Orient, 102.0,0 ,29-11-1973
+96217,La liga no es cosa de hombres, 111.0,0 ,03-04-1972
+61212,The Last Four Days, 0.0,0 ,27-03-1974
+88375,Chandler, 85.0,0 ,01-12-1971
+92389,Badge 373, 116.0,0 ,25-07-1973
+42494,Glen and Randa, 93.0,0 ,19-09-1971
+37916,Swept Away, 116.0,0 ,18-12-1974
+72086,The Night Visitor, 106.0,0 ,01-01-1971
+94225,Bless the Beasts & Children, 109.0,0 ,18-10-1971
+493,Shaft's Big Score!, 104.0,1978000 ,08-06-1972
+243987,Sense and Sensibility, 178.0,0 ,01-01-1971
+87719,Savage Abduction, 82.0,0 ,01-01-1973
+42491,Ulzana's Raid, 103.0,0 ,01-01-1972
+12545,Jesus Christ Superstar, 108.0,0 ,15-08-1973
+112355,Night Hair Child, 89.0,0 ,14-10-1972
+38729,A Delicate Balance, 133.0,0 ,12-11-1973
+81522,What?, 114.0,0 ,07-12-1972
+47448,Remonstrance, 97.0,0 ,09-11-1972
+28715,Madhouse, 92.0,0 ,01-03-1974
+13939,Death Wish, 93.0,3000000 ,24-07-1974
+102699,The Visitors, 88.0,0 ,02-02-1972
+41383,Five Shaolin Masters, 105.0,0 ,25-12-1974
+68865,The Amazons, 100.0,0 ,15-12-1973
+20121,Killdozer, 74.0,0 ,02-02-1974
+84728,Black Girl, 97.0,0 ,09-11-1972
+28488,Knife of Ice, 91.0,0 ,24-08-1972
+95108,Wild Honey, 95.0,0 ,22-03-1972
+90092,Street Law, 105.0,0 ,17-09-1974
+52943,The Phone Box, 35.0,0 ,13-12-1972
+41078,Johnny Corncob, 74.0,0 ,01-05-1973
+74746,Joe Hill, 114.0,0 ,25-08-1971
+27236,Two-Lane Blacktop, 102.0,850000 ,07-07-1971
+31624,Torso, 97.0,0 ,04-01-1973
+25944,Blood for Dracula, 103.0,0 ,13-08-1974
+29167,The Case of the Bloody Iris, 94.0,0 ,04-08-1972
+494,Shaft in Africa, 112.0,2142000 ,14-06-1973
+30941,The Anderson Tapes, 99.0,3000000 ,17-06-1971
+47582,Castle of Purity, 110.0,0 ,10-05-1973
+27328,The Last House on Dead End Street, 78.0,3000 ,01-01-1973
+71097,Bibi, 120.0,0 ,10-05-1974
+78071,Successive Slidings of Pleasure, 102.0,0 ,07-03-1974
+4790,The Nada Gang, 132.0,0 ,21-03-1974
+92307,The Final Comedown, 83.0,0 ,31-05-1972
+13798,Thunderclump, 97.0,0 ,26-09-1974
+150704,Four Gunmen of the Holy Trinity, 107.0,0 ,29-05-1971
+68972,Claude Chabrol's High Heels, 0.0,0 ,29-09-1972
+26547,'Twas the Night Before Christmas, 25.0,0 ,08-12-1974
+24444,Zatôichi Meets the One-Armed Swordsman, 94.0,0 ,13-01-1971
+112633,Place de la République, 94.0,0 ,30-04-1974
+55154,Den siste Fleksnes, 86.0,0 ,04-11-1974
+27431,The Cat o' Nine Tails, 110.0,1000000 ,11-02-1971
+102272,The Sudden Wealth of the Poor People of Kombach, 102.0,0 ,14-04-1971
+60595,Siddhartha, 83.0,0 ,01-08-1972
+23148,Lady Sings the Blues, 144.0,0 ,12-10-1972
+40374,Breezy, 108.0,0 ,18-11-1973
+107287,Anna and the Wolves, 102.0,0 ,04-06-1973
+47570,Maid in Sweden, 80.0,0 ,03-11-1971
+29251,On Any Sunday, 96.0,0 ,28-07-1971
+98027,Seven Dead in the Cat's Eye, 95.0,0 ,12-04-1973
+85648,Showdown, 99.0,0 ,20-06-1973
+12310,The Four Musketeers, 108.0,0 ,31-10-1974
+52849,A Bell From Hell, 106.0,0 ,01-10-1973
+38359,The Red Snowball Tree, 110.0,0 ,25-03-1974
+30497,The Texas Chain Saw Massacre, 83.0,85000 ,01-10-1974
+25680,The Friends of Eddie Coyle, 102.0,0 ,26-06-1973
+61462,The Italian Connection, 95.0,0 ,02-09-1972
+26234,10 Rillington Place, 106.0,0 ,10-02-1971
+69765,Orders, 109.0,0 ,27-09-1974
+42522,The Hired Hand, 90.0,0 ,11-08-1971
+42527,The Projectionist, 88.0,0 ,17-01-1971
+5916,The Getaway, 118.0,3352254 ,13-12-1972
+90041,La Région Centrale, 184.0,0 ,01-01-1971
+42482,Elvis on Tour, 93.0,0 ,01-01-1972
+174162,Our Time, 90.0,0 ,10-04-1974
+86637,Ricco, 83.0,0 ,27-08-1973
+40130,The Red Queen Kills Seven Times, 100.0,0 ,18-08-1972
+13521,Charlie And A Half, 105.0,0 ,01-01-1974
+29464,Uptown Saturday Night, 104.0,3000000 ,26-07-1974
+11710,The Enigma of Kaspar Hauser, 109.0,0 ,01-11-1974
+42268,11 Harrowhouse, 94.0,0 ,26-09-1974
+15478,The Abdication, 103.0,0 ,03-10-1974
+44800,The Gambler, 111.0,0 ,02-10-1974
+17343,Vampyros Lesbos, 89.0,0 ,15-07-1971
+93164,A River Called Titas, 159.0,0 ,26-04-1973
+29845,A Woman Under the Influence, 155.0,0 ,19-09-1974
+85784,The Double, 88.0,0 ,01-01-1971
+51242,Bread and Chocolate, 100.0,0 ,05-05-1974
+15018,Thriller: A Cruel Picture, 104.0,0 ,01-05-1973
+67687,The Stepmother, 85.0,0 ,06-06-1973
+5601,Shock Treatment, 91.0,0 ,18-01-1973
+173171,A Jungle Book of Regulations, 91.0,0 ,24-12-1974
+121923,Brother John, 95.0,0 ,15-08-1971
+62432,The Questor Tapes, 100.0,0 ,23-01-1974
+163392,The War Between Men and Women, 110.0,0 ,01-06-1972
+199655,With Clean Hands, 95.0,0 ,29-10-1972
+29399,Shanks, 93.0,0 ,09-10-1974
+49361,Don't Torture a Duckling, 102.0,0 ,29-09-1972
+78076,Hell Up In Harlem, 94.0,0 ,01-12-1973
+2988,The Harrad Experiment, 95.0,0 ,11-05-1973
+84796,Play It As It Lays, 99.0,0 ,19-10-1972
+140632,Hot Summer Week, 79.0,0 ,21-06-1972
+360627,Columbo - Ransom for a Dead Man, 0.0,0 ,01-01-1973
+1842,The Legend of Boggy Creek, 90.0,100000 ,01-08-1972
+65317,The Perfume of the Lady in Black, 101.0,0 ,29-03-1974
+171492,Ankur, 125.0,0 ,20-07-1974
+104242,I Will Walk Like a Crazy Horse, 100.0,0 ,22-11-1973
+319851,Pictures from Life's Other Side, 46.0,0 ,01-01-1971
+42472,The Man Who Loved Cat Dancing, 114.0,0 ,28-06-1973
+36090,Emperor Tomato Ketchup, 75.0,0 ,01-01-1971
+32627,The MacKintosh Man, 98.0,0 ,01-01-1973
+74689,Mon oncle Antoine, 104.0,0 ,12-11-1971
+88348,The Zebra Killer, 92.0,0 ,01-07-1974
+27439,Slaughter Hotel, 97.0,0 ,31-07-1971
+65131,Shadow, 87.0,0 ,18-09-1971
+64725,The Dead Are Alive, 105.0,0 ,25-05-1972
+23544,The Point!, 74.0,0 ,02-02-1971
+128395,Emitaï, 103.0,0 ,20-07-1971
+59873,Amore libero - Free Love, 86.0,0 ,13-08-1974
+119884,Arnold, 94.0,0 ,16-11-1973
+71910,Sitting Target, 93.0,0 ,19-06-1972
+156015,Out 1: Spectre, 264.0,0 ,01-01-1972
+25771,Pink Floyd: Live at Pompeii, 85.0,0 ,31-08-1972
+27094,Lenny, 111.0,0 ,10-11-1974
+91571,And Hope to Die, 122.0,0 ,15-09-1972
+77642,Night of the Sorcerers, 94.0,0 ,16-12-1974
+56341,The Scopone Game, 113.0,0 ,08-10-1972
+11681,Two Missionaries, 95.0,0 ,21-12-1974
+39925,Fear in the Night, 94.0,0 ,09-07-1972
+64630,Oasis of Fear, 90.0,0 ,18-08-1971
+104297,Scandalous John, 113.0,0 ,22-06-1971
+11624,Everything You Always Wanted to Know About Sex *But Were Afraid to Ask, 88.0,2000000 ,06-08-1972
+4031,Going Places, 117.0,0 ,12-05-1974
+28039,The New One-Armed Swordsman, 102.0,0 ,07-02-1971
+179178,Poker In Bed, 85.0,0 ,14-08-1974
+87392,Sambizanga, 102.0,0 ,25-04-1973
+31382,The Touch of Satan, 90.0,0 ,23-08-1971
+42481,The Goalie's Anxiety at the Penalty Kick, 101.0,410000 ,19-02-1972
+94741,The Don Is Dead, 106.0,0 ,14-11-1973
+86271,Three on a Meathook, 80.0,0 ,01-01-1973
+63452,The Straw Hat, 127.0,0 ,06-06-1974
+5183,Travels with My Aunt, 109.0,0 ,12-12-1972
+87884,The Teacher, 98.0,0 ,29-05-1974
+27349,The Great Northfield Minnesota Raid, 91.0,0 ,12-05-1972
+9267,And Now for Something Completely Different, 88.0,0 ,28-09-1971
+20628,Skin Game, 102.0,0 ,30-09-1971
+178614,Happy Anniversary and Goodbye, 60.0,0 ,19-11-1974
+27292,Prime Cut, 88.0,0 ,28-06-1972
+215538,The Love Machine, 108.0,0 ,14-08-1971
+2232,The Legend of Paul and Paula, 105.0,0 ,14-03-1973
+163366,Spend It All, 43.0,0 ,01-01-1971
+206188,Once Upon a Scoundrel, 99.0,0 ,15-08-1974
+75130,Catlow, 101.0,0 ,01-10-1971
+33543,Satan's School For Girls, 78.0,0 ,01-01-1973
+30901,All the Colors of the Dark, 94.0,0 ,28-02-1972
+75141,Huckleberry Finn, 118.0,0 ,24-05-1974
+28356,Black Beauty, 106.0,0 ,01-01-1971
+27841,They Might Be Giants, 98.0,0 ,09-06-1971
+197175,Rio das Mortes, 84.0,0 ,15-02-1971
+122271,Bleak Moments, 111.0,0 ,01-01-1971
+15393,Play Misty for Me, 102.0,725000 ,03-11-1971
+40022,Caliber 9, 100.0,0 ,15-02-1972
+50627,The King of Marvin Gardens, 103.0,0 ,12-10-1972
+21968,Super Fly, 93.0,0 ,04-08-1972
+240,The Godfather: Part II, 200.0,13000000 ,20-12-1974
+25188,The Last Picture Show, 118.0,1300000 ,03-10-1971
+57778,Unbelievable Adventures of Italians in Russia, 104.0,0 ,01-01-1974
+41357,Summer of '42, 103.0,0 ,09-04-1971
+46740,Monty Python's Fliegender Zirkus, 90.0,0 ,01-01-1971
+30702,Conrack, 106.0,0 ,27-03-1974
+22910,The Big Bird Cage, 96.0,0 ,01-07-1972
+41025,Gargoyles, 74.0,0 ,21-11-1972
+42463,Wedding in Blood, 95.0,0 ,12-04-1973
+61296,Stavisky, 120.0,0 ,15-05-1974
+40365,The Blood Spattered Bride, 100.0,0 ,30-09-1972
+257698,Femmes femmes, 115.0,0 ,27-11-1974
+50254,Edvard Munch, 221.0,0 ,12-11-1974
+71776,Hospitals:The White Mafia, 0.0,0 ,25-08-1973
+57868,The Autobiography of Miss Jane Pittman, 112.0,0 ,01-01-1974
+105120,Who Killed the Prosecutor and Why?, 90.0,0 ,15-04-1972
+30855,Dr Jekyll & Sister Hyde, 97.0,0 ,17-10-1971
+30933,Home for the Holidays, 73.0,0 ,13-07-1974
+60389,The Cook, 130.0,0 ,07-04-1972
+105861,Last House in Istanbul, 77.0,0 ,01-01-1974
+20567,Sex and Fury, 88.0,0 ,17-02-1973
+89417,Get to Know Your Rabbit, 91.0,0 ,01-06-1972
+69150,Chrome and Hot Leather, 91.0,0 ,29-09-1971
+114953,Lolly-Madonna XXX, 103.0,0 ,21-02-1973
+253232,Tora-san's Love Call, 114.0,0 ,29-12-1971
+72615,Exposed, 90.0,0 ,23-08-1971
+49967,The One-Armed Boxer, 89.0,0 ,02-08-1972
+26405,Wake in Fright, 114.0,0 ,21-07-1971
+25993,Asylum, 88.0,0 ,17-11-1972
+122291,The Homecoming, 111.0,0 ,29-10-1973
+104086,The Man Who Sleeps, 77.0,0 ,24-04-1974
+85968,Candy Stripe Nurses, 80.0,0 ,01-05-1974
+63327,The Valley, 105.0,0 ,06-07-1972
+36627,The Deluge, 315.0,0 ,02-09-1974
+142808,Dauria, 172.0,0 ,08-05-1972
+95966,Thomasine & Bushrod, 95.0,0 ,10-04-1974
+42455,And Now The Screaming Starts, 91.0,0 ,26-04-1973
+44495,A Very Natural Thing, 80.0,0 ,01-01-1974
+26329,Carry On Girls, 88.0,0 ,09-11-1973
+84834,Double Indemnity, 75.0,0 ,13-10-1973
+54306,Zatôichi in Desperation, 95.0,0 ,02-09-1972
+42676,The Fifth Cord, 90.0,0 ,28-08-1971
+43580,The Cat in the Hat, 30.0,0 ,10-03-1971
+42532,Willard, 95.0,0 ,30-07-1971
+42530,What's the Matter with Helen?, 101.0,0 ,30-06-1971
+33303,Confessions of a Window Cleaner, 90.0,0 ,01-01-1974
+35669,The Satanic Rites of Dracula, 87.0,0 ,03-11-1973
+71924,Henry VIII and His Six Wives, 120.0,0 ,13-07-1972
+29333,Murder in a Blue World, 100.0,0 ,22-08-1973
+17099,Hanzo the Razor: Sword of Justice, 108.0,0 ,30-12-1972
+128364,Where the Lilies Bloom, 98.0,0 ,10-04-1974
+55847,Four Nights of a Dreamer, 87.0,0 ,01-01-1971
+29491,The Possession of Joel Delaney, 105.0,1300000 ,24-05-1972
+27019,Celine and Julie Go Boating, 193.0,0 ,18-09-1974
+85236,Chosen Survivors, 130.0,0 ,05-12-1974
+136576,Counselor at Crime, 0.0,0 ,30-08-1973
+58655,Parade, 84.0,0 ,18-12-1974
+126555,Princess Goldilocks, 74.0,0 ,28-01-1973
+187422,Call to Arms, 84.0,0 ,18-01-1973
+157683,For a Book of Dollars, 0.0,0 ,01-01-1973
+96985,Hot Summer in Barefoot County, 90.0,0 ,01-07-1974
+68146,Man from Deep River, 93.0,0 ,07-08-1972
+19095,A Virgin Among the Living Dead, 79.0,0 ,15-11-1973
+238,The Godfather, 175.0,6000000 ,14-03-1972
+26513,Punishment Park, 88.0,0 ,09-05-1971
+39885,School of the Holy Beast, 91.0,0 ,16-02-1974
+85023,A Name for Evil, 74.0,0 ,01-01-1973
+275054,The Bonus, 85.0,0 ,01-01-1974
+78546,The Antichrist, 112.0,0 ,22-11-1974
+17810,Lone Wolf and Cub: Baby Cart at the River Styx, 81.0,0 ,01-06-1972
+73147,Peeping Toms, 90.0,0 ,06-06-1973
+84108,Alabama's Ghost, 96.0,0 ,02-02-1973
+45698,The Hourglass Sanatorium, 124.0,0 ,11-12-1973
+151732,Alleluja & Sartana Are Sons... Sons of God, 102.0,0 ,22-12-1972
+39775,Caged Heat, 83.0,180000 ,19-04-1974
+40682,The Train Robbers, 92.0,0 ,07-02-1973
+45764,Handicapped Future, 43.0,0 ,01-01-1971
+216736,Lady Liberty, 97.0,0 ,01-01-1971
+42493,Cold Turkey, 99.0,0 ,19-02-1971
+46799,The Third Part of the Night, 105.0,0 ,17-12-1971
+31283,Hannie Caulder, 85.0,0 ,08-11-1971
+28170,The Gore Gore Girls, 81.0,63500 ,15-12-1972
+89351,Daddy's Deadly Darling, 80.0,0 ,07-04-1972
+182937,Continental Circus, 102.0,0 ,15-07-1972
+11390,The Olsen Gang in Jutland, 96.0,0 ,08-10-1971
+63230,We Won't Grow Old Together, 110.0,0 ,02-05-1972
+42464,O Lucky Man!, 183.0,0 ,25-03-1973
+72460,Harry in Your Pocket, 103.0,0 ,23-09-1973
+31343,Can Dialectics Break Bricks?, 90.0,0 ,01-01-1973
+58061,White Fang, 102.0,0 ,21-12-1973
+54861,Freedom Strikes a Blow, 90.0,0 ,31-12-1973
+121342,Giovannona Long-Thigh, 94.0,0 ,12-04-1973
+60430,Love at the Top, 105.0,0 ,13-03-1974
+86600,The Internecine Project, 89.0,0 ,24-07-1974
+187771,The Last Desperate Hours, 0.0,0 ,28-11-1974
+90909,Sisyphus, 3.0,0 ,01-10-1974
+164990,The Golden Fortress, 120.0,0 ,27-12-1974
+140423,I Love You Rosa, 77.0,0 ,12-02-1972
+46439,Daughters of Satan, 90.0,0 ,17-11-1972
+88583,The Pursuit of Happiness, 93.0,0 ,23-02-1971
+269961,Pourquoi Israël, 185.0,0 ,01-10-1973
+252059,Through and Through, 70.0,0 ,11-05-1973
+51212,I'm Losing My Temper, 92.0,0 ,09-10-1974
+27977,The Groove Tube, 75.0,0 ,23-06-1974
+39844,Deranged, 83.0,200000 ,02-02-1974
+42483,Last of the Red Hot Lovers, 98.0,0 ,01-01-1972

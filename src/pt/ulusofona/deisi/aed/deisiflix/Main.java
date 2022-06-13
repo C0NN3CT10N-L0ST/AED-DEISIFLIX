@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     // Tells the program which files to use in the Readers (DP files or Local files)
-    static boolean DP = false;
+    static boolean DP = true;
 
     // Reader files' paths
     static String moviesFile = "deisi_movies.txt";
@@ -39,6 +39,11 @@ public class Main {
     static ArrayList<String> peopleIgnoredLines;
     static ArrayList<String> genresIgnoredLines;
 
+    /**
+     * Reads all input files with all the movies' data and stores that data in
+     * appropriate data structures.
+     * @throws IOException
+     */
     public static void lerFicheiros() throws IOException {
         // Sets Reader files' variables based on DP submission or Local environment
         if (!DP) {
@@ -48,44 +53,77 @@ public class Main {
             genresFile = largeGenres;
         }
 
+        // Executes 'movieReader' which reads all movies' data from 'deisi_movies.txt' file
+        // and stores it in appropriate data structures
         MoviesData moviesReader = Reader.movieReader(moviesFile);
         moviesFileOrder = moviesReader.moviesFileOrder;
         moviesDict = moviesReader.moviesDict;
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
+
+        // Executes 'movieVotesReader' which reads all movie votes' data from 'deisi_movie_votes.txt' file
+        // and stores it in appropriate data structures
         votesIgnoredLines = Reader.movieVotesReader(votesFile, moviesDict);
+
+        // Executes 'peopleReader' which reads all movie people data from 'deisi_people.txt' file
+        // and stores it in appropriate data structures
         PeopleData peopleReader = Reader.peopleReader(peopleFile, moviesDict);
         moviesPeople = peopleReader.moviesPeople;
         actorsByID = peopleReader.actorsByID;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
-        genresIgnoredLines = Reader.genresReader(genresFile, moviesDict);
 
-        // TODO: document this
+        // Executes 'genresReader' which reads all movie genres' data from 'deisi_genres.txt' file
+        // and stores it in appropriate data structures
+        genresIgnoredLines = Reader.genresReader(genresFile, moviesDict);
     }
 
+    /**
+     * Reads all test input files with all the movies' test data and stores that data in
+     * appropriate data structures.
+     * @throws IOException
+     */
     public static void lerFicheirosTestes() throws IOException {
+        // Executes 'movieReader' which reads all movies' data from 'test_movies.txt' file
+        // and stores it in appropriate data structures
         MoviesData moviesReader = Reader.movieReader(testMoviesFile);
         moviesFileOrder = moviesReader.moviesFileOrder;
         moviesDict = moviesReader.moviesDict;
         movieIDsByYear = moviesReader.movieIDsByYear;
         moviesIgnoredLines = moviesReader.ignoredLines;
+
+        // Executes 'movieVotesReader' which reads all movie votes' data from 'test_movie_votes.txt' file
+        // and stores it in appropriate data structures
         votesIgnoredLines = Reader.movieVotesReader(testVotesFile, moviesDict);
+
+        // Executes 'peopleReader' which reads all movie people data from 'test_people.txt' file
+        // and stores it in appropriate data structures
         PeopleData peopleReader = Reader.peopleReader(testPeopleFile, moviesDict);
         moviesPeople = peopleReader.moviesPeople;
         actorsByID = peopleReader.actorsByID;
         peopleDuplicateLinesYear = peopleReader.duplicateLinesYear;
         peopleIgnoredLines = peopleReader.ignoredLines;
+
+        // Executes 'genresReader' which reads all movie genres' data from 'test_genres.txt' file
+        // and stores it in appropriate data structures
         genresIgnoredLines = Reader.genresReader(testGenresFile, moviesDict);
-
-
-        // TODO: Document this
     }
 
+    /**
+     * Returns an ArrayList of type 'Filme' with all the movies which are present in
+     * 'deisi_movies.txt' file preserving the file order.
+     * @return Returns all movies in movies file with preserved order
+     */
     public static ArrayList<Filme> getFilmes() {
         return moviesFileOrder;
     }
 
+    /**
+     * Returns the ignored lines (lines that don't match the number of expected components)
+     * for the given file.
+     * @param fileName The name of the file to which the function must be executed
+     * @return Returns the ignored lines for the given file name
+     */
     public static ArrayList<String> getLinhasIgnoradas(String fileName) {
         switch (fileName) {
             case "deisi_movies.txt":
@@ -101,11 +139,14 @@ public class Main {
         }
     }
 
+    /**
+     * Executes and returns the value of the inserted query..
+     * If the query is valid, it returns the query output.
+     * If the query is not valid, it returns null.
+     * @param pergunta The given query to be executed
+     * @return Returns the value of the executed query
+     */
     public static QueryResult perguntar(String pergunta) {
-        // Checks if the query is valid
-        // Valid -> runs query and returns it
-        // Invalid -> returns null (??? not sure)
-
         // Gets query code
         String code = "";
         String data = "";
@@ -153,25 +194,28 @@ public class Main {
         }
     }
 
+    /**
+     * Returns a video explaining one the the non mandatory queries
+     * as well as the creative query.
+     * @return Returns the video link
+     */
     public static String getVideoURL() {
         return "https://youtu.be/Ur6ENIPnFXY";
     }
 
+    /**
+     * 'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' Query.
+     * Returns the top 10 movies with the largest budget for the given year.
+     * Input Format: "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR <Year>"
+     * Output Format: "<MovieTitle> - Budget: $<MovieBudget>" (separated by '\n', newline character)
+     * @return Returns the Creative Query
+     */
     public static String getCreativeQuery() {
-        /*
-            'TOP_N_MOST_EXPENSIVE_MOVIES_YEAR' Query.
-            Returns the top 10 movies with the largest budget for the given year.
-            Input Format: "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR <Year>"
-            Output Format: "<MovieTitle> - Budget: $<MovieBudget>" (separated by '\n', newline character)
-         */
         return "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR";
     }
 
     public static void main(String[] args) throws IOException {
-        // long readTimerStart = System.currentTimeMillis();
         lerFicheiros();  // Reads input files
-        // long readTimerEnd = System.currentTimeMillis();
-        // System.out.println("Tempo de leitura dos ficheiros: " + (readTimerEnd - readTimerStart));
 
         // Main program loop
         System.out.println("Bem vindo ao DEISIFLIX");

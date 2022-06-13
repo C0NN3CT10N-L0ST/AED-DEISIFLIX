@@ -1,6 +1,5 @@
 package pt.ulusofona.deisi.aed.deisiflix;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -298,33 +297,6 @@ public class AuxiliaryQueryFunctions {
                     }
                 }
             }
-        }
-    }
-
-    /**
-     * Adds a person to an HashMap with all people.
-     * @param person The given 'MovieAssociate' object
-     * @param people HashMap (KEY: name, VALUE: MovieAssociate) that stores all people
-     */
-    public static void addPersonToPeopleDict(MovieAssociate person, HashMap<String, ArrayList<MovieAssociate>> people) {
-        // Checks if an entry for the person name already exists and if the person already exists as well
-        if (people.containsKey(person.name)) {
-            boolean personAlreadyExists = false;
-            for (MovieAssociate movieAssociate : people.get(person.name)) {
-                if (movieAssociate.id == person.id && movieAssociate.type.equals(person.type)) {
-                    personAlreadyExists = true;
-                }
-            }
-
-            // If person already exists, do nothing, otherwise, adds new person
-            if (!personAlreadyExists) {
-                people.get(person.name).add(person);
-            }
-        } else {
-            // If person does not yet exist, just add it
-            ArrayList<MovieAssociate> movieAssociates = new ArrayList<>();
-            movieAssociates.add(person);
-            people.put(person.name, movieAssociates);
         }
     }
 

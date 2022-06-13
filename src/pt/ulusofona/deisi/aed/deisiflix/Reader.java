@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Reader {
-    static boolean DEBUG = true;
+    static boolean DEBUG = false;
 
     /* Reader functions */
     /**

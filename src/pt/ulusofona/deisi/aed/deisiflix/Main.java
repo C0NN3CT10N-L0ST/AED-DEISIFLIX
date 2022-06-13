@@ -154,8 +154,7 @@ public class Main {
     }
 
     public static String getVideoURL() {
-        // TODO: Add video here
-        return "";
+        return "https://youtu.be/Ur6ENIPnFXY";
     }
 
     public static String getCreativeQuery() {

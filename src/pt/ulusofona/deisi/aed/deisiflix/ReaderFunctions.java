@@ -113,7 +113,8 @@ public class ReaderFunctions {
                 int movieID = person.associatedMoviesID.get(0);
 
                 // Adds the movie to movieIDs list in case it does not yet exist
-                if (people.get(person.name).get(personIndex).associatedMoviesID.contains(movieID)) {
+                if (people.get(person.name).get(personIndex).associatedMoviesID.contains(movieID)
+                        && person.type.equals("ACTOR")) {
                     addLineToDuplicateLinesByYear(lineNum, movieID, person.id, duplicateLinesByYear, moviesDict);
                 } else {
                     people.get(person.name).get(personIndex).associatedMoviesID.add(movieID);

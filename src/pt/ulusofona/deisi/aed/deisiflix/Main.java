@@ -20,6 +20,10 @@ public class Main {
     static String largeVotes = "local-test-files/deisi_movie_votes_large.txt";
     static String largePeople = "local-test-files/deisi_people_large.txt";
     static String largeGenres = "local-test-files/deisi_genres_large.txt";
+    static String shortMovies = "local-test-files/deisi_movies_short.txt";
+    static String shortVotes = "local-test-files/deisi_movie_votes_short.txt";
+    static String shortPeople = "local-test-files/deisi_people_short.txt";
+    static String shortGenres = "local-test-files/deisi_genres_short.txt";
 
     // Test files' paths
     static String testMoviesFile = "test-files/test_movies.txt";
@@ -38,6 +42,7 @@ public class Main {
     static HashMap<Integer, ArrayList<String>> peopleDuplicateLinesYear;
     static ArrayList<String> peopleIgnoredLines;
     static ArrayList<String> genresIgnoredLines;
+    static ArrayList<Integer> movieIDsByFileOrder = new ArrayList<>();
 
     /**
      * Reads all input files with all the movies' data and stores that data in
@@ -212,6 +217,17 @@ public class Main {
      */
     public static String getCreativeQuery() {
         return "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR";
+    }
+
+    // DEFESA
+    static ArrayList<Filme> getFilmesByDuracao(double duracao) {
+        ArrayList<Filme> result = new ArrayList<>();
+        for (Integer id : movieIDsByFileOrder) {
+            if (moviesDict.get(id).duration == duracao) {
+                result.add(moviesDict.get(id));
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) throws IOException {

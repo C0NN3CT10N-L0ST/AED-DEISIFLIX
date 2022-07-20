@@ -12,6 +12,7 @@ public class Filme {
     int orcamento;
     double mediaVotos;
     int nrVotos;
+    double duration;
 
     Filme(){}
 
@@ -23,7 +24,8 @@ public class Filme {
           String dataLancamento,
           int orcamento,
           double mediaVotos,
-          int nrVotos
+          int nrVotos,
+          double duration
     ){
         this.id = id;
         this.titulo = titulo;
@@ -34,6 +36,7 @@ public class Filme {
         this.orcamento = orcamento;
         this.mediaVotos = mediaVotos;
         this.nrVotos = nrVotos;
+        this.duration = duration;
     }
 
     public String toString(){
@@ -44,6 +47,7 @@ public class Filme {
         // Defines 'toString' variables
         int genresSize = this.generos != null ? this.generos.size() : 0;
         int directorsSize = this.realizadores != null ? this.realizadores.size() : 0;
+        int allActorSize = this.atores != null ? this.atores.size() : 0;
         int actorsSize = 0;
         int actrissesSize = 0;
 
@@ -58,6 +62,13 @@ public class Filme {
             }
         }
 
+        StringBuilder directorsByName = new StringBuilder();
+        if (this.realizadores != null) {
+            for (int i = 0; i < this.realizadores.size(); i++) {
+                directorsByName.append(this.realizadores.get(i).nome + ";");
+            }
+        }
+
         // Returns final string
         return id +
                 " | " + titulo +
@@ -65,9 +76,8 @@ public class Filme {
                 " | " + nrVotos +
                 " | " + mediaVotos +
                 " | " + genresSize +
-                " | " + directorsSize +
-                " | " + actorsSize +
-                " | " + actrissesSize;
+                " | " + allActorSize +
+                " | " + directorsByName;
     }
 
 }

@@ -34,7 +34,7 @@ public class Reader {
             if (components.length == 5) {
                 int id = Integer.parseInt(components[0].strip());
                 String title = components[1].strip();
-                float duration = Float.parseFloat(components[2].strip());
+                double duration = Double.parseDouble(components[2].strip());
                 int budget = Integer.parseInt(components[3].strip());
                 String date = components[4].strip();
 
@@ -43,6 +43,7 @@ public class Reader {
                 movie.titulo = title;
                 movie.orcamento = budget;
                 movie.dataLancamento = date;
+                movie.duration = duration;
 
                 moviesFileOrder.add(movie);
 
@@ -64,6 +65,8 @@ public class Reader {
                 if (!moviesDict.containsKey(id)) {
                     moviesDict.put(id, movie);
                 }
+
+                Main.movieIDsByFileOrder.add(id);
             } else {
                 ignoredLines.add(line);
             }

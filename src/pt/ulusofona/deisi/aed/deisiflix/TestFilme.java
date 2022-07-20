@@ -31,7 +31,8 @@ public class TestFilme {
                 "07-11-2014",
                 165000000,
                 8.6,
-                1718186
+                1718186,
+                0.0
         );
 
         String realResult = movie.toString();
@@ -51,7 +52,8 @@ public class TestFilme {
                 "07-11-2014",
                 165000000,
                 8.6,
-                1718186
+                1718186,
+                0.0
         );
 
         String realResult = movie.toString();

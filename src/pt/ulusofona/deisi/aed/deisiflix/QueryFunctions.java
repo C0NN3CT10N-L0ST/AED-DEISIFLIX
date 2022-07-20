@@ -319,8 +319,6 @@ public class QueryFunctions {
             }
         }
 
-        // TODO: Make this more efficient. Still has potential to improve.
-
         endTime = System.currentTimeMillis();
         return new QueryResult(outputString.toString(), (endTime - startTime));
     }

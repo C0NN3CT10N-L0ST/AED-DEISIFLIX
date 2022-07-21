@@ -102,7 +102,14 @@ treated as if they did not exist).
 ## Database Queries
 Below are all the queries that can be performed on the movie database.
 
-Query Code | Description | Format
-:---: | --- | ---
-`COUNT_MOVIES_ACTOR` | Returns the number of movies an actor has participated in. If the actor does not exist 0 is returned. | `COUNT_MOVIES_ACTOR <Full Actor Name\>`
-`GET_MOVIES_ACTOR_YEAR` | Returns the 
+Query Code | Description | Query Format
+:---: | --- | :---:
+`COUNT_MOVIES_ACTOR` | Returns the number of movies an actor has participated in. If the actor does not exist `0` is returned. | ***COUNT_MOVIES_ACTOR*** `<Actor Full Name>`
+`GET_MOVIES_ACTOR_YEAR` | Returns the movies in which a given actor took part in a certain year in descending order.</br>Output format: `<Movie Title> <Date>`.</br>*Note:* Date format should be 'YYYY-MM-DD'. | ***GET_MOVIES_ACTOR_YEAR*** `<Actor Full Name>` `<Year>`
+`COUNT_MOVIES_WITH_ACTORS` | Returns the number of movies in which all the given actors took part in. | ***COUNT_MOVIES_WITH_ACTORS*** `<Actor1 Full Name>`;`<Actor2 Full Name>`;`...`
+`COUNT_ACTORS_3_YEARS` | Returns the number of actors which participated in movies in all 3 given years. | ***COUNT_ACTORS_3_YEARS*** `<Year1>` `<Year2>` `<Year3>`
+`TOP_MOVIES_WITH_GENDER_BIAS` | Returns the N (given number) movies from year Y (given year) with the greatest percentual discrepancy by descending order.</br>*Note:* Only movies with more than 10 actors/actresses should be taken into account.</br>Output Format: `<Movie Title>;<Gender>;<Percentual Discrepancy>`. | ***TOP_MOVIES_WITH_GENDER_BIAS*** `<Output Amount> <Year>`
+`GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR` | Returns the titles of the movies with the same average votes as the given one that were made after it and have at least 1 common actor.</br>Output Format: `<Movie1 Title>\|\|<Movie2 Title>\|\|<Movie3 Title>...`. | ***GET_RECENT_TITLES_SAME_AVG_VOTES_ONE_SHARED_ACTOR*** `<Movie ID>`
+`GET_TOP_N_YEARS_BEST_AVG_VOTES` | Returns the top N (given number) years with the best average votes (from all movies from each year).</br>Output Format: `<Year>:<Average votes>`.</br>*Note:* The output average votes should have no more than 2 decimal places. | ***GET_TOP_N_YEARS_BEST_AVG_VOTES*** `<Output Amount>`
+
+## Program - UX

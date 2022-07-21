@@ -9,19 +9,19 @@ The program input is split into 4 distinct CSV files.
 Each line in all of the 4 files contains data about a specific movie.
 File Name | Description | Line Format
 :---------: | ----------- | -----------
-deisi_movies.txt | Contains basic movie data | <Movie ID\>,<Title\>,<Duration\>,<Budget\>,<Date\>
-deisi_movie_votes.txt | Contains data related to movie votes according to the IMDB platform | <Movie ID\>,<Average Votes\>,<Total Votes\>
-deisi_people.txt | Contains data about movie related people | <Person Type\>,<Person ID\>,<Name\>,<Gender\>,<Movie ID\>
-deisi_genres.txt | Contains data about movie genres | <Genre Name\>,<Movie ID\>
+`deisi_movies.txt` | Contains basic movie data | `<Movie ID\>`,`<Title\>`,`<Duration\>`,`<Budget\>`,`<Date\>`
+`deisi_movie_votes.txt` | Contains data related to movie votes according to the IMDB platform | `<Movie ID\>`,`<Average Votes\>`,`<Total Votes\>`
+`deisi_people.txt` | Contains data about movie related people | `<Person Type\>`,`<Person ID\>`,`<Name\>`,`<Gender\>`,`<Movie ID\>`
+`deisi_genres.txt` | Contains data about movie genres | `<Genre Name\>`,`<Movie ID\>`
 
-### Components: *'deisi_movies.txt'*
+### **Components:** `'deisi_movies.txt'`
 Component | Type
  :---: | ---
-Movie ID | Non-negative Integer
-Title | String
-Duration | Real Number
-Budget | Integer
-Date | String with format 'DD-MM-YYYY'
+`Movie ID` | Non-negative Integer
+`Title` | String
+`Duration` | Real Number
+`Budget` | Integer
+`Date` | String with format 'DD-MM-YYYY'
 
 ### File format example
 ```
@@ -34,12 +34,12 @@ Date | String with format 'DD-MM-YYYY'
 1995,Lara Croft: Tomb Raider, 100,115000000 ,11-06-2001
 ```
 
-### Components: *'deisi_movie_votes.txt'*
+### **Components:** `'deisi_movie_votes.txt'`
 Component | Type
  :---: | ---
-Movie ID | Non-negative Integer
-Average Votes | Real Number
-Total Votes | Non-negative Integer
+`Movie ID` | Non-negative Integer
+`Average Votes` | Real Number
+`Total Votes` | Non-negative Integer
 ### File format example
 ```
 6978,7.1,727
@@ -50,14 +50,14 @@ Total Votes | Non-negative Integer
 1995,5.7,2235
 ```
 
-### Components: *'deisi_people.txt'*
+### **Components:** `'deisi_people.txt'`
 Component | Type
  :---: | ---
-Person Type | String ('ACTOR' or 'DIRECTOR')
-Person ID | Non-negative Integer
-Name | String
-Gender | Char ('M' - Male, 'F' - Female, '-' - N/A)
-Movie ID | Non-negative Integer
+`Person Type` | String ('ACTOR' or 'DIRECTOR')
+`Person ID` | Non-negative Integer
+`Name` | String
+`Gender` | Char ('M' - Male, 'F' - Female, '-' - N/A)
+`Movie ID` | Non-negative Integer
 ### File format example
 ```
 ACTOR,11701,Angelina Jolie,F,1995
@@ -72,11 +72,11 @@ DIRECTOR,1978,Iain Softley,-,10428
 DIRECTOR,96372,Tom Clegg,M,69787
 ```
 
-### Components: *'deisi_genres.txt'*
+### **Components:** `'deisi_genres.txt'`
 Component | Type
  :---: | ---
-Genere Name | String
-Movie ID | Non-negative Integer
+`Genere Name` | String
+`Movie ID` | Non-negative Integer
 ### File format example
 ```
 Action,603
@@ -93,7 +93,7 @@ Action,10428
 Comedy,6978
 ```
 
-### NOTE:
+### ***NOTE:***
 If for each line of any of the files the number of components of that line does not correspond to the expected number,
 then that line should be ignored.</br>
 Additionally, each line may contain extra spaces between the components, these should be ignored (i.e. they should be
@@ -104,5 +104,5 @@ Below are all the queries that can be performed on the movie database.
 
 Query Code | Description | Format
 :---: | --- | ---
-COUNT_MOVIES_ACTOR | Returns the number of movies an actor has participated in. If the actor does not exist 0 is returned. | COUNT_MOVIES_ACTOR <Full Actor Name\>
-GET_MOVIES_ACTOR_YEAR | Returns the 
+`COUNT_MOVIES_ACTOR` | Returns the number of movies an actor has participated in. If the actor does not exist 0 is returned. | COUNT_MOVIES_ACTOR <Full Actor Name\>
+`GET_MOVIES_ACTOR_YEAR` | Returns the 

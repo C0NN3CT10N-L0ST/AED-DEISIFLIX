@@ -4,15 +4,15 @@
 The goal of this project is to develop an application that can perform queries over a movie database where the focus is efficiency.
 The movie database is composed of files in CSV format.
 
-## Database Files Format (Input)
+## Database Files (Input)
 The program input is split into 4 distinct CSV files.
 Each line in all of the 4 files contains data about a specific movie.
 File Name | Description | Line Format
 :---------: | ----------- | -----------
-`deisi_movies.txt` | Contains basic movie data | `<Movie ID\>`,`<Title\>`,`<Duration\>`,`<Budget\>`,`<Date\>`
-`deisi_movie_votes.txt` | Contains data related to movie votes according to the IMDB platform | `<Movie ID\>`,`<Average Votes\>`,`<Total Votes\>`
-`deisi_people.txt` | Contains data about movie related people | `<Person Type\>`,`<Person ID\>`,`<Name\>`,`<Gender\>`,`<Movie ID\>`
-`deisi_genres.txt` | Contains data about movie genres | `<Genre Name\>`,`<Movie ID\>`
+`deisi_movies.txt` | Contains basic movie data | `<Movie ID>`,`<Title>`,`<Duration>`,`<Budget>`,`<Date>`
+`deisi_movie_votes.txt` | Contains data related to movie votes according to the IMDB platform | `<Movie ID>`,`<Average Votes>`,`<Total Votes>`
+`deisi_people.txt` | Contains data about movie related people | `<Person Type>`,`<Person ID>`,`<Name>`,`<Gender>`,`<Movie ID>`
+`deisi_genres.txt` | Contains data about movie genres | `<Genre Name>`,`<Movie ID>`
 
 ### **Components:** `'deisi_movies.txt'`
 Component | Type
@@ -75,7 +75,7 @@ DIRECTOR,96372,Tom Clegg,M,69787
 ### **Components:** `'deisi_genres.txt'`
 Component | Type
  :---: | ---
-`Genere Name` | String
+`Genre Name` | String
 `Movie ID` | Non-negative Integer
 ### File format example
 ```
@@ -104,5 +104,5 @@ Below are all the queries that can be performed on the movie database.
 
 Query Code | Description | Format
 :---: | --- | ---
-`COUNT_MOVIES_ACTOR` | Returns the number of movies an actor has participated in. If the actor does not exist 0 is returned. | COUNT_MOVIES_ACTOR <Full Actor Name\>
+`COUNT_MOVIES_ACTOR` | Returns the number of movies an actor has participated in. If the actor does not exist 0 is returned. | `COUNT_MOVIES_ACTOR <Full Actor Name\>`
 `GET_MOVIES_ACTOR_YEAR` | Returns the 

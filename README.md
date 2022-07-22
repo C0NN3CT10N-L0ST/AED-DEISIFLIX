@@ -127,5 +127,6 @@ start executing the queries in the CLI.</br>The program will run until the user 
 
 ### **Program Usage - Example**
 Example program usage for the query `TOP_10_MOST_EXPENSIVE_MOVIES_YEAR 2014`.
+___
 ![Detailed Program Usage](assets/Program%20Usage%20Detailed.png)
 ___

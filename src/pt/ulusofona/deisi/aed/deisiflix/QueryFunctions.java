@@ -832,7 +832,7 @@ public class QueryFunctions {
      * @param moviesDict HashMap (KEY: movie ID, VALUE: 'Filme' object) with all movies
      * @return Returns the most expensive movies from the given year
      */
-    public static QueryResult topNMostExpensiveMoviesYear(
+    public static QueryResult top10MostExpensiveMoviesYear(
             String data, HashMap<Integer, ArrayList<Integer>> moviesByYear, HashMap<Integer, Filme> moviesDict
     ) {
         startTime = System.currentTimeMillis();

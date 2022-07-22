@@ -193,7 +193,7 @@ public class Main {
             case "GET_DUPLICATE_LINES_YEAR":
                 return QueryFunctions.getDuplicateLinesYear(data, peopleDuplicateLinesYear);
             case "TOP_10_MOST_EXPENSIVE_MOVIES_YEAR":
-                return QueryFunctions.topNMostExpensiveMoviesYear(data, movieIDsByYear, moviesDict);
+                return QueryFunctions.top10MostExpensiveMoviesYear(data, movieIDsByYear, moviesDict);
             default:
                 return null;
         }

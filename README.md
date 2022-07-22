@@ -1,5 +1,6 @@
 # AED-DEISIFLIX
-
+![DEISIFLIX Banner](assets/DEISIFLIX_LOGO.png)
+___
 ## Project Description
 The goal of this project is to develop an application that can perform queries over a movie database where the focus is efficiency.
 The movie database is composed of files in CSV format.

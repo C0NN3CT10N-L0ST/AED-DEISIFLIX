@@ -1,11 +1,11 @@
 # AED-DEISIFLIX
 ![DEISIFLIX Banner](assets/DEISIFLIX_LOGO.png)
 ___
-## Project Description
-The goal of this project is to develop an application that can perform queries over a movie database where the focus is efficiency.
+## **Project Description**
+The goal of this project is to develop a **Java** application that can perform queries over a movie database where the focus is efficiency.
 The movie database is composed of files in CSV format.
 
-## Database Files (Input)
+## **Database Files (Input)**
 The program input is split into 4 distinct CSV files.
 Each line in all of the 4 files contains data about a specific movie.
 File Name | Description | Line Format
@@ -100,7 +100,7 @@ then that line should be ignored.</br>
 Additionally, each line may contain extra spaces between the components, these should be ignored (i.e. they should be
 treated as if they did not exist).
 
-## Database Queries
+## **Database Queries**
 Below are all the queries that can be performed on the movie database.
 
 Query | Description
@@ -121,4 +121,11 @@ Query | Description
 ***GET_DUPLICATE_LINES_YEAR*** `<Year>` | Returns all the duplicate lines from `deisi_people.txt` file for movies from the given year. If there are no results for the query it must return an empty string.</br>**Output Format:** `<Line_Number>:<Person_ID>:<Movie_ID>`.</br>**Note:** Its considered a duplicate line every time the same actor ID appears linked to the same movie more than 1 time.
 ***TOP_10_MOST_EXPENSIVE_MOVIES_YEAR*** `<Year>` | Returns the top 10 most expensive movies from the given year.</br>**Output Format:** `<Movie_Title> - Budget: $<Movie_Budget>`.
 
-## Program - UX
+## **Program Interface - UX**
+Once the program starts the user will be presented with the message `Bem vindo ao DEISIFLIX`. After that the user can
+start executing the queries in the CLI.</br>The program will run until the user decides to quit by writing `QUIT` in the terminal.
+
+### **Program Usage - Example**
+Example program usage for the query `TOP_10_MOST_EXPENSIVE_MOVIES_YEAR 2014`.
+![Detailed Program Usage](assets/Program%20Usage%20Detailed.png)
+___
